@@ -65,7 +65,7 @@
 .fs-62 {font-size: 62px;}
 .fs-63 {font-size: 63px;}
 .fs-64 {font-size: 64px;}
-.fs-65 {font-size: 65px;}
+/*.fs-65 {font-size: 65px;}*/
 .fs-66 {font-size: 66px;}
 .fs-67 {font-size: 67px;}
 .fs-68 {font-size: 68px;}
@@ -395,7 +395,7 @@
 .p-t-187 {padding-top: 187px;}
 .p-t-188 {padding-top: 188px;}
 .p-t-189 {padding-top: 189px;}
-.p-t-190 {padding-top: 190px;}
+.p-t-190 {padding-top: 30px;}
 .p-t-191 {padding-top: 191px;}
 .p-t-192 {padding-top: 192px;}
 .p-t-193 {padding-top: 193px;}
@@ -1218,7 +1218,7 @@
 .m-t-2 {margin-top: 2px;}
 .m-t-3 {margin-top: 3px;}
 .m-t-4 {margin-top: 4px;}
-.m-t-5 {margin-top: 5px;}
+.m-t-5 {margin-top: 20px;}
 .m-t-6 {margin-top: 6px;}
 .m-t-7 {margin-top: 7px;}
 .m-t-8 {margin-top: 8px;}

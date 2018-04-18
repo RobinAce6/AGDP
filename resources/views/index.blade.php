@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V6</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -23,24 +23,31 @@
 <!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="../vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="..																																					/css/util.css">
-	<link rel="stylesheet" type="text/css" href="..																																					/css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">																																					
 <!--===============================================================================================-->
 </head>
 <body>
-	
+	<div class="nav-bar">
+	<div>
+		<nav class="navbar fixed-top navbar-light bg-light">
+			<span class="navbar-brand mb-10"></span>
+		</nav>
+	</div>
+	</div>
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100 p-t-85 p-b-20">
+			<div class="wrap-login100 p-t-65 p-b-10">
 				<form class="login100-form validate-form">
-					<span class="login100-form-title p-b-70">
+					
+					<span class="login100-form-title p-b-45">
 						Welcome
 					</span>
-					<!--<span class="login100-form-avatar">
-						<img src="images/avatar-01.jpg" alt="AVATAR">
-					</span>-->
+					<span class="login100-form-avatar">
+						<img src="../images/logo1.png">
+					</span>
 
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">
+					<div class="wrap-input100 validate-input m-t-5 m-b-35" data-validate = "Enter username">
 						<input class="input100" type="text" name="username">
 						<span class="focus-input100" data-placeholder="Username"></span>
 					</div>

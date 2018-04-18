@@ -160,7 +160,7 @@ iframe {
 
 .container-login100 {
   width: 100%;  
-  min-height: 100vh;
+  min-height: 1vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -169,8 +169,9 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 15px;
-  background: #fff;  
+  /*padding: 12px;*/
+  background: #fff;
+  padding-bottom: 0%;  
 }
 
 .wrap-login100 {
@@ -188,8 +189,8 @@ iframe {
 
 .login100-form-title {
   display: block;
-  font-family: Poppins-Bold;
-  font-size: 39px;
+  font-family: Poppins-Medium;
+  font-size: 40px;
   color: #333333;
   line-height: 1.2;
   text-align: center;
@@ -197,9 +198,9 @@ iframe {
 
 .login100-form-avatar {
   display: block;
-  width: 120px;
+  width: 170px;
   height: 120px;
-  border-radius: 50%;
+  /*border-radius: 45%;*/
   overflow: hidden;
   margin: 0 auto;
 }
@@ -255,7 +256,7 @@ iframe {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 
-  background: #57b846;
+  background: #0984e3;
 }
 
 .focus-input100::after {
@@ -327,14 +328,14 @@ iframe {
   padding: 0 20px;
   width: 100%;
   height: 50px;
-  background-color: #57b846;
+  background-color: #0984e3;
   border-radius: 25px;
 
-  box-shadow: 0 10px 30px 0px rgba(87, 184, 70, 0.5);
-  -moz-box-shadow: 0 10px 30px 0px rgba(87, 184, 70, 0.5);
-  -webkit-box-shadow: 0 10px 30px 0px rgba(87, 184, 70, 0.5);
-  -o-box-shadow: 0 10px 30px 0px rgba(87, 184, 70, 0.5);
-  -ms-box-shadow: 0 10px 30px 0px rgba(87, 184, 70, 0.5);
+  box-shadow: 0 10px 30px 0px rgb(9, 132, 227);
+  -moz-box-shadow: 0 10px 30px 0px rgb(9, 132, 227);
+  -webkit-box-shadow: 0 10px 30px 0px rgb(9, 132, 227);
+  -o-box-shadow: 0 10px 30px 0px rgb(9, 132, 227);
+  -ms-box-shadow: 0 10px 30px 0px rgb(9, 132, 227);
 
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -445,4 +446,30 @@ iframe {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
   left: 0;
+}
+
+/*///////////////////////////////////////////////////////////////////
+[ Nav]*/
+
+.bg-light {
+    background-color: #0984e3!important;
+}
+
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 2.2rem 1rem;
+
+   box-shadow: 0 10px 30px 0px rgb(9, 132, 227);
+  -moz-box-shadow: 0 10px 30px 0px rgb(9, 132, 227);
+  -webkit-box-shadow: 0 10px 30px 0px rgb(9, 132, 227);
+  -o-box-shadow: 0 10px 30px 0px rgb(9, 132, 227);
+  -ms-box-shadow: 0 10px 30px 0px rgb(9, 132, 227);
 }
