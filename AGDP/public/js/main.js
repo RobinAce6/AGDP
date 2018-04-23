@@ -18,7 +18,7 @@
   
   
     /*==================================================================
-    [ Validate ]*/
+    [ Validate ]
     var input = $('.validate-input .input100');
 
     $('.validate-form').on('submit',function(){
@@ -65,6 +65,6 @@
 
         $(thisAlert).removeClass('alert-validate');
     }
-    
+    */
     
 })(jQuery);

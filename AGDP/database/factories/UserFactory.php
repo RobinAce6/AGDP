@@ -15,9 +15,11 @@ use Faker\Generator as Faker;
 
 $factory->define(App\User::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
+        'namePerson' => $faker->name,
+        'lastnamePerson' => $faker->lastName,
+        'userPerson' => $faker->unique()->companyEmail,
+        'phonePerson' => $faker->e164PhoneNumber,
+        'password' => bcrypt('admin01'), //'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
         'remember_token' => str_random(10),
     ];
 });
