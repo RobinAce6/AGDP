@@ -36,12 +36,12 @@
 	</div>
 	</div>
 		
-		@if (session()->has('msg'))
+		<!--@if (session()->has('msg'))
 		<div class="login100-form">
 			<div class="alert alert-info">{{ session('msg')}}</div>
 		</div>
 
-		@endif
+		@endif-->
 		@yield('content')
 
 

@@ -5,7 +5,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-65 p-b-10">
-				<form class="login100-form validate-form " method="POST" action="{{ route('login')}}">
+				<form class="login100-form validate-form" method="POST" action="{{ route('login')}}">
 
 					{{ csrf_field() }}
 					
