@@ -26,7 +26,7 @@ class LoginController extends Controller
         $credentials = $this->validate(request(), [
 
             'userPerson' => 'email|required|string',
-            'password'   =>  'string|required|min:6'
+            'password'   =>  'alphaNum|required|min:6'
 
         ]);
 
