@@ -35,7 +35,6 @@ class LoginController extends Controller
         {
             return redirect()->route('mainboard');
         }
-
             return back()
             ->withErrors(['userPerson' => 'Usuario y/o Contraseña Incorrectos'])
             ->withInput(request(['userPerson']));
