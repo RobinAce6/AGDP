@@ -46,8 +46,8 @@
 									<td>{{ $person->emailP}}</td>
 									<td>{{ $person->typeP}}</td>
 									<td>
-										<a href="{{ route('person.edit', ['idPeo' => $movie->idPeo]) }}">Actualizar</a>
-										<a href="{{ route('person/destroy', ['idPeo' => $movie->idPeo]) }}">Eliminar</a>
+										<a href="{{ route('person.edit', ['idPeo' => $person->idPeo]) }}">Actualizar</a>
+										<a href="{{ route('person/destroy', ['idPeo' => $person->idPeo]) }}">Eliminar</a>
 									</td>
 								</tr>
 								@endforeach

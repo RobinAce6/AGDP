@@ -27,25 +27,25 @@
 	<link rel="stylesheet" type="text/css" href="../css/main.css">																																					
 <!--===============================================================================================-->
 </head>
-<body>
-	<div class="nav-bar">
-	<div>
-		<nav class="navbar fixed-top navbar-light bg-light">
-			<span class="navbar-brand mb-10"></span>
-		</nav>
-	</div>
-	</div>
-		
-		<!--@if (session()->has('msg'))
-		<div class="login100-form">
-			<div class="alert alert-info">{{ session('msg')}}</div>
+	<body>
+		<div class="nav-bar">
+		<div>
+			<nav class="navbar fixed-top navbar-light bg-light">
+				<span class="navbar-brand mb-10"></span>
+			</nav>
 		</div>
+		</div>
+			
+			<!--@if (session()->has('msg'))
+			<div class="login100-form">
+				<div class="alert alert-info">{{ session('msg')}}</div>
+			</div>
 
-		@endif-->
-		@yield('content')
+			@endif-->
+			@yield('content')
 
 
-	<div id="dropDownSelect1"></div>
+		<div id="dropDownSelect1"></div>
 	
 <!--===============================================================================================-->
 	<script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -64,5 +64,5 @@
 <!--===============================================================================================-->
 	<script src="../js/main.js"></script>
 
-</body>
+	</body>
 </html>
