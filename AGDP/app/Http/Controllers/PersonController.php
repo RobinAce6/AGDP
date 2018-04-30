@@ -33,18 +33,20 @@ class PersonController extends Controller
   
     public function show($id)
     {
-        //
+        //return view()
     }
 
+    //I think   
+
     
-    public function edit($id)
+    public function edit($idPeo)
     {
-        $person = PersonM::find($id);
+        $person = PersonM::find($dPeo);
         return view('person.updateP', compact('person'));
     }
 
   
-    public function update(Request $request, $id)
+    public function update(Request $request, $idPeo)
     {
         $person = PersonM::find($request->idPeo);
         $person->nameP = $request->$nameP;
@@ -65,9 +67,9 @@ class PersonController extends Controller
     }
 
    
-    public function destroy($id)
+    public function destroy($idPeo)
     {
-        $person = PersonM::find($id);
+        $person = PersonM::find($idPeo);
         $person->delete();
         return back();
     }

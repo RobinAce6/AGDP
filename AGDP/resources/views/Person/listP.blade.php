@@ -5,7 +5,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-65 p-b-10">
-				<form class="login100-form validate-form" method="POST" action="{{ route('searchP')}}" novalidate>
+				<form class="login100-form" method="POST" action="{{ route('searchP')}}" novalidate>
 
 					{{ csrf_field() }}
 					
@@ -13,7 +13,7 @@
 						Registro Persona
 					</span>
 						
-					<div class="form-control">
+					<div class="container-login98">
 						<div class="form-group">
 							<div class="wrap-input100 validate-input m-t-4">
 								<input class="input100" type="text" name="searchR" placeholder="Buscar...">							
@@ -22,11 +22,11 @@
 							<button class="btn btn-warning" type="submit">Buscar</button>
 
 							<div class="container-login100-form-btn">
-								<a href="{{ route('person.newP')}}" class="btn btn-warning">Crear Nueva Persona</a>
+							<a href="{{ route('newP')}}" class="btn btn-warning">Crear Nueva Persona</a>
 							</div>
 						</div>
 
-						<table class="login100 table-striped">
+						<table class="table table-bordered">
 							<thead class="thead-light">
 								<tr>
 									<th scope="col">#</th>
@@ -37,14 +37,14 @@
 									<th scope="col">  </th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody class="table table-bordered">
 								@foreach ($person as $person)
 								<tr>
 									<td scope="row">{{ $person->idPeo}}</td>
-									<td>{{ $person->nameP}}</td>
-									<td>{{ $person->surnameP}}</td>
-									<td>{{ $person->emailP}}</td>
-									<td>{{ $person->typeP}}</td>
+									<td scope="row">{{ $person->nameP}}</td>
+									<td scope="row">{{ $person->surnameP}}</td>
+									<td scope="row">{{ $person->emailP}}</td>
+									<td scope="row">{{ $person->typeP}}</td>
 									<td>
 										<a href="{{ route('person.edit', ['idPeo' => $person->idPeo]) }}">Actualizar</a>
 										<a href="{{ route('person/destroy', ['idPeo' => $person->idPeo]) }}">Eliminar</a>
@@ -54,9 +54,7 @@
 							</tbody>
 							
 						</table>
-						
 					</div>
-
 				</form>
 			</div>
 		</div>

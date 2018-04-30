@@ -2,7 +2,7 @@
 
 //Routes Login
 
-Route::get('/', function () {
+	Route::get('/', function () {
 	return view('Auth\login');
 });
 
@@ -13,11 +13,25 @@ Route::POST('logout', 'Auth\LoginController@logout')->name('logout');
 
 //Routes Person
 
-/*Route::resource('Person', 'PersonController');*/
-Route::GET('Person', 'PersonController@index')->name('person');
-Route::GET('newP', 'PersonController@create')->name('person.newP');
-Route::POST('person.store', 'PersonController@store')->name('store');
-Route::PUT('person/{id}', 'PersonController@update')->name('updateP');
-Route::GET('person.edit', 'PersonController@edit')->name('person.edit');
-Route::DELETE('person/destroy/{id}', 'PersonController@destroy')->name('person/destroy');
+//Route::resource('Person', 'PersonController');
+
+//Route::POST('person', 'PersonController@index')->name('person');
+Route::GET('person', 'PersonController@index')->name('person');
+//Route::POST('person.store', 'PersonController@store')->name('store');
+
+Route::POST('person', 'PersonController@store')->name('store');
+
+Route::GET('person/create', 'PersonController@create')->name('newP');
+
+Route::PUT('person/{idPeo}', 'PersonController@update')->name('updateP');
+
+Route::GET('person/edit/{idPeo}', 'PersonController@edit')->name('person.edit');
+
+Route::GET('person/destroy/{id}', 'PersonController@destroy')->name('person/destroy');
+
 Route::POST('person/search', 'PersonController@search')->name('searchP');
+
+
+Route::POST('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+
+Route::POST('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');

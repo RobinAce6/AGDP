@@ -24,6 +24,9 @@
 						<div class="form-control">
 								<button class="btn btn-primary">Cerrar Sesión</button>
 						</div>
+						<div class="form-control">
+							<a href="{{ route('person')}}">Crear Nueva Persona</a>
+						</div>
 					</form>
 				</div>
 			</div>

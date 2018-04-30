@@ -475,3 +475,25 @@ iframe {
   -o-box-shadow: 0 10px 30px 0px rgb(9, 132, 227);
   -ms-box-shadow: 0 10px 30px 0px rgb(9, 132, 227);*/
 }
+
+/*///////////////////////////////////////////////////////////////////
+[ Nav]*/
+.container-login98 {
+
+
+    width: 100%;
+    min-height: 1vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    align-items: center;
+    /* padding: 12px; */
+    background: #fff;
+    padding-bottom: 0%;
+
+  }
+}

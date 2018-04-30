@@ -6,7 +6,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-65 p-b-10">
 				<form class="login100-form validate-form" method="PUT" action="{{ route('update')}}" novalidate>
-					<input class="hidden">{{ $person->idPeo}}</input>
+					
 					{{ csrf_field() }}
 					
 					<span class="login100-form-title p-b-45">
