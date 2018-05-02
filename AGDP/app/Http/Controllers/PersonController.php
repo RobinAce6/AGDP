@@ -29,19 +29,10 @@ class PersonController extends Controller
         $person->create($request->all());
         return redirect('person.listP');
     }
-
-  
-    public function show($id)
-    {
-        //return view()
-    }
-
-    //I think   
-
-    
+        
     public function edit($idPeo)
     {
-        $person = PersonM::find($dPeo);
+        $person = PersonM::find($idPeo);
         return view('person.updateP', compact('person'));
     }
 
@@ -49,13 +40,22 @@ class PersonController extends Controller
     public function update(Request $request, $idPeo)
     {
         $person = PersonM::find($request->idPeo);
-        $person->nameP = $request->$nameP;
-        $person->surnameP = $request->$surnameP;
-        $person->emailP = $request->$nameP;
-        $person->typeeP = $request->$typeP;
+        
+        if(!is_null($person)) { 
+
+        $person->nameP    =  $request->input('nameP');
+        $person->surnameP =  $request->input('surnameP');
+        $person->emailP   =  $request->input('emailP');
+        $person->typeP    =  $request->input('typeP');
+        
         $person->save();
-        return view('person.listP');
+
+        return view('person.listP'); }
+
+        return 'INGRESE INFORMACIÓN' ;
+
     }
+    
 
     public function search (Request $request)
     {
@@ -63,7 +63,7 @@ class PersonController extends Controller
 
         $person = PersonM::where('surnameP','like', '%'.$request->surnameP.'%')->get();
 
-        return view('listP', compact('person'));
+        return view('person.listP', compact('person'));
     }
 
    

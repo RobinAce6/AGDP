@@ -154,7 +154,7 @@ iframe {
 [ login ]*/
 
 .limiter {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -453,9 +453,9 @@ iframe {
 /*///////////////////////////////////////////////////////////////////
 [ Nav]*/
 
-.bg-light {
-   /* background-color: #0984e3!important;*/
-}
+/*.bg-light {
+   background-color: #0984e3!important;
+}*/
 
 .navbar {
     position: relative;
@@ -478,9 +478,9 @@ iframe {
 
 /*///////////////////////////////////////////////////////////////////
 [ Nav]*/
-.container-login98 {
+#container-login98
 
-
+{
     width: 100%;
     min-height: 1vh;
     display: -webkit-box;
@@ -494,6 +494,16 @@ iframe {
     /* padding: 12px; */
     background: #fff;
     padding-bottom: 0%;
+    
 
   }
+
+/*///////////////////////////////////////////////////////////////////
+[ Wrap]*/
+
+#wrap-login98
+{
+  width: 0px;
+  background: #fff;
+  margin: 5px;
 }

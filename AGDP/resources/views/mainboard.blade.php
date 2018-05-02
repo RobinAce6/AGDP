@@ -27,6 +27,9 @@
 						<div class="form-control">
 							<a href="{{ route('person')}}">Crear Nueva Persona</a>
 						</div>
+						<div class="form-control">
+							<a href="{{ route('role')}}">Crear Nuevo Rol</a>
+						</div>
 					</form>
 				</div>
 			</div>

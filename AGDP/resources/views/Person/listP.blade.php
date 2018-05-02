@@ -3,8 +3,8 @@
 @section('content')
 	
 	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100 p-t-65 p-b-10">
+		<div class="container-login98">
+			<div class="wrap-login98">
 				<form class="login100-form" method="POST" action="{{ route('searchP')}}" novalidate>
 
 					{{ csrf_field() }}
@@ -16,8 +16,10 @@
 					<div class="container-login98">
 						<div class="form-group">
 							<div class="wrap-input100 validate-input m-t-4">
-								<input class="input100" type="text" name="searchR" placeholder="Buscar...">							
+								<input class="input100" type="text" name="searchR" placeholder="Buscar..." required>							
 							</div>
+
+							<br>
 
 							<button class="btn btn-warning" type="submit">Buscar</button>
 
@@ -46,7 +48,7 @@
 									<td scope="row">{{ $person->emailP}}</td>
 									<td scope="row">{{ $person->typeP}}</td>
 									<td>
-										<a href="{{ route('person.edit', ['idPeo' => $person->idPeo]) }}">Actualizar</a>
+										<a href="{{ route('person/edit', ['idPeo' => $person->idPeo]) }}">Actualizar</a>
 										<a href="{{ route('person/destroy', ['idPeo' => $person->idPeo]) }}">Eliminar</a>
 									</td>
 								</tr>
