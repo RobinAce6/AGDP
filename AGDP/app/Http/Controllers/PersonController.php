@@ -7,7 +7,6 @@ use App\Models\PersonModel as PersonM;
 use Illuminate\Http\Request;
 
 
-
 class PersonController extends Controller
 {
     public function index()
@@ -39,21 +38,16 @@ class PersonController extends Controller
   
     public function update(Request $request, $idPeo)
     {
-        $person = PersonM::find($request->idPeo);
-        
-        if(!is_null($person)) { 
+        $person = PersonM::find($idPeo);
 
-        $person->nameP    =  $request->input('nameP');
-        $person->surnameP =  $request->input('surnameP');
-        $person->emailP   =  $request->input('emailP');
-        $person->typeP    =  $request->input('typeP');
-        
+        $person->nameP    =  $request->nameP;
+        $person->surnameP =  $request->surnameP;
+        $person->emailP   =  $request->emailP;
+        $person->typeP    =  $request->typeP;
+       
         $person->save();
-
-        return view('person.listP'); }
-
-        return 'INGRESE INFORMACIÓN' ;
-
+        
+        return back();
     }
     
 

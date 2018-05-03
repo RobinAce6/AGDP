@@ -9,4 +9,5 @@ class Role extends Model
     protected $table = 'roles';
     protected $fillable = ['nameRole'];
     protected $guarded = ['idRole'];
+    protected $primaryKey = 'idRole';
 }

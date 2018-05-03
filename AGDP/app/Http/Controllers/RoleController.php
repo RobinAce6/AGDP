@@ -2,75 +2,63 @@
 
 namespace App\Http\Controllers;
 
-use App\Role;
+use App\Models\Role as RoleM;
+
 use Illuminate\Http\Request;
+
 
 class RoleController extends Controller
 {
     
     public function index()
     {
-        return view('role.listR');
+        $role = RoleM::all();
+        return view('role.listR', compact('role'));
     }
 
     public function create()
     {
-        //
+        return view ('role.newR');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $role = new RoleM;
+        $role->create($request->all());
+        return redirect('role.listR');
+    }
+    
+    public function edit($idRole)
+    {
+        $role = RoleM::find($idRole);
+        return view('role.updateR', compact('role'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Role  $role
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Role $role)
+    
+    public function update(Request $request, $idRole)
     {
-        //
+        $role = RoleM::find($idRole);
+
+        $role->nameRole = $request->nameRole;
+
+        $role->save();
+
+        return back();
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Role  $role
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Role $role)
+    public function search(Request $request)
     {
-        //
+        $role = RoleM::where('idRole', 'like','%'.$request->idRole.'%')->get();
+
+        $role = RoleM::where('nameRole', 'like', '%'.$request->nameRole.'%')->get();
+
+        return view ('role.listR', compact('role'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Role  $role
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Role $role)
+    public function destroy($idRole)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Role  $role
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Role $role)
-    {
-        //
+        $role = RoleM::find($idRole);
+        $role->delete();
+        return back();
     }
 }
