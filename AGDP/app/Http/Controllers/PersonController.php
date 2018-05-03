@@ -7,7 +7,6 @@ use App\Models\PersonModel as PersonM;
 use Illuminate\Http\Request;
 
 
-
 class PersonController extends Controller
 {
     public function index()
@@ -29,31 +28,28 @@ class PersonController extends Controller
         $person->create($request->all());
         return redirect('person.listP');
     }
-
-  
-    public function show($id)
+        
+    public function edit($idPeo)
     {
-        //
-    }
-
-    
-    public function edit($id)
-    {
-        $person = PersonM::find($id);
+        $person = PersonM::find($idPeo);
         return view('person.updateP', compact('person'));
     }
 
   
-    public function update(Request $request, $id)
+    public function update(Request $request, $idPeo)
     {
-        $person = PersonM::find($request->idPeo);
-        $person->nameP = $request->$nameP;
-        $person->surnameP = $request->$surnameP;
-        $person->emailP = $request->$nameP;
-        $person->typeeP = $request->$typeP;
+        $person = PersonM::find($idPeo);
+
+        $person->nameP    =  $request->nameP;
+        $person->surnameP =  $request->surnameP;
+        $person->emailP   =  $request->emailP;
+        $person->typeP    =  $request->typeP;
+       
         $person->save();
-        return view('person.listP');
+        
+        return back();
     }
+    
 
     public function search (Request $request)
     {
@@ -61,13 +57,13 @@ class PersonController extends Controller
 
         $person = PersonM::where('surnameP','like', '%'.$request->surnameP.'%')->get();
 
-        return view('listP', compact('person'));
+        return view('person.listP', compact('person'));
     }
 
    
-    public function destroy($id)
+    public function destroy($idPeo)
     {
-        $person = PersonM::find($id);
+        $person = PersonM::find($idPeo);
         $person->delete();
         return back();
     }
