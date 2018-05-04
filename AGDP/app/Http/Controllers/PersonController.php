@@ -22,7 +22,7 @@ class PersonController extends Controller
     }
 
   
-    public function store(Request $request)
+    public function store (Request $request)
     {
         $person = new PersonM;
         $person->create($request->all());
