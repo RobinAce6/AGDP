@@ -13,7 +13,7 @@ Route::POST('login', 'Auth\LoginController@login')->name('login');
 Route::POST('logout', 'Auth\LoginController@logout')->name('logout');
 
 
-//Routes Person
+//Person Routes
 
 //Route::resource('Person', 'PersonController');
 
@@ -26,7 +26,7 @@ Route::PUT ('person/{id}',  'PersonController@update')			->name('update');
 Route::GET ('person/destroy/{id}', 'PersonController@destroy')	->name('person/destroy');
 Route::GET ('person/edit/{id}','PersonController@edit')			->name('person/edit');
 
-//Routes Role
+//Role Routes
 
 Route::GET ('role', 'RoleController@index')					->name('role');
 Route::GET ('role.listR', 'RoleController@index')			->name('role.listR');
@@ -37,7 +37,7 @@ Route::PUT ('role/update/{id}', 'RoleController@update')	->name('updateR');
 Route::GET ('role/destroy/{id}', 'RoleController@destroy')	->name('role/destroy');
 Route::GET ('role/edit/{id}', 'RoleController@edit')		->name('role/edit');
 
-//Routes Dependency
+//Dependency Routes
 
 Route::GET ('depend', 'DependencyController@index')					->name('depend');
 Route::GET ('depend.listD', 'DependencyController@index')			->name('depend.listD');
@@ -48,3 +48,13 @@ Route::PUT ('depend/update/{id}', 'DependencyController@update')	->name('updateD
 Route::GET ('depend/destroy/{id}', 'DependencyController@destroy')	->name('depend/destroy');
 Route::GET ('depend/edit/{id}', 'DependencyController@edit')		->name('depend/edit');
 
+//User Routes
+
+Route::GET ('user', 'UserController@index')					->name('user');
+Route::GET ('user.listU', 'UserController@index')			->name('user.listU');
+Route::POST('user','UserController@store')					->name('storeU');
+Route::GET ('user/create', 'UserController@create')			->name('newU');
+Route::POST('user/search', 'UserController@search')			->name('searchU');
+Route::PUT ('user/update/{id}', 'UserController@update')	->name('updateU');
+Route::GET ('user/destroy/{id}', 'UserController@destroy')	->name('user/destroy');
+Route::GET ('user/edit/{id}', 'UserController@edit')		->name('user/edit');

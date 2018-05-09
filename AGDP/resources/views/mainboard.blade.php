@@ -45,6 +45,9 @@
 						</button>
 					</p>
 					-->
+					<div class="form-control">
+						<a href="{{ route('user')}}">Crear Nuevo Usuario</a>
+					</div>
 				</form>
 			</div>
 		</div>
