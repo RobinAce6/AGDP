@@ -32,16 +32,19 @@
 							<tr>
 								<th scope="col">#</th>
 								<th scope="col">Nombre(s)</th>
+								<th scope="col" class="hidden"> Passowrd </th>
+								<th scope="col"> </th>
 							</tr>
 						</thead>
 						<tbody class="table table-bordered">
 							@foreach ( $user as $users )
 							<tr>
-								<td scope="row">{{ $user->idUser }}</td>
-								<td scope="row">{{ $user->userPerson }}</td>
+								<td scope="row">{{ $users->idUser }}</td>
+								<td scope="row">{{ $users->userPerson }}</td>
+								<td scope="row" class="hidden">{{ $users->password}}</td>
 								<td>
-									<a class="btn btn-link" href="{{ route('user/edit', ['idUser' => $user->idUser]) }}">Actualizar</a>
-									<a href="{{ route('user/destroy', ['idUser' => $user->idUser]) }}">Eliminar</a>
+									<a class="btn btn-link" href="{{ route('user/edit', ['idUser' => $users->idUser]) }}">Actualizar</a>
+									<a href="{{ route('user/destroy', ['idUser' => $users->idUser]) }}">Eliminar</a>
 								</td>
 							</tr>
 							@endforeach

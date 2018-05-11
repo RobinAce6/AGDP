@@ -30,14 +30,23 @@ class UserController extends Controller
         return redirect('user.listU');
     }
 
-    public function edit($id)
+    public function edit($idUser)
     {
-        //
+        $user = UserM::find($idUser);
+        return view('user.updateU', compact('user'));
+
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $idUser)
     {
-        //
+        $user = UserM::find($idUser);
+
+        $user->userPerson = $request->userPerson;
+        $user->password = $request->password;
+        
+        $user->save();
+
+        return back;
     }
 
     public function destroy($id)
