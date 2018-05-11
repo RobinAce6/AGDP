@@ -49,8 +49,15 @@ class UserController extends Controller
         return back;
     }
 
-    public function destroy($id)
+    public function search (Request $request)
     {
-        //
+        $user = UserM::where('userPerson', 'like','%'.$request->userName.'%')->get();
+    }
+
+    public function destroy($idUser)
+    {
+        $user = UserM::find($idUser);
+        $user->delete();
+        return back();
     }
 }
