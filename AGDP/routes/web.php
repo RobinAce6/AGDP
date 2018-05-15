@@ -58,3 +58,25 @@ Route::POST('user/search', 'UserController@search')			->name('searchU');
 Route::PUT ('user/update/{id}', 'UserController@update')	->name('updateU');
 Route::GET ('user/destroy/{id}', 'UserController@destroy')	->name('user/destroy');
 Route::GET ('user/edit/{id}', 'UserController@edit')		->name('user/edit');
+
+//Folder Routes
+
+Route::GET ('folder', 'FolderController@index')					->name('folder');
+Route::GET ('folder.listF', 'FolderController@index')			->name('folder.listF');
+Route::POST('folder','FolderController@store')					->name('storeF');
+Route::GET ('folder/create', 'FolderController@create')			->name('newF');
+Route::POST('folder/search', 'FolderController@search')			->name('searchF');
+Route::PUT ('folder/update/{id}', 'FolderController@update')	->name('updateF');
+Route::GET ('folder/destroy/{id}', 'FolderController@destroy')	->name('folder/destroy');
+Route::GET ('folder/edit/{id}', 'FolderController@edit')		->name('folder/edit');
+
+//StorageWays Routes
+
+Route::GET ('storagew', 'StorageWayController@index')				->name('storagew');
+Route::GET ('storagew.listSW', 'StorageWayController@index')		->name('storagew.listSW');
+Route::POST('storagew','StorageWayController@store')				->name('storeSW');
+Route::GET ('storagew/create', 'StorageWayController@create')		->name('newSW');
+Route::POST('storagew/search', 'StorageWayController@search')		->name('searchSW');
+Route::PUT ('storagew/update/{id}', 'StorageWayController@update')	->name('updateSW');
+Route::GET ('storagew/destroy/{id}', 'StorageWayController@destroy')->name('storagew/destroy');
+Route::GET ('storagew/edit/{id}', 'StorageWayController@edit')		->name('storagew/edit');

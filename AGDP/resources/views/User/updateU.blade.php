@@ -23,10 +23,6 @@
                      <input class="input100" type="text" name="nameUser" value="{{ $user->nameUser }}" required>
                   </div>
 
-                  <div class="wrap-input100 validate-input m-t-6">
-                     <input class="input100" type="password" name="password" value="{{ $user->password }}" required>
-                  </div>
-
                   <div class="container-login100-form-btn">
                      <button class="btn btn-warning">Guardar</button>
                   </div>

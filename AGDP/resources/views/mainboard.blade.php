@@ -38,6 +38,15 @@
 					<div class="form-control">
 						<a href="{{ route('depend')}}">Crear Nueva Dependencia</a>
 					</div>
+					<div class="form-control">
+						<a href="{{ route('folder')}}">Crear Nuevo Proyecto</a>
+					</div>
+					<div class="form-control">
+						<a href="{{ route('storagew')}}">Crear Nuevo SW</a>
+					</div>
+					<div class="form-control">
+						<a href="{{ route('user')}}">Crear Nuevo Usuario</a>
+					</div>
 					<!--
 					<p>
 						<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -45,9 +54,6 @@
 						</button>
 					</p>
 					-->
-					<div class="form-control">
-						<a href="{{ route('user')}}">Crear Nuevo Usuario</a>
-					</div>
 				</form>
 			</div>
 		</div>

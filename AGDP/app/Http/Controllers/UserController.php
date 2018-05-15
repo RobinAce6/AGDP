@@ -42,7 +42,6 @@ class UserController extends Controller
         $user = UserM::find($idUser);
 
         $user->userPerson = $request->userPerson;
-        $user->password = $request->password;
         
         $user->save();
 
@@ -61,3 +60,4 @@ class UserController extends Controller
         return back();
     }
 }
+    
