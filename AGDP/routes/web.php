@@ -47,7 +47,6 @@ Route::POST('depend/search', 'DependencyController@search')			->name('searchD');
 Route::PUT ('depend/update/{id}', 'DependencyController@update')	->name('updateD');
 Route::GET ('depend/destroy/{id}', 'DependencyController@destroy')	->name('depend/destroy');
 Route::GET ('depend/edit/{id}', 'DependencyController@edit')		->name('depend/edit');
-
 //User Routes
 
 Route::GET ('user', 'UserController@index')					->name('user');
