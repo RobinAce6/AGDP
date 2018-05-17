@@ -10,4 +10,9 @@ class Role extends Model
     protected $fillable = ['nameRole'];
     protected $guarded  = ['idRole'];
     protected $primaryKey = 'idRole';
+
+    public function permissionRole()
+    {
+        return $this->belongsToMany('App\Models\Permission');
+    } 
 }
