@@ -11,8 +11,8 @@ class Role extends Model
     protected $guarded  = ['idRole'];
     protected $primaryKey = 'idRole';
 
-    public function permissionRole()
+    public function permissionRoles()
     {
-        return $this->belongsToMany('App\Models\Permission');
+        return $this->belongsToMany('App\Models\Permission', 'permissionRole', 'idRole', 'idP');
     } 
 }

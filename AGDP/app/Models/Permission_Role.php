@@ -9,14 +9,15 @@ class Permission_Role extends Model
     protected $table = 'permission_roles';
     protected $fillable = ['idP','idRole'];
     protected $guarded = ['idPerRol'];
+    protected $primaryKey = 'idP';
 
     public function permissions()
     {
-        return $this->belongsTo('App\Models\Permission');
+        return $this->belongsToMany('App\Models\Permission', 'permissions');
     }
 
     public function roles()
     {
-        return $this->belongsTo('App\Models\Role');
+        return $this->belongsToMany('App\Models\Role','roles');
     }
 }

@@ -14,9 +14,14 @@ class CreatePermissionsTable extends Migration
     public function up()
     {
         Schema::create('permissions', function (Blueprint $table) {
-            $table->increments('idP');
+            $table->engine = 'InnoDB';
+            $table->increments('idP')->unique();
             $table->string('nameP');
             $table->string('tag');
+            
+            $table->integer('permission_role_id')->unsaigned();
+            $table->foreign('permission_role_id')->references('idPer_Rol')->on('permission_roles');
+            
             $table->timestamps();
         });
     }
