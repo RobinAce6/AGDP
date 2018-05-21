@@ -507,3 +507,11 @@ iframe {
   background: #fff;
   margin: 5px;
 }
+
+/*///////////////////////////////////////////////////////////////////
+[ Toggle]*/
+
+.collapse#collapseExample
+{
+  /*width: 10%;*/
+}
