@@ -3,21 +3,22 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Permission;
 
 class Permission_Role extends Model
 {
     protected $table = 'permission_roles';
-    protected $fillable = ['idP','idRole'];
+    protected $fillable = ['permissions','idRole'];
     protected $guarded = ['idPerRol'];
-    protected $primaryKey = 'idP';
+    protected $primaryKey = 'idPerRol';
 
-    public function permissions()
+    /*public function permissions()
     {
-        return $this->belongsToMany('App\Models\Permission', 'permissions');
-    }
+        return $this->belongsTo(Permission::class, 'permissions','idP');
+    }*/
 
-    public function roles()
+    /*public function roles()
     {
         return $this->belongsToMany('App\Models\Role','roles');
-    }
+    }*/
 }

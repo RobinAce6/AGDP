@@ -15,11 +15,11 @@
                     
             <div class="form-control">
 
-                  <div class="wrap-input100 validate-input m-t-6">
+                  <div class="wrap-input100 validate-input m-t-6 validate-form">
                      <input class="input100" type="text" name="userPerson" placeholder="Nombre" required>
                   </div>
 
-                  <div class="wrap-input100 validate-input m-t-6">
+                  <div class="wrap-input100 validate-input m-t-6 validate-form">
                      <input class="input100" type="password" name="password" placeholder="Contraseña" required>
                   </div>
 

@@ -11,17 +11,16 @@ class CreateRolesTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up()    
     {
         Schema::create('roles', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->increments('idRole')->unique();
+            $table->bigIncrements('idRole');
             $table->string('nameRole')->unique();
 
             //$table->integer('permission_role_id')->unsaigned();
             //$table->foreign('permission_role_id')->references('idPer_Rol')->on('permission_roles');
             
-            $table->timestamps();
+            $table->timestamps();   
         });
     }
 

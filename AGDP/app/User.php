@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\typePerson;
 
 class User extends Authenticatable
 {
@@ -28,4 +29,9 @@ class User extends Authenticatable
     ];
 
     protected $primaryKey = 'idUser';   
+
+    /*public function typePeople()
+    {
+         return $this->belongsTo(typePerson::class, 'typePeople','idTypePerson');
+    }*/
 }

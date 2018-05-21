@@ -15,16 +15,9 @@
 					{{ csrf_field() }}
 					
 					<span class="login100-form-title p-b-45">
-						Bienvenido, @User
+						Bienvenido, {{Auth::user()->userPerson}}
 
 					</span>
-
-					<div class="wrap-input100 validate-input m-t-5 m-b-35 {{ $errors->has('userPerson') ? 'has-error' : '' }}"  value= "{{ old('userPerson')}}">
-						<input class="input100" type="text" name="userPerson" placeholder="Usuario">
-					
-					{!! $errors ->first('userPerson', '<span class="badge badge-pill badge-danger">:message</span>') !!}
-
-					</div>
 					
 					<div class="form-control">
 							<button class="btn btn-primary">Cerrar Sesión</button>
