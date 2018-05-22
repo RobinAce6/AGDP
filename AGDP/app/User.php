@@ -4,7 +4,6 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Models\typePerson;
 
 class User extends Authenticatable
 {
@@ -16,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'userPerson'
+        'codPerson', 'namePerson', 'lastnamePerson', 'emailPerson', 'typePerson_id', 'dependency_id'
     ];
 
     /**
@@ -25,13 +24,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'passwordPerson', 'remember_token',
     ];
 
     protected $primaryKey = 'idUser';   
 
-    /*public function typePeople()
-    {
-         return $this->belongsTo(typePerson::class, 'typePeople','idTypePerson');
-    }*/
+    public $timestamps = true;
 }
