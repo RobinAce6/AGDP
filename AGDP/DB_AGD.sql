@@ -1,20 +1,23 @@
 drop database P1;
 create database P1;
-use P1;
+use P1;	
 
-CREATE TABLE Department (
+CREATE TABLE Department 
+(
     idDepartment INT auto_increment,
     nameDepartment varchar (25) not null,
     PRIMARY KEY (idDepartment)
 ) ;
 
-CREATE TABLE City (
+CREATE TABLE City 
+(
     idCity INT primary key auto_increment,
     department_id INT,
     INDEX dep_ind (department_id),
     FOREIGN KEY (department_id)
         REFERENCES Department(idDepartment)
         ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 
 create table StorageWay
@@ -58,14 +61,6 @@ create table Dependency
     primary key (idDependency)
 );
 
-create table usersS
-(
-	idUser int auto_increment,
-    userPerson varchar (30) not null,
-    passwordUser char (15) not null,
-    primary key (idUser)
-);
-
 create table Permission
 (
 	idPermission int auto_increment,
@@ -84,29 +79,33 @@ create table permission_roles
 (
  nPR int auto_increment,
  role_id int not null,
- permission_id int null,
+ permission_id int not null,
  primary key (nPR),
  
  FOREIGN KEY (permission_id)
         REFERENCES Permission (idPermission)
-        ON DELETE CASCADE,
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
  FOREIGN KEY (role_id)
         REFERENCES Role(idRole)
         ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 
-create table Person
+create table Users
 (
-	idPerson int auto_increment,
+	idUser int auto_increment,
     codPerson int,
     namePerson varchar (50) not null,
     lastnamePerson varchar (50) not null,
     emailPerson varchar (45) unique not null,
-    idTypePerson int not null,
+    passwordPerson char (15) not null,
+	remember_token varchar (255) not null,
+    typePerson_id int not null,
     dependency_id int not null,
-    primary key (idPerson),
-    INDEX per_typ (idTypePerson),
-    FOREIGN KEY (idTypePerson)
+    primary key (idUser),
+    INDEX per_typ (typePerson_id),
+    FOREIGN KEY (typePerson_id)
         REFERENCES TypePerson (idTypePerson)
         ON DELETE CASCADE
         ON update CASCADE,
@@ -114,6 +113,7 @@ create table Person
     FOREIGN KEY (dependency_id)
         REFERENCES Dependency (idDependency)
         ON DELETE CASCADE
+        ON update CASCADE
 );
 
 create table Mail
@@ -133,13 +133,9 @@ create table Mail
     dependency_id int not null,
     storagew_id int not null,
     city_id int not null,
-    primary key (idMail,idMail2),
+    primary key (idMail),
 	FOREIGN KEY (city_id)
         REFERENCES City (idCity)
-        ON DELETE CASCADE
-        ON update CASCADE,
-    FOREIGN KEY (dependency_id)
-        REFERENCES Dependency (idDependency)
         ON DELETE CASCADE
         ON update CASCADE,
 	FOREIGN KEY (storagew_id)
@@ -151,7 +147,7 @@ create table Mail
 create table EDoc
 (
 	idEDoc int auto_increment,
-    nameEDoc varchar (50) unique,
+    nameEDoc varchar (50) unique not null,
     mail_id int not null,
     folder_id int not null,
     primary key (idEDoc),
@@ -178,7 +174,7 @@ create table Role_User
         on update cascade
         on delete cascade,
 	foreign key (user_id)
-		references usersS (idUser)
+		references Users (idUser)
         on update cascade
         on delete cascade
 );
@@ -221,15 +217,29 @@ create table Folder_User
     user_id int not null,
     folder_id int not null,
     primary key (nUF),
-    foreign key (user_id)
-		references usersS (idUser)
-        on update cascade
-        on delete cascade,
 	foreign key (folder_id)
 		references Folder (idFolder)
+        on update cascade
+        on delete cascade,
+    foreign key (user_id)
+		references Users (idUser)
         on update cascade
         on delete cascade
 );
 
-show tables;
-select * from person;
+create table Mail_Place
+(
+	nMP int auto_increment,
+    mail_id int not null,
+    place_id int not null,
+    primary key (nMP),
+    foreign key (mail_id)
+		references Mail (idMail)
+        on update cascade
+        on delete cascade,
+	foreign key (place_id)
+		references City (idCity)
+        on update cascade
+        on delete cascade
+);
+
