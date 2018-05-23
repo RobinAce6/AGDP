@@ -23,7 +23,7 @@
 								<a href="{{ route('newP') }}" class="btn btn-warning">Crear Nueva Persona</a>
 							</div>
 							<div class="container-login100-form-btn">
-								<a href="{{ route('mainboard' )}}" class="btn btn-danger"> Inicio</a>
+								<a href="{{ route('mainboard' )}}" class="btn btn-danger"> Home</a>
 							</div>
 						</div>
 

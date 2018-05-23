@@ -37,13 +37,13 @@
 							</tr>
 						</thead>
 						<tbody class="table table-bordered">
-							@foreach ($role as $roles)
+							@foreach ($typep as $typep)
 							<tr>
-								<td scope="row">{{ $roles->idRole}}</td>
-								<td scope="row">{{ $roles->nameRole}}</td>
+								<td scope="row">{{ $typep->idRole}}</td>
+								<td scope="row">{{ $typep->nameRole}}</td>
 								<td>
-									<a class="btn btn-link" href="{{ route('role/edit', ['idRole' => $roles->idRole]) }}">Actualizar</a>
-									<a href="{{ route('role/destroy', ['idRole' => $roles -> idRole]) }}">Eliminar</a>
+									<a class="btn btn-link" href="{{ route('role/edit', ['idRole' => $typep->idRole]) }}">Actualizar</a>
+									<a href="{{ route('role/destroy', ['idRole' => $typep -> idRole]) }}">Eliminar</a>
 								</td>
 							</tr>
 							@endforeach

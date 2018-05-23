@@ -1,11 +1,10 @@
 @extends('layouts.app')
 
-@section('content')
-    
+@section('container')
 <div class="limiter">
    <div class="container-login100">
       <div class="wrap-login100 p-t-65 p-b-10">
-         <form class="login100-form validate-form" method="POST" action="{{ route('storeR')}}" novalidate>
+         <form class="login100-form validate-form" method="POST" action="{{ route('storeTP')}}" novalidate>
 
             {{ csrf_field() }}
                 
@@ -30,5 +29,4 @@
       </div>
    </div>
 </div>
-
 @endsection

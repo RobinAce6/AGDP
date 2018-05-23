@@ -43,7 +43,7 @@ class RoleController extends Controller
 
         $role->save();
 
-        return back();
+        return view('role.listR');
     }
 
     public function search(Request $request)

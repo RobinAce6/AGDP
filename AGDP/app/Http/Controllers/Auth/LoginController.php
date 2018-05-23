@@ -25,8 +25,8 @@ class LoginController extends Controller
     {
         $credentials = $this->validate(request(), [
 
-            'userPerson' => 'email|required|string',
-            'password'   =>  'alphaNum|required|min:6'
+            'emailPerson' => 'email|required|string',
+            'passwordPerson'   =>  'alphaNum|required|min:6'
 
         ]);
 
@@ -36,8 +36,8 @@ class LoginController extends Controller
             return redirect()->route('mainboard');
         }
             return back()
-            ->withErrors(['userPerson' => 'Usuario y/o Contraseña Incorrectos'])
-            ->withInput(request(['userPerson']));
+            ->withErrors(['emailPerson' => 'Usuario y/o Contraseña Incorrectos'])
+            ->withInput(request(['emailPerson']));
     }
 
     public function logout () 
