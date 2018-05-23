@@ -15,17 +15,6 @@ Route::POST('logout', 'Auth\LoginController@logout')->name('logout');
 
 //Person Routes
 
-//Route::resource('Person', 'PersonController');
-
-Route::GET ('person', 		'PersonController@index')			->name('person');
-Route::GET ('person.listP', 'PersonController@index')			->name('person.listP');
-Route::POST('person',		'PersonController@store')			->name('store');
-Route::GET ('person/create','PersonController@create')			->name('newP');
-Route::POST('person/search','PersonController@search')			->name('searchP');
-Route::PUT ('person/{id}',  'PersonController@update')			->name('update');
-Route::GET ('person/destroy/{id}', 'PersonController@destroy')	->name('person/destroy');
-Route::GET ('person/edit/{id}','PersonController@edit')			->name('person/edit');
-
 //Role Routes
 
 Route::GET ('role', 'RoleController@index')					->name('role');
@@ -47,6 +36,7 @@ Route::POST('depend/search', 'DependencyController@search')			->name('searchD');
 Route::PUT ('depend/update/{id}', 'DependencyController@update')	->name('updateD');
 Route::GET ('depend/destroy/{id}', 'DependencyController@destroy')	->name('depend/destroy');
 Route::GET ('depend/edit/{id}', 'DependencyController@edit')		->name('depend/edit');
+
 //User Routes
 
 Route::GET ('user', 'UserController@index')					->name('user');
@@ -79,3 +69,14 @@ Route::POST('storagew/search', 'StorageWayController@search')		->name('searchSW'
 Route::PUT ('storagew/update/{id}', 'StorageWayController@update')	->name('updateSW');
 Route::GET ('storagew/destroy/{id}', 'StorageWayController@destroy')->name('storagew/destroy');
 Route::GET ('storagew/edit/{id}', 'StorageWayController@edit')		->name('storagew/edit');
+
+//TypePerson Routes
+
+Route::GET ('typePerson', 'TypePersonController@index')					->name('typePerson');
+Route::GET ('typePerson.listTP', 'TypePersonController@index')			->name('typePerson.listTP');
+Route::POST('typePerson','TypePersonController@store')					->name('storeTP');
+Route::GET ('typePerson/create', 'TypePersonController@create')			->name('newTP');
+Route::POST('typePerson/search', 'TypePersonController@search')			->name('searchTP');
+Route::PUT ('typePerson/update/{id}', 'TypePersonController@update')	->name('updateTP');
+Route::GET ('typePerson/destroy/{id}', 'TypePersonController@destroy')  ->name('typePerson/destroy');
+Route::GET ('typePerson/edit/{id}', 'TypePersonController@edit')		->name('typePerson/edit');

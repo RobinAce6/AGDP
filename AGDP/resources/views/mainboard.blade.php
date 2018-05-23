@@ -15,15 +15,12 @@
 					{{ csrf_field() }}
 					
 					<span class="login100-form-title p-b-45">
-						Bienvenido, {{Auth::user()->userPerson}}
+						Bienvenido, @User
 
 					</span>
 					
 					<div class="form-control">
 							<button class="btn btn-primary">Cerrar Sesión</button>
-					</div>
-					<div class="form-control">
-						<a href="{{ route('person')}}">Crear Nueva Persona</a>
 					</div>
 					<div class="form-control">
 						<a href="{{ route('role')}}">Crear Nuevo Rol</a>
@@ -39,6 +36,9 @@
 					</div>
 					<div class="form-control">
 						<a href="{{ route('user')}}">Crear Nuevo Usuario</a>
+					</div>
+					<div class="form-control">
+						<a href="{{ route('typePerson')}}">Crear Nuevo Tipo Persona</a>
 					</div>
 					<!--
 					<p>

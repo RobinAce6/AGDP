@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dependency extends Model
 {
-    protected $table = 'dependencies';
-    protected $fillable = ['nameDep'];
-    protected $guarded = ['idDep'];
-    protected $primaryKey = 'idDep';
+    protected $table = 'dependency';
+    protected $fillable = ['nameDependency'];
+    protected $guarded = ['idDependency'];
+    protected $primaryKey = 'idDependency';
 }

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User as UserM;
-use App\Models\Person as PersonM;
 
 
 class UserController extends Controller
@@ -41,8 +40,16 @@ class UserController extends Controller
     {
         $user = UserM::find($idUser);
 
-        $user->userPerson = $request->userPerson;
-        
+        $user->codPerson      = $request->codPerson;
+        $user->namePerson     = $request->namePerson;
+        $user->lastnamePerson = $request->lastnamePerson;
+        $user->emailPerson    = $request->emailPerson;
+        $user->typePerson_id  = $request->typePerson_id;
+        $user->dependency_id  = $request->dependency_id;       
+        $user->userPerson     = $request->emailPerson;
+        $user->passwordPerson = $request->passwordPerson;
+        $user->confirPassPerson = $request->confirPassPerson;
+
         $user->save();
 
         return back;
