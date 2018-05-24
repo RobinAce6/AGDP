@@ -30,31 +30,40 @@
                   <div class="wrap-input100 validate-input m-t-6 validate-form">
                      <input class="input100" type="email" name="emailPerson" placeholder="Email Corporativo" required>
                   </div>
-                  <div class="wrap-input100 validate-input m-t-6 validate-form">
-                     <input class="input100" type="text" name="typePerson_id" placeholder="Tipo Persona" required>
+                  <br>
+                  <div class="form-group">
+                   <p> Tipo de Persona </p>
+                      <select class="wrap-input100 m-t-6" name="idTypePerson">
+                        @foreach ($typep as $typePerson)
+                          <option value="{{$typePerson->idTypePerson}}">{{$typePerson->nameTypePerson}}</option>
+                        @endforeach
+                      </select>
                   </div>
-
-                  <div class="wrap-input100 validate-input m-t-6 validate-form">
-                     <input class="input100" type="text" name="dependency_id" placeholder="Dependencia" required>
+                  <div class="form-group">
+                   <p> Área de Trabajo </p>
+                      <select class="wrap-input100 m-t-6" name="idDependency">
+                        @foreach ($depend as $Depend)
+                          <option value="{{$typePerson->idTypePerson}}">{{$Depend->nameDependency}}</option>
+                        @endforeach
+                      </select>
                   </div>
             </div>
-            <div class="card">
-               <div class="card-header">
-                   Usuario
+            <div class="hidden">
+               <input class="input100" type="hidden" name="userPerson">
+            </div>
+            <div class="hidden">
+               <input class="input100" type="hidden" name="passwordPerson">
+            </div>
+            <div class="hidden">
+               <input class="input100" type="hidden" name="confirPassPerson">
+            </div>
+            <div class="container-login100-form-btn">
+               <button class="btn btn-warning">Guardar</button><br>
+               <a href="{{ route('user.listU')}}" class="btn btn-danger">Cancelar</a>
+            </div>
+            <div>
+               <div class="card-footer text-muted">
                </div>
-               <div class="card-body">
-                  <p class="card-title">Nombre de Usuario</p>
-                     <input class="input100" type="text" name="userPerson" placeholder="Nombre de Usuario"  required>
-                     <input class="input100" type="password" name="passwordPerson" placeholder="Contraseña" required>
-                     <input class="input100" type="password" name="confirPassPerson" placeholder="Confirme Contraseña Contraseña" required>
-               </div>
-               <div class="container-login100-form-btn">
-                  <button class="btn btn-warning">Guardar</button>
-               </div>
-
-               <div class="container-login100-form-btn">
-                  <a href="{{ route('user.listU') }}" class="btn btn-danger">Cancelar</a>
-               </div>   
             </div>
          </form>
       </div>

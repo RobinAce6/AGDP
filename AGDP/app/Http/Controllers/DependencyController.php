@@ -11,6 +11,7 @@ class DependencyController extends Controller
     
     public function index()
     {
+        $depend = DependM::all();
         return view ('depend.listD', compact('depend'));
     }
 
@@ -34,13 +35,13 @@ class DependencyController extends Controller
     
     public function update(Request $request, $idDependency)
     {
-        $depend = DependM::find($request->id);
+        $depend = DependM::find($idDependency);
         
         $depend->nameDependency = $request->nameDependency;
 
         $depend->save();
 
-        return view('depend.listD', compact('depend'));
+        return redirect('depend.listD');
     }
     
     public function search(Request $request)

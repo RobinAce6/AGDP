@@ -1,27 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-
-   <div class="limiter">
+<div class="limiter">
    	<div class="container-login100">
    		<div class="wrap-login100 p-t-65 p-b-10">
-   			<form class="login100-form validate-form" method="POST"	action="{{ route('updateD', [$depend->idDependency]) }}">
+   			<form class="login100-form validate-form" method="POST"	action="{{ route('updateTP', [$typep->idTypePerson]) }}">
    				
    				{{ method_field('PUT')}}
    				{{ csrf_field() }}
    				
    				<span class="login100-form-title p-b-45">
-   					Actualizar Dependencia
+   					Actualizar <strong>Tipo de Persona</strong>
    				</span>
    					
    				<div class="form-control">
 
    					<div class="wrap-input100 validate-input m-t-6">
-   						<input class="input100" type="number" name="idDependency" value="{{ $depend->idDependency }}" disabled>
+   						<input class="input100" type="number" name="idTypePerson" value="{{ $typep->idTypePerson }}" disabled>
    					</div>
 
    					<div class="wrap-input100 validate-input m-t-6">
-   						<input class="input100" type="text" name="nameDependency" value="{{ $depend->nameDependency }}" required>
+   						<input class="input100" type="text" name="nameTypePerson" value="{{ $typep->nameTypePerson }}" required>
    					</div>
 
    					<div class="container-login100-form-btn">
@@ -29,17 +28,16 @@
    					</div>
    					<br>
    					<div class="container-login100-form-btn">
-   						<a href="{{ route('depend.listD')}}" class="btn btn-danger">Cancelar</a>
+   						<a href="{{ route('typePerson.listTP')}}" class="btn btn-danger">Cancelar</a>
    					</div>
    					
    					<div class="container-login100-form-btn">
-   						<a href="{{ route('depend.listD')}}" class="btn btn-primary">Regresar a la Lista</a>
+   						<a href="{{ route('typePerson.listTP')}}" class="btn btn-primary">Regresar a la Lista</a>
    					</div>
 
    				</div>
    			</form>
    		</div>
    	</div>
-   </div>
-
+</div>
 @endsection

@@ -77,6 +77,6 @@ Route::GET ('typePerson.listTP', 'TypePersonController@index')			->name('typePer
 Route::POST('typePerson','TypePersonController@store')					->name('storeTP');
 Route::GET ('typePerson/create', 'TypePersonController@create')			->name('newTP');
 Route::POST('typePerson/search', 'TypePersonController@search')			->name('searchTP');
-Route::PUT ('typePerson/update/{id}', 'TypePersonController@update')	->name('updateTP');
+Route::PUT ('typePerson/update/{idTypePerson}', 'TypePersonController@update')	->name('updateTP');
 Route::GET ('typePerson/destroy/{id}', 'TypePersonController@destroy')  ->name('typePerson/destroy');
 Route::GET ('typePerson/edit/{id}', 'TypePersonController@edit')		->name('typePerson/edit');

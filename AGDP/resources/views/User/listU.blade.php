@@ -31,8 +31,13 @@
 						<thead class="thead-light">
 							<tr>
 								<th scope="col">#</th>
+								<th scope="col"> Identificación </th>
 								<th scope="col"> Nombre(s) </th>
-								<th scope="col"> Tipo Usuario </th>
+								<th scope="col"> Apellido(s) </th>
+								<th scope="col"> Tipo de Persona</th>
+								<th scope="col"> Dependencia</th>
+								<th scope="col"> Email </th>
+								<th scope="col"> Nombre de Usuario </th>
 								<th scope="col"> </th>
 							</tr>
 						</thead>
@@ -40,6 +45,12 @@
 							@foreach ( $user as $users )
 							<tr>
 								<td scope="row">{{ $users->idUser }}</td>
+								<td scope="row">{{ $users->codPerson }}</td>
+								<td scope="row">{{ $users->namePerson }}</td>
+								<td scope="row">{{ $users->lastnamePerson }}</td>
+								<td scope="row">{{ $users->typePerson->nametypePerson}}</td>
+								<td scope="row">{{ $users->Dependency->nameDependency }}</td>
+								<td scope="row">{{ $users->emailPerson }}</td>
 								<td scope="row">{{ $users->userPerson }}</td>
 								<td scope="row">  </td>
 								<td>

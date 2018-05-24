@@ -35,10 +35,10 @@
 						<a href="{{ route('storagew')}}">Crear Nuevo SW</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('user')}}">Crear Nuevo Usuario</a>
+						<a href="{{ route('typePerson')}}">Crear Nuevo Tipo Persona</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('typePerson')}}">Crear Nuevo Tipo Persona</a>
+						<a href="{{ route('user')}}">Crear Nuevo Usuario</a>
 					</div>
 					<!--
 					<p>
