@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration {
 		Schema::create('users', function(Blueprint $table)
 		{
 			$table->integer('idUser', true);
-			$table->integer('codPerson');
+			$table->char('codPerson', 15);
 			$table->string('namePerson', 50);
 			$table->string('lastnamePerson', 50);
 			$table->string('emailPerson', 45)->unique('emailPerson');
@@ -24,7 +24,6 @@ class CreateUsersTable extends Migration {
 			$table->integer('dependency_id')->index('per_dep');
 			$table->string('userPerson', 45);
 			$table->char('passwordPerson', 15);
-			$table->char('confirPassPerson', 15);
 			$table->rememberToken();
             $table->timestamps();
 		});

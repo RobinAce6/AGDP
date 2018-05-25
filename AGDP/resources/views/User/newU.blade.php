@@ -54,9 +54,6 @@
             <div class="hidden">
                <input class="input100" type="hidden" name="passwordPerson">
             </div>
-            <div class="hidden">
-               <input class="input100" type="hidden" name="confirPassPerson">
-            </div>
             <div class="container-login100-form-btn">
                <button class="btn btn-warning">Guardar</button><br>
                <a href="{{ route('user.listU')}}" class="btn btn-danger">Cancelar</a>
