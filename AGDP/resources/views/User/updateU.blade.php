@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section(container)
+@section('content')
+
 	<div class="limiter">
       <div class="container-login100">
          <div class="wrap-login100 p-t-65 p-b-10">
@@ -46,24 +47,12 @@
                         @endforeach
                       </select>
                   </div>
-            </div>
-            <div class="card">
-               <div class="card-header">
-                   Usuario
-               </div>
-               <div class="card-body">
-                     <input class="input100" type="text" name="userPerson" placeholder="Nombre de Usuario"  required>
-                     <input class="input100" type="password" name="passwordPerson" placeholder="Contraseña" required>
-                     <input class="input100" type="password" name="confirPassPerson" placeholder="Confirme Contraseña Contraseña" required>
-               </div>
-               <div class="container-login100-form-btn">
-                  <button class="btn btn-warning">Guardar</button>
-               </div>
-
-               <div class="container-login100-form-btn">
-                  <a href="{{ route('user.listU') }}" class="btn btn-danger">Cancelar</a>
-               </div>   
-            </div>
+              <div class="hidden">
+                 <input class="input100" type="hidden" name="userPerson">
+              </div>
+              <div class="hidden">
+                 <input class="input100" type="hidden" name="passwordPerson">
+              </div>
             </form>
          </div>
       </div>

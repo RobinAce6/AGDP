@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\typePerson;
+use App\Models\Dependency;
 
 class User extends Authenticatable
 {
@@ -27,7 +29,16 @@ class User extends Authenticatable
         'passwordPerson', 
     ];
 
-    protected $primaryKey = 'idUser';   
+    protected $primaryKey = 'idUser';
 
-    public $timestamps = true;
+
+    public function TypePerson()
+    {
+        return $this->belongsTo(typePerson::class, 'typePerson_id','idTypePerson');
+    } 
+
+    public function Dependency()
+    {
+        return $this->belongsTo(Dependency::class,'dependency_id','idDependency');
+    } 
 }

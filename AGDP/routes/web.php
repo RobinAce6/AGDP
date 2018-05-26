@@ -6,6 +6,10 @@
 	return view('Auth\login');
 });
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');	
+
 //Mainboard
 
 Route::GET('mainboard', 'MainboardController@index')->name('mainboard');
@@ -80,3 +84,10 @@ Route::POST('typePerson/search', 'TypePersonController@search')			->name('search
 Route::PUT ('typePerson/update/{idTypePerson}', 'TypePersonController@update')	->name('updateTP');
 Route::GET ('typePerson/destroy/{id}', 'TypePersonController@destroy')  ->name('typePerson/destroy');
 Route::GET ('typePerson/edit/{id}', 'TypePersonController@edit')		->name('typePerson/edit');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

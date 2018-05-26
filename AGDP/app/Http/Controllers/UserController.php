@@ -13,7 +13,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $user = UserM::with('typep', 'dependency')->get();
+        $user = UserM::with('TypePerson')->get();
         return view('user.listU', compact('user'));
     }
 
@@ -58,11 +58,10 @@ class UserController extends Controller
         $user->namePerson     = $request->namePerson;
         $user->lastnamePerson = $request->lastnamePerson;
         $user->emailPerson    = $request->emailPerson;
-        $user->typePerson_id  = $request->typePerson_id;
-        $user->dependency_id  = $request->dependency_id;       
+        $user->typePerson_id  = $request->idTypePerson;
+        $user->dependency_id  = $request->idDependency;       
         $user->userPerson     = $request->emailPerson;
         $user->passwordPerson = $request->codPerson;
-        $user->confirPassPerson = $request->codPerson;
 
         $user->save();
 

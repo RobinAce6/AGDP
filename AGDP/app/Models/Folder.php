@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Folder extends Model
 {
     protected $table    = 'folders';
-    protected $fillable = ['nameFolder'];   
+    protected $fillable = ['nameFolder', 'client_id'];   
     protected $guarded  = ['idFolder'];
     protected $primaryKey = 'idFolder';
 }

@@ -11,4 +11,8 @@ class typePerson extends Model
     protected $guarded = ['idTypePerson'];
     protected $primaryKey = 'idTypePerson';
 
+    public function User()
+	{
+		return $this->hasMany(User::class,'typePerson_id','idTypePerson');
+	} 
 }
