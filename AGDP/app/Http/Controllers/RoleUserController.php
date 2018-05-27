@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Role_User;
+use App\Models\Role_User as RUM;
+use App\Models\Role as Role;
+use App\User as User;
+
 use Illuminate\Http\Request;
 
 class RoleUserController extends Controller
@@ -14,7 +17,8 @@ class RoleUserController extends Controller
      */
     public function index()
     {
-        //
+        $userole = RUM::with('User', 'Role')->get();
+        return view('role_user.listRU', compact('userole'));
     }
 
     /**
@@ -24,7 +28,9 @@ class RoleUserController extends Controller
      */
     public function create()
     {
-        //
+        $role = Role::all();
+        $user = User::all();
+        return view('role_user.newRU', compact('role', 'user'));
     }
 
     /**
@@ -35,7 +41,14 @@ class RoleUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $userole = new RUM;
+
+        $userole->role_id = $request->idRole;
+        $userole->user_id = $request->idUser;
+
+        $userole->save();
+
+        return redirect('role_user.listRU');
     }
 
     /**
@@ -55,9 +68,10 @@ class RoleUserController extends Controller
      * @param  \App\Models\Role_User  $role_User
      * @return \Illuminate\Http\Response
      */
-    public function edit(Role_User $role_User)
+    public function edit($nRU)
     {
-        //
+        $userole = RUM::find($nRU);
+        return view('role_user.updateRU', compact('userole'));
     }
 
     /**
@@ -67,9 +81,16 @@ class RoleUserController extends Controller
      * @param  \App\Models\Role_User  $role_User
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Role_User $role_User)
+    public function update(Request $request, $nRU)
     {
-        //
+        $roleuser = RUM::find($nRU);
+
+        $roleuser->role_id = $request->idRole;
+        $roleuser->user_id = $request->idUser;
+
+        $roleuser->save();
+
+        return back();
     }
 
     /**
@@ -78,8 +99,10 @@ class RoleUserController extends Controller
      * @param  \App\Models\Role_User  $role_User
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Role_User $role_User)
+    public function destroy($nRU)
     {
-        //
+        $roleuser = RUM::find($nRU);
+        $roleuser->delete();
+        return back();
     }
 }

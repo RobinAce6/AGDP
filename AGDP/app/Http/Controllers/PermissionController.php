@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Permission;
+use App\Models\Permission as PermM;
+
 use Illuminate\Http\Request;
 
 class PermissionController extends Controller
@@ -14,7 +15,8 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        //
+        $permis = PermM::all();
+        return view('permis.listPr', compact('permis'));
     }
 
     /**
@@ -24,7 +26,7 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        //
+        return view('permis.newPr');
     }
 
     /**
@@ -35,7 +37,10 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $permis = new PermM;
+        $permis->create($request->all());
+        return view('permis.listPr');
+    
     }
 
     /**
@@ -55,9 +60,10 @@ class PermissionController extends Controller
      * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function edit(Permission $permission)
+    public function edit($idPermission)
     {
-        //
+        $permis = PermM::find($idPermission);
+        return view('permis.updatePr', compact('permis'));
     }
 
     /**
@@ -67,9 +73,15 @@ class PermissionController extends Controller
      * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Permission $permission)
+    public function update(Request $request, $idPermission)
     {
-        //
+        $permis = PerM::find($idPermission);
+
+        $permis->namePermission = $request->namePermission;
+
+        $permis->save();
+
+        return view('permis.listPr');
     }
 
     /**
@@ -78,8 +90,15 @@ class PermissionController extends Controller
      * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Permission $permission)
+    public function destroy($idPermission)
     {
-        //
+        $permis = PermM::find($idPermission);
+        $permis->delete();
+        return back();
+    }
+
+    public function search (Request $request)
+    {
+        $permis = PermM::where('namePermission', 'like','%'.$request->namePermission.'%')->get();
     }
 }

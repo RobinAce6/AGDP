@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Permissions;
+use App\Models\Role;
 
 class Permission_Role extends Model
 {
@@ -11,13 +13,13 @@ class Permission_Role extends Model
     protected $guarded = ['nPR'];
     protected $primaryKey = 'nPR';
 
+    public function Roles()
+    {
+        return $this->belongsTo(Role::class,'role_id', 'idRole');
+    }
+
     public function Permissions()
     {
         return $this->belongsTo(Permission::class, 'permission_id','idPermission');
-    }
-
-    public function Roles()
-    {
-        return $this->belongsToMany(Role::class,'permissionRole', 'idRole');
     }
 }

@@ -41,4 +41,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Dependency::class,'dependency_id','idDependency');
     } 
+
+    public function Role_User()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'idUser');
+    }
+
 }

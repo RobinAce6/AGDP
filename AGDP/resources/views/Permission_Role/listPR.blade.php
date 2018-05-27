@@ -1,18 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    
 <div class="limiter">
 	<div class="container-login98">
 		<div class="wrap-login98">
-			<form class="login100-form" method="POST" action="{{ route('searchPr')}}">
+			<form class="login100-form" method="POST" action="{{ route('searchPR')}}">
 
 				{{ csrf_field() }}
 				
 				<div class="container-login98">
 					<div class="form-group">
 						<div class="wrap-input100 validate-input m-t-4">
-							<input class="input100" type="text" name="searchPr" placeholder="Buscar..." required>							
+							<input class="input100" type="text" name="searchPR" placeholder="Buscar..." required>							
 						</div>
 
 						<br>
@@ -20,7 +19,7 @@
 						<button class="btn btn-warning" type="submit">Buscar</button>
 
 						<div class="container-login100-form-btn">
-						   <a href="{{ route('newPr')}}" class="btn btn-warning">Crear Nuevo Permiso</a>
+						   <a href="{{ route('newPR')}}" class="btn btn-warning">Asociación Permiso-Rol</a>
 						</div>
 
                   <div class="container-login100-form-btn">
@@ -32,18 +31,19 @@
 						<thead class="thead-light">
 							<tr>
 								<th scope="col"> # </th>
-								<th scope="col">Nombre</th>
-								<th scope="col"> </th>
+								<th scope="col">Permiso</th>
+								<th scope="col">Rol</th>
 							</tr>
 						</thead>
 						<tbody class="table table-bordered">
-							@foreach ($permis as $permisssion)
+							@foreach ($permisrole as $permisRole)
 							<tr>
-								<td scope="row">{{ $permisssion->idPermission}}</td>
-								<td scope="row">{{ $permisssion->namePermission}}</td>
+								<td scope="row">{{ $permisRole->nPR}}</td>
+                        <td scope="row">{{ $permisRole->Role->nameRole}}</td>
+								<td scope="row">{{ $permisRole->Permission->namePermission}}</td>
 								<td>
-									<a class="btn btn-link" href="{{ route('permis/edit', ['idPermission' => $permisssion->idPermission]) }}">Actualizar</a>
-									<a href="{{ route('permis/destroy', ['idPermission' => $permisssion -> idPermission]) }}">Eliminar</a>
+									<a class="btn btn-link" href="{{ route('permisrole/edit', ['nPR' => $permisRole->nPR]) }}">Actualizar</a>
+									<a href="{{ route('permisrole/destroy', ['nPR' => $permisRole -> nPR]) }}">Eliminar</a>
 								</td>
 							</tr>
 							@endforeach
@@ -55,5 +55,4 @@
 		</div>
 	</div>
 </div>
-
 @endsection

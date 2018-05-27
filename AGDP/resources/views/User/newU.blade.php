@@ -43,7 +43,7 @@
                    <p> Área de Trabajo </p>
                       <select class="wrap-input100 m-t-6" name="idDependency">
                         @foreach ($depend as $Depend)
-                          <option value="{{$typePerson->idTypePerson}}">{{$Depend->nameDependency}}</option>
+                          <option value="{{$Depend->idDependency}}">{{$Depend->nameDependency}}</option>
                         @endforeach
                       </select>
                   </div>

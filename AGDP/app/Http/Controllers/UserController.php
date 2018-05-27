@@ -65,7 +65,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return back;
+        return back();
     }
 
     public function search (Request $request)

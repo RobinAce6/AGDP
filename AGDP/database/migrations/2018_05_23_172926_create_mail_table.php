@@ -28,8 +28,8 @@ class CreateMailTable extends Migration {
 			$table->string('nameMsessenger', 50);
 			$table->boolean('typeMail')->nullable();
 			$table->integer('dependency_id');
-			$table->integer('storagew_id')->index('storagew_id');
-			$table->integer('city_id')->index('city_id');
+			$table->integer('storagew_id');
+			$table->integer('city_id');
 			$table->rememberToken();
             $table->timestamps();
 		});

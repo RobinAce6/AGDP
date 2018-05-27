@@ -17,7 +17,60 @@ Route::POST('login', 'Auth\LoginController@login')->name('login');
 Route::POST('logout', 'Auth\LoginController@logout')->name('logout');
 
 
-//Person Routes
+// City Routes
+
+Route::GET ('city', 'CityController@index')					->name('city');
+Route::GET ('city.listC', 'CityController@index')			->name('city.listC');
+Route::POST('city','CityController@store')					->name('storeC');
+Route::GET ('city/create', 'CityController@create')			->name('newC');
+Route::POST('city/search', 'CityController@search')			->name('searchC');
+Route::PUT ('city/update/{id}', 'CityController@update')	->name('updateC');
+Route::GET ('city/destroy/{id}', 'CityController@destroy')	->name('city/destroy');
+Route::GET ('city/edit/{id}', 'CityController@edit')		->name('city/edit');
+
+// Clients Routes
+
+Route::GET ('clients', 'ClientsController@index')				->name('clients');
+Route::GET ('clients.listCl', 'ClientsController@index')		->name('clients.listCl');
+Route::POST('clients','ClientsController@store')				->name('storeCl');
+Route::GET ('clients/create', 'ClientsController@create')		->name('newCl');
+Route::POST('clients/search', 'ClientsController@search')		->name('searchCl');
+Route::PUT ('clients/update/{id}', 'ClientsController@update')	->name('updateCl');
+Route::GET ('clients/destroy/{id}', 'ClientsController@destroy')->name('clients/destroy');
+Route::GET ('clients/edit/{id}', 'ClientsController@edit')		->name('clients/edit');
+
+// Role_User Routes
+
+Route::GET ('role_user', 'RoleUserController@index')				->name('roleuser');
+Route::GET ('role_user.listRU', 'RoleUserController@index')		->name('role_user.listRU');
+Route::POST('role_user','RoleUserController@store')				->name('storeRU');
+Route::GET ('role_user/create', 'RoleUserController@create')		->name('newRU');
+Route::POST('role_user/search', 'RoleUserController@search')		->name('searchRU');
+Route::PUT ('role_user/update/{id}', 'RoleUserController@update')->name('updateRU');
+Route::GET ('role_user/destroy/{id}', 'RoleUserController@destroy')->name('role_user/destroy');
+Route::GET ('role_user/edit/{id}', 'RoleUserController@edit')	->name('role_user/edit');
+
+// Permissions Routes
+
+Route::GET ('permis', 'PermissionController@index')				->name('permis');
+Route::GET ('permis.listPr', 'PermissionController@index')		->name('permis.listPr');
+Route::POST('permis','PermissionController@store')				->name('storePr');
+Route::GET ('permis/create', 'PermissionController@create')		->name('newPr');
+Route::POST('permis/search', 'PermissionController@search')		->name('searchPr');
+Route::PUT ('permis/update/{id}', 'PermissionController@update')->name('updatePr');
+Route::GET ('permis/destroy/{id}', 'PermissionController@destroy')->name('permis/destroy');
+Route::GET ('permis/edit/{id}', 'PermissionController@edit')	->name('permis/edit');
+
+// Permission_Role Routes
+
+Route::GET ('permisrole', 'PermissionRoleController@index')				->name('permisrole');
+Route::GET ('permisrole.listPR', 'PermissionRoleController@index')		->name('permisrole.listPR');
+Route::POST('permisrole','PermissionRoleController@store')				->name('storePR');
+Route::GET ('permisrole/create', 'PermissionRoleController@create')		->name('newPR');
+Route::POST('permisrole/search', 'PermissionRoleController@search')		->name('searchPR');
+Route::PUT ('permisrole/update/{id}', 'PermissionRoleController@update')->name('updatePR');
+Route::GET ('permisrole/destroy/{id}', 'PermissionRoleController@destroy')->name('permisrole/destroy');
+Route::GET ('permisrole/edit/{id}', 'PermissionRoleController@edit')	->name('permisrole/edit');
 
 //Role Routes
 

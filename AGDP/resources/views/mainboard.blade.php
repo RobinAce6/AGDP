@@ -40,6 +40,12 @@
 					<div class="form-control">
 						<a href="{{ route('user')}}">Crear Nuevo Usuario</a>
 					</div>
+					<div class="form-control">
+						<a href="{{ route('roleuser')}}">Asociar Rol a Usuario</a>
+					</div>
+					<div class="form-control">
+						<a href="{{ route('permisrole')}}">Asociar Permiso a Rol</a>
+					</div>
 					<!--
 					<p>
 						<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">

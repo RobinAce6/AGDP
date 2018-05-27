@@ -9,7 +9,7 @@
             {{ csrf_field() }}
                 
             <span class="login100-form-title p-b-45">
-               Registro Permisos
+               Registro Permisos de Usuario
             </span>
                     
             <div class="form-control">
