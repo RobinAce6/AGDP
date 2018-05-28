@@ -51,16 +51,6 @@ class RoleUserController extends Controller
         return redirect('role_user.listRU');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Role_User  $role_User
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Role_User $role_User)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -70,8 +60,10 @@ class RoleUserController extends Controller
      */
     public function edit($nRU)
     {
+        $role = Role::all();
+        $user = User::all();
         $userole = RUM::find($nRU);
-        return view('role_user.updateRU', compact('userole'));
+        return view('role_user.updateRU', compact('userole', 'role', 'user'));
     }
 
     /**
@@ -90,7 +82,7 @@ class RoleUserController extends Controller
 
         $roleuser->save();
 
-        return back();
+        return redirect('role_user.listRU');
     }
 
     /**

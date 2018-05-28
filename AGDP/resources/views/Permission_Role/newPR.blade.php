@@ -17,7 +17,7 @@
                   <div class="form-group">
                    <p> Permiso  </p>
                       <select class="wrap-input100 m-t-6" name="idPermission">
-                        @foreach ($permis as $Permis)
+                        @foreach ($permission as $Permis)
                           <option value="{{$Permis->idPermission}}">{{$Permis->namePermission}}</option>
                         @endforeach
                       </select>
@@ -33,7 +33,7 @@
             </div>
             <div class="container-login100-form-btn">
                <button class="btn btn-warning">Guardar</button><br>
-               <a href="{{ route('permisrole.listPR')}}" class="btn btn-danger">Cancelar</a>
+               <a href="{{ route('permission_role.listPR')}}" class="btn btn-danger">Cancelar</a>
             </div>
             <div>
                <div class="card-footer text-muted">

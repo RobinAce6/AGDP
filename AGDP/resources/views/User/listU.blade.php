@@ -37,7 +37,6 @@
 								<th scope="col"> Tipo de Persona</th>
 								<th scope="col"> Dependencia</th>
 								<th scope="col"> Email </th>
-								<th scope="col"> Nombre de Usuario </th>
 								<th scope="col"> </th>
 							</tr>
 						</thead>
@@ -51,7 +50,6 @@
 								<td scope="row">{{ $users->TypePerson->nameTypePerson}}</td>
 								<td scope="row">{{ $users->Dependency->nameDependency}}</td>
 								<td scope="row">{{ $users->email }}</td>
-								<td scope="row">{{ $users->userPerson }}</td>
 								<td>
 									<a class="btn btn-link" href="{{ route('user/edit', ['idUser' => $users->idUser]) }}">Actualizar</a>
 									<a href="{{ route('user/destroy', ['idUser' => $users->idUser]) }}">Eliminar</a>

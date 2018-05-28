@@ -28,9 +28,9 @@ class PermissionRoleController extends Controller
      */
     public function create()
     {
-        $permis = Permission::all();
+        $permission = Permission::all();
         $role = Role::all();
-        return view('permission_role.newPR', compact('permis','role'));
+        return view('permission_role.newPR', compact(['permission', 'role']));
     }
 
     /**
@@ -47,19 +47,7 @@ class PermissionRoleController extends Controller
         $permisrole->role_id = $request->idRole;
 
         $permisrole->save();
-
         return redirect('permission_role.listPR');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Permission_Role  $permission_Role
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Permission_Role $permission_Role)
-    {
-        //
     }
 
     /**
@@ -70,8 +58,10 @@ class PermissionRoleController extends Controller
      */
     public function edit($nPR)
     {
+        $role = Role::all();
+        $permission = Permission::all();
         $permisrole = PRM::find($nPR);
-        return view('permission_role.updatePR', compact('permisrole'));
+        return view('permission_role.updatePR', compact('permisrole','permission','role'));
     }
 
     /**
@@ -90,7 +80,7 @@ class PermissionRoleController extends Controller
 
         $permisrole->save();
 
-        return back();
+        return redirect('permission_role.listPR');
     }
 
     /**

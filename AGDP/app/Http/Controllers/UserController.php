@@ -44,8 +44,10 @@ class UserController extends Controller
 
     public function edit($idUser)
     {
+        $typep  = TPM::all();
+        $depend = DM::all();
         $user = UserM::find($idUser);
-        return view('user.updateU', compact('user'));
+        return view('user.updateU', compact('user','typep', 'depend'));
 
     }
 

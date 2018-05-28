@@ -22,7 +22,7 @@
                </div>
 
                <div class="container-login100-form-btn">
-                  <a href="{{ route('role.listR') }}" class="btn btn-danger">Cancelar</a>
+                  <a href="{{ route('typePerson.listTP') }}" class="btn btn-danger">Cancelar</a>
                </div>   
             </div>
          </form>

@@ -27,13 +27,19 @@ class FolderController extends Controller
     public function store(Request $request)
     {
         $folder = new FolderM;
-        $folder->create($request->all());
+
+        $folder->nameFolder = $request->nameFolder;
+        $folder->client_id = $request->idClient;
+
+        $folder->save();
+
         return redirect('folder.listF');
     }
 
     
     public function edit($idFolder)
     {
+         $client = Client::all();
         $folder = FolderM::find($idFolder);
         return view('folder.updateF', compact('folder'));
     }

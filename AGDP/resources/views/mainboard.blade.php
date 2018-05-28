@@ -14,19 +14,14 @@
 
 					{{ csrf_field() }}
 					
-					<span class="login100-form-title p-b-45">
-						Bienvenido, @User
-
-					</span>
-					
 					<div class="form-control">
-							<button class="btn btn-primary">Cerrar Sesión</button>
+						<a href="{{ route('depend')}}"> Dependencia</a>
 					</div>
 					<div class="form-control">
 						<a href="{{ route('role')}}"> Rol</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('depend')}}"> Dependencia</a>
+						<a href="{{ route('clients')}}"> Cliente </a>
 					</div>
 					<div class="form-control">
 						<a href="{{ route('folder')}}"> Proyecto</a>
@@ -38,20 +33,17 @@
 						<a href="{{ route('typePerson')}}"> Tipo Persona</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('user')}}"> Usuario</a>
+						<a href="{{ route('permission')}}"> Permiso </a>
 					</div>
 					<div class="form-control">
 						<a href="{{ route('roleuser')}}">Asociar Rol a Usuario</a>
 					</div>
 					<div class="form-control">
+						<a href="{{ route('user')}}"> Usuario</a>
+					</div>
+					<div class="form-control">
 						<a href="{{ route('permission_role')}}">Asociar Permiso a Rol</a>
 					</div>
-					</div>
-					<div class="form-control">
-						<a href="{{ route('permission')}}"> Permiso </a>
-					</div>
-					<div class="form-control">
-						<a href="{{ route('clients')}}"> Cliente </a>
 					</div>
 					<!--
 					<p>
