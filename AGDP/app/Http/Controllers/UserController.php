@@ -65,7 +65,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return back();
+        return redirect('user.listU');
     }
 
     public function search (Request $request)

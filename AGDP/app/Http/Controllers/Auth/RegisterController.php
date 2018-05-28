@@ -48,14 +48,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'codPerson' => 'required|string|:50',
-            'namePerson' => 'required|string|:50',
+            'codPerson'      => 'required|string',
+            'namePerson'     => 'required|string',
             'lastnamePerson' => 'required|string',
-            'emailPerson' => 'required|string|email|unique:users',
-            'typePerson_id' => 'required|string|min:6',
-            'dependency_id' => 'required|string|min:6',
-            'userPerson' => 'required|string|min:6',
-            'passwordPerson' => 'required|string|min:6',
+            'emailPerson'    => 'required|string|email|unique:users',
+            'typePerson_id'  => 'required|string',
+            'dependency_id'  => 'required|string',
+            'userPerson'     => 'required|string',
+            'passwordPerson' => 'required|string',
         ]);
     }
 
@@ -68,10 +68,14 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'lastName' => $data['lastName'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'codPerson'      => $data['codPerson'],,
+            'namePerson'     => $data['namePerson'],
+            'lastnamePerson' => $data['lastnamePerson'],
+            'emailPerson'    => $data['emailPerson'],
+            'typePerson_id'  => $data['typePerson_id'],
+            'dependency_id'  => $data['dependency_id'],
+            'userPerson'     => $data['emailPerson'],
+            'passwordPerson' => bcrypt($data['codPerson']),
         ]);
     }
 }
