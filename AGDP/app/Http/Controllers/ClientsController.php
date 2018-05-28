@@ -39,7 +39,7 @@ class ClientsController extends Controller
     {
         $client = new Client;
         $client->create($request->all());
-        return view('clients.listCl');
+        return redirect('clients.listCl');
     }
 
     /**
@@ -62,7 +62,7 @@ class ClientsController extends Controller
     public function edit($idClient)
     {
         $client = Client::find($idClient);
-        return view('clients.listCl', compact('client'));
+        return view('clients.updateCl', compact('client'));
     }
 
     /**

@@ -23,22 +23,22 @@
 							<button class="btn btn-primary">Cerrar Sesión</button>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('role')}}">Nuevo Rol</a>
+						<a href="{{ route('role')}}"> Rol</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('depend')}}">Nueva Dependencia</a>
+						<a href="{{ route('depend')}}"> Dependencia</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('folder')}}">Nuevo Proyecto</a>
+						<a href="{{ route('folder')}}"> Proyecto</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('storagew')}}">Nuevo SW</a>
+						<a href="{{ route('storagew')}}"> SW</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('typePerson')}}">Nuevo Tipo Persona</a>
+						<a href="{{ route('typePerson')}}"> Tipo Persona</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('user')}}">Nuevo Usuario</a>
+						<a href="{{ route('user')}}"> Usuario</a>
 					</div>
 					<div class="form-control">
 						<a href="{{ route('roleuser')}}">Asociar Rol a Usuario</a>
@@ -48,7 +48,10 @@
 					</div>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('permission')}}">Nuevo Permiso </a>
+						<a href="{{ route('permission')}}"> Permiso </a>
+					</div>
+					<div class="form-control">
+						<a href="{{ route('clients')}}"> Cliente </a>
 					</div>
 					<!--
 					<p>

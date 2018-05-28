@@ -12,7 +12,7 @@
 				<div class="container-login98">
 					<div class="form-group">
 						<div class="wrap-input100 validate-input m-t-4">
-							<input class="input100" type="text" name="searchCl" placeholder="Buscar..." required>							
+							<input class="input100" type="text" name="searchCl" placeholder="Buscar..." required>					
 						</div>
 
 						<br>
@@ -38,9 +38,11 @@
 							</tr>
 						</thead>
 						<tbody class="table table-bordered">
-							@foreach ($clients as $clients)
+							@foreach ($client as $clients)
 							<tr>
 								<td scope="row">{{ $clients->idClient}}</td>
+								
+								<td scope="row">{{ $clients->consecutiveClient}}</td>
 								<td scope="row">{{ $clients->nameClient}}</td>
 								<td>
 									<a class="btn btn-link" href="{{ route('clients/edit', ['idClient' => $clients->idClient]) }}">Actualizar</a>
