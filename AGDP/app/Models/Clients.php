@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Folder;
 
 class Clients extends Model
 {
@@ -11,8 +12,8 @@ class Clients extends Model
     protected $guarded	= ['idClient'];
     protected $primaryKey = 'idClient';
 
-    public function Client_Mail()
+    public function Folder()
     {
-    	return $this->hasMany(Client_Mail::class, 'client_id', 'idClient');
+    	return $this->hasMany(Folder::class, 'client_id', 'idClient');
     }
 }

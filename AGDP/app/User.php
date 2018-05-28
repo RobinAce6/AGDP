@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
+
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\typePerson;
 use App\Models\Dependency;
+use App\Models\Folder_User;
+use App\Models\Role_User;
 
 class User extends Authenticatable
 {
@@ -44,7 +47,12 @@ class User extends Authenticatable
 
     public function Role_User()
     {
-        return $this->belongsTo(User::class, 'user_id', 'idUser');
+        return $this->hasMany(Role_User::class, 'user_id', 'idUser');
+    }
+
+    public function Folder_User()
+    {
+        return $this->hasMany(Folder_User::class, 'user_id', 'idUser');
     }
 
 }

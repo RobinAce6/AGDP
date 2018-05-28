@@ -23,33 +23,14 @@ class AllRelationship extends Migration
             ->onDelete('CASCADE');
         });
         
-        //Client_Mail
-        Schema::table('client_mail', function(Blueprint $table)
-		{
-            $table->foreign('client_id')
-            ->references('idClient')
-            ->on('clients')->onUpdate('CASCADE')
-            ->onDelete('CASCADE');
-
-            $table->foreign('mail_id')
-            ->references('idMail')
-            ->on('mail')
-            ->onUpdate('CASCADE')
-            ->onDelete('CASCADE');
-        });
         
         //Edoc
         Schema::table('edoc', function(Blueprint $table)
 		{
-            $table->foreign('folder_id')
-            ->references('idFolder')
-            ->on('folder')
-            ->onUpdate('CASCADE')
-            ->onDelete('CASCADE');
 
             $table->foreign('mail_id')
             ->references('idMail')
-            ->on('mail')
+            ->on('mailE')
             ->onUpdate('CASCADE')
             ->onDelete('CASCADE');
         });
@@ -81,11 +62,11 @@ class AllRelationship extends Migration
         });
         
         //Mail Dependency
-        Schema::table('mail_dependency', function(Blueprint $table)
+        Schema::table('dependency_mail', function(Blueprint $table)
 		{
             $table->foreign('mail_id')
             ->references('idMail')
-            ->on('mail')
+            ->on('mailE')
             ->onUpdate('CASCADE')
             ->onDelete('CASCADE');
 
@@ -101,7 +82,7 @@ class AllRelationship extends Migration
 		{
             $table->foreign('mail_id')
             ->references('idMail')
-            ->on('mail')
+            ->on('mailE')
             ->onUpdate('CASCADE')
             ->onDelete('CASCADE');
 
@@ -113,17 +94,17 @@ class AllRelationship extends Migration
         });
         
         //Mail
-        Schema::table('mail', function(Blueprint $table)
+        Schema::table('mailE', function(Blueprint $table)
 		{
-            $table->foreign('city_id')
-            ->references('idCity')
-            ->on('city')
-            ->onUpdate('CASCADE')
-            ->onDelete('CASCADE');
-
             $table->foreign('storagew_id')
             ->references('idStorageWay')
             ->on('storageway')
+            ->onUpdate('CASCADE')
+            ->onDelete('CASCADE');
+
+            $table->foreign('folder_id')
+            ->references('idFolder')
+            ->on('folder')
             ->onUpdate('CASCADE')
             ->onDelete('CASCADE');
         });

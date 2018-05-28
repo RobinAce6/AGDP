@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\City;
 
 class Department extends Model
 {
     protected $table 	= 'department';
-	protected $fillable = ['nameDepartment','department_id'];
+	protected $fillable = ['nameDepartment'];
 	protected $guarded  = ['idDepartment'];
 	protected $primaryKey = 'idDepartment';
 

@@ -13,23 +13,23 @@ class CreateMailTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('mail', function(Blueprint $table)
+		Schema::create('mailE', function(Blueprint $table)
 		{
 			$table->integer('idMail', true);
 			$table->char('idMail2', 3);
 			$table->char('codEnterprise', 2);
+			$table->boolean('typeMail');
+			$table->integer('folder_id');
 			$table->string('affair', 200);
-			$table->date('creationDate')->nullable();
-			$table->date('internalEstablishmentDate')->nullable();
-			$table->date('receivedDate')->nullable();
-			$table->string('observations', 125)->nullable();
+			$table->integer('dependency_id');
+			$table->date('creationDate');
+			$table->date('internalEstablishmentDate');
+			$table->date('receivedDate');
+			$table->integer('storagew_id');  
+			$table->string('observations', 125);
 			$table->boolean('deliveredToArchive');
 			$table->string('shippingWay', 30);
-			$table->string('nameMsessenger', 50);
-			$table->boolean('typeMail')->nullable();
-			$table->integer('dependency_id');
-			$table->integer('storagew_id');
-			$table->integer('city_id');
+			$table->string('nameMessenger', 50);
 			$table->rememberToken();
             $table->timestamps();
 		});

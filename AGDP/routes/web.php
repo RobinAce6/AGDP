@@ -52,7 +52,7 @@ Route::GET ('role_user/edit/{id}', 'RoleUserController@edit')	->name('role_user/
 
 // Permissions Routes
 
-Route::GET ('permission', 'PermissionController@index')				->name('permission');
+Route::GET ('permissio', 'PermissionController@index')				->name('permission');
 Route::GET ('permission.listPr', 'PermissionController@index')		->name('permission.listPr');
 Route::POST('permission','PermissionController@store')				->name('storePr');
 Route::GET ('permission/create', 'PermissionController@create')		->name('newPr');

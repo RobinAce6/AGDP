@@ -16,9 +16,8 @@ class CreateEdocTable extends Migration {
 		Schema::create('edoc', function(Blueprint $table)
 		{
 			$table->integer('idEDoc', true);
-			$table->string('nameEDoc', 50)->unique('nameEDoc');
-			$table->integer('mail_id')->index('edoc_mail');
-			$table->integer('folder_id')->index('edoc_folder');
+			$table->string('nameEDoc', 50)->unique();
+			$table->integer('mail_id');
 			$table->rememberToken();
             $table->timestamps();
 		});
