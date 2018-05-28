@@ -5,7 +5,7 @@
 <div class="limiter">
 	<div class="container-login98">
 		<div class="wrap-login98">
-			<form class="login100-form" method="POST" action="{{ route('searchC')}}">
+			<form class="login100-form" method="POST" action="{{ route('searchCl')}}">
 
 				{{ csrf_field() }}
 				

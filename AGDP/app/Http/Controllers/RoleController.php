@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
-    
     public function index()
     {
         $role = RoleM::all();
@@ -43,7 +42,7 @@ class RoleController extends Controller
 
         $role->save();
 
-        return view('role.listR');
+        return redirect('role.listR');
     }
 
     public function search(Request $request)

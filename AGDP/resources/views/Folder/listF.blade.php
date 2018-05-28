@@ -19,7 +19,7 @@
 						<button class="btn btn-warning" type="submit">Buscar</button>
 
 						<div class="container-login100-form-btn">
-						   <a href="{{ route('newF')}}" class="btn btn-warning">Crear Nuevo Proyecto</a>
+						   <a href="{{ route('newF')}}" class="btn btn-warning">Nuevo Proyecto</a>
 						</div>
 
                   <div class="container-login100-form-btn">
@@ -31,14 +31,15 @@
 						<thead class="thead-light">
 							<tr>
 								<th scope="col"> # </th>
+								<th scope="col">Cliente</th>
 								<th scope="col">Nombre</th>
-								<th scope="col"> </th>
 							</tr>
 						</thead>
 						<tbody class="table table-bordered">
 							@foreach ($folder as $folders)
 							<tr>
 								<td scope="row">{{ $folders->idFolder}}</td>
+								<td scope="row">{{ $folders->Client->nameClient}}</td>
 								<td scope="row">{{ $folders->nameFolder}}</td>
 								<td>
 									<a class="btn btn-link" href="{{ route('folder/edit', ['idFolder' => $folders->idFolder]) }}">Actualizar</a>
