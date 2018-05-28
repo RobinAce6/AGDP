@@ -16,9 +16,9 @@
                   
                   <div class="form-group">
                    <p> Permiso  </p>
-                      <select class="wrap-input100 m-t-6" name="idUser">
+                      <select class="wrap-input100 m-t-6" name="idPermission">
                         @foreach ($permis as $Permis)
-                          <option value="{{$Permis->idPermission}}">{{$Permis->namePermiso}}</option>
+                          <option value="{{$Permis->idPermission}}">{{$Permis->namePermission}}</option>
                         @endforeach
                       </select>
                   </div>

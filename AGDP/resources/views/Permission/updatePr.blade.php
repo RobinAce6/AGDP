@@ -5,7 +5,7 @@
 <div class="limiter">
 	<div class="container-login100">
 		<div class="wrap-login100 p-t-65 p-b-10">
-			<form class="login100-form validate-form" method="POST"	action="{{ route('updatePr', [$permis->idPermission]) }}">
+			<form class="login100-form validate-form" method="POST"	action="{{ route('updatePr', [$permiss->idPermission]) }}">
 				
 				{{ method_field('PUT')}}
 				{{ csrf_field() }}
@@ -17,11 +17,11 @@
 				<div class="form-control">
 
 					<div class="wrap-input100 validate-input m-t-6">
-						<input class="input100" type="number" name="idPermission" value="{{ $permis->idPermission }}" disabled>
+						<input class="input100" type="number" name="idPermission" value="{{ $permiss->idPermission }}" disabled>
 					</div>
 
 					<div class="wrap-input100 validate-input m-t-6">
-						<input class="input100" type="text" name="namePermission" value="{{ $permis->namePermission }}" required>
+						<input class="input100" type="text" name="namePermission" value="{{ $permiss->namePermission }}" required>
 					</div>
 
 					<div class="container-login100-form-btn">
@@ -29,11 +29,11 @@
 					</div>
 					<br>
 					<div class="container-login100-form-btn">
-						<a href="{{ route('permis.listPr')}}" class="btn btn-danger">Cancelar</a>
+						<a href="{{ route('permission.listPr')}}" class="btn btn-danger">Cancelar</a>
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<a href="{{ route('permis.listPr')}}" class="btn btn-primary">Regresar a la Lista</a>
+						<a href="{{ route('permission.listPr')}}" class="btn btn-primary">Regresar a la Lista</a>
 					</div>
 
 				</div>

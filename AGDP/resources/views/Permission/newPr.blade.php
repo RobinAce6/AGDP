@@ -20,10 +20,7 @@
                <div class="container-login100-form-btn">
                   <button class="btn btn-warning">Guardar</button>
                </div>
-
-               <div class="container-login100-form-btn">
-                  <a href="{{ route('permission.listPr') }}" class="btn btn-danger">Cancelar</a>
-               </div>   
+  
             </div>
          </form>
       </div>

@@ -129,7 +129,7 @@ class AllRelationship extends Migration
         });
         
         //Permission Roles
-        Schema::table('permission_roles', function(Blueprint $table)
+        Schema::table('permission_role', function(Blueprint $table)
 		{
             $table->foreign('permission_id')
             ->references('idPermission')

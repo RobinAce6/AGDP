@@ -37,13 +37,13 @@
 							</tr>
 						</thead>
 						<tbody class="table table-bordered">
-							@foreach ($permis as $permisssion)
+							@foreach ($permiss as $permission)
 							<tr>
-								<td scope="row">{{ $permisssion->idPermission}}</td>
-								<td scope="row">{{ $permisssion->namePermission}}</td>
+								<td scope="row">{{ $permission->idPermission}}</td>
+								<td scope="row">{{ $permission->namePermission}}</td>
 								<td>
-									<a class="btn btn-link" href="{{ route('permis/edit', ['idPermission' => $permisssion->idPermission]) }}">Actualizar</a>
-									<a href="{{ route('permis/destroy', ['idPermission' => $permisssion -> idPermission]) }}">Eliminar</a>
+									<a class="btn btn-link" href="{{ route('permission/edit', ['idPermission' => $permission->idPermission]) }}">Actualizar</a>
+									<a href="{{ route('permission/destroy', ['idPermission' => $permission -> idPermission]) }}">Eliminar</a>
 								</td>
 							</tr>
 							@endforeach

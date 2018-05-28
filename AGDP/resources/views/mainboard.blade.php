@@ -23,28 +23,32 @@
 							<button class="btn btn-primary">Cerrar Sesión</button>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('role')}}">Crear Nuevo Rol</a>
+						<a href="{{ route('role')}}">Nuevo Rol</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('depend')}}">Crear Nueva Dependencia</a>
+						<a href="{{ route('depend')}}">Nueva Dependencia</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('folder')}}">Crear Nuevo Proyecto</a>
+						<a href="{{ route('folder')}}">Nuevo Proyecto</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('storagew')}}">Crear Nuevo SW</a>
+						<a href="{{ route('storagew')}}">Nuevo SW</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('typePerson')}}">Crear Nuevo Tipo Persona</a>
+						<a href="{{ route('typePerson')}}">Nuevo Tipo Persona</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('user')}}">Crear Nuevo Usuario</a>
+						<a href="{{ route('user')}}">Nuevo Usuario</a>
 					</div>
 					<div class="form-control">
 						<a href="{{ route('roleuser')}}">Asociar Rol a Usuario</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('permisrole')}}">Asociar Permiso a Rol</a>
+						<a href="{{ route('permission_role')}}">Asociar Permiso a Rol</a>
+					</div>
+					</div>
+					<div class="form-control">
+						<a href="{{ route('permission')}}">Nuevo Permiso </a>
 					</div>
 					<!--
 					<p>

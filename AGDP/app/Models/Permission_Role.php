@@ -9,7 +9,7 @@ use App\Models\Role;
 class Permission_Role extends Model
 {
     protected $table = 'permission_role';
-    protected $fillable = ['role_id','permission_id'];
+    protected $fillable = ['permission_id', 'role_id'];
     protected $guarded = ['nPR'];
     protected $primaryKey = 'nPR';
 

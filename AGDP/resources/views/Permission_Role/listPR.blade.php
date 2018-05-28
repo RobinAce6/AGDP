@@ -39,11 +39,11 @@
 							@foreach ($permisrole as $permisRole)
 							<tr>
 								<td scope="row">{{ $permisRole->nPR}}</td>
-                        <td scope="row">{{ $permisRole->Role->nameRole}}</td>
-								<td scope="row">{{ $permisRole->Permission->namePermission}}</td>
+                        		<td scope="row">{{ $permisRole->Roles->nameRole}}</td>
+								<td scope="row">{{ $permisRole->Permissions->namePermission}}</td>
 								<td>
-									<a class="btn btn-link" href="{{ route('permisrole/edit', ['nPR' => $permisRole->nPR]) }}">Actualizar</a>
-									<a href="{{ route('permisrole/destroy', ['nPR' => $permisRole -> nPR]) }}">Eliminar</a>
+									<a class="btn btn-link" href="{{ route('permission_role/edit', ['nPR' => $permisRole->nPR]) }}">Actualizar</a>
+									<a href="{{ route('permission_role/destroy', ['nPR' => $permisRole -> nPR]) }}">Eliminar</a>
 								</td>
 							</tr>
 							@endforeach

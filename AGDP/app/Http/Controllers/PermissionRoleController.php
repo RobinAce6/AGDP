@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Permission_Role as PRM;
-use App\Models\Role as Role;
 use App\Models\Permission as Permission;
+use App\Models\Role as Role;
 
 use Illuminate\Http\Request;
 
@@ -17,7 +17,7 @@ class PermissionRoleController extends Controller
      */
     public function index()
     {
-        $permisrole = PRM::with('Permission', 'Role')->get();
+        $permisrole = PRM::with('Permissions', 'Roles')->get();
         return view('permission_role.listPR', compact('permisrole'));
     }
 
@@ -30,7 +30,7 @@ class PermissionRoleController extends Controller
     {
         $permis = Permission::all();
         $role = Role::all();
-        return view('permission_role.newPR', compact('permis', 'role'));
+        return view('permission_role.newPR', compact('permis','role'));
     }
 
     /**
@@ -87,6 +87,10 @@ class PermissionRoleController extends Controller
 
         $permisrole->permission_id = $request->idPermission;
         $permisrole->role_id = $request->idRole;
+
+        $permisrole->save();
+
+        return back();
     }
 
     /**
@@ -99,6 +103,6 @@ class PermissionRoleController extends Controller
     {
         $permisrole = PRM::find($nPR);
         $permisrole->delete();
-        return bakc();
+        return back();
     }
 }

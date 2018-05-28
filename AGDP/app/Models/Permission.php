@@ -12,7 +12,7 @@ class Permission extends Model
     protected $guarded = ['idPermission'];
     protected $primaryKey = 'idPermission';
 
-    public function permissions_role()
+    public function Permissions_Role()
     {
         return $this->hasMany(Permission_Role::class, 'permission_id','idPermission');
     }
