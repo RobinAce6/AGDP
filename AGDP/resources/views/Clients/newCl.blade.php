@@ -43,6 +43,7 @@
 							<tr>
 								<td scope="row">{{ $clients->idClient}}</td>
 								<td scope="row">{{ $clients->consecutiveClient}}</td>
+								<td scope="row">{{ $clients->nameClient}}</td>
 								<td>
 									<a class="btn btn-link" href="{{ route('clients/edit', ['idClient' => $clients->idClient]) }}">Actualizar</a>
 									<a href="{{ route('clients/destroy', ['idClient' => $clients -> idClient]) }}">Eliminar</a>
