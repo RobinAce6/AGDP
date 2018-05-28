@@ -28,7 +28,7 @@
                   </div>
 
                   <div class="wrap-input100 validate-input m-t-6 validate-form">
-                     <input class="input100" type="email" name="emailPerson" placeholder="Email Corporativo" required>
+                     <input class="input100" type="email" name="email" placeholder="Email Corporativo" required>
                   </div>
                   <br>
                   <div class="form-group">
@@ -49,10 +49,7 @@
                   </div>
             </div>
             <div class="hidden">
-               <input class="input100" type="hidden" name="userPerson">
-            </div>
-            <div class="hidden">
-               <input class="input100" type="hidden" name="passwordPerson">
+               <input class="input100" type="hidden" name="password">
             </div>
             <div class="container-login100-form-btn">
                <button class="btn btn-warning">Guardar</button><br>
