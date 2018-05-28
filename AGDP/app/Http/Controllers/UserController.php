@@ -13,7 +13,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $user = UserM::with('TypePerson')->get();
+        $user = UserM::with('TypePerson', 'Dependency')->get();
         return view('user.listU', compact('user'));
     }
 
@@ -32,11 +32,10 @@ class UserController extends Controller
         $user->codPerson      = $request->codPerson;
         $user->namePerson     = $request->namePerson;
         $user->lastnamePerson = $request->lastnamePerson;
-        $user->emailPerson    = $request->emailPerson;
+        $user->email          = $request->email;
         $user->typePerson_id  = $request->idTypePerson;
-        $user->dependency_id  = $request->idDependency;       
-        $user->userPerson     = $request->emailPerson;
-        $user->passwordPerson = $request->codPerson;
+        $user->dependency_id  = $request->idDependency;
+        $user->password       = bcrypt($request->codPerson);
 
         $user->save();
 
@@ -57,11 +56,10 @@ class UserController extends Controller
         $user->codPerson      = $request->codPerson;
         $user->namePerson     = $request->namePerson;
         $user->lastnamePerson = $request->lastnamePerson;
-        $user->emailPerson    = $request->emailPerson;
+        $user->email          = $request->email;  
         $user->typePerson_id  = $request->idTypePerson;
-        $user->dependency_id  = $request->idDependency;       
-        $user->userPerson     = $request->emailPerson;
-        $user->passwordPerson = $request->codPerson;
+        $user->dependency_id  = $request->idDependency;  
+        $user->password       = $request->codPerson;
 
         $user->save();
 

@@ -19,11 +19,10 @@ class CreateUsersTable extends Migration {
 			$table->char('codPerson', 15);
 			$table->string('namePerson', 50);
 			$table->string('lastnamePerson', 50);
-			$table->string('emailPerson', 45)->unique('emailPerson');
+			$table->string('email', 45)->unique('email');
 			$table->integer('typePerson_id')->index('per_typ');
 			$table->integer('dependency_id')->index('per_dep');
-			$table->string('userPerson', 45);
-			$table->char('passwordPerson', 15);
+			$table->string('password');
 			$table->rememberToken();
             $table->timestamps();
 		});

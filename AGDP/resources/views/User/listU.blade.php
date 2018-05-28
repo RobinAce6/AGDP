@@ -50,7 +50,7 @@
 								<td scope="row">{{ $users->lastnamePerson }}</td>
 								<td scope="row">{{ $users->TypePerson->nameTypePerson}}</td>
 								<td scope="row">{{ $users->Dependency->nameDependency}}</td>
-								<td scope="row">{{ $users->emailPerson }}</td>
+								<td scope="row">{{ $users->email }}</td>
 								<td scope="row">{{ $users->userPerson }}</td>
 								<td>
 									<a class="btn btn-link" href="{{ route('user/edit', ['idUser' => $users->idUser]) }}">Actualizar</a>

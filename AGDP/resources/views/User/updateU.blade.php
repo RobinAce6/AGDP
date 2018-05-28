@@ -26,6 +26,10 @@
                      <input class="input100" type="text" name="lastnamePerson" value="{{ $user->lastnamePerson }}">
                   </div>
 
+                  <div class="wrap-input100 validate-input m-t-6 validate-form">
+                     <input class="input100" type="text" name="email" value="{{ $user->email }}">
+                  </div>
+
                   </div>
                   <br>
                   <div class="form-group">
@@ -46,10 +50,7 @@
                       </select>
                   </div>
               <div class="hidden">
-                 <input class="input100" type="hidden" name="userPerson">
-              </div>
-              <div class="hidden">
-                 <input class="input100" type="hidden" name="passwordPerson">
+                 <input class="input100" type="hidden" name="password">
               </div>
               <div class="container-login100-form-btn">
                <button class="btn btn-warning">Guardar</button><br>

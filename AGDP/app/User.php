@@ -20,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'codPerson', 'namePerson', 'lastnamePerson',  'typePerson_id', 'dependency_id', 'emailPerson', 'userPerson'
+        'codPerson', 'namePerson', 'lastnamePerson',  'typePerson_id', 'dependency_id', 'email'
     ];
 
     /**
@@ -29,7 +29,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'passwordPerson', 
+        'password', 
     ];
 
     protected $primaryKey = 'idUser';

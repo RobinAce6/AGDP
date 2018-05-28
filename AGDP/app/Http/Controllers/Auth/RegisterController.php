@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/mainboard';
 
     /**
      * Create a new controller instance.
@@ -51,11 +51,10 @@ class RegisterController extends Controller
             'codPerson'      => 'required|string',
             'namePerson'     => 'required|string',
             'lastnamePerson' => 'required|string',
-            'emailPerson'    => 'required|string|email|unique:users',
+            'email'          => 'required|string|email|unique:users',
             'typePerson_id'  => 'required|string',
             'dependency_id'  => 'required|string',
-            'userPerson'     => 'required|string',
-            'passwordPerson' => 'required|string',
+            'password'       => 'required|string',
         ]);
     }
 
@@ -71,11 +70,10 @@ class RegisterController extends Controller
             'codPerson'      => $data['codPerson'],,
             'namePerson'     => $data['namePerson'],
             'lastnamePerson' => $data['lastnamePerson'],
-            'emailPerson'    => $data['emailPerson'],
+            'email'          => $data['email'],
             'typePerson_id'  => $data['typePerson_id'],
             'dependency_id'  => $data['dependency_id'],
-            'userPerson'     => $data['emailPerson'],
-            'passwordPerson' => bcrypt($data['codPerson']),
+            'password' => bcrypt($data['codPerson']),
         ]);
     }
 }
