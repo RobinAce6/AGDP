@@ -56,7 +56,7 @@
               </div>
               <div class="container-login100-form-btn">
                <button class="btn btn-warning">Guardar</button><br>
-               
+               <a href="{{ route('user.listU')}}" class="btn btn-primary">Cancelar</a>
             </div>
             </form>
          </div>

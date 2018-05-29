@@ -14,18 +14,19 @@ class Folder extends Model
     protected $guarded  = ['idFolder'];
     protected $primaryKey = 'idFolder';
 
-    public function Mail()
-    {
-    	return $this->hasMany(MailE::class, 'client_id', 'idClient');
-    }
-
-    public function Folder_User()
-    {
-        return $this->hasMany(Folder_User::class, 'folder_id', 'idFolder');
-    }
-
     public function Client()
     {
         return $this->belongsTo(Clients::class, 'client_id', 'idClient');
     }
+
+    public function MailE()
+    {
+        return $this->hasMany(MailE::class, 'email_id', 'idMail');
+    }
+
+    public function Folder_User()
+    {
+        return $this->belongsTo(Folder::class, 'folder_id', 'idFolder');
+    }
+
 }

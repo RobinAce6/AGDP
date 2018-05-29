@@ -14,10 +14,6 @@
             </span>
                     
             <div class="form-control">
-
-        		<div class="wrap-input100 validate-input m-t-6 validate-form">
-                 <input class="input100" type="text" name="nPR" value="{{ $permisrole->nPR }}" disabled>
-                </div>
                   
                   <div class="form-group">
                    <p> Permiso  </p>

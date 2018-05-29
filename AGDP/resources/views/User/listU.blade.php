@@ -13,7 +13,7 @@
 					<div class="form-group">
 						<div class="wrap-input100 validate-input m-t-4">
 							<input class="input100" type="text" name="searchU" placeholder="Buscar..." required>							
-						</div>
+						</div> 
 
 						<br>
 

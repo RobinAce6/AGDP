@@ -16,10 +16,6 @@
 				<div class="form-control">
 
 					<div class="wrap-input100 validate-input m-t-6">
-						<input class="input100" type="number" name="idFolder" value="{{ $folder->idFolder }}" disabled>
-					</div>
-
-					<div class="wrap-input100 validate-input m-t-6">
 						<input class="input100" type="text" name="nameFolder" value="{{ $folder->nameFolder }}" required>
 					</div>
 
@@ -33,9 +29,6 @@
 		           	</div>
 					<div class="container-login100-form-btn">
 						<button class="btn btn-warning">Guardar</button>
-					</div>
-					<br>
-					<div class="container-login100-form-btn">
 						<a href="{{ route('folder.listF')}}" class="btn btn-danger">Cancelar</a>
 					</div>
 					

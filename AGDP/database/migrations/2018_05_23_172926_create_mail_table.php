@@ -25,7 +25,8 @@ class CreateMailTable extends Migration {
 			$table->date('creationDate');
 			$table->date('internalEstablishmentDate');
 			$table->date('receivedDate');
-			$table->integer('storagew_id');  
+			$table->integer('storagew_id'); 
+			$table->integer('noPages');			 
 			$table->string('observations', 125);
 			$table->boolean('deliveredToArchive');
 			$table->string('shippingWay', 30);

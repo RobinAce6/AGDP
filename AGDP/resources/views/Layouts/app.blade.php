@@ -17,9 +17,6 @@
 
 </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 
         <!-- Start Header -->
         
@@ -34,22 +31,22 @@
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 @guest
                   <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                            <li><a class="nav-link" href="#">{{ __('Register') }}</a></li>
                  @else
                 <li class="nav-item">
                     <a class="nav-link text-uppercase" href="mails.html">Correspondencia</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-uppercase" href="folders.html">Proyectos</a>
+                    <a class="nav-link text-uppercase" href="{{route('folder')}}">Proyectos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-uppercase" href="clients.html">Clientes</a>
+                    <a class="nav-link text-uppercase" href="{{route('clients')}}">Clientes</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link active text-uppercase" href="users.html">Usuarios</a>
+                    <a class="nav-link active text-uppercase" href="{{route('folder')}}">Usuarios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-uppercase" href="dependency.html">Areas de Trabajo</a>
+                    <a class="nav-link text-uppercase" href="{{route('depend')}}">Areas de Trabajo</a>
                 </li>
                 
                 
@@ -63,7 +60,7 @@
                          <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Cerrar Sesión') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

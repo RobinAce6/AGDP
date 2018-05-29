@@ -30,34 +30,34 @@ class StorageWayController extends Controller
     }
 
     
-    public function edit($idSW)
+    public function edit($idStorageWay)
     {
-        $storagew = SWM::find($idSW);
+        $storagew = SWM::find($idStorageWay);
         return view('storagew.updateSW', compact('storagew'));
     }
 
    
-    public function update(Request $request, $idSW)
+    public function update(Request $request, $idStorageWay)
     {
-        $storagew = SWM::find($idSW);
+        $storagew = SWM::find($idStorageWay);
 
         $storagew->nameSW = $request->nameSW;
 
         $storagew->save();
 
-        return back();
+        return redirect('storagew.listSW');
     }
 
     public function search(Request $request)
     {
-        $storagew = SWM::where('idSW', 'like','%'.$request->idSW.'%')->get();
+        $storagew = SWM::where('idStorageWay', 'like','%'.$request->idStorageWay.'%')->get();
 
         return view ('storagew.listSW', compact('storagew'));
     }
     
-    public function destroy($idSW)
+    public function destroy($idStorageWay)
     {
-        $storagew = SWM::find($idSW);
+        $storagew = SWM::find($idStorageWay);
         $storagew->delete();
         return back();
     }

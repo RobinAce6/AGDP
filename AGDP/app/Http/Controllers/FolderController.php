@@ -13,7 +13,7 @@ class FolderController extends Controller
     
     public function index() 
     {
-        $folder = FolderM::with('Clients')->get();
+        $folder = FolderM::with('Client')->get();
         return view('folder.listF', compact('folder'));
     }
 
@@ -24,16 +24,14 @@ class FolderController extends Controller
         return view ('folder.newF', compact('client'));
     }
 
-    public function store(Request $request)
+    public function store (Request $request)
     {
-        $folder = new FolderM;
+        $client = new Client;
 
-        $folder->nameFolder = $request->nameFolder;
-        $folder->client_id = $request->idClient;
+        $client->nameClient = $request->nameClient;
+        $client->client_id = $request->idClient;
 
-        $folder->save();
-
-        return redirect('folder.listF');
+        $client->save();
     }
 
     

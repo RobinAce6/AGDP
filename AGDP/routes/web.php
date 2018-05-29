@@ -92,7 +92,7 @@ Route::GET ('depend/create', 'DependencyController@create')			->name('newD');
 Route::POST('depend/search', 'DependencyController@search')			->name('searchD');
 Route::PUT ('depend/update/{id}', 'DependencyController@update')	->name('updateD');
 Route::GET ('depend/destroy/{id}', 'DependencyController@destroy')	->name('depend/destroy');
-Route::GET ('depend/edit/{id}', 'DependencyController@edit')		->name('depend/edit');
+Route::GET ('depend/edit/{id}', 'DependencyController@edit')->name('depend/edit');
 
 //User Routes
 
@@ -144,3 +144,21 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Email Routes
+
+/*Route::GET ('typePerson', 'MaileController@index')					->name('typePerson');
+Route::GET ('typePerson.listTP', 'MaileController@index')			->name('typePerson.listTP');
+Route::POST('typePerson','MaileController@store')					->name('storeTP');
+Route::GET ('typePerson/create', 'MaileController@create')			->name('newTP');
+Route::POST('typePerson/search', 'MaileController@search')			->name('searchTP');
+Route::PUT ('typePerson/update/{idTypePerson}', 'MaileController@update')	->name('updateTP');
+Route::GET ('typePerson/destroy/{id}', 'MaileController@destroy')  ->name('typePerson/destroy');
+Route::GET ('typePerson/edit/{id}', 'MaileController@edit')		->name('typePerson/edit');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');*/

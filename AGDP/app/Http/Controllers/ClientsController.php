@@ -74,7 +74,7 @@ class ClientsController extends Controller
      */
     public function update(Request $request, $idClient)
     {
-        $client = Client::find($idClient);
+        $client = Client::find($idClient); 
 
         $client->consecutiveClient = $request->consecutiveClient;
         $client->nameClient = $request->nameClient;

@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
+@section('tittle'.'Inicio de Sesión')
+
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-info">
-                <div class="panel-heading">Inicio Sesión</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
@@ -55,9 +56,6 @@
                                     Iniciar
                                 </button>
 
-                                <a class="btn btn-danger" href="{{ route('password.request') }}">
-                                    Olvido su Contraseña?
-                                </a>
                             </div>
                         </div>
                     </form>

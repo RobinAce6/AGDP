@@ -15,7 +15,7 @@ class Mail_Dependency extends Model
 
     public function MailE()
     {
-    	return $this->belongsTo(MailE::class, 'mail_id', 'idMail');
+    	return $this->hasMany(MailE::class, 'mail_id', 'idMail');
     }
 
     public function Dependency()

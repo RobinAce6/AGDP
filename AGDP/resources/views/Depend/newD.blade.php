@@ -12,7 +12,7 @@
                <span class="login100-form-title p-b-45">
                   Registro Dependencia
                </span>
-                  
+                   
                <div class="form-control">
 
                   <div class="wrap-input100 validate-input m-t-6">

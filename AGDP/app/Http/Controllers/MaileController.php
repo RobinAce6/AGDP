@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Aapp\Models\MailE as MailE;
+use App\Models\Dependency as DM;
+use App\Models\StorageWay as SWM;
+use App\Models\Folder as FM;
+
 class MaileController extends Controller
 {
     /**
@@ -13,7 +18,8 @@ class MaileController extends Controller
      */
     public function index()
     {
-        //
+        $mail = MailE::with('Folder', 'StorageWay','Dependency_Mail');
+        return view('maile.newM', compact('mail'));
     }
 
     /**
@@ -23,7 +29,10 @@ class MaileController extends Controller
      */
     public function create()
     {
-        //
+        $folder = FM::all();
+        $storagew = SWM::all();
+        $depend = DM::all();
+        return view('maile.newM', compact('folder', 'storagew','depend'));
     }
 
     /**
@@ -34,7 +43,26 @@ class MaileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $mail = new MailE;
+
+        $mail->idMail2 = $request->idMail2;
+        $mail->codEnterprise = $request->codEnterprise;
+        $mail->Mailfolder_id = $request->idMailfolder;
+        $mail->affair   = $request->affair;
+        $mail->dependency_id = $request->idDependency;
+        $mail->creationDate  = $request->creationDate;
+        $mail->internalEstablishmentDate = $request->internalEstablishmentDate;
+        $mail->receivedDate = $request->receivedDate;
+        $mail->storagew_id  = $request->idStorageWay;
+        $mail->obervations  = $request->obervations;
+        $mail->deliveredToArchive = $request->deliveredToArchive;
+        $mail->shippingWay   = $request->shippingWay;
+        $mail->nameMessenger = $request->nameMessenger;
+
+        $mail->save();
+
+        return redirect('maile.listM');
+    
     }
 
     /**
@@ -54,9 +82,12 @@ class MaileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($idMail)
     {
-        //
+        $folder = FM::all();
+        $storagew = SWM::all();
+        $depend = DM::all();
+        return view('maile.updateM', compact('folder', 'storagew','depend'));
     }
 
     /**
@@ -66,19 +97,27 @@ class MaileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idMail)
     {
-        //
+        $mail = MailE::find($idMail);
+
+        $mail->idMail2 = $request->idMail2;
+        $mail->codEnterprise = $request->codEnterprise;
+        $mail->Mailfolder_id = $request->idMailfolder;
+        $mail->affair   = $request->affair;
+        $mail->dependency_id = $request->idDependency;
+        $mail->creationDate  = $request->creationDate;
+        $mail->internalEstablishmentDate = $request->internalEstablishmentDate;
+        $mail->receivedDate = $request->receivedDate;
+        $mail->storagew_id  = $request->idStorageWay;
+        $mail->obervations  = $request->obervations;
+        $mail->deliveredToArchive = $request->deliveredToArchive;
+        $mail->shippingWay   = $request->shippingWay;
+        $mail->nameMessenger = $request->nameMessenger;
+
+        $mail->save();
+
+        return redirect('maile.listM');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

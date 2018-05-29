@@ -7,7 +7,7 @@ use App\Models\MailE;
 
 class StorageWay extends Model
 {
-    protected $table    = 'storage_way';
+    protected $table    = 'storageway';
     protected $fillable = ['nameSW'];
     protected $guarded  = 'idStorageWay';
     protected $primaryKey = 'idStorageWay';

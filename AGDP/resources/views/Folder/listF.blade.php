@@ -13,9 +13,6 @@
 						<div class="wrap-input100 validate-input m-t-4">
 							<input class="input100" type="text" name="searchF" placeholder="Buscar..." required>							
 						</div>
-
-						<br>
-
 						<button class="btn btn-warning" type="submit">Buscar</button>
 
 						<div class="container-login100-form-btn">
@@ -33,6 +30,7 @@
 								<th scope="col"> # </th>
 								<th scope="col">Cliente</th>
 								<th scope="col">Nombre</th>
+								<th scope="col"> </th>
 							</tr>
 						</thead>
 						<tbody class="table table-bordered">
@@ -47,8 +45,7 @@
 								</td>
 							</tr>
 							@endforeach
-						</tbody>
-						
+						</tbody>						
 					</table>
 				</div>
 			</form>

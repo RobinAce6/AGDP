@@ -36,10 +36,10 @@
 						<a href="{{ route('permission')}}"> Permiso </a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('roleuser')}}">Asociar Rol a Usuario</a>
+						<a href="{{ route('user')}}"> Usuario</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('user')}}"> Usuario</a>
+						<a href="{{ route('roleuser')}}">Asociar Rol a Usuario</a>
 					</div>
 					<div class="form-control">
 						<a href="{{ route('permission_role')}}">Asociar Permiso a Rol</a>

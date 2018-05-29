@@ -14,11 +14,7 @@
    				</span>
    					
    				<div class="form-control">
-
-   					<div class="wrap-input100 validate-input m-t-6">
-   						<input class="input100" type="number" name="idTypePerson" value="{{ $typep->idTypePerson }}" disabled>
-   					</div>
-
+				   
    					<div class="wrap-input100 validate-input m-t-6">
    						<input class="input100" type="text" name="nameTypePerson" value="{{ $typep->nameTypePerson }}" required>
    					</div>

@@ -15,11 +15,7 @@
             </span>
                     
             <div class="form-control">
-
-                  <div class="wrap-input100 validate-input m-t-6 validate-form">
-                     <input class="input100" type="text" name="nRU" value="{{ $userole->nRU }}" disabled>
-                  </div>
-
+            
                   <div class="form-group">
                    <p> Usuario </p>
                       <select class="wrap-input100 m-t-6" name="idUser">

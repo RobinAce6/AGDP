@@ -107,6 +107,12 @@ class AllRelationship extends Migration
             ->on('folder')
             ->onUpdate('CASCADE')
             ->onDelete('CASCADE');
+
+            $table->foreign('dependency_id')
+            ->references('idDependency')
+            ->on('dependency')
+            ->onUpdate('CASCADE')
+            ->onDelete('CASCADE');
         });
         
         //Permission Roles

@@ -38,11 +38,11 @@
 						<tbody class="table table-bordered">
 							@foreach ($storagew as $storagew)
 							<tr>
-								<td scope="row">{{ $storagew->idSW}}</td>
+								<td scope="row">{{ $storagew->idStorageWay}}</td>
 								<td scope="row">{{ $storagew->nameSW}}</td>
 								<td>
-									<a class="btn btn-link" href="{{ route('storagew/edit', ['idSW' => $storagew->idSW]) }}">Actualizar</a>
-									<a href="{{ route('storagew/destroy', ['idSW' => $storagew -> idSW]) }}">Eliminar</a>
+									<a class="btn btn-link" href="{{ route('storagew/edit', ['idStorageWay' => $storagew->idStorageWay]) }}">Actualizar</a>
+									<a href="{{ route('storagew/destroy', ['idStorageWay' => $storagew -> idStorageWay]) }}">Eliminar</a>
 								</td>
 							</tr>
 							@endforeach

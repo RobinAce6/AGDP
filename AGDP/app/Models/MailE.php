@@ -13,7 +13,7 @@ class MailE extends Model
 {
     protected $table    = 'mailE';
     protected $fillable = [
-        'idMail2', 'codEnterprise','typeMail','folder_id' ,'affair', 'dependency_id', 'creationDate', 'internalEstablishmentDate', 'receivedDate', 'storagew_id', 'obervations', 'deliveredToArchive', 'shippingWay', 'nameMessenger'
+        'idMail2', 'codEnterprise','typeMail','folder_id' ,'affair', 'dependency_id', 'creationDate', 'internalEstablishmentDate', 'receivedDate', 'storagew_id', 'noPages', 'obervations', 'deliveredToArchive', 'shippingWay', 'nameMessenger'
     ];   
     protected $guarded  = ['idMail'];
     protected $primaryKey = 'idMail';
@@ -30,7 +30,7 @@ class MailE extends Model
 
     public function Dependency_Mail()
     {
-        return $this->hasMany(Dependency_Mail::class, 'mail_id', 'idMail');
+        return $this->belongsTo(Dependency_Mail::class, 'mail_id', 'idMail');
     }
 
     public function Edoc()
