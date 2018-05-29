@@ -30,23 +30,53 @@
                <table class="table table-bordered">
                   <thead class="thead-light">
                      <tr>
-                        <th scope="col"> # </th>
-                        <th scope="col">Nombre</th>
+                        <th scope="col">Correspondencia No. </th>
+                        <th scope="col">Empresa</th>
+                        <th scope="col">Tipo Correspondencia </th>
+                        <th scope="col">Proyecto </th>
+                        <th scope="col">Asunto</th>
+                        <th scope="col">Dependencia</th>
+                        <th scope="col">Fecha Recibido</th>
+                        <th scope="col">Fecha de Envío</th>
+                        <th scope="col">Desinatario</th>
+                        <th scope="col">Remitente</th>
+                        <th scope="col">Formato</th>                        
+                        <th scope="col">Número de Folios</th>
+                        <th scope="col">Obervaciones</th>
+                        <th scope="col">Entregada a Archivo </th>
+                        <th scope="col">Forma de Envío</th>
+                        <th scope="col">Mensajero </th>
                         <th scope="col"> </th>
                      </tr>
                   </thead>
                   <tbody class="table table-bordered">
-                     @foreach ($depend as $depends)
-                     <tr>
-                        <td scope="row">{{ $depends->idDependency}}</td>
-                        <td scope="row">{{ $depends->nameDependency}}</td>
-                        <td>
-                           <a class="btn btn-link" href="{{ route('depend/edit', ['idDependency' => $depends->idDependency]) }}">Actualizar</a>
-                           <a href="{{ route('depend/destroy', ['idDependency' => $depends -> idDependency]) }}">Eliminar</a>
-                        </td>
-                     </tr>
-                     @endforeach
-                  </tbody>
+                           @foreach ($mail as $Mail)
+                           <tr>
+                              <td scope="row">{{ $Mail->idMail}}</td>
+                              <td scope="row">{{ $Mail->idMail2}}</td>
+                              <td scope="row">{{ $Mail->codEnterprise}}</td>
+                              <td scope="row">{{ $Mail->typeMail}}</td>
+                              <td scope="row">{{ $Mail->Folder->idFolder}}</td>
+                              <td scope="row">{{ $Mail->affair}}</td>
+                              <td scope="row">{{ $Mail->Dependency->nameDependency}}</td>
+                              <td scope="row">{{ $Mail->creationDate}}</td>
+                              <td scope="row">{{ $Mail->internalEstablishmentDate}}</td>
+                              <td scope="row">{{ $Mail->sender}}</td>
+                              <td scope="row">{{ $Mail->addressee}}</td>
+                              <td scope="row">{{ $Mail->receivedDate}}</td>
+                              <td scope="row">{{ $Mail->StorageWay->nameSW}}</td>
+                              <td scope="row">{{ $Mail->noPages}}</td>
+                              <td scope="row">{{ $Mail->observations}}</td>
+                              <td scope="row">{{ $Mail->deliveredToArchive}}</td>
+                              <td scope="row">{{ $Mail->shippingWay}}</td>
+                              <td scope="row">{{ $Mail->nameMessenger}}</td>
+                              <td>
+                                 <a class="btn btn-link" href="{{ route('role_user/edit', ['nRU' => $SW->nRU]) }}">Actualizar</a>
+                                 <a href="{{ route('role_user/destroy', ['nRU' => $SW -> nRU]) }}">Eliminar</a>
+                              </td>
+                           </tr>
+                           @endforeach
+                        </tbody>
                   
                </table>
             </div>

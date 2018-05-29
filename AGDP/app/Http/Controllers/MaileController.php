@@ -45,24 +45,56 @@ class MaileController extends Controller
     {
         $mail = new MailE;
 
-        $mail->idMail2 = $request->idMail2;
-        $mail->codEnterprise = $request->codEnterprise;
-        $mail->Mailfolder_id = $request->idMailfolder;
-        $mail->affair   = $request->affair;
-        $mail->dependency_id = $request->idDependency;
-        $mail->creationDate  = $request->creationDate;
-        $mail->internalEstablishmentDate = $request->internalEstablishmentDate;
-        $mail->receivedDate = $request->receivedDate;
-        $mail->storagew_id  = $request->idStorageWay;
-        $mail->obervations  = $request->obervations;
-        $mail->deliveredToArchive = $request->deliveredToArchive;
-        $mail->shippingWay   = $request->shippingWay;
-        $mail->nameMessenger = $request->nameMessenger;
+        if ($request->$typeMail=='Sent') {
+         
+            $mail->idMail2 = $request->idMail2;
+            $mail->codEnterprise = $request->codEnterprise;
+            $mail->typeMail = $request->typeMail;
+            $mail->Mailfolder_id = $request->idMailfolder;
+            $mail->affair   = $request->affair;
+            $mail->dependency_id = $request->idDependency;
+            $mail->creationDate  = $request->creationDate;
+            $mail->internalEstablishmentDate = $request->internalEstablishmentDate;
+            $mail->receivedDate = $request->receivedDate;
+            $mail->storagew_id  = $request->idStorageWay;
+            $mail->obervations  = $request->obervations;
+            $mail->deliveredToArchive = $request->deliveredToArchive;
+            $mail->shippingWay   = $request->shippingWay;
+            $mail->nameMessenger = $request->nameMessenger;
 
-        $mail->save();
+            
 
-        return redirect('maile.listM');
-    
+            $mail->save();
+
+            return redirect('maile.listM');
+
+        }
+
+        elseif ($request->$typeMail=='Received') 
+        {
+        
+            $mail->idMail2 = $request->idMail2;
+            $mail->codEnterprise = $request->codEnterprise;
+            $mail->typeMail = $request->typeMail;
+            $mail->Mailfolder_id = $request->idMailfolder;
+            $mail->affair   = $request->affair;
+            $mail->dependency_id = $request->idDependency;
+            $mail->creationDate  = $request->creationDate;
+            $mail->internalEstablishmentDate = $request->internalEstablishmentDate;
+            $mail->receivedDate = $request->receivedDate;
+            $mail->storagew_id  = $request->idStorageWay;
+            $mail->obervations  = $request->obervations;
+            $mail->deliveredToArchive = $request->deliveredToArchive;
+            $mail->shippingWay   = $request->shippingWay;
+            $mail->nameMessenger = $request->nameMessenger;
+
+            
+
+            $mail->save();
+
+            return redirect('maile.listM');
+        }
+       
     }
 
     /**
@@ -100,10 +132,11 @@ class MaileController extends Controller
     public function update(Request $request, $idMail)
     {
         $mail = MailE::find($idMail);
-
+                
         $mail->idMail2 = $request->idMail2;
         $mail->codEnterprise = $request->codEnterprise;
         $mail->Mailfolder_id = $request->idMailfolder;
+        $mail->typeMail = $request->typeMail;
         $mail->affair   = $request->affair;
         $mail->dependency_id = $request->idDependency;
         $mail->creationDate  = $request->creationDate;
@@ -114,6 +147,8 @@ class MaileController extends Controller
         $mail->deliveredToArchive = $request->deliveredToArchive;
         $mail->shippingWay   = $request->shippingWay;
         $mail->nameMessenger = $request->nameMessenger;
+
+
 
         $mail->save();
 
