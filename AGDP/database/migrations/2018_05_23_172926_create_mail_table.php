@@ -24,10 +24,12 @@ class CreateMailTable extends Migration {
 			$table->integer('dependency_id');
 			$table->date('creationDate');
 			$table->date('internalEstablishmentDate');
+			$table->string('sender', 200);
+			$table->string('addressee', 200);
 			$table->date('receivedDate');
 			$table->integer('storagew_id'); 
 			$table->integer('noPages');			 
-			$table->string('observations', 125);
+			$table->string('observations', 125)->nullable();
 			$table->boolean('deliveredToArchive');
 			$table->string('shippingWay', 30);
 			$table->string('nameMessenger', 50);
