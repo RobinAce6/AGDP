@@ -76,23 +76,6 @@ class AllRelationship extends Migration
             ->onUpdate('CASCADE')
             ->onDelete('CASCADE');
         });
-        
-        //Mail Place
-        Schema::table('mail_place', function(Blueprint $table)
-		{
-            $table->foreign('mail_id')
-            ->references('idMail')
-            ->on('mailE')
-            ->onUpdate('CASCADE')
-            ->onDelete('CASCADE');
-
-            $table->foreign('place_id')
-            ->references('idCity')
-            ->on('city')
-            ->onUpdate('CASCADE')
-            ->onDelete('CASCADE');
-        });
-        
         //Mail
         Schema::table('mailE', function(Blueprint $table)
 		{
@@ -108,9 +91,9 @@ class AllRelationship extends Migration
             ->onUpdate('CASCADE')
             ->onDelete('CASCADE');
 
-            $table->foreign('dependency_id')
-            ->references('idDependency')
-            ->on('dependency')
+            $table->foreign('city_id')
+            ->references('idCity')
+            ->on('city')
             ->onUpdate('CASCADE')
             ->onDelete('CASCADE');
         });

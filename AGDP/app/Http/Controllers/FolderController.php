@@ -30,7 +30,7 @@ class FolderController extends Controller
 
         $client->nameClient = $request->nameClient;
         $client->client_id = $request->idClient;
-
+ 
         $client->save();
     }
 

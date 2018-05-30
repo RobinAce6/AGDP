@@ -27,7 +27,7 @@
 						<a href="{{ route('folder')}}"> Proyecto</a>
 					</div>
 					<div class="form-control">
-						<a href="{{ route('storagew')}}"> SW</a>
+						<a href="{{ route('storagew')}}"> Formato Correspondencia</a>
 					</div>
 					<div class="form-control">
 						<a href="{{ route('typePerson')}}"> Tipo Persona</a>
@@ -43,6 +43,9 @@
 					</div>
 					<div class="form-control">
 						<a href="{{ route('permission_role')}}">Asociar Permiso a Rol</a>
+					</div>
+					<div class="form-control">
+						<a href="{{ route('maile')}}">Correspondencia</a>
 					</div>
 					</div>
 					<!--

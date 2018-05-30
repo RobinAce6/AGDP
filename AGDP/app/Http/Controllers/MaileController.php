@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Aapp\Models\MailE as MailE;
-use App\Models\Dependency as DM;
+use App\Models\MailE as MailE;
 use App\Models\StorageWay as SWM;
 use App\Models\Folder as FM;
+use App\Models\City as CM;
 
 class MaileController extends Controller
 {
@@ -18,8 +18,8 @@ class MaileController extends Controller
      */
     public function index()
     {
-        $mail = MailE::with('Folder', 'StorageWay','Dependency_Mail');
-        return view('maile.newM', compact('mail'));
+        $mail = MailE::with('Folder', 'StorageWay', 'City');
+        return view('maile.listM', compact('mail'));
     }
 
     /**
@@ -31,8 +31,8 @@ class MaileController extends Controller
     {
         $folder = FM::all();
         $storagew = SWM::all();
-        $depend = DM::all();
-        return view('maile.newM', compact('folder', 'storagew','depend'));
+        $city = CM::all();
+        return view('maile.newM', compact('folder', 'storagew', 'city'));
     }
 
     /**
@@ -44,57 +44,27 @@ class MaileController extends Controller
     public function store(Request $request)
     {
         $mail = new MailE;
-
-        if ($request->$typeMail=='Sent') {
          
-            $mail->idMail2 = $request->idMail2;
-            $mail->codEnterprise = $request->codEnterprise;
-            $mail->typeMail = $request->typeMail;
-            $mail->Mailfolder_id = $request->idMailfolder;
-            $mail->affair   = $request->affair;
-            $mail->dependency_id = $request->idDependency;
-            $mail->creationDate  = $request->creationDate;
-            $mail->internalEstablishmentDate = $request->internalEstablishmentDate;
-            $mail->receivedDate = $request->receivedDate;
-            $mail->storagew_id  = $request->idStorageWay;
-            $mail->obervations  = $request->obervations;
-            $mail->deliveredToArchive = $request->deliveredToArchive;
-            $mail->shippingWay   = $request->shippingWay;
-            $mail->nameMessenger = $request->nameMessenger;
+        $mail->idMail2 = $request->idMail2;
+        $mail->codEnterprise = $request->codEnterprise;
+        $mail->folder_id = $request->idFolder;
+        $mail->typeMail = $request->typeMail;
+        $mail->affair   = $request->affair;
+        $mail->sentDate = $request->sentDate;
+        $mail->sender = $request->sender;
+        $mail->addressee = $request->addressee;
+        $mail->receivedDate = $request->receivedDate;
+        $mail->storagew_id  = $request->idStorageWay;
+        $mail->noPages  = $request->noPages;
+        $mail->obervations  = $request->obervations;
+        $mail->deliveredToArchive = $request->deliveredToArchive;
+        $mail->nameMessenger = $request->nameMessenger;
+        $mail->city_id = $request->idCity;
 
-            
+        $mail->save();
 
-            $mail->save();
+        return redirect('maile.listM');
 
-            return redirect('maile.listM');
-
-        }
-
-        elseif ($request->$typeMail=='Received') 
-        {
-        
-            $mail->idMail2 = $request->idMail2;
-            $mail->codEnterprise = $request->codEnterprise;
-            $mail->typeMail = $request->typeMail;
-            $mail->Mailfolder_id = $request->idMailfolder;
-            $mail->affair   = $request->affair;
-            $mail->dependency_id = $request->idDependency;
-            $mail->creationDate  = $request->creationDate;
-            $mail->internalEstablishmentDate = $request->internalEstablishmentDate;
-            $mail->receivedDate = $request->receivedDate;
-            $mail->storagew_id  = $request->idStorageWay;
-            $mail->obervations  = $request->obervations;
-            $mail->deliveredToArchive = $request->deliveredToArchive;
-            $mail->shippingWay   = $request->shippingWay;
-            $mail->nameMessenger = $request->nameMessenger;
-
-            
-
-            $mail->save();
-
-            return redirect('maile.listM');
-        }
-       
     }
 
     /**
@@ -118,8 +88,8 @@ class MaileController extends Controller
     {
         $folder = FM::all();
         $storagew = SWM::all();
-        $depend = DM::all();
-        return view('maile.updateM', compact('folder', 'storagew','depend'));
+        $city = CM::all();
+        return view('maile.updateM', compact('folder','storagew','city'));
     }
 
     /**
@@ -135,20 +105,19 @@ class MaileController extends Controller
                 
         $mail->idMail2 = $request->idMail2;
         $mail->codEnterprise = $request->codEnterprise;
-        $mail->Mailfolder_id = $request->idMailfolder;
+        $mail->folder_id = $request->idFolder;
         $mail->typeMail = $request->typeMail;
         $mail->affair   = $request->affair;
-        $mail->dependency_id = $request->idDependency;
-        $mail->creationDate  = $request->creationDate;
-        $mail->internalEstablishmentDate = $request->internalEstablishmentDate;
+        $mail->sentDate = $request->sentDate;
+        $mail->sender = $request->sender;
+        $mail->addressee = $request->addressee;
         $mail->receivedDate = $request->receivedDate;
         $mail->storagew_id  = $request->idStorageWay;
+        $mail->noPages  = $request->noPages;
         $mail->obervations  = $request->obervations;
         $mail->deliveredToArchive = $request->deliveredToArchive;
-        $mail->shippingWay   = $request->shippingWay;
         $mail->nameMessenger = $request->nameMessenger;
-
-
+        $mail->city_id = $request->idCity;
 
         $mail->save();
 

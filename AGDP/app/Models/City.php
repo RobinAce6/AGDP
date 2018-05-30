@@ -4,11 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Department;
+use App\Models\MailE;
+
 
 class City extends Model
 {
     protected $table 	= 'city';
-	protected $fillable = ['nameCity', 'department_id'];
+	protected $fillable = [
+        'nameCity', 'department_id'
+        ];
 	protected $guarded  = ['idCity'];
 	protected $primaryKey = 'idCity';
 
@@ -17,8 +21,8 @@ class City extends Model
         return $this->belongsTo(Department::class, 'department_id','idDepartment');
     }
 
-    public function Mail_Place()
+    public function MailE()
     {
-        return $this->hasMany(Mail_Place::class, 'place_id', 'idCity');
+        return $this->hasMany(MailE::class, 'city_id', 'idCity');
     }
-}
+} 

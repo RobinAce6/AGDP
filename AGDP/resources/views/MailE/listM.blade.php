@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -30,21 +31,21 @@
                <table class="table table-bordered">
                   <thead class="thead-light">
                      <tr>
-                        <th scope="col">Correspondencia No. </th>
+                        <th scope="col">C No. </th>
                         <th scope="col">Empresa</th>
-                        <th scope="col">Tipo Correspondencia </th>
+                        <th scope="col">Tipo de C. </th>
                         <th scope="col">Proyecto </th>
                         <th scope="col">Asunto</th>
-                        <th scope="col">Dependencia</th>
                         <th scope="col">Fecha Recibido</th>
                         <th scope="col">Fecha de Envío</th>
-                        <th scope="col">Desinatario</th>
+                        <th scope="col">Remitente</th>
+                        <th scope="col">Destinatario</th>
                         <th scope="col">Remitente</th>
                         <th scope="col">Formato</th>                        
                         <th scope="col">Número de Folios</th>
                         <th scope="col">Obervaciones</th>
                         <th scope="col">Entregada a Archivo </th>
-                        <th scope="col">Forma de Envío</th>
+                        <th scope="col">Mensajería</th>
                         <th scope="col">Mensajero </th>
                         <th scope="col"> </th>
                      </tr>
@@ -59,25 +60,23 @@
                               <td scope="row">{{ $Mail->Folder->idFolder}}</td>
                               <td scope="row">{{ $Mail->affair}}</td>
                               <td scope="row">{{ $Mail->Dependency->nameDependency}}</td>
-                              <td scope="row">{{ $Mail->creationDate}}</td>
-                              <td scope="row">{{ $Mail->internalEstablishmentDate}}</td>
-                              <td scope="row">{{ $Mail->sender}}</td>
-                              <td scope="row">{{ $Mail->addressee}}</td>
                               <td scope="row">{{ $Mail->receivedDate}}</td>
+                              <td scope="row">{{ $Mail->sentDate}}</td>
+                              <td scope="row">{{ $Mail->addressee}}</td>
+                              <td scope="row">{{ $Mail->sender}}</td>
                               <td scope="row">{{ $Mail->StorageWay->nameSW}}</td>
                               <td scope="row">{{ $Mail->noPages}}</td>
                               <td scope="row">{{ $Mail->observations}}</td>
                               <td scope="row">{{ $Mail->deliveredToArchive}}</td>
-                              <td scope="row">{{ $Mail->shippingWay}}</td>
+                              <td scope="row">{{ $Mail->CompanyMssgr}}</td>
                               <td scope="row">{{ $Mail->nameMessenger}}</td>
                               <td>
-                                 <a class="btn btn-link" href="{{ route('role_user/edit', ['nRU' => $SW->nRU]) }}">Actualizar</a>
-                                 <a href="{{ route('role_user/destroy', ['nRU' => $SW -> nRU]) }}">Eliminar</a>
+                                 <a class="btn btn-link" href="{{ route('maile/edit', ['idMail' => $mail->idMail]) }}">Actualizar</a>
+                                 <a href="{{ route('maile/destroy', ['idMail' => $mail -> idMail]) }}">Eliminar</a>
                               </td>
                            </tr>
                            @endforeach
                         </tbody>
-                  
                </table>
             </div>
          </form>

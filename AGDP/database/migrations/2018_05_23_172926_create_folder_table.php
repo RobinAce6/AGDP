@@ -19,7 +19,7 @@ class CreateFolderTable extends Migration {
 			$table->string('nameFolder', 25);
 			$table->integer('client_id');
 			$table->rememberToken();
-            $table->timestamps();
+            $table->timestamps(); 
 		});
 	}
 
