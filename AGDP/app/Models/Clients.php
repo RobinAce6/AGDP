@@ -9,7 +9,7 @@ class Clients extends Model
 {
     protected $table 	= 'clients';
     protected $fillable = ['nameClient'];
-    protected $guarded	= ['idClient'];
+    protected $guarded	= ['idClient'];								
     protected $primaryKey = 'idClient';
 
     public function Folder()

@@ -38,7 +38,9 @@ class ClientsController extends Controller
     public function store(Request $request)
     {
         $client = new Client;
-        $client->create($request->all());
+
+        $client->nameClient = $request->nameClient;
+
         return redirect('clients.listCl');
     }
 
@@ -76,7 +78,6 @@ class ClientsController extends Controller
     {
         $client = Client::find($idClient); 
 
-        $client->consecutiveClient = $request->consecutiveClient;
         $client->nameClient = $request->nameClient;
 
         $client->save();
