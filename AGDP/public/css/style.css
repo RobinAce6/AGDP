@@ -562,8 +562,14 @@ input[type="radio"] {
   margin-right: 0.4375em;
   padding: 0; }
 
+h1 {
+  font-size: 1.5em; }
+
 .btn {
   margin: 10px 20px; }
+
+.fa-pencil-alt {
+  color: #42a3b8; }
 
 .wrapper-login {
   background: url("../img/bg-login.jpg") no-repeat center center;
@@ -584,6 +590,17 @@ input[type="radio"] {
   background-color: #2a2d3c; }
   .main-nav .navbar {
     padding: 0; }
+    .main-nav .navbar .dropdown-menu {
+      padding: 0;
+      left: 0%;
+      width: 90%; }
+      .main-nav .navbar .dropdown-menu a.dropdown-item {
+        color: #2a2d3c;
+        padding: 10px; }
+        .main-nav .navbar .dropdown-menu a.dropdown-item.active, .main-nav .navbar .dropdown-menu a.dropdown-item:active, .main-nav .navbar .dropdown-menu a.dropdown-item:focus, .main-nav .navbar .dropdown-menu a.dropdown-item:hover {
+          background-color: rgba(42, 45, 60, 0.2); }
+      .main-nav .navbar .dropdown-menu .dropdown-divider {
+        margin: 0; }
   .main-nav .question {
     display: inline-block;
     vertical-align: middle;
@@ -597,33 +614,27 @@ input[type="radio"] {
     margin-right: 20px; }
     .main-nav .user:hover {
       opacity: 0.7; }
-    .main-nav .user .dropdown-menu--user .dropdown-item a {
-      color: #2a2d3c;
-      text-decoration: none !important; }
-  .main-nav li {
-    padding: 10px 20px; }
-    .main-nav li:hover {
-      background-color: #444A5F; }
-    .main-nav li a {
-      color: #fff; }
+    .main-nav .user .dropdown-menu--user {
+      width: auto;
+      left: auto; }
+      .main-nav .user .dropdown-menu--user .dropdown-item a {
+        color: #2a2d3c;
+        text-decoration: none !important; }
+  .main-nav li:hover {
+    background-color: #444A5F; }
+  .main-nav li a {
+    color: #fff; }
+    .main-nav li a.nav-link {
+      padding: 20px 20px !important; }
 
-.nav-vertical .nav-container {
-  background-color: #f6f6f6;
-  padding: 0;
-  min-height: 100%;
-  height: -webkit-fill-available; }
-  .nav-vertical .nav-container .nav-pills .nav-link {
-    padding-left: 30px;
-    color: #323232; }
-  .nav-vertical .nav-container .nav-pills .nav-link.active, .nav-vertical .nav-container .nav-pills .show > .nav-link {
-    background-color: #f6f6f6;
-    border-radius: 0;
-    color: #2b2e3c;
-    font-weight: 600;
-    /* text-decoration: underline; */ }
+.main-container {
+  margin: 50px 0; }
 
-.nav-vertical .info-container {
-  padding: 4%; }
+.wrapper-perfil .main-container .form-group {
+  padding-left: 12%; }
+
+.wrapper-perfil p {
+  margin: 0; }
 
 .wrapper-dashboard .main-nav .navbar-nav {
   opacity: 0; }
@@ -652,20 +663,53 @@ form .password {
     cursor: pointer;
     z-index: 9; }
 
-.wrapper-users .info-container table tr td i {
-  margin-right: 5%;
-  cursor: pointer; }
-  .wrapper-users .info-container table tr td i.fa-lock {
-    color: #b30000; }
-  .wrapper-users .info-container table tr td i.fa-edit {
-    color: #1c4984; }
+.wrapper-users table tbody tr td {
+  padding: 12px 10px; }
+  .wrapper-users table tbody tr td.options .dropdown-menu a {
+    color: #2a2d3c; }
+  .wrapper-users table tbody tr td .btn {
+    background-color: transparent; }
+  .wrapper-users table tbody tr td i {
+    margin-right: 5%;
+    cursor: pointer; }
+    .wrapper-users table tbody tr td i.fa-lock {
+      color: #b30000; }
+    .wrapper-users table tbody tr td i.fa-edit {
+      color: #1c4984; }
 
-.wrapper-users .info-container table .locked td {
+.wrapper-users table tbody .locked td {
   opacity: 0.3; }
-  .wrapper-users .info-container table .locked td.options {
+  .wrapper-users table tbody .locked td.options {
     opacity: 1; }
-  .wrapper-users .info-container table .locked td .fa-unlock-alt {
+  .wrapper-users table tbody .locked td .fa-unlock-alt {
     color: #828143; }
+
+.wrapper-roles .card-header h6, .wrapper-dependency .card-header h6 {
+  cursor: pointer; }
+
+.wrapper-roles .card-body .permission-title, .wrapper-dependency .card-body .permission-title {
+  font-weight: 400; }
+
+.wrapper-roles .card-body ul.permission li, .wrapper-dependency .card-body ul.permission li {
+  display: inline-block;
+  position: relative;
+  width: 48%;
+  padding-left: 15px; }
+  .wrapper-roles .card-body ul.permission li:before, .wrapper-dependency .card-body ul.permission li:before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    top: 8px;
+    left: 0px;
+    background-color: #42a3b8;
+    border-radius: 50px; }
+
+.dataTables_wrapper .dataTables_length select {
+  padding-left: 10px; }
+
+.treetable .subject .indenter {
+  opacity: 0; }
 
 /*estilos para tablet y mobile*/
 @media (max-width: 1024px) {

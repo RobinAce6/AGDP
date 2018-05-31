@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
 
     <meta charset="utf-8">
@@ -19,65 +22,8 @@
     <body>
 
         <!-- Start Header -->
-        
-<div class="wrapper-users">
    
-<div class=" main-nav">
-    <nav class="navbar navbar-expand-lg ">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                @guest
-                  <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                            <li><a class="nav-link" href="#">{{ __('Register') }}</a></li>
-                 @else
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase" href="mails.html">Correspondencia</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase" href="{{route('folder')}}">Proyectos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase" href="{{route('clients')}}">Clientes</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link active text-uppercase" href="{{route('folder')}}">Usuarios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase" href="{{route('depend')}}">Areas de Trabajo</a>
-                </li>
-                
-                
-            </ul>
-            <div class=" my-2 my-lg-0">
-                <a href="" class="question"><i class="far fa-question-circle"></i></a>
-                <div class="user">
-                    <a class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Auth::user()->namePerson}}</a>
-                    <div class="dropdown-menu dropdown-menu--user dropdown-menu-right">
-                        <a class="dropdown-item"  href="">Perfil de usuario</a>
-                         <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Cerrar Sesión') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                    </div>
-                </div>
-                 @endguest
-            </div>
-        </div>
-    </nav>
-</div>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+    @yield('content')
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -92,6 +38,10 @@
 
     
 
+    <script src="{{asset('js/jquery.treetable.js')}}"></script>
+
+    <script src="{{asset('js/main.js')}}"></script>
+    <script type="text/javascript'">
 
     <script src="{{asset('js/main.js')}}"></script>
 </body>

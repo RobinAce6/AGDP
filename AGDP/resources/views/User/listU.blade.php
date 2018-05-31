@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
 
@@ -52,7 +52,6 @@
 								<td scope="row">{{ $users->email }}</td>
 								<td>
 									<a class="btn btn-link" href="{{ route('user/edit', ['idUser' => $users->idUser]) }}">Actualizar</a>
-									<a href="{{ route('user/destroy', ['idUser' => $users->idUser]) }}">Eliminar</a>
 								</td>
 							</tr>
 							@endforeach
