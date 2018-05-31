@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\MailE;
 use App\Models\Dependency;
 
-class Mail_Dependency extends Model
+class Dependency_Mail extends Model
 {
     protected $table 	= 'mail_dependency';
     protected $fillable = ['mail_id', 'dependency_id'];
@@ -20,6 +20,6 @@ class Mail_Dependency extends Model
 
     public function Dependency()
     {
-    	return $this->belongsTo(Dependency::class, 'dependency_id', 'idDependency');
+    	return $this->hasMany(Dependency::class, 'dependency_id', 'idDependency');
     }
 }

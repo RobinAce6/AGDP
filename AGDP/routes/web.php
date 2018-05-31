@@ -147,18 +147,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Email Routes
 
-/*Route::GET ('typePerson', 'MaileController@index')					->name('typePerson');
-Route::GET ('typePerson.listTP', 'MaileController@index')			->name('typePerson.listTP');
-Route::POST('typePerson','MaileController@store')					->name('storeTP');
-Route::GET ('typePerson/create', 'MaileController@create')			->name('newTP');
-Route::POST('typePerson/search', 'MaileController@search')			->name('searchTP');
-Route::PUT ('typePerson/update/{idTypePerson}', 'MaileController@update')	->name('updateTP');
-Route::GET ('typePerson/destroy/{id}', 'MaileController@destroy')  ->name('typePerson/destroy');
-Route::GET ('typePerson/edit/{id}', 'MaileController@edit')		->name('typePerson/edit');
+Route::GET ('maile', 'MaileController@index')				->name('maile');
+Route::GET ('maile.listM', 'MaileController@index')			->name('maile.listM');
+Route::POST('maile','MaileController@store')				->name('storeM');
+Route::GET ('maile/create', 'MaileController@create')		->name('newM');
+Route::POST('maile/search', 'MaileController@search')		->name('searchM');
+Route::PUT ('maile/update/{idTypePerson}', 'MaileController@update')->name('updateTP');
+Route::GET ('maile/destroy/{id}', 'MaileController@destroy')->name('maile/destroy');
+Route::GET ('maile/edit/{id}', 'MaileController@edit')		->name('maile/edit');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');*/
+Route::get('/home', 'HomeController@index')->name('home');

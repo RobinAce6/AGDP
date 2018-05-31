@@ -9,7 +9,7 @@ use App\Models\Dependency_Mail;
 class Dependency extends Model
 {
     protected $table = 'dependency';
-    protected $fillable = ['nameDependency'];
+    protected $fillable = ['nameDependency']; 
     protected $guarded = ['idDependency'];
     protected $primaryKey = 'idDependency';
 

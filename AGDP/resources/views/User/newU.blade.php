@@ -38,7 +38,7 @@
                           <option value="{{$typePerson->idTypePerson}}">{{$typePerson->nameTypePerson}}</option>
                         @endforeach
                       </select>
-                  </div>
+                  </div>  
                   <div class="form-group">
                    <p> Área de Trabajo </p>
                       <select class="wrap-input100 m-t-6" name="idDependency">

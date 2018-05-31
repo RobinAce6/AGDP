@@ -18,9 +18,9 @@
                </div>
 
                <div class="form-group">
-                <p> Cliente </p>
+                <laber> Cliente </laber>
                    <select class="wrap-input100 m-t-6" name="idCliente">
-                     @foreach ($client as $Client)
+                     @foreach ($client as $Client) 
                        <option value="{{$Client->idClient}}">{{$Client->nameClient}}</option>
                      @endforeach
                    </select>

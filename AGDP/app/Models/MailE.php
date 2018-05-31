@@ -7,13 +7,17 @@ use App\Models\StorageWay;
 use App\Models\Folder;
 use App\Models\Edoc;
 use App\Models\Dependency_Mail;
-use App\Models\Mail_Place;
+use App\Models\City;
 
 class MailE extends Model
 {
     protected $table    = 'mailE';
     protected $fillable = [
-        'idMail2', 'codEnterprise','typeMail','folder_id' ,'affair', 'dependency_id', 'creationDate', 'internalEstablishmentDate', 'receivedDate', 'storagew_id', 'noPages', 'obervations', 'deliveredToArchive', 'shippingWay', 'nameMessenger'
+        'idMail2', 'codEnterprise','typeMail','folder_id' ,'affair', 
+        'dependency_id', 'receivedDate', 'sentDate', 
+        'sender'. 'addressee', 'storagew_id', 'noPages', 
+        'obervations','deliveredToArchive','CompanyMssgr' ,'nameMessenger', 
+        'city_id'
     ];   
     protected $guarded  = ['idMail'];
     protected $primaryKey = 'idMail';
@@ -25,12 +29,12 @@ class MailE extends Model
 
     public function StorageWay()
     {
-        return $this->belongsTo(StorageWay::class, 'storagew_id', 'idStorageWay');
+        return $this->belongsTo(StorageWay::class, 'storagew_id', 'idStorageWay'); 
     }
 
     public function Dependency_Mail()
     {
-        return $this->belongsTo(Dependency_Mail::class, 'mail_id', 'idMail');
+        return $this->hasMany(Dependency_Mail::class, 'mail_id', 'idMail');
     }
 
     public function Edoc()
@@ -38,8 +42,8 @@ class MailE extends Model
         return $this->hasMany(Edoc::class, 'mail_id', 'idMail');
     }
 
-    public function Mail_Place()
+    public function City()
     {
-        return $this->hasMany(Mail_Place::class, 'mail_id', 'idMail');
+        return $this->belongsTo(City::class, 'city_id', 'idCity');
     }
 }

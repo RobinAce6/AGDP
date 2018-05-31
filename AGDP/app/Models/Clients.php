@@ -8,8 +8,8 @@ use App\Models\Folder;
 class Clients extends Model
 {
     protected $table 	= 'clients';
-    protected $fillable = ['nameClient', 'consecutiveClient'];
-    protected $guarded	= ['idClient'];
+    protected $fillable = ['nameClient'];
+    protected $guarded	= ['idClient'];								
     protected $primaryKey = 'idClient';
 
     public function Folder()

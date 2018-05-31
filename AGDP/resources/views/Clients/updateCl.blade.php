@@ -17,10 +17,6 @@
 				<div class="form-control">
 
 					<div class="wrap-input100 validate-input m-t-6">
-						<input class="input100" type="text" name="consecutiveClient" value="{{ $client->consecutiveClient }}" required>
-					</div>
-
-					<div class="wrap-input100 validate-input m-t-6">
 						<input class="input100" type="text" name="nameClient" value="{{ $client->nameClient }}" required>
 					</div>
 
