@@ -1,62 +1,77 @@
-@extends('layouts.app')
+@extends('layouts.main') 
 
 @section('content')
-    
-<div class="limiter">
-	<div class="container-login98">
-		<div class="wrap-login98">
-			<form class="login100-form" method="POST" action="{{ route('searchCl')}}">
-
-				{{ csrf_field() }}
-				
-				<div class="container-login98">
-					<div class="form-group">
-						<div class="wrap-input100 validate-input m-t-4">
-							<input class="input100" type="text" name="searchCl" placeholder="Buscar..." required>					
+<form class="login100-form" method="POST" action="{{ route('searchD')}}">
+	{{ csrf_field() }}
+    <div class="row justify-content-center main-container">
+		<div class="col-sm-11">
+			<h1 class="text-center text-uppercase">Clientes</h1> <br>	
+			<div class="col-sm-12">
+				<button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> <i class="fas fa-plus"></i> Nuevo Cliente </button>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="collapse" id="collapseExample">
+							<div class="card card-body">
+								<form  class="needs-validation" novalidate>
+									<div class="row justify-content-center">
+										<div class="col-sm-12 col-md-6 form-group text-left">
+											<label for="" class="col-sm-12 col-lg-4 col-form-label">Consecutivo <sup>*</sup></label>
+											<div class="col-sm-10 col-lg-12">
+												<input type="text" class="form-control" id="" value="" required>
+												<div class="invalid-feedback">
+													Por favor ingrese el consecutivo
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12 col-md-6 form-group text-left">
+											<label for="" class="col-sm-12 col-lg-4 col-form-label">Nombre <sup>*</sup></label>
+											<div class="col-sm-10 col-lg-12">
+												<input type="text" class="form-control" id="" value="" required>
+												<div class="invalid-feedback">
+													Por favor ingrese el nombre
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12 form-group text-left">
+											<small><sup>*</sup> Campos obligatorios</small>
+										</div>
+										<div class="col-sm-12 col-md-12 form-group text-center ">
+											<button type="submit" class="btn btn-info">Guardar</button>
+											<a href="clients.html" class="btn btn-light">Cancelar</a>
+										</div>
+									</div>
+								</form>
+							</div>
 						</div>
-
-						<br>
-
-						<button class="btn btn-warning" type="submit">Buscar</button>
-
-						<div class="container-login100-form-btn">
-						   <a href="{{ route('newCl')}}" class="btn btn-warning">Crear Nuevo Cliente</a>
-						</div>
-
-                  <div class="container-login100-form-btn">
-                     <a href="{{ route('mainboard' )}}" class="btn btn-danger"> Home </a>
-                  </div>
 					</div>
-
-					<table class="table table-bordered">
-						<thead class="thead-light">
-							<tr>
-								<th scope="col"> # </th>
-								<th scope="col">Consecutivo Cliente</th>
-								<th scope="col">Nombre</th>
-								<th scope="col"> </th>
-							</tr>
-						</thead>
-						<tbody class="table table-bordered">
-							@foreach ($client as $clients)
-							<tr>
-								<td scope="row">{{ $clients->idClient}}</td>
-								
-								<td scope="row">{{ $clients->consecutiveClient}}</td>
-								<td scope="row">{{ $clients->nameClient}}</td>
-								<td>
-									<a class="btn btn-link" href="{{ route('clients/edit', ['idClient' => $clients->idClient]) }}">Actualizar</a>
-									<a href="{{ route('clients/destroy', ['idClient' => $clients -> idClient]) }}">Eliminar</a>
-								</td>
-							</tr>
-							@endforeach
-						</tbody>
-						
-					</table>
 				</div>
-			</form>
+			</div>
+		</div>
+		<div class="col-sm-11">
+			<br><br>
+			<table  class=" table-search hover text-center" style="width:100%">
+				<thead class="thead-light">
+					<tr>
+						<th scope="col">Empresa</th>
+						<th scope="col">Proyecto</th>
+						<th scope="col">Consecutivo</th>
+						<th scope="col">Opciones </th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach ($client as $clients)
+					<tr>
+						<td scope="row">{{ $clients->nameClient}}</td>
+						<td scope="row">{{ $clients->folder}}</td>
+						<td scope="row">{{ $clients->mail}}</td>
+						<td>
+							<a class="btn btn-link" href="{{ route('clients/edit', ['idClient' => $clients->idClient]) }}"><i class="fas fa-pencil-alt"></i></a>
+						</td>
+					</tr>
+					@endforeach
+				</tbody>
+			</table>
 		</div>
 	</div>
-</div>
-
+</form>
 @endsection

@@ -1,4 +1,4 @@
-@extends('layoust.app')
+@extends('layoust.main')
 
 @section('content')
 <div class="limiter">

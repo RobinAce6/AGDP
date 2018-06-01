@@ -16,4 +16,5 @@ class Clients extends Model
     {
     	return $this->hasMany(Folder::class, 'client_id', 'idClient');
     }
+
 }

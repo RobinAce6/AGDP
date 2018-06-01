@@ -38,6 +38,7 @@ Route::POST('clients/search', 'ClientsController@search')		->name('searchCl');
 Route::PUT ('clients/update/{id}', 'ClientsController@update')	->name('updateCl');
 Route::GET ('clients/destroy/{id}', 'ClientsController@destroy')->name('clients/destroy');
 Route::GET ('clients/edit/{id}', 'ClientsController@edit')		->name('clients/edit');
+Route::GET ('clients/listCl', 'ClientsController@union')		->name('clients/listCl');
 
 // Role_User Routes
 
@@ -145,7 +146,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Email Routes
+//MailE Routes
 
 Route::GET ('maile', 'MaileController@index')				->name('maile');
 Route::GET ('maile.listM', 'MaileController@index')			->name('maile.listM');

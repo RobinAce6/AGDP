@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Clients as Client;
+use App\Models\Folder as Project;
+use App\Models\MailE as Mail;
+
+use DB;
 
 class ClientsController extends Controller
 {
@@ -15,7 +19,7 @@ class ClientsController extends Controller
      */
     public function index()
     {
-        $client = Client::all();
+        $client  = Client::all();
         return view('clients.listCl', compact('client'));
     }
 
@@ -102,4 +106,7 @@ class ClientsController extends Controller
     {
        $client = Client::where('nameClient', 'like','%'.$request->nameClient.'%')->get();
     }
+
+
+   
 }
