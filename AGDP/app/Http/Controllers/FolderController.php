@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Folder as FolderM;
+use App\Models\Clients as Client;
 
 use Illuminate\Http\Request;
 
@@ -12,28 +13,34 @@ class FolderController extends Controller
     
     public function index() 
     {
-        $folder = FolderM::all();
+        $folder = FolderM::with('Client')->get();
         return view('folder.listF', compact('folder'));
     }
 
    
     public function create()
     {
-        return view ('folder.newF');
+        $client = Client::all();
+        return view ('folder.newF', compact('client'));
     }
 
-    public function store(Request $request)
+    public function store (Request $request)
     {
         $folder = new FolderM;
-        $folder->create($request->all());
+
+        $folder->nameFolder = $request->nameFolder;
+        $folder->client_id = $request->idClient;
+ 
+        $folder->save();
+
         return redirect('folder.listF');
     }
 
     
     public function edit($idFolder)
     {
-        $folder = FolderM::find($idFolder);
-        return view('folder.updateF', compact('folder'));
+        $client = Client::all();
+        return view('folder.updateF', compact('client'));
     }
 
     
@@ -42,10 +49,11 @@ class FolderController extends Controller
         $folder = FolderM::find($idFolder);
 
         $folder->nameFolder = $request->nameFolder;
+        $folder->client_id = $request->idClient;
 
         $folder->save();
 
-        return back();
+        return redirect('folder.listF');
     }
 
     public function search(Request $request)

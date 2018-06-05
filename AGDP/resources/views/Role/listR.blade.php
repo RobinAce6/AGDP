@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
-    
+
 <div class="limiter">
 	<div class="container-login98">
 		<div class="wrap-login98">
@@ -43,7 +43,6 @@
 								<td scope="row">{{ $roles->nameRole}}</td>
 								<td>
 									<a class="btn btn-link" href="{{ route('role/edit', ['idRole' => $roles->idRole]) }}">Actualizar</a>
-									<a href="{{ route('role/destroy', ['idRole' => $roles -> idRole]) }}">Eliminar</a>
 								</td>
 							</tr>
 							@endforeach

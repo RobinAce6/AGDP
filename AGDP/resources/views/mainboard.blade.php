@@ -1,63 +1,82 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
 
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100 p-t-65 p-b-10">
-				<!--<div class="collapse" id="collapseExample">
-					<div class="card card-body">
-						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-					</div>
-				</div>-->
-				<form class="login100-form validate-form " method="POST" action="{{ route('logout') }}">
+			<div class="container">
+				<div class="wrapper-dashboard">
+				<form class="form-group" method="POST" action="{{ route('logout') }}">
 
 					{{ csrf_field() }}
-					
-					<span class="login100-form-title p-b-45">
-						Bienvenido, @User
 
-					</span>
+					<div class="row content-card justify-content-md-center">
+						<div class="container text-center">
+							<div class="row content-card justify-content-md-center">
+								<div class="col-md-4 text-center">
+									<div class="card" style="width: 18rem;">
+										<div class="card-body">
+											<img src="img/correspondencia_2.png">
+											<h5 class="card-title">CORRESPONDENCIA</h5>
+											<p class="card-text">Gestión de la correspondencia recibida y enviada.</p>
+											<a href="{{route('maile')}}" class="card-link">Nueva</a>
+											<a href="{{route('maile.listM')}}" class="card-link">Ultimas Referencias</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 text-center">
+									<div class="card" style="width: 18rem;">
+										<div class="card-body">
+											<img src="img/proyectos.png">
+											<h5 class="card-title">PROYECTOS</h5>
+											<p class="card-text">Gestión de los proyectos que se realizan en la empresa.</p>
+											<a href="#" class="card-link">Crear</a>
+											<a href="#" class="card-link">Ver Listado</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 text-center">
+									<div class="card" style="width: 18rem;">
+										<div class="card-body">
+											<img src="img/clientes.png">
 
-					<div class="wrap-input100 validate-input m-t-5 m-b-35 {{ $errors->has('userPerson') ? 'has-error' : '' }}"  value= "{{ old('userPerson')}}">
-						<input class="input100" type="text" name="userPerson" placeholder="Usuario">
-					
-					{!! $errors ->first('userPerson', '<span class="badge badge-pill badge-danger">:message</span>') !!}
+											<h5 class="card-title">CLIENTES</h5>
+											<p class="card-text">Gestión de remitentes y destinatarios de la correspondencia</p>
+											<a href="{{ route('clients')}}" class="card-link">Crear</a>
+											<a href="{{ route('clients')}}" class="card-link">Ver Listado</a>
+										</div>
+									</div>
+								</div>
+							</div>
 
+							<div class="row content-card  justify-content-md-center">
+									
+								<div class="col-sm-4 text-center">
+									<div class="card" style="width: 18rem;">
+										<div class="card-body">
+											<img src="img/usuarios.png">
+											<h5 class="card-title">USUARIOS</h5>
+											<p class="card-text">Administración de usuarios, roles, permisos y cargos en la empresa.</p>
+											<a href="{{ route('user')}}" class="card-link">Crear</a>
+											<a href="{{ route('user')}}" class="card-link">Ver Listado</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 text-center">
+									<div class="card" style="width: 18rem;">
+										<div class="card-body">
+											<img src="img/area_trabajo_2.png">
+
+											
+											<h5 class="card-title">ÁREAS DE TRABAJO</h5>
+											<p class="card-text">Gestión de las diferentes áreas de trabajo. Ej.</p>
+											<a href="{{ route('depend')}}" class="card-link">Crear</a>
+											<a href="{{ route('depend')}}" class="card-link">Ver Listado</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					
-					<div class="form-control">
-							<button class="btn btn-primary">Cerrar Sesión</button>
-					</div>
-					<div class="form-control">
-						<a href="{{ route('person')}}">Crear Nueva Persona</a>
-					</div>
-					<div class="form-control">
-						<a href="{{ route('role')}}">Crear Nuevo Rol</a>
-					</div>
-					<div class="form-control">
-						<a href="{{ route('depend')}}">Crear Nueva Dependencia</a>
-					</div>
-					<div class="form-control">
-						<a href="{{ route('folder')}}">Crear Nuevo Proyecto</a>
-					</div>
-					<div class="form-control">
-						<a href="{{ route('storagew')}}">Crear Nuevo SW</a>
-					</div>
-					<div class="form-control">
-						<a href="{{ route('user')}}">Crear Nuevo Usuario</a>
-					</div>
-					<!--
-					<p>
-						<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-							Button with data-target
-						</button>
-					</p>
-					-->
-				</form>
+				</div>
 			</div>
-		</div>
-	</div>
-
 
 @endsection

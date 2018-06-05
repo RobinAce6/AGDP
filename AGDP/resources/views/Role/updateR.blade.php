@@ -17,10 +17,6 @@
 				<div class="form-control">
 
 					<div class="wrap-input100 validate-input m-t-6">
-						<input class="input100" type="number" name="idRole" value="{{ $role->idRole }}" disabled>
-					</div>
-
-					<div class="wrap-input100 validate-input m-t-6">
 						<input class="input100" type="text" name="nameRole" value="{{ $role->nameRole }}" required>
 					</div>
 

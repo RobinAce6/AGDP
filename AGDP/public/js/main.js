@@ -1,70 +1,89 @@
+$(document).ready(function() {
+	
+	if(window.location.href.indexOf("id_user") > -1) {
+		if($("#v-pills-profile-tab").hasClass("active")){
 
-(function ($) {
-    "use strict";
+			$("#v-pills-profile-tab").text("Modificar Usuario")
+			$("#v-pills-tabContent h1").text("Modificar Usuario")
+		}else{
+			$("#v-pills-profile-tab").text("Nuevo Usuario")
+			$("#v-pills-tabContent h1").text("Registrar Nuevo Usuario")
+		}
+		
 
-
-    /*==================================================================
-    [ Focus input ]*/
-    $('.input100').each(function(){
-        $(this).on('blur', function(){
-            if($(this).val().trim() != "") {
-                $(this).addClass('has-val');
-            }
-            else {
-                $(this).removeClass('has-val');
-            }
-        })    
-    })
-  
-  
-    /*==================================================================
-    [ Validate ]
-    var input = $('.validate-input .input100');
-
-    $('.validate-form').on('submit',function(){
-        var check = true;
-
-        for(var i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
-                check=false;
-            }
-        }
-
-        return check;
-    });
+	}
 
 
-    $('.validate-form .input100').each(function(){
-        $(this).focus(function(){
-           hideValidate(this);
-        });
-    });
+	$('.table-search').DataTable(
+    	{
+        responsive: true,
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+        	}
+    	}
+    );
+	$(".treetable").treetable({ expandable: true });
 
-    function validate (input) {
-        if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
-            if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-                return false;
-            }
-        }
-        else {
-            if($(input).val().trim() == ''){
-                return false;
-            }
-        }
-    }
+    (function() {
+	  'use strict';
+	  window.addEventListener('load', function() {
+	    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+	    var forms = document.getElementsByClassName('needs-validation');
+	    // Loop over them and prevent submission
+	    var validation = Array.prototype.filter.call(forms, function(form) {
+	      form.addEventListener('submit', function(event) {
+	        if (form.checkValidity() === false) {
+	          event.preventDefault();
+	          event.stopPropagation();
+	        }
+	        form.classList.add('was-validated');
+	      }, false);
+	    });
+	  }, false);
+	})();
 
-    function showValidate(input) {
-        var thisAlert = $(input).parent();
+	$(".unlock").click(function(){
+		let input_pssw = $(this).parent().parent().find("input");
+		let lock = $(this).parent().find(".lock");
 
-        $(thisAlert).addClass('alert-validate');
-    }
+		$(input_pssw).attr("type","text")
+		$(lock).removeClass("d-none")
+		$(this).addClass("d-none")
+	});
+	$(".lock").click(function(){
+		let input_pssw = $(this).parent().parent().find("input");
+		let unlock = $(this).parent().find(".unlock");
 
-    function hideValidate(input) {
-        var thisAlert = $(input).parent();
+		$(input_pssw).attr("type","password")
+		$(this).addClass("d-none")
+		$(unlock).removeClass("d-none")
+	});
 
-        $(thisAlert).removeClass('alert-validate');
-    }
-    */
-    
-})(jQuery);
+	$(".wrapper-users .table-users tbody tr").each(function(){
+			
+
+		if($(this).hasClass("locked")){
+			console.log("1111111")
+			let lock = $(this).find(".lock");
+			let unlock = $(this).find(".unlock");
+			$(lock).addClass("d-none");
+			$(unlock).removeClass("d-none");
+		}
+	})
+
+	$("#select_received").change(function(){
+
+		if($(this)){
+			$("#received").removeClass("d-none");
+			$("#sent").addClass("d-none");
+		}
+	})
+	$("#select_sent").change(function(){
+
+		if($(this)){
+			
+			$("#sent").removeClass("d-none");
+			$("#received").addClass("d-none");
+		}
+	})
+} );

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Permission;
 use Illuminate\Http\Request;
+
+use App\Models\Permission as PM;
 
 class PermissionController extends Controller
 {
@@ -14,7 +15,8 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        //
+        $permiss = PM::all();
+        return view('permission.listPr', compact('permiss'));
     }
 
     /**
@@ -24,7 +26,7 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        //
+       return view('permission.newPr');
     }
 
     /**
@@ -35,16 +37,18 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $permiss = new PM;
+        $permiss->create($request->all());
+        return redirect('permission.listPr');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Permission  $permission
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Permission $permission)
+    public function show($id)
     {
         //
     }
@@ -52,34 +56,43 @@ class PermissionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Permission  $permission
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Permission $permission)
+    public function edit($idPermission)
     {
-        //
+        $permiss = PM::find($idPermission);
+        return view('permission.updatePr', compact('permiss'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Permission  $permission
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Permission $permission)
+    public function update(Request $request, $idPermission)
     {
-        //
+        $permiss = PM::find($idPermission);
+
+        $permiss->namePermission = $request->namePermission;
+
+        $permiss->save();
+
+        return redirect('permission.listPr');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Permission  $permission
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Permission $permission)
+    public function destroy($idPermission)
     {
-        //
+        $permiss = PM::find($idPermission);
+        $permiss->delete();
+        return back();
     }
 }

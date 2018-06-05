@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dependency as DependM;
+
 use Illuminate\Http\Request;
 
 class DependencyController extends Controller
@@ -26,35 +27,35 @@ class DependencyController extends Controller
         return redirect('depend.listD');
     }
 
-    public function edit($idDep)
+    public function edit($idDependency)
     {
-        $depend = DependM::find($idDep);
+        $depend = DependM::find($idDependency);
         return view('depend.updateD', compact('depend'));
     }
     
-    public function update(Request $request, $idDep)
+    public function update(Request $request, $idDependency)
     {
-        $depend = DependM::find($idDep);
-
-        $depend->nameDep = $request->nameDep;
+        $depend = DependM::find($idDependency);
+        
+        $depend->nameDependency = $request->nameDependency;
 
         $depend->save();
 
-        return back();
+        return redirect('depend.listD');
     }
     
     public function search(Request $request)
     {
-        $depend = DependM::where('idDep', 'like','%'.$request->idDep.'%')->get();
+        $depend = DependM::where('idDependency', 'like','%'.$request->idDependency.'%')->get();
 
-        $depend = DependM::where('nameDep', 'like', '%'.$request->nameDep.'%')->get();
+        $depend = DependM::where('nameDependency', 'like', '%'.$request->nameDependency.'%')->get();
 
         return view ('depend.listD', compact('depend'));
     }
 
-    public function destroy($idDep)
+    public function destroy($idDependency)
     {
-        $depend = DependM::find($idDep);
+        $depend = DependM::find($idDependency);
         $depend->delete();
         return back();
     }

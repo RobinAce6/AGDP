@@ -13,13 +13,10 @@
 						<div class="wrap-input100 validate-input m-t-4">
 							<input class="input100" type="text" name="searchF" placeholder="Buscar..." required>							
 						</div>
-
-						<br>
-
 						<button class="btn btn-warning" type="submit">Buscar</button>
 
 						<div class="container-login100-form-btn">
-						   <a href="{{ route('newF')}}" class="btn btn-warning">Crear Nuevo Proyecto</a>
+						   <a href="{{ route('newF')}}" class="btn btn-warning">Nuevo Proyecto</a>
 						</div>
 
                   <div class="container-login100-form-btn">
@@ -31,6 +28,7 @@
 						<thead class="thead-light">
 							<tr>
 								<th scope="col"> # </th>
+								<th scope="col">Cliente</th>
 								<th scope="col">Nombre</th>
 								<th scope="col"> </th>
 							</tr>
@@ -39,6 +37,7 @@
 							@foreach ($folder as $folders)
 							<tr>
 								<td scope="row">{{ $folders->idFolder}}</td>
+								<td scope="row">{{ $folders->Client->nameClient}}</td>
 								<td scope="row">{{ $folders->nameFolder}}</td>
 								<td>
 									<a class="btn btn-link" href="{{ route('folder/edit', ['idFolder' => $folders->idFolder]) }}">Actualizar</a>
@@ -46,8 +45,7 @@
 								</td>
 							</tr>
 							@endforeach
-						</tbody>
-						
+						</tbody>						
 					</table>
 				</div>
 			</form>
