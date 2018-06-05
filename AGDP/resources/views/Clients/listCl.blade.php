@@ -36,8 +36,8 @@
 											<small><sup>*</sup> Campos obligatorios</small>
 										</div>
 										<div class="col-sm-12 col-md-12 form-group text-center ">
-											<button type="submit" class="btn btn-info">Guardar</button>
-											<a href="clients.html" class="btn btn-light">Cancelar</a>
+											<button class="btn btn-info">Guardar</button>
+											<a href="{{route('mainboard')}}" class="btn btn-light">Cancelar</a>
 										</div>
 									</div>
 								</form>
@@ -71,6 +71,9 @@
 					@endforeach
 				</tbody>
 			</table>
+		</div>
+		<div class="text-center col-sm-11">
+			<a href="{{route('mainboard')}}" class="btn btn-success">Home</a>
 		</div>
 	</div>
 </form>

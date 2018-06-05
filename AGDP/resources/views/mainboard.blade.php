@@ -17,8 +17,8 @@
 											<img src="img/correspondencia_2.png">
 											<h5 class="card-title">CORRESPONDENCIA</h5>
 											<p class="card-text">Gestión de la correspondencia recibida y enviada.</p>
-											<a href="../plantillas/mail.php" class="card-link">Nueva</a>
-											<a href="#" class="card-link">Ultimas Referencias</a>
+											<a href="{{route('maile')}}" class="card-link">Nueva</a>
+											<a href="{{route('maile.listM')}}" class="card-link">Ultimas Referencias</a>
 										</div>
 									</div>
 								</div>

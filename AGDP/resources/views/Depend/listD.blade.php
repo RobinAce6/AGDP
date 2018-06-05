@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form class="login100-form" method="POST" action="{{ route('searchD')}}">
+<form class="login100-form" method="POST" action="">
 
     {{ csrf_field() }}
     
@@ -44,8 +44,8 @@
 											<small><sup>*</sup> Campos obligatorios</small>
 										</div>
 										<div class="col-sm-12 col-md-12 form-group text-center ">
-											<button type="submit" class="btn btn-info">Guardar</button>
-											<a href="dependency.html" class="btn btn-light">Cancelar</a>
+											<button class="btn btn-info">Guardar</button>
+											<a href="{{route('mainboard')}}" class="btn btn-light">Cancelar</a>
 										</div>
 										
 									</div>
@@ -59,11 +59,11 @@
 		<div class="col-sm-11">
 			<br><br>
 			<div>
-			@foreach ($depend as $depends)
+				@foreach ($depend as $depends)
 				<div class="card">
 					<div class="card-header" id="headingOne">
 						<h6 class="mb-0" data-toggle="collapse" data-target="#gerencia" aria-expanded="true" aria-controls="gerencia">
-						Gerencia
+						{{$depends->nameDependency}}
 						<a class="btn btn-link" href="{{ route('depend/edit', ['idDependency' => $depends->idDependency]) }}"><i class="fas fa-pencil-alt float-right"></i></a>
 						</h6>
 					</div>
@@ -78,6 +78,7 @@
 				</div>
 			</div>
         </div>
+		<a href="{{route('mainboard')}}" class="btn btn-success">Home</a>
 	</div>
 </form>  
 @endsection

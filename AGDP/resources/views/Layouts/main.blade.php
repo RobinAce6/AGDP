@@ -31,8 +31,10 @@
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 @guest
                   <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                            <li><a class="nav-link" href="#">{{ __('Register') }}</a></li>
                  @else
+                 
+                <li><a class="nav-link" href="{{route('newU')}}">{{ __('Registro') }}</a></li>
+
                 <li class="nav-item">
                     <a class="nav-link text-uppercase" href="mails.html">Correspondencia</a>
                 </li>
@@ -43,7 +45,7 @@
                     <a class="nav-link text-uppercase" href="{{route('clients')}}">Clientes</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link active text-uppercase" href="{{route('folder')}}">Usuarios</a>
+                    <a class="nav-link active text-uppercase" href="{{route('user')}}">Usuarios</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-uppercase" href="{{route('depend')}}">Areas de Trabajo</a>
@@ -56,7 +58,7 @@
                 <div class="user">
                     <a class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Auth::user()->namePerson}}</a>
                     <div class="dropdown-menu dropdown-menu--user dropdown-menu-right">
-                        <a class="dropdown-item"  href="">Perfil de usuario</a>
+                        <a class="dropdown-item"  href="{{ route('profile')}}">Perfil de usuario</a>
                          <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

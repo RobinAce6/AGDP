@@ -79,5 +79,10 @@ class UserController extends Controller
         $user->delete();
         return back();
     }
+
+    public function Profile()
+    {
+        return view('profile');
+    }
 }
     

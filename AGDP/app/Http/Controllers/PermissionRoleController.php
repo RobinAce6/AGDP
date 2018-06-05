@@ -41,13 +41,19 @@ class PermissionRoleController extends Controller
      */
     public function store(Request $request)
     {
-        $permisrole = new PRM;
+        $permissions = $request['idPermission'];
+        foreach ($permissions as $permission)
 
-        $permisrole->permission_id = $request->idPermission;
-        $permisrole->role_id = $request->idRole;
+        //dd($permission);
 
-        $permisrole->save();
-        return redirect('permission_role.listPR');
+        $permirole = new PRM;
+
+        $permirole->permission_id = $permission;
+        $permirole->role_id = $request->idRole;
+
+        $permirole->save();
+
+        return redirect('permission_role.newPR');
     }
 
     /**

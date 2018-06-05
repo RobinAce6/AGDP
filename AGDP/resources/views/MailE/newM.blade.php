@@ -24,8 +24,9 @@
 
 			<div id="sent" class="sent d-none">
 				<form  class="needs-validation" novalidate>
+
 					<div class="form-group row">
-						<div class="col-sm-12 col-md-4">
+						<div class="col-sm-12 col-md-12">
 							<label for="" class="col-sm-12 col-lg-12 col-form-label">Fecha de envío <sup>*</sup></label>
 							<div class="col-sm-10 col-lg-12">
 								<input type="date" class="form-control" name="sentDate" value="" required>
@@ -34,7 +35,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-12 col-md-4">
+						<!-- <div class="col-sm-12 col-md-12">
 							<label for="" class="col-sm-12 col-lg-12 col-form-label">Hora de envío <sup>*</sup></label>
 							<div class="col-sm-10 col-lg-12">
 								<input type="time" class="form-control" name="create_at" value="" required>
@@ -42,7 +43,7 @@
 									Por favor ingrese la hora
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<div class="col-sm-12 col-md-4"> 
                                 <label for="" class="col-sm-12 col-lg-12 col-form-label">Ciudad Origen <sup>*</sup></label>
                                 <div class="col-sm-10 col-lg-12">
@@ -63,7 +64,6 @@
 									Por favor ingrese la ciudad
 								</div>
 						</div>
-                    </div>
                     
 					<div class="form-group row">
 						<div class="col-sm-12 col-md-4"> 
@@ -414,7 +414,7 @@
 					</div>
 					<div class="text-center">
 						<button type="submit" class="btn btn-info">Guardar</button>
-						<a href="mails.html" class="btn btn-light">Cancelar</a>
+						<a href="{{route('maile.listM')}}" class="btn btn-light">Cancelar</a>
 					</div>
 				</form>
 
