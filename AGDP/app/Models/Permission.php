@@ -8,7 +8,7 @@ use App\Models\Permission_Role;
 class Permission extends Model
 {
     protected $table = 'permission';
-    protected $fillable = ['namePermission'];
+    protected $fillable = ['namePermission','description'];
     protected $guarded = ['idPermission'];
     protected $primaryKey = 'idPermission';
 

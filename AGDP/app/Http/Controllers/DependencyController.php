@@ -15,48 +15,33 @@ class DependencyController extends Controller
         return view ('depend.listD', compact('depend'));
     }
 
-    public function create()
-    {
-        return view ('depend.newD');
-    }
+    // public function create()
+    // {
+    //     return view ('depend.newD');
+    // }
 
-    public function store(Request $request)
-    {
-        $depend = new DependM;
-        $depend->create($request->all());
-        return redirect('depend.listD');
-    }
+    // public function store(Request $request)
+    // {
+    //     $depend = new DependM;
+    //     $depend->create($request->all());
+    //     return redirect('depend.listD');
+    // }
 
-    public function edit($idDependency)
-    {
-        $depend = DependM::find($idDependency);
-        return view('depend.updateD', compact('depend'));
-    }
+    // public function edit($idDependency)
+    // {
+    //     $depend = DependM::find($idDependency);
+    //     return view('depend.updateD', compact('depend'));
+    // }
     
-    public function update(Request $request, $idDependency)
-    {
-        $depend = DependM::find($idDependency);
+    // public function update(Request $request, $idDependency)
+    // {
+    //     $depend = DependM::find($idDependency);
         
-        $depend->nameDependency = $request->nameDependency;
+    //     $depend->nameDependency = $request->nameDependency;
 
-        $depend->save();
+    //     $depend->save();
 
-        return redirect('depend.listD');
-    }
+    //     return redirect('depend.listD');
+    // }
     
-    public function search(Request $request)
-    {
-        $depend = DependM::where('idDependency', 'like','%'.$request->idDependency.'%')->get();
-
-        $depend = DependM::where('nameDependency', 'like', '%'.$request->nameDependency.'%')->get();
-
-        return view ('depend.listD', compact('depend'));
-    }
-
-    public function destroy($idDependency)
-    {
-        $depend = DependM::find($idDependency);
-        $depend->delete();
-        return back();
-    }
 }

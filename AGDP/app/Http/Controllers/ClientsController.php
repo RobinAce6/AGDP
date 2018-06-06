@@ -30,7 +30,7 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        return view ('clients.newCl');
+        return view ('clients.listCl');
     }
 
     /**
@@ -45,7 +45,9 @@ class ClientsController extends Controller
 
         $client->nameClient = $request->nameClient;
 
-        return redirect('clients.listCl');
+        $client->save();
+
+        return back();
     }
 
     /**
@@ -102,7 +104,7 @@ class ClientsController extends Controller
         return back();
     }
 
-    public function search ()
+    public function search (Request $request)
     {
        $client = Client::where('nameClient', 'like','%'.$request->nameClient.'%')->get();
     }

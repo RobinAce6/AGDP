@@ -50,7 +50,6 @@
         <div class="form-group row">
           <label for="" class="col-sm-2 col-lg-4 col-form-label">Área de trabajo <sup>*</sup></label>
           <div class="col-sm-10 col-lg-8">
-            
             <select class="form-control custom-select" name="idDependency">
             @foreach ($depend as $Depend)
                <option value="{{$Depend->idDependency}}">{{$Depend->nameDependency}}</option>

@@ -66,10 +66,9 @@
 											<img src="img/area_trabajo_2.png">
 
 											
-											<h5 class="card-title">ÁREAS DE TRABAJO</h5>
+											<h5 class="card-title">DEPENDENCIAS</h5>
 											<p class="card-text">Gestión de las diferentes áreas de trabajo. Ej.</p>
-											<a href="{{ route('depend')}}" class="card-link">Crear</a>
-											<a href="{{ route('depend')}}" class="card-link">Ver Listado</a>
+											<a href="{{ route('depend')}}" class="card-link">Ver Dependencias</a>
 										</div>
 									</div>
 								</div>

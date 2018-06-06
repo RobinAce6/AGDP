@@ -26,7 +26,7 @@ class PermissionController extends Controller
      */
     public function create()
     {
-       return view('permission.newPr');
+       return view('permission.listPr');
     }
 
     /**
@@ -39,7 +39,7 @@ class PermissionController extends Controller
     {
         $permiss = new PM;
         $permiss->create($request->all());
-        return redirect('permission.listPr');
+        return back();
     }
 
     /**
@@ -77,6 +77,7 @@ class PermissionController extends Controller
         $permiss = PM::find($idPermission);
 
         $permiss->namePermission = $request->namePermission;
+        $permiss->description = $request->description;
 
         $permiss->save();
 

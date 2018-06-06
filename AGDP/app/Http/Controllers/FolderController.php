@@ -11,17 +11,18 @@ use Illuminate\Http\Request;
 class FolderController extends Controller
 {
     
-    public function index() 
+    public function index(Request $request) 
     {
+        $client = Client::all();
         $folder = FolderM::with('Client')->get();
-        return view('folder.listF', compact('folder'));
+        return view('folder.listF', compact('folder', 'client'));
     }
 
    
     public function create()
     {
         $client = Client::all();
-        return view ('folder.newF', compact('client'));
+        return view ('folder.listF', compact('client'));
     }
 
     public function store (Request $request)
@@ -33,7 +34,7 @@ class FolderController extends Controller
  
         $folder->save();
 
-        return redirect('folder.listF');
+        return back();
     }
 
     
@@ -54,13 +55,6 @@ class FolderController extends Controller
         $folder->save();
 
         return redirect('folder.listF');
-    }
-
-    public function search(Request $request)
-     {
-        $folder = FolderM::where('nameFolder','like', '%'.$request->nameFolder.'%')->get();
-
-        return view('folder.listF', compact('folder'));
     }
 
    

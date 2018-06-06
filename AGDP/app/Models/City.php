@@ -10,10 +10,14 @@ use App\Models\MailE;
 class City extends Model
 {
     protected $table 	= 'city';
-	protected $fillable = [
+
+	protected $fillable = 
+    [
         'nameCity', 'department_id'
-        ];
+    ];
+
 	protected $guarded  = ['idCity'];
+    
 	protected $primaryKey = 'idCity';
 
 	public function Department()

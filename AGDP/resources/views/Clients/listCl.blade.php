@@ -1,7 +1,7 @@
 @extends('layouts.main') 
 
 @section('content')
-<form class="login100-form" method="POST" action="{{ route('searchD')}}">
+<form  method="POST" action="{{ route('storeCl')}}">
 	{{ csrf_field() }}
     <div class="row justify-content-center main-container">
 		<div class="col-sm-11">
@@ -15,18 +15,9 @@
 								<form  class="needs-validation" novalidate>
 									<div class="row justify-content-center">
 										<div class="col-sm-12 col-md-6 form-group text-left">
-											<label for="" class="col-sm-12 col-lg-4 col-form-label">Consecutivo <sup>*</sup></label>
-											<div class="col-sm-10 col-lg-12">
-												<input type="text" class="form-control" id="" value="" required>
-												<div class="invalid-feedback">
-													Por favor ingrese el consecutivo
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-12 col-md-6 form-group text-left">
 											<label for="" class="col-sm-12 col-lg-4 col-form-label">Nombre <sup>*</sup></label>
 											<div class="col-sm-10 col-lg-12">
-												<input type="text" class="form-control" id="" value="" required>
+												<input type="text" class="form-control" name="nameClient" required>
 												<div class="invalid-feedback">
 													Por favor ingrese el nombre
 												</div>
@@ -36,7 +27,7 @@
 											<small><sup>*</sup> Campos obligatorios</small>
 										</div>
 										<div class="col-sm-12 col-md-12 form-group text-center ">
-											<button class="btn btn-info">Guardar</button>
+											<button class="btn btn-success" >Guardar</button>
 											<a href="{{route('mainboard')}}" class="btn btn-light">Cancelar</a>
 										</div>
 									</div>
@@ -62,7 +53,11 @@
 					@foreach ($client as $clients)
 					<tr>
 						<td scope="row">{{ $clients->nameClient}}</td>
-						<td scope="row">{{ $clients->folder}}</td>
+						<td scope="row">
+							@foreach($clients->folder as $folder)
+								<ul>{{$folder->nameFolder}}</ul>
+							@endforeach
+						</td>
 						<td scope="row">{{ $clients->mail}}</td>
 						<td>
 							<a class="btn btn-link" href="{{ route('clients/edit', ['idClient' => $clients->idClient]) }}"><i class="fas fa-pencil-alt"></i></a>

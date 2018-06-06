@@ -2,57 +2,36 @@
 
 @section('content')
 
-<div class="limiter">
-	<div class="container-login98">
-		<div class="wrap-login98">
-			<form class="login100-form" method="POST" action="{{ route('searchR')}}">
-
-				{{ csrf_field() }}
+<form  method="GET" action="{{route('mainboard')}}">
+	{{ csrf_field() }}
+    <div class="row justify-content-center main-container">
 				
-				<div class="container-login98">
-					<div class="form-group">
-						<div class="wrap-input100 validate-input m-t-4">
-							<input class="input100" type="text" name="searchR" placeholder="Buscar..." required>							
-						</div>
-
-						<br>
-
-						<button class="btn btn-warning" type="submit">Buscar</button>
-
-						<div class="container-login100-form-btn">
-						   <a href="{{ route('newR')}}" class="btn btn-warning">Crear Nuevo Rol</a>
-						</div>
-
-                  <div class="container-login100-form-btn">
-                     <a href="{{ route('mainboard' )}}" class="btn btn-danger"> Home </a>
-                  </div>
-					</div>
-
-					<table class="table table-bordered">
-						<thead class="thead-light">
-							<tr>
-								<th scope="col"> # </th>
-								<th scope="col">Nombre</th>
-								<th scope="col"> </th>
-							</tr>
-						</thead>
-						<tbody class="table table-bordered">
-							@foreach ($role as $roles)
-							<tr>
-								<td scope="row">{{ $roles->idRole}}</td>
-								<td scope="row">{{ $roles->nameRole}}</td>
-								<td>
-									<a class="btn btn-link" href="{{ route('role/edit', ['idRole' => $roles->idRole]) }}">Actualizar</a>
-								</td>
-							</tr>
-							@endforeach
-						</tbody>
-						
-					</table>
-				</div>
-			</form>
+		<div class="col-sm-11">
+			<h1 class="text-center text-uppercase">Roles del Sistema</h1> <br>
+			<br><br>
+			<table  class=" table-search hover text-center" style="width:100%">
+				<thead class="thead-light">
+					<tr>
+						<th scope="col">Permiso</th>
+						<th scope="col">Descripción</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach ($role as $role)
+					<tr>
+						<td scope="row">{{ $role->nameRole}}</td>
+						<td scope="row">{{ $role->description}}</td>
+					</tr>
+					@endforeach
+				</tbody>
+			</table>
 		</div>
+
+		<div class="text-center col-sm-11">
+			<button  class="btn btn-success">Home</button>
+		</div>
+
 	</div>
-</div>
+</form>
 
 @endsection

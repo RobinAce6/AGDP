@@ -4,7 +4,7 @@
 <div class="limiter">
 	<div class="container-login100">
 		<div class="wrap-login100 p-t-65 p-b-10">
-			<form class="login100-form validate-form" method="POST"	action="{{ route('updateC', [$city->idCity]) }}">
+			<form class="login100-form validate-form" method="POST"	action="">
 				
 				{{ method_field('PUT')}}
 				{{ csrf_field() }}
@@ -33,11 +33,11 @@
 					</div>
 					<br>
 					<div class="container-login100-form-btn">
-						<a href="{{ route('city.listC')}}" class="btn btn-danger">Cancelar</a>
+						<a href="" class="btn btn-danger">Cancelar</a>
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<a href="{{ route('city.listC')}}" class="btn btn-primary">Regresar a la Lista</a>
+						<a href="" class="btn btn-primary">Regresar a la Lista</a>
 					</div>
 
 				</div>

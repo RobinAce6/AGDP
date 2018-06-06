@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form class="login100-form" method="POST" action="{{ route('searchU')}}" novalidate>
+<form class="login100-form" method="POST" action="" novalidate>
    {{ csrf_field() }}
 
    <div class="row justify-content-center main-container">
@@ -46,6 +46,7 @@
 
    <div>
       <a href="{{route('mainboard')}}" class="btn btn-success">Cancelar</a>
+      <a href="{{route('newU')}}" class="btn btn-warning">Nuevo Usuario del Sistema</a>
    </div>
 
    <div class="modal fade modal-lock" tabindex="-1" role="dialog" aria-labelledby="modal-lock" aria-hidden="true">

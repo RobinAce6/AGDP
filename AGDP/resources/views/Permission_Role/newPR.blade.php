@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
 <form class="login100-form validate-form" method="POST" action="{{route('storePR')}}" novalidate>
@@ -34,7 +34,7 @@
                         </div>
                             <div class="row">
                               @foreach ($permission as $permission)
-                              <div class="form-check col-sm-10 col-lg-3">
+                              <div class="form-check col-sm-10 col-lg-3">   
                                 <input class="form-check-input" type="checkbox" value="{{$permission->idPermission}}" id="idPermission"   name="idPermission[]">
                                 <label class="form-check-label" for="idPermission">
                                {{$permission->namePermission}}
@@ -66,34 +66,48 @@
       <div class="col-sm-11">
         <br><br>
         <div>
-          @foreach($role as $Role)
           <div class="card">
             <div class="card-header" id="headingOne" value="{{$Role->idRole}}">
               <h6 class="mb-0" data-toggle="collapse" data-target="#superadmin" aria-expanded="true" aria-controls="superadmin">
-              {{$Role->nameRole}}
-              <a href=""><i class="fas fa-pencil-alt float-right"></i></a>
+              <a href=""><i class="fas fa-pencil-alt float-right"></i></a>Ver Todos
               </h6>
-              @endforeach
             </div>
             <div id="superadmin" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
               <div class="card-body">
                 <p><strong>Permisos</strong></p>
+                <div class="form-group row">
+                  <label for="" class="col-sm-2 col-lg-4 col-form-label">Escoja un rol</label>
+                  <div class="col-sm-10 col-lg-8">
+                    <select class="form-control custom-select" name="idRole">
+                    @foreach ($role as $Role)
+                       <option value="{{$Role->idRole}}">{{$Role->nameRole}}</option>
+                    @endforeach
+                    </select>
+                  </div>
+                </div>
+
                 <div class="col-sm-12 form-group text-center">
                   <div class="row">
                     <div class="col-sm-12 col-md-3 text-left">
-                      <p  class="text-left col-sm-12 permission-title">-Usuario</p>
+                      <p  class="text-left col-sm-12 permission-title">Permisos</p>
                     </div>
-                    <div class="col-sm-12 col-md-9 text-left">
-                      <ul class="permission">
-                        <li >Crear</li>
-                      </ul> 
-                    </div>
+                    @foreach ($permission as $permis)
+                      @if ($Role->idRole == $permission->idPermission)
+                      <div class="col-sm-12 col-md-9 text-left">
+                        <ul class="permission">
+                          <li>{{$permission->namePermission}}</li>
+                        </ul> 
+                      </div>
+                      @endif
+                    @endforeach
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
         </div>
+        
       </div>
     </div>
 </form>

@@ -36,7 +36,7 @@
                 <li><a class="nav-link" href="{{route('newU')}}">{{ __('Registro') }}</a></li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-uppercase" href="mails.html">Correspondencia</a>
+                    <a class="nav-link text-uppercase" href="{{route('maile')}}">Correspondencia</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-uppercase" href="{{route('folder')}}">Proyectos</a>

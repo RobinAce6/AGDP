@@ -33,7 +33,6 @@
 								<th scope="col">#</th>
 								<th scope="col"> Nombre </th>
 								<th scope="col"> Departamento </th>
-								<th scope="col"> </th>
 							</tr>
 						</thead>
 						<tbody class="table table-bordered">
@@ -42,10 +41,6 @@
 								<td scope="row">{{ $city->idCity }}</td>
 								<td scope="row">{{ $city->nameCity }}</td>
 								<td scope="row">{{ $city->Department->nameDepartment}}</td>
-								<td>
-									<a class="btn btn-link" href="{{ route('city/edit', ['idCity' => $city->idCity]) }}">Actualizar</a>
-									<a href="{{ route('city/destroy', ['idCity' => $city->idCity]) }}">Eliminar</a>
-								</td>
 							</tr>
 							@endforeach
 						</tbody>

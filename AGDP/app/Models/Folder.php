@@ -10,7 +10,7 @@ use App\Models\Clients;
 class Folder extends Model
 {
     protected $table    = 'folder';
-    protected $fillable = ['nameFolder', 'client_id'];   
+    protected $fillable = ['nameFolder','client_id'];   
     protected $guarded  = ['idFolder'];
     protected $primaryKey = 'idFolder';
 

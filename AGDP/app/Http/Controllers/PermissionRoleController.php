@@ -46,14 +46,14 @@ class PermissionRoleController extends Controller
 
         //dd($permission);
 
-        $permirole = new PRM;
+        $permisrole = new PRM;
 
-        $permirole->permission_id = $permission;
-        $permirole->role_id = $request->idRole;
+        $permisrole->permission_id = $permission;
+        $permisrole->role_id = $request->idRole;
 
-        $permirole->save();
+        $permisrole->save();
 
-        return redirect('permission_role.newPR');
+        return back();
     }
 
     /**
