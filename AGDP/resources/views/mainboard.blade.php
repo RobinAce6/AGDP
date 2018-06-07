@@ -2,13 +2,18 @@
 
 @section('content')
 
-			<div class="container">
-				<div class="wrapper-dashboard">
+		<div class="container">
+			<div class="wrapper-dashboard">
+				<div class="row content-card justify-content-md-center" style="margin-top:0%;">
+					<div class="jumbotron jumbotron-fluid" style="width: 100%; padding:4%">
+						<div class="container">
+							<h1 class="display-4 text-center">Bienvenido<strong> {{Auth::user()->namePerson}}</strong></h1>
+						</div>
+					</div>
+				</div>
 				<form class="form-group" method="POST" action="{{ route('logout') }}">
 
 					{{ csrf_field() }}
-
-					<div class="row content-card justify-content-md-center">
 						<div class="container text-center">
 							<div class="row content-card justify-content-md-center">
 								<div class="col-md-4 text-center">
@@ -25,11 +30,10 @@
 								<div class="col-sm-4 text-center">
 									<div class="card" style="width: 18rem;">
 										<div class="card-body">
-											<img src="img/proyectos.png">
+											<img src="img/folder.png">
 											<h5 class="card-title">PROYECTOS</h5>
 											<p class="card-text">Gestión de los proyectos que se realizan en la empresa.</p>
-											<a href="#" class="card-link">Crear</a>
-											<a href="#" class="card-link">Ver Listado</a>
+											<a href="{{route('folder')}}" class="card-link">Ir</a>
 										</div>
 									</div>
 								</div>
@@ -72,7 +76,21 @@
 										</div>
 									</div>
 								</div>
+								<div class="col-sm-4 text-center">
+									<div class="card" style="width: 18rem;">
+										<div class="card-body">
+											<img src="img/proyectos.png">
+
+											
+											<h5 class="card-title">OTRAS CONFIGURACIONES</h5>
+											<p class="card-text">Formato de Correspondencia, Cargo, Ciudades, Permisos, Roles del Sistema, entre otros.</p>
+											<a href="{{ route('depend')}}" class="card-link">Ir</a>
+										</div>
+									</div>
+								</div>
 							</div>
+
+							
 						</div>
 					</div>
 				</div>
