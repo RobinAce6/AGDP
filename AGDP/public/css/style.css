@@ -720,3 +720,8 @@ form .password {
 @media (min-width: 1024px) {
   .hidden-desktop {
     display: none !important; } }
+
+.navbar-brand
+{
+  padding: 18px 16px;
+}

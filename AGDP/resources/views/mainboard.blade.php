@@ -22,7 +22,7 @@
 											<img src="img/correspondencia_2.png">
 											<h5 class="card-title">CORRESPONDENCIA</h5>
 											<p class="card-text">Gestión de la correspondencia recibida y enviada.</p>
-											<a href="{{route('maile')}}" class="card-link">Nueva</a>
+											<a href="{{route('newM')}}" class="card-link">Nueva</a>
 											<a href="{{route('maile.listM')}}" class="card-link">Ultimas Referencias</a>
 										</div>
 									</div>
@@ -44,8 +44,7 @@
 
 											<h5 class="card-title">CLIENTES</h5>
 											<p class="card-text">Gestión de remitentes y destinatarios de la correspondencia</p>
-											<a href="{{ route('clients')}}" class="card-link">Crear</a>
-											<a href="{{ route('clients')}}" class="card-link">Ver Listado</a>
+											<a href="{{ route('clients')}}" class="card-link">Ir</a>
 										</div>
 									</div>
 								</div>
@@ -59,7 +58,7 @@
 											<img src="img/usuarios.png">
 											<h5 class="card-title">USUARIOS</h5>
 											<p class="card-text">Administración de usuarios, roles, permisos y cargos en la empresa.</p>
-											<a href="{{ route('user')}}" class="card-link">Crear</a>
+											<a href="{{ route('newU')}}" class="card-link">Crear</a>
 											<a href="{{ route('user')}}" class="card-link">Ver Listado</a>
 										</div>
 									</div>
@@ -84,7 +83,7 @@
 											
 											<h5 class="card-title">OTRAS CONFIGURACIONES</h5>
 											<p class="card-text">Formato de Correspondencia, Cargo, Ciudades, Permisos, Roles del Sistema, entre otros.</p>
-											<a href="{{ route('depend')}}" class="card-link">Ir</a>
+											<a href="{{ route('others')}}" class="card-link">Ir</a>
 										</div>
 									</div>
 								</div>

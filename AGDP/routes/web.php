@@ -17,6 +17,7 @@ Route::GET('mainboard', 'MainboardController@index')->name('mainboard');
 Route::POST('login', 'Auth\LoginController@login')->name('login');
 Route::POST('logout', 'Auth\LoginController@logout')->name('logout');
 Route::GET('profile', 'UserController@profile')->name('profile');
+Route::GET('others', 'UserController@Others')->name('others');
 
 
 // City Routes
@@ -103,7 +104,7 @@ Route::GET ('user', 'UserController@index')					->name('user');
 Route::GET ('user.listU', 'UserController@index')			->name('user.listU');
 Route::POST('user','UserController@store')					->name('storeU');
 Route::GET ('user/create', 'UserController@create')			->name('newU');
-Route::POST('user/search', 'UserController@search')			->name('searchU');
+//Route::POST('user/search', 'UserController@search')			->name('searchU');
 Route::PUT ('user/update/{id}', 'UserController@update')	->name('updateU');
 //Route::GET ('user/destroy/{id}', 'UserController@destroy')	->name('user/destroy');
 Route::GET ('user/edit/{id}', 'UserController@edit')		->name('user/edit');

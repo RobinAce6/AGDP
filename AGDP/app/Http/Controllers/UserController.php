@@ -13,8 +13,10 @@ class UserController extends Controller
 
     public function index()
     {
+        $typep  = TPM::all();
+        $depend = DM::all();
         $user = UserM::with('TypePerson', 'Dependency')->get();
-        return view('user.listU', compact('user'));
+        return view('user.listU', compact('user','typep', 'depend'));
     }
 
     
@@ -39,7 +41,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect('user.listU');
+        return redirect('user');
     }
 
     public function edit($idUser)
@@ -52,7 +54,7 @@ class UserController extends Controller
     }
 
     public function update(Request $request, $idUser)
-    {
+    {             
         $user = UserM::find($idUser);
 
         $user->codPerson      = $request->codPerson;
@@ -65,7 +67,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect('user.listU');
+        return redirect('user');
     }
 
     public function search (Request $request)
@@ -83,6 +85,11 @@ class UserController extends Controller
     public function Profile()
     {
         return view('profile');
+    }
+
+    public function Others()
+    {
+        return view('others');
     }
 }
     

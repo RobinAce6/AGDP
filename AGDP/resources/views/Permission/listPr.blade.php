@@ -65,7 +65,7 @@
 			</table>
 		</div>
 		<div class="text-center col-sm-11">
-			<a href="{{route('mainboard')}}" class="btn btn-success">Home</a>
+			<a href="{{route('others')}}" class="btn btn-success">Home</a>
 		</div>
 	</div>
 </form>

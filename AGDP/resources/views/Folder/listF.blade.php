@@ -9,6 +9,7 @@
 			<h1 class="text-center text-uppercase">Proyectos</h1> <br>	
 			<div class="col-sm-12">
 				<button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> <i class="fas fa-plus"></i> Nuevo Proyecto </button>
+				<a href="{{route('mainboard')}}" class="btn btn-success">Home</a>
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="collapse" id="collapseExample">
@@ -71,7 +72,7 @@
 			</table>
 		</div>
 		<div class="text-center col-sm-11">
-			<a href="{{route('mainboard')}}" class="btn btn-success">Home</a>
+			
 		</div>
 	</div>
 </form>

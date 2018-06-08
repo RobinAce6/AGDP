@@ -4,13 +4,14 @@
 
 <div class="row justify-content-center main-container">
    <div class="col-sm-11">
-      <form method="POST" action="{{ route('storeSW')}}">
+    <form method="POST" action="{{ route('storeSW')}}">
 
          {{ csrf_field() }}
 
          <h1 class="text-center text-uppercase ">Formato<small class="text-center"> Almacenamiento Documento</small> <br>   </h1>
          <div class="col-sm-12">
             <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> <i class="fas fa-plus"></i> Nuevo Formato </button>
+          <a href="{{route('others')}}" class="btn btn-success">Home</a>
             <div class="row">
                <div class="col-sm-12">
                   <div class="collapse" id="collapseExample">
@@ -37,7 +38,6 @@
                </div>
             </div>
          </div>
-      </div>
       <form  >
          <div class="col-sm-11">
          @foreach($storagew as $Storage)
@@ -63,6 +63,7 @@
                            <form class="login100-form validate-form" method="POST"  action="{{ route('updateSW', [$Storage->idStorageWay]) }}">
                                   {{ method_field('PUT') }}
                                   {{ csrf_field() }}
+                                  
                                  <input type="text" class="form-control" name="nameSW" value="{{ $Storage->nameSW }}" required>
 
                                  <div class="modal-footer">
@@ -79,5 +80,7 @@
          @endforeach
          </div>
       </form>
-   </form>
+    </form>
+  </div>
+</div>
 @endsection

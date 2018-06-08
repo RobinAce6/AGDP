@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form  method="GET" action="{{route('mainboard')}}">
+<form  method="GET" action="{{route('others')}}">
 	{{ csrf_field() }}
     <div class="row justify-content-center main-container">
 				
