@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
 
 <div class="row justify-content-center main-container">
 
-	<form class="login100-form" method="POST" action="{{ route('searchR')}}">
+	<form class="login100-form" method="POST" action="{{ route('searchPR')}}">
 		{{ csrf_field() }}
 
 		<div class="col-sm-11">

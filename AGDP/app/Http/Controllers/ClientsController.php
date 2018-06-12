@@ -30,7 +30,7 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        return view ('clients.listCl');
+        return view ('clients');
     }
 
     /**
@@ -43,7 +43,9 @@ class ClientsController extends Controller
     {
         $client = new Client;
 
+        $client->nitClient = $request->nitClient;
         $client->nameClient = $request->nameClient;
+        $client->addressClient = $request->addressClient;
 
         $client->save();
 
@@ -84,11 +86,13 @@ class ClientsController extends Controller
     {
         $client = Client::find($idClient); 
 
+        $client->nitClient = $request->nitClient;
         $client->nameClient = $request->nameClient;
+        $client->addressClient = $request->addressClient;
 
         $client->save();
 
-        return redirect('clients.listCl');
+        return redirect('clients');
     }
 
     /**
@@ -97,17 +101,17 @@ class ClientsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($idClient)
-    {
-        $client = Client::find($idClient);
-        $client->delete();
-        return back();
-    }
+    // public function destroy($idClient)
+    // {
+    //     $client = Client::find($idClient);
+    //     $client->delete();
+    //     return back();
+    // }
 
-    public function search (Request $request)
-    {
-       $client = Client::where('nameClient', 'like','%'.$request->nameClient.'%')->get();
-    }
+    // public function search (Request $request)
+    // {
+    //    $client = Client::where('nameClient', 'like','%'.$request->nameClient.'%')->get();
+    // }
 
 
    

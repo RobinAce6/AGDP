@@ -11,8 +11,8 @@
 		<div class="col-sm-11">
 			<br><br>
 			<div>
-				@foreach ($depend as $depends)
 				<div class="card">
+				@foreach ($depend as $depends)
 					<div class="card-header" id="headingOne">
 						<h6 class="mb-0" data-toggle="collapse" data-target="#gerencia" aria-expanded="true" aria-controls="gerencia">
 						{{$depends->nameDependency}}
@@ -25,11 +25,10 @@
 							<p><strong>Trabajadores:</strong></p>
 						</div>
 					</div>
-				</div>
 				@endforeach
+				</div>
 			</div>
         </div>
-		<a href="{{route('mainboard')}}" class="btn btn-success">Home</a>
 	</div>
 </form>  
 @endsection

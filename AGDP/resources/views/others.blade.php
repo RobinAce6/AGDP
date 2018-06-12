@@ -10,7 +10,7 @@
                   <div class="card border-primary" style="width: 18rem;">
                      <div class="card-body text-primary">
                         <h5 class="card-title">Cargo</h5>
-                        <buton href="{{route('typePerson')}}" class=" btn btn-link">Ver</buton>
+                        <a href="{{route('typePerson')}}" class=" btn btn-link">Ver</a>
                      </div>
                   </div>
                </div>
@@ -19,7 +19,7 @@
          			<div class="card border-primary" style="width: 18rem;">
          				<div class="card-body text-primary">
          					<h5 class="card-title">Formato Documento</h5>
-                        <button href="{{route('storagew')}}" class="btn btn-link">Ver</button>
+                        <a href="{{route('storagew')}}" class="btn btn-link">Ver</a>
          				</div>
          			</div>
          		</div>
@@ -30,7 +30,7 @@
                   <div class="card border-primary" style="width: 18rem;">
                      <div class="card-body text-primary">
                         <h5 class="card-title">Roles del Sistema</h5>
-                        <button href="{{ route('role')}}" class="btn btn-link">Ver</button>
+                        <a href="{{ route('role')}}" class="btn btn-link">Ver</a>
                      </div>
                   </div>
                </div>
@@ -38,7 +38,7 @@
          			<div class="card border-primary" style="width: 18rem;">
          				<div class="card-body text-primary">
          					<h5 class="card-title">Permisos del Sistema</h5>
-                        <button href="{{ route('permission')}}" class="btn btn-link">Ver</button>
+                        <a href="{{ route('permission')}}" class="btn btn-link">Ver</a>
          				</div>
          			</div>
          		</div>

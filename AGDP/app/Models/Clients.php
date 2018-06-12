@@ -8,7 +8,7 @@ use App\Models\Folder;
 class Clients extends Model
 {
     protected $table 	= 'clients';
-    protected $fillable = ['nameClient'];
+    protected $fillable = ['nitClient', 'nameClient', 'addressClient'];
     protected $guarded	= ['idClient'];								
     protected $primaryKey = 'idClient';
 

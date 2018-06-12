@@ -11,8 +11,7 @@
       	<div class="col-sm-12 text-left">
             <div>
                <h1 class="text-center text-uppercase">Usuarios</h1> <br>
-                     <a href="{{route('mainboard')}}" class="btn btn-secondary">Cancelar</a>
-                     <a href="{{route('newU')}}" class="btn btn-success">Nuevo Usuario del Sistema</a><br><br>
+                     <a href="{{route('newU')}}" class="btn btn-info">Nuevo Usuario del Sistema</a><br><br>
                   </div>
                   <div>
       			      <table  class="table-search table-users hover  text-center" style="width:100%">
@@ -55,7 +54,7 @@
                                        </div>
 
                                        <div class="modal-body">
-                                          <form class="needs-validation"  method="POST" action="{{ route('updateU', [$users->idUser]) }}"novalidate>
+                                          <form class="needs-validation"  method="POST" action="{{ route('updateU', [$users->idUser]) }}" novalidate>
 
                                             {{ method_field('PUT')}}              
                                             {{ csrf_field() }}
@@ -67,7 +66,7 @@
                                                     <br>
                                                    <input class="form-control" type="text" name="lastnamePerson" value="{{ $users->lastnamePerson }}" required>
                                                     <br>
-                                                   <input class="form-control" type="text" name="email" value="{{ $users->email }}" required>
+                                                   <input class="form-control" type="text" name="email" value="{{ $users->email }}" pattern="[a-z0-9._%+-]+@[consultecnicos.-]+\.[a-z]{2,3}$" title="Solo correo corporativo" required>
                                                     <br>
                                                </div>
                                              <div class="form-group">
@@ -135,7 +134,7 @@
          			<div class="modal-body text-center">
          				<p>¿Desea habilitar este usuario?</p>
          				<button  class="btn btn-light" data-dismiss="modal" aria-label="Close">Cancelar</button>
-         				<button type="submit" class="btn btn-info">Aceptar</button>
+         				<button class="btn btn-info">Aceptar</button>
          			</div>
          		</div>
          	</div>

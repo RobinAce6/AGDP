@@ -34,14 +34,12 @@ Route::GET ('city', 'CityController@index')					->name('city');
 // Clients Routes
 
 Route::GET ('clients', 'ClientsController@index')				->name('clients');
-Route::GET ('clients.listCl', 'ClientsController@index')		->name('clients.listCl');
+//Route::GET ('clients.listCl', 'ClientsController@index')		->name('clients/Ver');
 Route::POST('clients','ClientsController@store')				->name('storeCl');
-Route::GET ('clients/create', 'ClientsController@create')		->name('newCl');
-Route::POST('clients/search', 'ClientsController@search')		->name('searchCl');
-Route::PUT ('clients/update/{id}', 'ClientsController@update')	->name('updateCl');
-Route::GET ('clients/destroy/{id}', 'ClientsController@destroy')->name('clients/destroy');
+//Route::GET ('clients/Nuevo', 'ClientsController@create')		->name('Nuevo');
+Route::PUT ('clients/Actualizar/{id}', 'ClientsController@update')->name('Actualizar');
+//Route::GET ('clients/destroy/{id}', 'ClientsController@destroy')->name('clients/destroy');
 Route::GET ('clients/edit/{id}', 'ClientsController@edit')		->name('clients/edit');
-Route::GET ('clients/listCl', 'ClientsController@union')		->name('clients/listCl');
 
 // Role_User Routes
 
@@ -56,7 +54,7 @@ Route::GET ('clients/listCl', 'ClientsController@union')		->name('clients/listCl
 
 // Permissions Routes
 
- Route::GET ('permission', 'PermissionController@index')				->name('permission');
+Route::GET ('permission', 'PermissionController@index')				->name('permission');
 // Route::GET ('permission.listPr', 'PermissionController@index')		->name('permission.listPr');
 Route::POST('permission','PermissionController@store')				->name('storePr');
 // Route::GET ('permission/create', 'PermissionController@create')		->name('newPr');
@@ -79,7 +77,7 @@ Route::GET ('permission_role/edit/{id}', 'PermissionRoleController@edit')		->nam
 //Role Routes
 
 Route::GET ('role', 'RoleController@index')					->name('role');
-// Route::GET ('role.listR', 'RoleController@index')			->name('role.listR');
+Route::GET ('role.listR', 'RoleController@index')			->name('role.listR');
 Route::POST('role','RoleController@store')					->name('storeR');
 //Route::GET ('role/create', 'RoleController@create')			->name('newR');
 //Route::POST('role/search', 'RoleController@search')			->name('searchR');
