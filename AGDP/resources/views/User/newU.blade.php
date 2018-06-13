@@ -71,7 +71,7 @@
                       Por favor ingrese el cargo
                     </div>
                  </div>
-           </div>      
+           </div> 
           <div class="form-group text-right">
             <small><sup>*</sup> Campos obligatorios</small>
           </div>

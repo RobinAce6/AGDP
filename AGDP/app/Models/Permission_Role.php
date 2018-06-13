@@ -13,7 +13,7 @@ class Permission_Role extends Model
     protected $guarded = ['nPR'];
     protected $primaryKey = 'nPR';
 
-    public function Roles()
+    public function Roles() 
     {
         return $this->belongsTo(Role::class,'role_id', 'idRole');
     }

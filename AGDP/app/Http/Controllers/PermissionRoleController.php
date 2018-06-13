@@ -17,8 +17,10 @@ class PermissionRoleController extends Controller
      */
     public function index()
     {
+        $permission = Permission::all();
+        $role = Role::all();
         $permisrole = PRM::with('Permissions', 'Roles')->get();
-        return view('permission_role.listPR', compact('permisrole'));
+        return view('permission_role.listPR', compact('permisrole','permission', 'role'));
     }
 
     /**
@@ -30,7 +32,7 @@ class PermissionRoleController extends Controller
     {
         $permission = Permission::all();
         $role = Role::all();
-        return view('permission_role.newPR', compact(['permission', 'role']));
+        return view('permission_role', compact(['permission', 'role']));
     }
 
     /**
@@ -41,14 +43,9 @@ class PermissionRoleController extends Controller
      */
     public function store(Request $request)
     {
-        $permissions = $request['idPermission'];
-        foreach ($permissions as $permission)
-
-        //dd($permission);
-
         $permisrole = new PRM;
 
-        $permisrole->permission_id = $permission;
+        $permisrole->permission_id = $request->idPermission;
         $permisrole->role_id = $request->idRole;
 
         $permisrole->save();
@@ -101,4 +98,6 @@ class PermissionRoleController extends Controller
         $permisrole->delete();
         return back();
     }
+
+
 }
