@@ -63,8 +63,16 @@
 				<tbody>
 					@foreach ($permisrole as $permisRole)
 					<tr>
-                  <td scope="row">{{ $permisRole->Roles->nameRole}}</td>
-						<td scope="row">{{ $permisRole->Permissions->namePermission}}</td>
+                  <td scope="row">
+                     @foreach($permisRole->roles as $role)
+                        <il>{{$role->nameRole}}</il>
+                     @endforeach
+                  </td>
+                  <td scope="row">
+                     @foreach($permisRole->permissions as $role)
+                        <il>{{$role->namePermission}}</il>
+                     @endforeach
+                  </td>
 						<td>
 							<a class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter-{{$permisRole->nPR}}"><i class="fas fa-pencil-alt"></i></a>
 

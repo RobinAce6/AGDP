@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Permissions;
+use App\Models\Permission;
 use App\Models\Role;
 
 class Permission_Role extends Model
@@ -15,11 +15,11 @@ class Permission_Role extends Model
 
     public function Roles() 
     {
-        return $this->belongsTo(Role::class,'role_id', 'idRole');
+        return $this->belongsToMany(Role::class,'role_id', 'idRole')->withPivot('nameRole');
     }
 
     public function Permissions()
     {
-        return $this->belongsTo(Permission::class, 'permission_id','idPermission');
+        return $this->belongsToMany('App\Models\Permission')->withPivot('idPermission','namePermission');;
     }
 }
