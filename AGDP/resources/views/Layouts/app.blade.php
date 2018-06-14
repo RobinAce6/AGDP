@@ -41,8 +41,6 @@
     <script src="{{asset('js/jquery.treetable.js')}}"></script>
 
     <script src="{{asset('js/main.js')}}"></script>
-    <script type="text/javascript'">
-
-    <script src="{{asset('js/main.js')}}"></script>
+    <script type="text/javascript'"></script>
 </body>
 </html>

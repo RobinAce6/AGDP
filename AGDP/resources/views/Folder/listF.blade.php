@@ -28,10 +28,10 @@
 											<label for="col-sm-10 col-lg-12" class="col-sm-12 col-lg-4 col-form-label">Cliente</label>
 											<div class="col-sm-10 col-lg-12">
 												<select class="form-control custom-select" name="idClient">
-		                                       @foreach ($client as $Client) 
-		                                         <option value="{{$Client->idClient}}">{{$Client->nameClient}}</option>
-		                                       @endforeach
-		                                    </select>
+			                                   @foreach ($client as $Client) 
+			                                     <option value="{{$Client->idClient}}">{{$Client->nameClient}}</option>
+			                                   @endforeach
+			                                </select>
 												<div class="invalid-feedback">
 													Por favor ingrese el nombre
 												</div>

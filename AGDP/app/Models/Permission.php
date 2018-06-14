@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Permission_Role;
+use App\Models\Role;
 
 class Permission extends Model
 {
@@ -12,14 +13,9 @@ class Permission extends Model
     protected $guarded = ['idPermission'];
     protected $primaryKey = 'idPermission';
 
-    public function Permissions_Role()
-    {
-        return $this->hasMany(Permission_Role::class, 'permission_id','idPermission');
-    }
-
     public function role()
     {
-    	return $this->belongsToMany('App\Models\Role', 'Permission_Role');
+    	return $this->belongsToMany(Role::class, 'Permission_Role', 'idPermission', 'idRole');
     }
 }
 

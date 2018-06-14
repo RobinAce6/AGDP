@@ -43,14 +43,14 @@ Route::GET ('clients/edit/{id}', 'ClientsController@edit')		->name('clients/edit
 
 // Role_User Routes
 
-// Route::GET ('role_user', 'RoleUserController@index')				->name('roleuser');
-// Route::GET ('role_user.listRU', 'RoleUserController@index')			->name('role_user.listRU');
-// Route::POST('role_user','RoleUserController@store')					->name('storeRU');
-// Route::GET ('role_user/create', 'RoleUserController@create')		->name('newRU');
-// Route::POST('role_user/search', 'RoleUserController@search')		->name('searchRU');
-// Route::PUT ('role_user/update/{id}', 'RoleUserController@update')	->name('updateRU');
-// Route::GET ('role_user/destroy/{id}', 'RoleUserController@destroy')	->name('role_user/destroy');
-// Route::GET ('role_user/edit/{id}', 'RoleUserController@edit')		->name('role_user/edit');
+Route::GET ('role_user', 'RoleUserController@index')				->name('roleuser');
+Route::GET ('role_user.listRU', 'RoleUserController@index')			->name('role_user.listRU');
+Route::POST('role_user','RoleUserController@store')					->name('storeRU');
+Route::GET ('role_user/create', 'RoleUserController@create')		->name('newRU');
+Route::POST('role_user/search', 'RoleUserController@search')		->name('searchRU');
+Route::PUT ('role_user/update/{id}', 'RoleUserController@update')	->name('updateRU');
+Route::GET ('role_user/destroy/{id}', 'RoleUserController@destroy')	->name('role_user/destroy');
+Route::GET ('role_user/edit/{id}', 'RoleUserController@edit')		->name('role_user/edit');
 
 // Permissions Routes
 

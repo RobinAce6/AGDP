@@ -15,11 +15,11 @@ class Permission_Role extends Model
 
     public function Roles() 
     {
-        return $this->belongsToMany(Role::class,'role_id', 'idRole')->withPivot('nameRole');
+        return $this->belongsTo(Role::class,'role_id', 'idRole');
     }
 
     public function Permissions()
     {
-        return $this->belongsToMany('App\Models\Permission')->withPivot('idPermission','namePermission');;
+        return $this->belongsTo(Permission::class, 'permission_id', 'idPermission');
     }
 }

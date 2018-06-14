@@ -572,7 +572,7 @@ h1 {
   color: #42a3b8; }
 
 .wrapper-login {
-  background: url("../img/bg-login.jpg") no-repeat center center;
+  /*background: url("../img/bg-login.jpg") no-repeat center center;*/
   background-size: cover;
   height: 100%; }
   .wrapper-login .login {

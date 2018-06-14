@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <form  class="needs-validation" method="POST" action="{{ route('login') }}">
-        <div class="wrapper-login">
+    <form  class="needs-validation" method="POST" action="{{ route('login') }}" style="background-image: url(../img/bg-login.jpg);">
+        <div class="wrapper-login" >
             <div class="container">
                     {{ csrf_field() }}
                     <div class="row justify-content-center">
@@ -67,31 +67,29 @@
 
             
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <form  class="needs-validation" novalidate>
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Restablecer contraseña</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="form-group text-left">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electrónico empresarial" required>
-                                    <div class="invalid-feedback">
-                                        Por favor ingrese su email corporativo
-                                    </div>
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <form  class="needs-validation" novalidate>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Restablecer contraseña</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group text-left">
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electrónico empresarial" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese su email corporativo
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <a href="{{ route('login')}}" class="btn btn-light">Cancelar</a>
-                                <button type="submit" class="btn btn-info">Restablecer</button>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="{{ route('login')}}" class="btn btn-light">Cancelar</a>
+                            <button type="submit" class="btn btn-info">Restablecer</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        
-</form>
+        </div>
 @endsection
