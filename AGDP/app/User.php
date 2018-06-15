@@ -9,6 +9,7 @@ use App\Models\typePerson;
 use App\Models\Dependency;
 use App\Models\Folder_User;
 use App\Models\Role_User;
+use App\Models\Role;
 
 class User extends Authenticatable
 {
@@ -53,6 +54,11 @@ class User extends Authenticatable
     public function Folder_User()
     {
         return $this->hasMany(Folder_User::class, 'user_id', 'idUser');
+    }
+
+    public function role()
+    {
+        return  $this->belongsToMany(Role::class, 'Role_User', 'user_id', 'role_id');
     }
 
 }

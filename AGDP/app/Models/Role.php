@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Role_User;
 use App\Models\Permission_Role;
 use App\Models\Permission;
+use App\Models\User;
 
 class Role extends Model
 {
@@ -22,5 +23,10 @@ class Role extends Model
     public function permission()
     {
        return $this->belongsToMany(Permission::class, 'Permission_Role', 'idPermission', 'idRole');
+    }
+
+    public function user()
+    {
+        return $this->belongsToMany(User::class, 'Role_User', 'user_id', 'role_id');
     }
 }
