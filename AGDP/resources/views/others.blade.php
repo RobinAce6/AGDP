@@ -15,11 +15,20 @@
                   </div>
                </div>
 
+               <div class="col-sm-4 text-center border-primary">
+                  <div class="card border-primary" style="width: 18rem;">
+                     <div class="card-body text-primary">
+                        <h5 class="card-title">Formato Documento</h5>
+                        <a href="{{route('storagew')}}" class="btn btn-link">Ver</a>
+                     </div>
+                  </div>
+               </div>
+
          		<div class="col-sm-4 text-center border-primary">
          			<div class="card border-primary" style="width: 18rem;">
          				<div class="card-body text-primary">
-         					<h5 class="card-title">Formato Documento</h5>
-                        <a href="{{route('storagew')}}" class="btn btn-link">Ver</a>
+         					<h5 class="card-title">Asignar Permiso a Rol </h5>
+                        <a href="{{route('permission_role')}}" class="btn btn-link">Ver</a>
          				</div>
          			</div>
          		</div>
@@ -34,11 +43,19 @@
                      </div>
                   </div>
                </div>
+               <div class="col-sm-4 text-center border-primary">
+                  <div class="card border-primary" style="width: 18rem;">
+                     <div class="card-body text-primary">
+                        <h5 class="card-title">Permisos del Sistema</h5>
+                        <a href="{{ route('permission')}}" class="btn btn-link">Ver</a>
+                     </div>
+                  </div>
+               </div>
          		<div class="col-sm-4 text-center border-primary">
          			<div class="card border-primary" style="width: 18rem;">
          				<div class="card-body text-primary">
-         					<h5 class="card-title">Permisos del Sistema</h5>
-                        <a href="{{ route('permission')}}" class="btn btn-link">Ver</a>
+         					<h5 class="card-title">Asociar Rol a Usuario </h5>
+                        <a href="{{ route('roleuser')}}" class="btn btn-link">Ver</a>
          				</div>
          			</div>
          		</div>

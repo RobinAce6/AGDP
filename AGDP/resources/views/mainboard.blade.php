@@ -12,7 +12,7 @@
 					</div>
 				</div>
 				<form class="form-group" method="POST" action="{{ route('logout') }}">
-				 @if(Auth::user()->role->nameRole === 'Admnistrador	')
+				 @if(Auth::user()->$roleuser === '2')
 					{{ csrf_field() }}
 						<div class="container text-center">
 							<div class="row content-card justify-content-md-center">
