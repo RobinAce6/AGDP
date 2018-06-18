@@ -19,7 +19,7 @@
                               <label for="col-sm-10 col-lg-12" class="col-sm-12 col-lg-4 col-form-label">Usuario</label>
                                  <select class="form-control custom-select" name="idUser">
                                  @foreach ($user as $User)
-                                    <option value="{{$User->idUser}}">{{$User->namePerson}}</option>
+                                    <option value="{{$User->idUser}}">{{$User->namePerson}}</option>   
                                     @endforeach
                                  </select>
                               </div>
