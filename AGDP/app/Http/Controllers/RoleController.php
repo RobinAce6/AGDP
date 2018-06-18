@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
-    
     public function index()
     {
         $role = RoleM::all();
@@ -18,7 +17,7 @@ class RoleController extends Controller
 
     public function create()
     {
-        return view ('role.newR');
+        // return view ('role.newR');
     }
 
     public function store(Request $request)
@@ -28,37 +27,22 @@ class RoleController extends Controller
         return redirect('role.listR');
     }
     
-    public function edit($idRole)
-    {
-        $role = RoleM::find($idRole);
-        return view('role.updateR', compact('role'));
-    }
+    // public function edit($idRole)
+    // {
+    //     $role = RoleM::find($idRole);
+    //     return view('role.updateR', compact('role'));
+    // }
 
     
-    public function update(Request $request, $idRole)
-    {
-        $role = RoleM::find($idRole);
+    // public function update(Request $request, $idRole)
+    // {
+    //     $role = RoleM::find($idRole);
 
-        $role->nameRole = $request->nameRole;
+    //     $role->nameRole = $request->nameRole;
+    //     $role->description = $request->description;
 
-        $role->save();
+    //     $role->save();
 
-        return view('role.listR');
-    }
-
-    public function search(Request $request)
-    {
-        $role = RoleM::where('idRole', 'like','%'.$request->idRole.'%')->get();
-
-        $role = RoleM::where('nameRole', 'like', '%'.$request->nameRole.'%')->get();
-
-        return view ('role.listR', compact('role'));
-    }
-
-    public function destroy($idRole)
-    {
-        $role = RoleM::find($idRole);
-        $role->delete();
-        return back();
-    }
+    //     return back();
+    // }
 }

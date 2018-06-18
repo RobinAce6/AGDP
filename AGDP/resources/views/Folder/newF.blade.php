@@ -17,10 +17,18 @@
                   <input class="input100" type="text" name="nameFolder" placeholder="Nombre" required>
                </div>
 
-               <div class="container-login100-form-btn">
-                  <button class="btn btn-warning">Guardar</button>
+               <div class="form-group">
+                <laber> Cliente </laber>
+                   <select class="wrap-input100 m-t-6" name="idCliente">
+                     @foreach ($client as $Client) 
+                       <option value="{{$Client->idClient}}">{{$Client->nameClient}}</option>
+                     @endforeach
+                   </select>
                </div>
 
+                <div class="container-login100-form-btn">
+                  <button class="btn btn-warning">Guardar</button>
+               </div>
                <div class="container-login100-form-btn">
                   <a href="{{ route('folder.listF') }}" class="btn btn-danger">Cancelar</a>
                </div>   

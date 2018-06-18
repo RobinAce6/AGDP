@@ -13,11 +13,11 @@ class CreatePermissionRolesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('permission_roles', function(Blueprint $table)
+		Schema::create('permission_role', function(Blueprint $table)
 		{
 			$table->integer('nPR', true);
-			$table->integer('role_id')->index('role_id');
-			$table->integer('permission_id')->index('permission_id');
+			$table->integer('permission_id');
+			$table->integer('role_id');
 			$table->rememberToken();
             $table->timestamps();
 		});

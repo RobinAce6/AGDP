@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\User;
 
 class typePerson extends Model
 {
@@ -12,4 +11,8 @@ class typePerson extends Model
     protected $guarded = ['idTypePerson'];
     protected $primaryKey = 'idTypePerson';
 
+    public function User()
+	{
+		return $this->hasMany(User::class,'typePerson_id','idTypePerson');
+	} 
 }

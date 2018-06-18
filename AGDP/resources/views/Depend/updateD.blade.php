@@ -10,15 +10,11 @@
    				{{ method_field('PUT')}}
    				{{ csrf_field() }}
    				
-   				<span class="login100-form-title p-b-45">
+   				<span class="login100-form-title p-b-45"> 
    					Actualizar Dependencia
    				</span>
    					
    				<div class="form-control">
-
-   					<div class="wrap-input100 validate-input m-t-6">
-   						<input class="input100" type="number" name="id" value="{{ $depend->idDependency }}" disabled>
-   					</div>
 
    					<div class="wrap-input100 validate-input m-t-6">
    						<input class="input100" type="text" name="nameDependency" value="{{ $depend->nameDependency }}" required>

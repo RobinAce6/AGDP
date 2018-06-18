@@ -16,18 +16,19 @@
 				<div class="form-control">
 
 					<div class="wrap-input100 validate-input m-t-6">
-						<input class="input100" type="number" name="idFolder" value="{{ $folder->idFolder }}" disabled>
-					</div>
-
-					<div class="wrap-input100 validate-input m-t-6">
 						<input class="input100" type="text" name="nameFolder" value="{{ $folder->nameFolder }}" required>
 					</div>
 
+					<div class="form-group">
+		            	<p> Cliente </p>
+		               	<select class="wrap-input100 m-t-6" name="idCliente">
+		                 @foreach ($client as $Client)
+		                   <option value="{{$Client->idClient}}">{{$Client->nameClient}}</option>
+		                 @endforeach
+		               	</select>
+		           	</div>
 					<div class="container-login100-form-btn">
 						<button class="btn btn-warning">Guardar</button>
-					</div>
-					<br>
-					<div class="container-login100-form-btn">
 						<a href="{{ route('folder.listF')}}" class="btn btn-danger">Cancelar</a>
 					</div>
 					

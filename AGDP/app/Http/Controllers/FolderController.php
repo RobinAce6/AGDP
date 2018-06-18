@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Folder as FolderM;
+use App\Models\Clients as Client;
 
 use Illuminate\Http\Request;
 
@@ -10,30 +11,37 @@ use Illuminate\Http\Request;
 class FolderController extends Controller
 {
     
-    public function index() 
+    public function index(Request $request) 
     {
-        $folder = FolderM::all();
-        return view('folder.listF', compact('folder'));
+        $client = Client::all();
+        $folder = FolderM::with('Client')->get();
+        return view('folder.listF', compact('folder', 'client'));
     }
 
    
     public function create()
     {
-        return view ('folder.newF');
+        $client = Client::all();
+        return view ('folder.listF', compact('client'));
     }
 
-    public function store(Request $request)
+    public function store (Request $request)
     {
         $folder = new FolderM;
-        $folder->create($request->all());
-        return redirect('folder.listF');
+
+        $folder->nameFolder = $request->nameFolder;
+        $folder->client_id = $request->idClient;
+ 
+        $folder->save();
+
+        return back();
     }
 
     
     public function edit($idFolder)
     {
-        $folder = FolderM::find($idFolder);
-        return view('folder.updateF', compact('folder'));
+        $client = Client::all();
+        return view('folder.updateF', compact('client'));
     }
 
     
@@ -42,17 +50,11 @@ class FolderController extends Controller
         $folder = FolderM::find($idFolder);
 
         $folder->nameFolder = $request->nameFolder;
+        $folder->client_id = $request->idClient;
 
         $folder->save();
 
-        return back();
-    }
-
-    public function search(Request $request)
-     {
-        $folder = FolderM::where('nameFolder','like', '%'.$request->nameFolder.'%')->get();
-
-        return view('folder.listF', compact('folder'));
+        return redirect('folder.listF');
     }
 
    
