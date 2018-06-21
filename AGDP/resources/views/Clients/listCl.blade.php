@@ -81,40 +81,40 @@
 							<a class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter-{{$clients->idClient}}"><i class="fas fa-pencil-alt"></i></a>
 
 							<div class="modal fade bd-example-modal-md" id="exampleModalCenter-{{$clients->idClient}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                       	<div class="modal-dialog modal-dialog-centered" role="document">
-                         	<div class="modal-content">
-                           	<div class="modal-header">
-                             	<h5 class="modal-title" id="exampleModalLongTitle">Actualizar Cliente</h5>
-                            	 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                               <span aria-hidden="true">&times;</span>
-                             	</button>
-                           	</div>
+	                       	<div class="modal-dialog modal-dialog-centered" role="document">
+	                         	<div class="modal-content">
+	                           	<div class="modal-header">
+	                             	<h5 class="modal-title" id="exampleModalLongTitle">Actualizar Cliente</h5>
+	                            	 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                               <span aria-hidden="true">&times;</span>
+	                             	</button>
+	                           	</div>
 
-                           	<div class="modal-body">
+	                           	<div class="modal-body">
 
-                              	<form class="login100-form validate-form" method="POST"	action="{{ route('Actualizar', [$clients->idClient]) }}">
+	                              	<form class="login100-form validate-form" method="POST"	action="{{ route('Actualizar', [$clients->idClient]) }}">
 
-												{{ method_field('PUT')}}
-												{{ csrf_field() }}
+													{{ method_field('PUT')}}
+													{{ csrf_field() }}
 
-												<input class="form-control" type="number" name="nitClient" value="{{ $clients->nitClient }}" required>
-												<br>
-												<input class="form-control" type="text" name="nameClient" value="{{ $clients->nameClient }}" required>
-												<br>
-												<input class="form-control" type="text" name="addressClient" value="{{ $clients->addressClient }}" required>
-												<br>
+													<input class="form-control" type="number" name="nitClient" value="{{ $clients->nitClient }}" required>
+													<br>
+													<input class="form-control" type="text" name="nameClient" value="{{ $clients->nameClient }}" required>
+													<br>
+													<input class="form-control" type="text" name="addressClient" value="{{ $clients->addressClient }}" required>
+													<br>
 
-												<div class="modal-footer">
-	                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-	                                   <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-	                                	</div>
+													<div class="modal-footer">
+		                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+		                                   <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+		                                	</div>
 
-											</form>
+												</form>
 
-                           	</div>
-                         	</div>
-                       	</div>
-                     </div>
+	                           	</div>
+	                         	</div>
+	                       	</div>
+	                     	</div>
 						</td>
 					</tr>
 					@endforeach

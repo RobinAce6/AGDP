@@ -55,16 +55,60 @@
 				<thead class="thead-light">
 					<tr>
 						<th scope="col">Cod. Proyecto</th>
-						<th scope="col">Cliente</th>
 						<th scope="col">Nombre Proyecto</th>
+                  <th scope="col">Cliente</th>
+						<th scope="col">Opciones</th>
 					</tr>
 				</thead>
 				<tbody>
 					@foreach ($folder as $folders)
 					<tr>
 						<td scope="row">{{ $folders->idFolder}}</td>
+                  <td scope="row">{{ $folders->nameFolder}}</td>
 						<td scope="row">{{ $folders->Client->nameClient}}</td>
-						<td scope="row">{{ $folders->nameFolder}}</td>
+						<td>
+							<a class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter-{{$folders->idFolder}}"><i class="fas fa-pencil-alt"></i></a>
+
+							<div class="modal fade bd-example-modal-md" id="exampleModalCenter-{{$folders->idFolder}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    	<div class="modal-dialog modal-dialog-centered" role="document">
+                      	<div class="modal-content">
+                        	<div class="modal-header">
+                          	<h5 class="modal-title" id="exampleModalLongTitle">Actualizar Cliente</h5>
+                         	 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          	</button>
+                        	</div>
+
+                        	<div class="modal-body">
+
+                           	<form class="login100-form validate-form" method="POST"	action="{{ route('updateF', [$folders->idFolder]) }}">
+
+											{{ method_field('PUT')}}
+											{{ csrf_field() }}
+
+                                 <input class="form-control" type="number" name="idFolder" value="{{ $folders->idFolder }}" disabled><br>
+                                                                 
+                                 <input class="form-control" type="text" name="nameFolder" value="{{ $folders->nameFolder }}" required><br>
+
+                                 <label> Cliente </label>
+                                    <select class="form-control custom-select" name="idClient">
+                                   @foreach ($client as $Client)
+                                     <option value="{{$Client->idClient}}">{{$Client->nameClient}}</option>
+                                   @endforeach
+                                    </select>
+
+											<div class="modal-footer">
+                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                   <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                                	</div>
+
+										</form>
+
+                        	</div>
+                      	</div>
+                    	</div>
+                  	</div>
+						</td>
 					</tr>
 					@endforeach
 				</tbody>

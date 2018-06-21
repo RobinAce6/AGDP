@@ -18,7 +18,9 @@ class CreateClientsTable extends Migration {
 			$table->integer('idClient', true);
 			$table->string('nitClient', 50);
 			$table->string('nameClient', 50);
-			$table->string('addressClient', 50);
+			$table->string('personClient', 50);
+			$table->string('addressClient', 50)->unique();
+			$table->boolean('typeClient')->unique();
 			$table->rememberToken();
             $table->timestamps();
 		});
