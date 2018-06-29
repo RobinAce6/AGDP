@@ -12,7 +12,7 @@
 					</div>
 				</div>
 				<form class="form-group" method="POST" action="{{ route('logout') }}">
-				 @if(Auth::user()->$roleuser === '2')
+				 
 					{{ csrf_field() }}
 						<div class="container text-center">
 							<div class="row content-card justify-content-md-center">
@@ -27,7 +27,7 @@
 										</div>
 									</div>
 								</div>
-								@elseif(Auth::user()->role === 'Consulta')
+								
 								<div class="col-sm-4 text-center">
 									<div class="card" style="width: 18rem;">
 										<div class="card-body">
@@ -89,7 +89,6 @@
 									</div>
 								</div>
 							</div>
-							@endif
 						</div>
 					</form>
 				</div>
