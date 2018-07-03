@@ -99,7 +99,7 @@ Route::GET ('depend.listD', 'DependencyController@index')			->name('depend.listD
 //User Routes
 
 Route::GET ('user', 'UserController@index')					->name('user');
-Route::GET ('user.listU', 'UserController@index')			->name('user.listU');
+Route::GET ('user.listU', 'UserController@index')			->name('listU');
 Route::POST('user','UserController@store')					->name('storeU');
 Route::GET ('user/create', 'UserController@create')			->name('newU');
 //Route::POST('user/search', 'UserController@search')			->name('searchU');
@@ -110,7 +110,7 @@ Route::GET ('user/edit/{id}', 'UserController@edit')		->name('user/edit');
 //Folder Routes
 
 Route::GET ('folder', 'FolderController@index')					->name('folder');
-Route::GET ('folder.listF', 'FolderController@index')			->name('folder.listF');
+Route::GET ('folder.listF', 'FolderController@index')			->name('listF');
 Route::POST('folder','FolderController@store')					->name('storeF');
 Route::GET ('folder/create', 'FolderController@create')			->name('newF');
 //Route::POST('folder/search', 'FolderController@search')			->name('searchF');
@@ -145,7 +145,7 @@ Auth::routes();
 //MailE Routes
 
 Route::GET ('maile', 'MaileController@index')				->name('maile');
-Route::GET ('maile.listM', 'MaileController@index')			->name('maile.listM');
+Route::GET ('maile.listM', 'MaileController@index')			->name('listM');
 Route::POST('maile','MaileController@store')				->name('storeM');
 Route::GET ('maile/create', 'MaileController@create')		->name('newM');
 Route::POST('maile/search', 'MaileController@search')		->name('searchM');

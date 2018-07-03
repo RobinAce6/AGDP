@@ -1,61 +1,172 @@
-@extends('layouts.app') 
-<div class="wrapper-users">
-   
-    <div class=" main-nav"> 
-        <nav class="navbar navbar-expand-lg ">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    @guest
-                      <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                     @else
+@extends('layouts.app')
 
-                    <li> 
-                     <a class="navbar-brand" href="{{route('mainboard')}}"><img src="../img/home.png" width="30" height="30" alt="">
-                    </a>
-                    </li>
+@section('content')
 
-                    <li><a class="nav-link" href="{{route('newU')}}">{{ __('REGISTRO USUARIO') }}</a></li>
+   <div class="container-body">
 
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="{{route('maile')}}">Correspondencia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="{{route('folder')}}">Proyectos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="{{route('clients')}}">Clientes</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link active text-uppercase" href="{{route('user')}}">Usuarios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="{{route('others')}}">Otras Configuraciones</a>
-                    </li>
-                    
-                    
-                </ul>
-                <div class=" my-2 my-lg-0">
-                    <a href="" class="question"><i class="far fa-question-circle"></i></a>
-                    <div class="user">
-                        <a class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Auth::user()->namePerson}}</a>
-                        <div class="dropdown-menu dropdown-menu--user dropdown-menu-right">
-                            <a class="dropdown-item"  href="{{ route('profile')}}">Perfil de usuario</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            {{ __('Cerrar Sesión') }}</a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                        </div>
-                    </div>
-                     @endguest
-                </div>
+      <div class="col-md-3 left_col">
+         <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+               <a href="dashboard.html" class="site_title"><img src="img/main/logo_1.png"> <span>Consultecnicos</span></a>
             </div>
-        </nav>
-    </div>
 
-</div>
+            <div class="clearfix"></div>
 
+            <br><br>
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+               <div class="menu_section">
+                  <ul class="nav side-menu">
+                     <li><a><i class="fa fa-envelope-o"></i> Correspondencia <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                           <li><a>C. Enviada <span class="fa fa-chevron-down"></span></a>
+                              <ul class="nav child_menu">
+                                 <li><a href="{{ route('newM') }}">Registrar Nueva</a></li>
+                                 <li><a href="{{ route('listM') }}">Ver Todas</a></li>
+                                 <li><a href="#">Archivos adjuntos</a></li>
+                              </ul>
+                           </li>
+                           <li><a>C. Recibida <span class="fa fa-chevron-down"></span></a>
+                              <ul class="nav child_menu">
+                                 <li><a href="{{ route('newM') }}">Registrar Nueva</a></li>
+                                 <li><a href="{{ route('newM') }}">Ver Todas</a></li>
+                                 <li><a href="#">Archivos adjuntos</a></li>
+
+                              </ul>
+                           </li>
+                        </ul>
+                     </li>
+                     <li><a><i class="fa fa-edit"></i> Proyectos <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                           <li><a href="{{ route('newF') }}">Registrar Nuevo</a></li>
+                           <li><a href="{{ route('listF') }}">Ver Todos</a></li>
+                        </ul>
+                     </li>
+                     <li><a><i class="fa fa-globe"></i> Clientes <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                           <li><a href="{{ route('clients') }}">Registrar Nuevo</a></li>
+                           <li><a href="{{ route('clients') }}">Ver Todos</a></li>
+                        </ul>
+                     </li>
+                     <li><a><i class="fa fa-users"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                           <li><a href="{{ route('newU') }}">Registrar Nuevo</a></li>
+                           <li><a href="{{ route('listU') }}">Ver Todos</a></li>
+                        </ul>
+                     </li>
+                     <li><a><i class="fa fa-bar-chart-o"></i> Informes <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                           <li><a href="#">C. Enviada</a></li>
+                           <li><a href="#">C. Recibida</a></li>
+                        </ul>
+                     </li>
+                     
+                  </ul>
+               </div>
+            
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+               
+               <a data-toggle="tooltip" data-placement="top" title="Logout" href="{{ route('login') }}">
+                  <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+               </a>
+               <a data-toggle="tooltip" data-placement="top" title="Logout" href="#">
+                  <span class="glyphicon glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+               </a>
+            </div>
+            <!-- /menu footer buttons -->
+         </div>
+      </div>
+
+      <div class="top_nav">
+         <div class="nav_menu">
+            <nav>
+               <div class="nav toggle">
+                  <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+               </div>
+
+               <ul class="nav navbar-nav navbar-right">
+                  <li class="">
+                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><!--  -->
+                        <span class=" fa fa-angle-down"></span>
+                     </a>
+                     <ul class="dropdown-menu dropdown-usermenu pull-right">
+                        <a class="dropdown-item"  href="{{ route('profile')}}">Perfil</a>
+                        <li><a href="javascript:;">Ayuda</a></li>
+                        <li><a href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Cerrar Sesión') }}><i class="fa fa-sign-out pull-right"></i> Cerrar sesión</a></li>
+                     </ul>
+                  </li>
+
+                  <li role="presentation" class="dropdown">
+                     <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-envelope-o"></i>
+                        <span class="badge bg-green">6</span>
+                     </a>
+                     <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                        <li>
+                           <a href="ver_correspondencia_recibida.html">
+                            
+                              <span>
+                                 <span><strong>CONSECUTIVO-010203</strong></span>
+                                 <!-- <span class="time">3 mins ago</span> -->
+                              </span>
+                              <span class="message">
+                                 <strong>Asunto:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat...
+                              </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="ver_correspondencia_recibida.html">
+                              <span>
+                                 <span><strong>CONSECUTIVO-010203</strong></span>
+                                 <!-- <span class="time">3 mins ago</span> -->
+                              </span>
+                              <span class="message">
+                                 <strong>Asunto:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat...
+                              </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="ver_correspondencia_recibida.html">
+                            <span>
+                                 <span><strong>CONSECUTIVO-010203</strong></span>
+                                 <!-- <span class="time">3 mins ago</span> -->
+                              </span>
+                              <span class="message">
+                                 <strong>Asunto:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat...
+                              </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="ver_correspondencia_recibida.html">
+                               <span>
+                                 <span><strong>CONSECUTIVO-010203</strong></span>
+                                 <!-- <span class="time">3 mins ago</span> -->
+                              </span>
+                              <span class="message">
+                                 <strong>Asunto:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat...
+                              </span>
+                           </a>
+                        </li>
+                        <li>
+                           <div class="text-center">
+                              <a href="lista_correspondencia_recibida.html">
+                                 <strong>Ver Toda la Correspondencia</strong>
+                                 <i class="fa fa-angle-right"></i>
+                              </a>
+                           </div>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+      </div>
+      
+   </div>
+@endsection

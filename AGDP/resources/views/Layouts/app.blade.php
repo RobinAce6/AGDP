@@ -1,46 +1,352 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Consultécnicos</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
-    <link rel="apple-touch-icon" href="{{asset('img/apple-touch-icon.png')}}">
+
+    <title>Consultécnicos</title>
+
+    <!-- Bootstrap -->
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="vendor/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="vendor/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- bootstrap-progressbar -->
+    <link href="vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="vendor/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="vendor/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    
+    <!-- bootstrap-datetimepicker -->
+    <link href="vendor/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+    <!-- Datatables -->
+    <link href="vendor/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,600" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <!-- Treetable -->
+    <link href="css/jquery.treetable.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.treetable.theme.default.css" rel="stylesheet" type="text/css" />
+
+    <!-- Main Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> -->
+
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
+    
 
 </head>
-    <body>
+    <body  class="nav-md">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
 
         <!-- Start Header -->
-   
-    @yield('content')
+        
+                
+                
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        
+
+
+
+
+
+
+<div class="container body">
+    <div class="main_container">
+        <!-- <div class=" main-nav ">
+        <ul class="nav main-nav ">
+        <li class="nav-item">
+            <a class="nav-link active text-uppercase" href="#">Usuarios</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link text-uppercase" href="#">Areas de Trabajo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-uppercase" href="#">Proyectos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-uppercase" href="#">Clientes</a>
+        </li>
+        </ul>
+        </div> -->
+<div class="col-md-3 left_col">
+    <div class="left_col scroll-view">
+        <div class="navbar nav_title" style="border: 0;">
+            <a href="dashboard.html" class="site_title"><img src="img/main/logo_1.png"> <span>Consultecnicos</span></a>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <br><br>
+
+        <!-- sidebar menu -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+                <ul class="nav side-menu">
+                    <li><a><i class="fa fa-envelope-o"></i> Correspondencia <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a>C. Enviada <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="correspondencia_enviada.html">Registrar Nueva</a></li>
+                                    <li><a href="lista_correspondencia_enviada.html">Ver Todas</a></li>
+                                    <li><a href="archivos_correspondencia_enviada.html">Archivos adjuntos</a></li>
+                                </ul>
+                            </li>
+                            <li><a>C. Recibida <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="correspondencia_recibida.html">Registrar Nueva</a></li>
+                                    <li><a href="lista_correspondencia_recibida.html">Ver Todas</a></li>
+                                    <li><a href="archivos_correspondencia_recibida.html">Archivos adjuntos</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-edit"></i> Proyectos <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="proyecto.html">Registrar Nuevo</a></li>
+                            <li><a href="lista_proyectos.html">Ver Todos</a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-globe"></i> Clientes <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="cliente.html">Registrar Nuevo</a></li>
+                            <li><a href="lista_clientes.html">Ver Todos</a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-users"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="usuario.html">Registrar Nuevo</a></li>
+                            <li><a href="lista_usuarios.html">Ver Todos</a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-bar-chart-o"></i> Informes <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="#">C. Enviada</a></li>
+                            <li><a href="#">C. Recibida</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+
+        </div>
+        <!-- /sidebar menu -->
+
+        <!-- /menu footer buttons -->
+        <div class="sidebar-footer hidden-small">
+            
+            <a data-toggle="tooltip" data-placement="top" title="Logout" href="iniciar_sesion.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="Logout" href="#">
+                <span class="glyphicon glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </a>
+        </div>
+        <!-- /menu footer buttons -->
+    </div>
+</div>
+
+<!-- top navigation -->
+<div class="top_nav">
+    <div class="nav_menu">
+        <nav>
+            <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        Esperanza Beltrán
+                        <span class=" fa fa-angle-down"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+                        <li><a href="perfil.html"> Perfil</a></li>
+                        <li><a href="javascript:;">Ayuda</a></li>
+                        <li><a href="iniciar_sesion.html"><i class="fa fa-sign-out pull-right"></i> Cerrar sesión</a></li>
+                    </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-envelope-o"></i>
+                        <span class="badge bg-green">6</span>
+                    </a>
+                    <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                        <li>
+                            <a href="ver_correspondencia_recibida.html">
+                             
+                                <span>
+                                    <span><strong>CONSECUTIVO-010203</strong></span>
+                                    <!-- <span class="time">3 mins ago</span> -->
+                                </span>
+                                <span class="message">
+                                    <strong>Asunto:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat...
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ver_correspondencia_recibida.html">
+                                <span>
+                                    <span><strong>CONSECUTIVO-010203</strong></span>
+                                    <!-- <span class="time">3 mins ago</span> -->
+                                </span>
+                                <span class="message">
+                                    <strong>Asunto:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat...
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ver_correspondencia_recibida.html">
+                             <span>
+                                    <span><strong>CONSECUTIVO-010203</strong></span>
+                                    <!-- <span class="time">3 mins ago</span> -->
+                                </span>
+                                <span class="message">
+                                    <strong>Asunto:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat...
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ver_correspondencia_recibida.html">
+                                 <span>
+                                    <span><strong>CONSECUTIVO-010203</strong></span>
+                                    <!-- <span class="time">3 mins ago</span> -->
+                                </span>
+                                <span class="message">
+                                    <strong>Asunto:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat...
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="text-center">
+                                <a href="lista_correspondencia_recibida.html">
+                                    <strong>Ver Toda la Correspondencia</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<!-- /top navigation -->
+
+
+        yield('content')
+
+
+
+    </div>
+</div>
+
     
 
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
-    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" ></script>
+            
 
 
 
+    <!-- jQuery -->
+    <script src="vendor/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="vendor/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="vendor/nprogress/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="vendor/iCheck/icheck.min.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="vendor/moment/min/moment.min.js"></script>
+    <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap-datetimepicker -->    
+    <script src="vendor/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <!-- bootstrap-wysiwyg -->
+    <script src="vendor/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="vendor/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="vendor/google-code-prettify/src/prettify.js"></script>
+    <!-- jQuery Tags Input -->
+    <script src="vendor/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+    <!-- Switchery -->
+    <script src="vendor/switchery/dist/switchery.min.js"></script>
+    <!-- Select2 -->
+    <script src="vendor/select2/dist/js/select2.full.min.js"></script>
+    <!-- Parsley -->
+    <script src="vendor/parsleyjs/dist/parsley.min.js"></script>
+    <!-- Autosize -->
+    <script src="vendor/autosize/dist/autosize.min.js"></script>
+    <!-- jQuery autocomplete -->
+    <script src="vendor/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+    <!-- starrr -->
+    <script src="vendor/starrr/dist/starrr.js"></script>
+
+    <!-- DateJS -->
+    <script src="vendor/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
     
+    <!-- bootstrap-daterangepicker -->
+    <script src="vendor/moment/min/moment.min.js"></script>
+    <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <script src="{{asset('js/jquery.treetable.js')}}"></script>
 
-    <script src="{{asset('js/main.js')}}"></script>
-    <script type="text/javascript'"></script>
+    <!-- Datatables -->
+    <script src="vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="vendor/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="vendor/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="vendor/jszip/dist/jszip.min.js"></script>
+    <script src="vendor/pdfmake/build/pdfmake.min.js"></script>
+    <script src="vendor/pdfmake/build/vfs_fonts.js"></script>
+
+    <!-- Treetable -->
+    <script src="js/jquery.treetable.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="../js/custom.js"></script>
+    <script src="js/main.js"></script>|
+  
 </body>
 </html>
