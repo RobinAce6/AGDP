@@ -11,6 +11,8 @@
 
 	Auth::routes();
 
+
+
 //Mainboard
 
 Route::GET('mainboard', 'MainboardController@index')->name('mainboard');
@@ -149,13 +151,10 @@ Route::GET ('maile.listM', 'MaileController@index')			->name('listM');
 Route::POST('maile','MaileController@store')				->name('storeM');
 Route::GET ('maile/create', 'MaileController@create')		->name('newM');
 Route::POST('maile/search', 'MaileController@search')		->name('searchM');
-Route::PUT ('maile/update/{idTypePerson}', 'MaileController@update')->name('updateTP');
+Route::PUT ('maile/update/{idTypePerson}', 'MaileController@update')->name('updateM');
 Route::GET ('maile/destroy/{id}', 'MaileController@destroy')->name('maile/destroy');
 Route::GET ('maile/edit/{id}', 'MaileController@edit')		->name('maile/edit');
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Front

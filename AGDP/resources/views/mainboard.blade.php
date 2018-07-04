@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
-@section('content')
+@section('main')
 
 
 	<div class="right_col" role="main">
@@ -11,7 +11,7 @@
 						<div class="row">
 						
 							<div class="animated flipInY col-lg-4 col-lg-offset-2 col-md-offset-2  col-md-4 col-sm-offset-0  col-sm-6 col-xs-offset-0  col-xs-12">
-								<a href="lista_correspondencia_enviada.html"><div class="tile-stats">
+								<a href="{{route('listM')}}"><div class="tile-stats">
 									<div class="icon"><i class="fa fa-envelope"></i></div>
 									<div class="count">1700</div>
 									<h3>Correspondencia Enviada</h3>
