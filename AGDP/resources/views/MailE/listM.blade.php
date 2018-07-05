@@ -54,8 +54,8 @@
                                                 <i class="fa fa-ellipsis-v"></i>
                                              </button>
                                              <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                <li><a href="ver_correspondencia_recibida.html">Ver</a></li>
-                                                <li><a href="{{route('updateM')}}">Modificar</a></li>
+                                                <li><a href="{{route('ver')}}">Ver</a></li>
+                                                <li><a href="{{route('edit')}}">Modificar</a></li>
                                              </div>
                                           </div>
                                        </td>

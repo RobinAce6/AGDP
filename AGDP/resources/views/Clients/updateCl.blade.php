@@ -1,41 +1,62 @@
 @extends('layouts.main')
 
-@section('content')
+@section('main')
 
-<div class="limiter">
-	<div class="container-login100">
-		<div class="wrap-login100 p-t-65 p-b-10">
-			<form class="login100-form validate-form" method="POST"	action="{{ route('updateCl', [$client->idClient]) }}">
-				
-				{{ method_field('PUT')}}
-				{{ csrf_field() }}
-				
-				<span class="login100-form-title p-b-45">
-					Actualizar Cliente
-				</span>
-					
-				<div class="form-control">
+	<div class="right_col" role="main">
+			<div class="clearfix"></div>
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="x_panel">
+						<div class="x_title">
+							<h2>Modificar Cliente <small>Cliente 1</small> </h2>
+							<ul class="nav navbar-right panel_toolbox">
+								<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+								</li>
+								 <li><a href="#" class="collapse-link"><i class="fa fa-wrench"></i></a>
+								</li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+						<div class="x_content">
+							
+							<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+								
+								
+								<div class="row">
+									<div class="form-group col-xs-12 col-md-6">
+										<label class="control-label" for="last-name">Consecutivo<span class="required">*</span></label>
+										<input type="text" id="last-name" name="last-name" required="required" data-parsley-required-message="Este campo es obligatorio" class="form-control">
+									</div>
+									<div class="form-group col-xs-12 col-md-6">
+										<label class="control-label" for="last-name">Nombre<span class="required">*</span></label>
+										<input type="text" id="last-name" name="last-name" required="required" data-parsley-required-message="Este campo es obligatorio" class="form-control">
+									</div>
+									
+								</div>
+								
+								
+							
+								<div class="row">
+									<div class="form-group text-left">
+										<small class="col-sm-12 col-lg-12 "><sup>*</sup> Campos obligatorios</small>
+									</div>
+								</div>					
+								<div class="ln_solid"></div>
+								<div class="row">
+									<div class="form-group col-xs-12 text-center">
+									
+										<button class="btn btn-primary" type="button">Cancelar</button>
+										<button type="submit" class="btn btn-success">Guardar</button>
+									
+								</div>
+								</div>
+								
 
-					<div class="wrap-input100 validate-input m-t-6">
-						<input class="input100" type="text" name="nameClient" value="{{ $client->nameClient }}" required>
+							</form>
+						</div>
 					</div>
-
-					<div class="container-login100-form-btn">
-						<button class="btn btn-warning">Guardar</button>
-					</div>
-					<br>
-					<div class="container-login100-form-btn">
-						<a href="{{ route('clients.listCl')}}" class="btn btn-danger">Cancelar</a>
-					</div>
-					
-					<div class="container-login100-form-btn">
-						<a href="{{ route('clients.listCl')}}" class="btn btn-primary">Regresar a la Lista</a>
-					</div>
-
 				</div>
-			</form>
+			</div>
 		</div>
-	</div>
-</div>
 
 @endsection

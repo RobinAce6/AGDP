@@ -64,4 +64,14 @@ class FolderController extends Controller
         $folder->delete();
         return back();
     }
+
+    public function verF()
+    {
+        return view('folder.ver');
+    }
+
+    public function editF()
+    {
+        return view('folder.edit');
+    }
 }

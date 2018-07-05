@@ -124,4 +124,14 @@ class MaileController extends Controller
         return redirect('maile.listM');
     }
 
+    public function editM()
+    {
+        return view('maile.updateM');
+    }
+
+    public function verM()
+    {
+        return view('maile.ver');
+    }
+
 }

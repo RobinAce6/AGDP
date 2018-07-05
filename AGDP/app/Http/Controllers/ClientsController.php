@@ -113,6 +113,10 @@ class ClientsController extends Controller
     //    $client = Client::where('nameClient', 'like','%'.$request->nameClient.'%')->get();
     // }
 
+    public function editCl()
+    {
+        return view('clients.updateCl');
+    }
 
    
 }

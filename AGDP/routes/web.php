@@ -24,7 +24,7 @@ Route::GET('others', 'UserController@Others')->name('others');
 
 // City Routes
 
-Route::GET ('city', 'CityController@index')					->name('city');
+//Route::GET ('city', 'CityController@index')					->name('city');
 // Route::GET ('city.listC', 'CityController@index')			->name('city.listC');
 // Route::POST('city','CityController@store')					->name('storeC');
 // Route::GET ('city/create', 'CityController@create')			->name('newC');
@@ -36,7 +36,7 @@ Route::GET ('city', 'CityController@index')					->name('city');
 // Clients Routes
 
 Route::GET ('clients', 'ClientsController@index')				->name('clients');
-//Route::GET ('clients.listCl', 'ClientsController@index')		->name('clients/Ver');
+Route::GET ('listCl', 'ClientsController@index')				->name('listCl');
 Route::POST('clients','ClientsController@store')				->name('storeCl');
 //Route::GET ('clients/Nuevo', 'ClientsController@create')		->name('Nuevo');
 Route::PUT ('clients/Actualizar/{id}', 'ClientsController@update')->name('Actualizar');
@@ -112,7 +112,7 @@ Route::GET ('user/edit/{id}', 'UserController@edit')		->name('user/edit');
 //Folder Routes
 
 Route::GET ('folder', 'FolderController@index')					->name('folder');
-Route::GET ('folder.listF', 'FolderController@index')			->name('listF');
+Route::GET ('folder.listF', 'FolderController@index')					->name('listF');
 Route::POST('folder','FolderController@store')					->name('storeF');
 Route::GET ('folder/create', 'FolderController@create')			->name('newF');
 //Route::POST('folder/search', 'FolderController@search')			->name('searchF');
@@ -157,4 +157,14 @@ Route::GET ('maile/edit/{id}', 'MaileController@edit')		->name('maile/edit');
 
 
 
-//Front
+//Front V2.0
+
+Route::GET('edit', 'MaileController@editM')->name('edit');
+Route::GET('ver', 'MaileController@verM')->name('ver');
+
+Route::GET('edit', 'ClientsController@editCl')->name('edit');
+Route::GET('ver', 'ClientsController@verCl')->name('ver');
+
+Route::GET('edit', 'FolderController@editF')->name('edit');
+Route::GET('ver', 'FolderController@verF')->name('ver');
+

@@ -22,36 +22,36 @@
                            <ul class="nav child_menu">
                                <li><a>C. Enviada <span class="fa fa-chevron-down"></span></a>
                                    <ul class="nav child_menu">
-                                       <li><a href="correspondencia_enviada.html">Registrar Nueva</a></li>
-                                       <li><a href="lista_correspondencia_enviada.html">Ver Todas</a></li>
-                                       <li><a href="archivos_correspondencia_enviada.html">Archivos adjuntos</a></li>
+                                       <li><a href="{{route('listM')}}">Registrar Nueva</a></li>
+                                       <li><a href="{{('listM')}}">Ver Todas</a></li>
+                                       <li><a href="#">Archivos adjuntos</a></li>
                                    </ul>
                                </li>
                                <li><a>C. Recibida <span class="fa fa-chevron-down"></span></a>
                                    <ul class="nav child_menu">
-                                       <li><a href="correspondencia_recibida.html">Registrar Nueva</a></li>
-                                       <li><a href="lista_correspondencia_recibida.html">Ver Todas</a></li>
-                                       <li><a href="archivos_correspondencia_recibida.html">Archivos adjuntos</a></li>
+                                       <li><a href="{{route('listM')}}">Registrar Nueva</a></li>
+                                       <li><a href="{{route('listM')}}">Ver Todas</a></li>
+                                       <li><a href="#">Archivos adjuntos</a></li>
                                    </ul>
                                </li>
                            </ul>
                        </li>
                        <li><a><i class="fa fa-edit"></i> Proyectos <span class="fa fa-chevron-down"></span></a>
                            <ul class="nav child_menu">
-                               <li><a href="proyecto.html">Registrar Nuevo</a></li>
-                               <li><a href="lista_proyectos.html">Ver Todos</a></li>
+                               <li><a href="{{route('listF')}}">Registrar Nuevo</a></li>
+                               <li><a href="{{route('listF')}}">Ver Todos</a></li>
                            </ul>
                        </li>
                        <li><a><i class="fa fa-globe"></i> Clientes <span class="fa fa-chevron-down"></span></a>
                            <ul class="nav child_menu">
-                               <li><a href="cliente.html">Registrar Nuevo</a></li>
-                               <li><a href="lista_clientes.html">Ver Todos</a></li>
+                               <li><a href="{{route('listCl')}}">Registrar Nuevo</a></li>
+                               <li><a href="{{route('listCl')}}">Ver Todos</a></li>
                            </ul>
                        </li>
                        <li><a><i class="fa fa-users"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
                            <ul class="nav child_menu">
-                               <li><a href="usuario.html">Registrar Nuevo</a></li>
-                               <li><a href="lista_usuarios.html">Ver Todos</a></li>
+                               <li><a href="{{route('listU')}}">Registrar Nuevo</a></li>
+                               <li><a href="{{route('listU')}}">Ver Todos</a></li>
                            </ul>
                        </li>
                        <li><a><i class="fa fa-bar-chart-o"></i> Informes <span class="fa fa-chevron-down"></span></a>
@@ -98,7 +98,7 @@
                    <ul class="dropdown-menu dropdown-usermenu pull-right">
                        <li><a href="perfil.html"> Perfil</a></li>
                        <li><a href="javascript:;">Ayuda</a></li>
-                       <li><a href="iniciar_sesion.html"><i class="fa fa-sign-out pull-right"></i> Cerrar sesión</a></li>
+                       <li><a href="{{('iniciar_sesion.html')}}"><i class="fa fa-sign-out pull-right"></i> Cerrar sesión</a></li>
                    </ul>
                </li>
 
@@ -132,7 +132,7 @@
                            </a>
                        </li>
                        <li>
-                           <a href="ver_correspondencia_recibida.html">
+                           <a href="#">
                             <span>
                                    <span><strong>CONSECUTIVO-010203</strong></span>
                                    <!-- <span class="time">3 mins ago</span> -->

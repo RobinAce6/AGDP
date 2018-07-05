@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
-@section('content')
+@section('main')
 
 <div class="right_col" role="main">
       <div class="clearfix"></div>
@@ -12,7 +12,7 @@
               <ul class="nav navbar-right panel_toolbox">
                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                 </li>
-                 <li><a href="editar_correspondencia_enviada.html" class="collapse-link"><i class="fa fa-wrench"></i></a>
+                 <li><a href="{{route('edit')}}" class="collapse-link"><i class="fa fa-wrench"></i></a>
                 </li>
               </ul>
               <div class="clearfix"></div>
@@ -161,7 +161,7 @@
                 <div class="ln_solid"></div>
                 <div class="row">
                   <div class="form-group col-xs-12 text-center">
-                    <button class="btn btn-primary" type="button">Cancelar</button>
+                    <button class="btn btn-primary" type="button" href="{{route('listM')}}">Cancelar</button>
                     <button type="submit" class="btn btn-success">Guardar</button>
                   </div>
                 </div>
