@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('content')
+@section('main')
 <form class="login100-form validate-form" method="POST" action="{{route('storePR')}}" novalidate>
     {{ csrf_field() }}
     <div class="row justify-content-center main-container">

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('content')
+@section('main')
 
 <form data-toggle="validator" role="form" method="POST" action="{{ route('storeU')}}" >
   {{ csrf_field() }}

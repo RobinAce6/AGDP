@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('content')
+@section('main')
 
 <form  method="GET" action="{{route('others')}}">
 	{{ csrf_field() }}

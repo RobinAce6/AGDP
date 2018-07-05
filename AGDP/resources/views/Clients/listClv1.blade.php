@@ -1,6 +1,6 @@
 @extends('layouts.main') 
 
-@section('content')
+@section('main')
 <form  method="POST" action="{{ route('storeCl')}}">
 	{{ csrf_field() }}
     <div class="row justify-content-center main-container">

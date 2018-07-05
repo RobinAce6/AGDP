@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('content')
+@section('main')
 
 <div class="container">
    <div class="wrapper-dashboard">

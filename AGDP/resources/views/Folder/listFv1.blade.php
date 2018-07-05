@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('content')
+@section('main')
 
 <form  method="POST" action="{{route('storeF')}}">
 	{{ csrf_field() }}

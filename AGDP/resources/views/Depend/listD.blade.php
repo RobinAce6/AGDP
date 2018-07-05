@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('content')
+@section('main')
 
 <form class="login100-form" method="POST" action="">
 
