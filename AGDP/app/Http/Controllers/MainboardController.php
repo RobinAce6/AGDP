@@ -21,6 +21,6 @@ class MainboardController extends Controller
     {
     	$roleuser = RU::all();
 
-    	return view('mainboard', compact('roleuser'));
+    	return view('principal', compact('roleuser'));
     }
 }

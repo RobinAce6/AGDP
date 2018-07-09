@@ -29,7 +29,7 @@
 						</div>
 						<div class="row">
 							<div class="animated flipInY col-lg-4 col-lg-offset-2 col-md-offset-2  col-md-4 col-sm-offset-0  col-sm-6 col-xs-offset-0  col-xs-12">
-								<a href="{{route('listCl')}}"><div class="tile-stats">
+								<a href="{{route('lista')}}"><div class="tile-stats">
 									<div class="icon"><i class="fa fa-globe"></i></div>
 									<div class="count">5</div>
 									<h3>Clientes</h3>
@@ -37,7 +37,7 @@
 								</div></a>
 							</div>
 							<div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
-								<a href="{{route('listF')}}"><div class="tile-stats">
+								<a href="{{route('lista')}}"><div class="tile-stats">
 									<div class="icon"><i class="fa fa-edit"></i></div>
 									<div class="count">28</div>
 									<h3>Proyectos</h3>

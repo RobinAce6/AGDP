@@ -15,7 +15,7 @@
 
 //Mainboard
 
-Route::GET('mainboard', 'MainboardController@index')->name('mainboard');
+Route::GET('Principal', 'MainboardController@index')->name('Principal');
 Route::POST('login', 'Auth\LoginController@login')->name('login');
 Route::POST('logout', 'Auth\LoginController@logout')->name('logout');
 Route::GET('profile', 'UserController@profile')->name('profile');
@@ -36,12 +36,12 @@ Route::GET('others', 'UserController@Others')->name('others');
 // Clients Routes
 
 Route::GET ('clients', 'ClientsController@index')				->name('clients');
-Route::GET ('listCl', 'ClientsController@index')				->name('listCl');
-Route::POST('clients','ClientsController@store')				->name('storeCl');
-//Route::GET ('clients/Nuevo', 'ClientsController@create')		->name('Nuevo');
-Route::PUT ('clients/Actualizar/{id}', 'ClientsController@update')->name('Actualizar');
+Route::GET ('lista', 'ClientsController@index')					->name('lista');
+Route::GET ('clients/nuevo', 'ClientsController@create')		->name('nuevo');
+Route::POST('clients/create','ClientsController@store')			->name('store');
+Route::GET ('clients/Modificar/{id}', 'ClientsController@edit')	->name('clients/Modificar');
+Route::PUT ('clients/update/{id}', 'ClientsController@update')	->name('update');
 //Route::GET ('clients/destroy/{id}', 'ClientsController@destroy')->name('clients/destroy');
-Route::GET ('clients/edit/{id}', 'ClientsController@edit')		->name('clients/edit');
 
 // Role_User Routes
 
@@ -112,13 +112,12 @@ Route::GET ('user/edit/{id}', 'UserController@edit')		->name('user/edit');
 //Folder Routes
 
 Route::GET ('folder', 'FolderController@index')					->name('folder');
-Route::GET ('folder.listF', 'FolderController@index')					->name('listF');
+Route::GET ('lista', 'FolderController@index')					->name('lista');
+Route::GET ('folder/nuevo', 'FolderController@create')			->name('nuevo');
 Route::POST('folder','FolderController@store')					->name('storeF');
-Route::GET ('folder/create', 'FolderController@create')			->name('newF');
-//Route::POST('folder/search', 'FolderController@search')			->name('searchF');
+Route::GET ('folder/Modificar/{id}', 'FolderController@edit')	->name('Modificar');
 Route::PUT ('folder/update/{id}', 'FolderController@update')	->name('updateF');
-Route::GET ('folder/destroy/{id}', 'FolderController@destroy')	->name('folder/destroy');
-Route::GET ('folder/edit/{id}', 'FolderController@edit')		->name('folder/edit');
+//Route::GET ('folder/destroy/{id}', 'FolderController@destroy')	->name('folder/destroy');
 
 //StorageWays Routes
 

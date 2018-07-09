@@ -8,7 +8,6 @@ use App\Models\Clients as Client;
 use App\Models\Folder as Project;
 use App\Models\MailE as Mail;
 
-use DB;
 
 class ClientsController extends Controller
 {
@@ -20,7 +19,7 @@ class ClientsController extends Controller
     public function index()
     {
         $client  = Client::all();
-        return view('clients.listCl', compact('client'));
+        return view('clients.lista', compact('client'));
     }
 
     /**
@@ -30,7 +29,7 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        return view ('clients');
+        return view ('clients.nuevo');
     }
 
     /**
@@ -45,11 +44,12 @@ class ClientsController extends Controller
 
         $client->nitClient = $request->nitClient;
         $client->nameClient = $request->nameClient;
+        $client->personClient = $request->personClient;
         $client->addressClient = $request->addressClient;
 
         $client->save();
 
-        return back();
+        return redirect('lista');
     }
 
     /**
@@ -72,7 +72,7 @@ class ClientsController extends Controller
     public function edit($idClient)
     {
         $client = Client::find($idClient);
-        return view('clients.updateCl', compact('client'));
+        return view('clients.modificar', compact('client'));
     }
 
     /**
@@ -88,11 +88,12 @@ class ClientsController extends Controller
 
         $client->nitClient = $request->nitClient;
         $client->nameClient = $request->nameClient;
+        $client->personClient = $request->personClient;
         $client->addressClient = $request->addressClient;
 
         $client->save();
 
-        return redirect('clients');
+        return redirect('lista');
     }
 
     /**
@@ -113,9 +114,9 @@ class ClientsController extends Controller
     //    $client = Client::where('nameClient', 'like','%'.$request->nameClient.'%')->get();
     // }
 
-    public function editCl()
+    public function editcL()
     {
-        return view('clients.updateCl');
+        return view('clients.modificar');
     }
 
    

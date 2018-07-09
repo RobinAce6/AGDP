@@ -23,23 +23,21 @@
 								<table id="datatable-responsive" class="table  table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
 									<thead>
 										<tr>
-											<th>Consecutivo</th>
-											<th>Nombre </th>
+											<th>NIT</th>
+											<th>Empresa </th>
 											<th>Proyectos</th>
 											<th>Opciones</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr class="locked">
-											<td>1049638457</td>
-											<td>Cliente 1</td>
-											<td>
-												<ul>
-													<li>Proyecto 1</li>
-													<li>Proyecto 2</li>
-													<li>Proyecto 3</li>
-													<li>Proyecto 4</li>
-												</ul>
+										@foreach ($client as $clients)
+										<tr>
+											<td scope="row">{{ $clients->nitClient}}</td>
+											<td scope="row">{{ $clients->nameClient}}</td>
+											<td scope="row">
+												@foreach($clients->folder as $folder)
+													<il>{{$folder->nameFolder}}</il>
+												@endforeach
 											</td>
 											<td>
 												<div class="dropdown">
@@ -47,7 +45,7 @@
 														<i class="fa fa-ellipsis-v"></i>
 													</button>
 													<div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-													<li><a href="{{route('edit')}}">Modificar</a></li>
+													<li><a href="{{route('clients/Modificar', ['idClient' => $clients->idClient] )}}">Modificar</a></li>
 													<li class="lock"><a href="#">Desctivar</a></li>
 													<li class="hide unlock"><a href="#">Activar</a></li>
 													</div>
@@ -56,6 +54,7 @@
 												</div>
 											</td>
 										</tr>
+										@endforeach
 									</tbody>
 								</table>
 							</div>

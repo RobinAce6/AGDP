@@ -29,18 +29,18 @@
                               </tr>
                            </thead>
                            <tbody>
+                           @foreach ($folder as $folders)
                               <tr>
-                                 <td>1049638457</td>
-                                 <td>Cliente 1</td>
-                                 
+                                 <td scope="row">{{ $folders->Client->nameClient}}</td>
+                                 <td scope="row">{{ $folders->nameFolder}}</td>
                                  <td>
                                     <div class="dropdown">
                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                           <i class="fa fa-ellipsis-v"></i>
                                        </button>
                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                       <li><a href="{{route('ver')}}">Ver</a></li>
-                                       <li><a href="{{route('edit')}}">Modificar</a></li>
+                                       <li><a href="{{route('Modificar', ['idFolder' => $folders->idFolder])}}">Modificar</a></li>
+                                       <li><a href="#">Ver</a></li>
                                        <li class="lock"><a href="#">Desctivar</a></li>
                                        <li class="hide unlock"><a href="#">Activar</a></li>
                                        </div>
@@ -49,6 +49,7 @@
                                     </div>
                                  </td>
                               </tr>
+                              @endforeach
                            </tbody>
                         </table>
                      </div>

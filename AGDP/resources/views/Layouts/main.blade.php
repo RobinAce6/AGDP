@@ -7,7 +7,7 @@
       <div class="col-md-3 left_col">
          <div class="left_col scroll-view">
            <div class="navbar nav_title" style="border: 0;">
-               <a href="dashboard.html" class="site_title"><img src="img/main/logo_1.png"> <span>Consultecnicos</span></a>
+               <a href="{{route('Principal')}}" class="site_title"><img src="img/main/logo_1.png"> <span>Consultecnicos</span></a>
            </div>
 
            <div class="clearfix"></div>
@@ -38,14 +38,14 @@
                        </li>
                        <li><a><i class="fa fa-edit"></i> Proyectos <span class="fa fa-chevron-down"></span></a>
                            <ul class="nav child_menu">
-                               <li><a href="{{route('listF')}}">Registrar Nuevo</a></li>
-                               <li><a href="{{route('listF')}}">Ver Todos</a></li>
+                               <li><a href="{{route('nuevo')}}">Registrar Nuevo</a></li>
+                               <li><a href="{{route('lista')}}">Ver Todos</a></li>
                            </ul>
                        </li>
                        <li><a><i class="fa fa-globe"></i> Clientes <span class="fa fa-chevron-down"></span></a>
                            <ul class="nav child_menu">
-                               <li><a href="{{route('listCl')}}">Registrar Nuevo</a></li>
-                               <li><a href="{{route('listCl')}}">Ver Todos</a></li>
+                               <li><a href="{{route('nuevo')}}">Registrar Nuevo</a></li>
+                               <li><a href="{{route('lista')}}">Ver Todos</a></li>
                            </ul>
                        </li>
                        <li><a><i class="fa fa-users"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
@@ -166,7 +166,7 @@
            </ul>
        </nav>
    </div>
-       </div>
+</div>
        <!-- /top navigation -->
 
 
