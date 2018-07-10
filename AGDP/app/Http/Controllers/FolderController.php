@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 use App\Models\Folder as FolderM;
 use App\Models\Clients as Client;
-
-use Illuminate\Http\Request;
 
 
 class FolderController extends Controller
@@ -40,8 +40,10 @@ class FolderController extends Controller
     
     public function edit($idFolder)
     {
+        
+        $folder = FolderM::find($idFolder);
         $client = Client::all();
-        return view('folder.updateF', compact('client'));
+        return view('folder.editF', compact('client', 'folder'));
     }
 
     

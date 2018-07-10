@@ -39,14 +39,12 @@
                                           <i class="fa fa-ellipsis-v"></i>
                                        </button>
                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                       <li><a href="{{route('Modificar', ['idFolder' => $folders->idFolder])}}">Modificar</a></li>
+                                       <li><a href="{{route('folder/Modificar', ['idFolder' => $folders->idFolder])}}">Modificar</a></li>
                                        <li><a href="#">Ver</a></li>
                                        <li class="lock"><a href="#">Desctivar</a></li>
                                        <li class="hide unlock"><a href="#">Activar</a></li>
                                        </div>
-                                       
                                        </div>
-                                    </div>
                                  </td>
                               </tr>
                               @endforeach

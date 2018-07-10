@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('main')
+
 <div class="limiter">
 	<div class="container-login100">
 		<div class="wrap-login100 p-t-65 p-b-10">

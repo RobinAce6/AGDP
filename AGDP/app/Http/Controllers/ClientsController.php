@@ -19,7 +19,7 @@ class ClientsController extends Controller
     public function index()
     {
         $client  = Client::all();
-        return view('clients.lista', compact('client'));
+        return view('clients.listaC', compact('client'));
     }
 
     /**
@@ -69,6 +69,7 @@ class ClientsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
     public function edit($idClient)
     {
         $client = Client::find($idClient);
@@ -114,10 +115,10 @@ class ClientsController extends Controller
     //    $client = Client::where('nameClient', 'like','%'.$request->nameClient.'%')->get();
     // }
 
-    public function editcL()
-    {
-        return view('clients.modificar');
-    }
+    // public function editcL()
+    // {
+    //     return view('clients.modificar');
+    // }
 
    
 }

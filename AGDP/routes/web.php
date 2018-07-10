@@ -36,7 +36,7 @@ Route::GET('others', 'UserController@Others')->name('others');
 // Clients Routes
 
 Route::GET ('clients', 'ClientsController@index')				->name('clients');
-Route::GET ('lista', 'ClientsController@index')					->name('lista');
+Route::GET ('listaC', 'ClientsController@index')				->name('listaC');
 Route::GET ('clients/nuevo', 'ClientsController@create')		->name('nuevo');
 Route::POST('clients/create','ClientsController@store')			->name('store');
 Route::GET ('clients/Modificar/{id}', 'ClientsController@edit')	->name('clients/Modificar');
@@ -115,8 +115,8 @@ Route::GET ('folder', 'FolderController@index')					->name('folder');
 Route::GET ('lista', 'FolderController@index')					->name('lista');
 Route::GET ('folder/nuevo', 'FolderController@create')			->name('nuevo');
 Route::POST('folder','FolderController@store')					->name('storeF');
-Route::GET ('folder/Modificar/{id}', 'FolderController@edit')	->name('Modificar');
-Route::PUT ('folder/update/{id}', 'FolderController@update')	->name('updateF');
+Route::GET ('folder/Modificar/{id}', 'FolderController@edit')	->name('folder/Modificar');
+Route::PUT ('folder/update/{id}', 'FolderController@update')	->name('update');
 //Route::GET ('folder/destroy/{id}', 'FolderController@destroy')	->name('folder/destroy');
 
 //StorageWays Routes
@@ -158,12 +158,12 @@ Route::GET ('maile/edit/{id}', 'MaileController@edit')		->name('maile/edit');
 
 //Front V2.0
 
-Route::GET('edit', 'MaileController@editM')->name('edit');
-Route::GET('ver', 'MaileController@verM')->name('ver');
+// Route::GET('edit', 'MaileController@editM')->name('edit');
+// Route::GET('ver', 'MaileController@verM')->name('ver');
 
-Route::GET('edit', 'ClientsController@editCl')->name('edit');
-Route::GET('ver', 'ClientsController@verCl')->name('ver');
+// Route::GET('edit', 'ClientsController@editCl')->name('edit');
+// Route::GET('ver', 'ClientsController@verCl')->name('ver');
 
-Route::GET('edit', 'FolderController@editF')->name('edit');
-Route::GET('ver', 'FolderController@verF')->name('ver');
+// Route::GET('edit', 'FolderController@editF')->name('edit');
+// Route::GET('ver', 'FolderController@verF')->name('ver');
 
