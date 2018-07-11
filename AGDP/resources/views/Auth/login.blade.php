@@ -42,22 +42,23 @@
                                 </div>
                                 </div>
                                    <div class="form-group">
-                                <div class="col-md-4">
+                                <!-- <div class="col-md-4">
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme
                                         </label>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="form-group">
-                            <a href="" class="remember-pssw" data-toggle="modal" data-target="#exampleModalCenter">¿Olvidó su contraseña?</a><br>
+                            <!-- <a href="" class="remember-pssw" data-toggle="modal" data-target="#exampleModalCenter">¿Olvidó su contraseña?</a><br> -->
+                            <a href="{{ route('password.request')}}" class="button btn btn-info">¿Olvidó su contraseña?</a>
                                 <div class="col-md-4 col-md-offset-4 text-center">
                                 </div>
                             </div>
-                                    <button type="submit" class="btn btn-info">
-                                        Ingresar
-                                    </button>
+                            <button  class="btn btn-info">
+                                Ingresar
+                            </button>
                         </div>
                     </div>
                 </div>

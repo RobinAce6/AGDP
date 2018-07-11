@@ -11,6 +11,8 @@
 
 	Auth::routes();
 
+	//Route::POST('email', 'ResetPasswordController@showResetForm');
+
 //Mainboard
 
 Route::GET('mainboard', 'MainboardController@index')->name('mainboard');
@@ -22,7 +24,7 @@ Route::GET('others', 'UserController@Others')->name('others');
 
 // City Routes
 
-Route::GET ('city', 'CityController@index')					->name('city');
+//Route::GET ('city', 'CityController@index')					->name('city');
 // Route::GET ('city.listC', 'CityController@index')			->name('city.listC');
 // Route::POST('city','CityController@store')					->name('storeC');
 // Route::GET ('city/create', 'CityController@create')			->name('newC');
