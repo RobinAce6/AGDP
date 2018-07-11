@@ -78,7 +78,7 @@
 
           <div class="text-center">
            <button class="btn btn-info">Guardar</button>
-            <a href="{{route('mainboard')}}" class="btn btn-light">Cancelar</a>
+            <a href="{{route('Principal')}}" class="btn btn-light">Cancelar</a>
           </div>
           
         </form>

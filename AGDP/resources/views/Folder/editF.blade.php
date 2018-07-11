@@ -1,6 +1,7 @@
-@extends('layouts.main')
+@extends('layouts.editF')
 
-@section('main')
+
+@section('editF')
 
 <div class="right_col" role="main">
 	<div class="clearfix"></div>
@@ -8,11 +9,9 @@
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
-					<h2>Modificar Proyecto <small>proyecto 1</small> </h2>
+					<h2>Actualizar Información <small>{{$folder->nameFolder}}</small> </h2>
 					<ul class="nav navbar-right panel_toolbox">
 						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-						</li>
-						 <li><a href="editar_proyecto.html" class="collapse-link"><i class="fa fa-wrench"></i></a>
 						</li>
 					</ul>
 					<div class="clearfix"></div>
@@ -59,7 +58,7 @@
 						<div class="row">
 							<div class="form-group col-xs-12 text-center">
 							
-								<button class="btn btn-primary" type="button">Cancelar</button>
+								<a href="{{ route('lista')}}" class="btn btn-primary">Cancelar</a>
 								<button type="submit" class="btn btn-success">Guardar</button>
 							
 						</div>
@@ -67,6 +66,8 @@
 						
 
 					</form>
+
+
 				</div>
 			</div>
 		</div>

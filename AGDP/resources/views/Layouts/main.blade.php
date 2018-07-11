@@ -50,8 +50,8 @@
                        </li>
                        <li><a><i class="fa fa-users"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
                            <ul class="nav child_menu">
-                               <li><a href="{{route('listU')}}">Registrar Nuevo</a></li>
-                               <li><a href="{{route('listU')}}">Ver Todos</a></li>
+                               <li><a href="{{route('newU')}}">Registrar Nuevo</a></li>
+                               <li><a href="{{route('listaU')}}">Ver Todos</a></li>
                            </ul>
                        </li>
                        <li><a><i class="fa fa-bar-chart-o"></i> Informes <span class="fa fa-chevron-down"></span></a>

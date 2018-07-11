@@ -101,13 +101,13 @@ Route::GET ('depend.listD', 'DependencyController@index')			->name('depend.listD
 //User Routes
 
 Route::GET ('user', 'UserController@index')					->name('user');
-Route::GET ('user.listU', 'UserController@index')			->name('listU');
+Route::GET ('listaU', 'UserController@index')				->name('listaU');
 Route::POST('user','UserController@store')					->name('storeU');
 Route::GET ('user/create', 'UserController@create')			->name('newU');
-//Route::POST('user/search', 'UserController@search')			->name('searchU');
 Route::PUT ('user/update/{id}', 'UserController@update')	->name('updateU');
+Route::GET ('user/Modificar/{id}', 'UserController@edit')	->name('Modificar');
+//Route::POST('user/search', 'UserController@search')			->name('searchU');
 //Route::GET ('user/destroy/{id}', 'UserController@destroy')	->name('user/destroy');
-Route::GET ('user/edit/{id}', 'UserController@edit')		->name('user/edit');
 
 //Folder Routes
 
