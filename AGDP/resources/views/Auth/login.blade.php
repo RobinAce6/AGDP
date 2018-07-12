@@ -4,14 +4,14 @@
 
 <div class="wrapper-login">
     <div class="container">
-    {{ csrf_field() }}
-        <form method="POST  action="{{ route('login') }}" class="needs-validation" data-parsley-validate>
+        <form class="needs-validation" data-parsley-validate  method="POST"  action="{{ route('login') }}">
+        {{ csrf_field() }}
             <div class="row">
                 <div class="col-xs-12 col-xs-offset-0 col-md-4 col-md-offset-4 login text-center">
                     <img src="img/main/logo.png">
                     <h1 class="text-uppercase">Iniciar sesión</h1>
-                    <div class="form-group text-left">
-                        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email Empresarial" required data-parsley-required-message="Este campo es obligatorio" data-parsley-type-message="Ingrese un correo electrónico válido" value="{{ old('email') }}" id="email" name="email">
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} text-left">
+                        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email Empresarial" required data-parsley-required-message="Este campo es obligatorio" data-parsley-type-message="Ingrese un correo electrónico válido" value="{{ old('email') }}" name="email">
 
                         @if ($errors->has('email'))
                             <span class="help-block">
@@ -20,12 +20,12 @@
                         @endif
                         
                     </div>
-                    <div class="form-group text-left password">
+                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} text-left password">
                         <div class="input-group-lock__pswwd">
                             <i class="lock fa fa-eye-slash hide"></i>
                             <i class="unlock fa fa-eye"></i>
                         </div>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" id="password" name="password" required data-parsley-required-message="Este campo es obligatorio">
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña"  name="password" required data-parsley-required-message="Este campo es obligatorio">
 
                        @if ($errors->has('password'))
                           <span class="help-block">
@@ -36,7 +36,7 @@
                     </div>
                     <a href="" class="remember-pssw" data-toggle="modal" data-target="#exampleModalCenter">¿Olvidó su contraseña?</a><br>
                     <br>
-                    <button type="submit" class="btn btn-success">Ingresar</button>
+                    <button class="btn btn-success">Ingresar</button>
                 </div>
             </div>
         </form>

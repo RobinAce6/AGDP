@@ -141,11 +141,11 @@
     <script src="vendor/pdfmake/build/vfs_fonts.js"></script>
 
     <!-- Treetable -->
-    <script src="js/jquery.treetable.js"></script>
+    <script src="{{asset('js/jquery.treetable.js')}}"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="../js/custom.js"></script>
-    <script src="js/main.js"></script>|
+    <script src="{{asset('js/custom.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>|
   
 </body>
 </html>

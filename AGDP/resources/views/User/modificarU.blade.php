@@ -14,14 +14,12 @@
             <ul class="nav navbar-right panel_toolbox">
               <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
               </li>
-               <li><a href="editar_usuario.html" class="collapse-link"><i class="fa fa-wrench"></i></a>
-              </li>
             </ul>
             <div class="clearfix"></div>
           </div>
           <div class="x_content">
             
-            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" {{ route('updateU', [$user->idUser]) }}">
+            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action=" {{ route('updateU', [$user->idUser]) }}" method="POST">
 
               {{ method_field('PUT')}}              
               {{ csrf_field() }}
@@ -52,7 +50,7 @@
               <div class="row">
                 <div class="form-group col-md-4 col-xs-12">
                   <label class="control-label">Cargo</label>
-                  <select class="select2_single form-control" tabindex="-1" required="required" data-parsley-required-message="Este campo es obligatorio" name="idTypePerson">
+                  <select class="select2_single form-control" tabindex="-1" required="required" data-parsley-required-message="Este campo es obligatorio" name="idDependency">
                     @foreach ($depend as $Depend)
                       <option value="{{$Depend->idDependency}}">{{$Depend->nameDependency}}</option>
                     @endforeach

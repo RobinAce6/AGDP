@@ -80,17 +80,17 @@ Route::GET ('permission_role/edit/{id}', 'PermissionRoleController@edit')		->nam
 
 Route::GET ('role', 'RoleController@index')					->name('role');
 Route::GET ('role.listR', 'RoleController@index')			->name('role.listR');
-Route::POST('role','RoleController@store')					->name('storeR');
+//Route::POST('role','RoleController@store')					->name('storeR');
 //Route::GET ('role/create', 'RoleController@create')			->name('newR');
 //Route::POST('role/search', 'RoleController@search')			->name('searchR');
 // Route::PUT ('role/update/{id}', 'RoleController@update')	->name('updateR');
 // Route::GET ('role/destroy/{id}', 'RoleController@destroy')	->name('role/destroy');
-Route::GET ('role/edit/{id}', 'RoleController@edit')		->name('role/edit');
+//Route::GET ('role/edit/{id}', 'RoleController@edit')		->name('role/edit');
 
 //Dependency Routes
 
 Route::GET ('depend', 'DependencyController@index')					->name('depend');
-Route::GET ('depend.listD', 'DependencyController@index')			->name('depend.listD');
+Route::GET ('depend.listaD', 'DependencyController@index')			->name('listaD');
 // Route::POST('depend','DependencyController@store')					->name('storeD');
 // Route::GET ('depend/create', 'DependencyController@create')			->name('newD');
 //Route::POST('depend/search', 'DependencyController@search')			->name('searchD');

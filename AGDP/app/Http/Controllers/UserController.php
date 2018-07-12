@@ -65,9 +65,7 @@ class UserController extends Controller
         $user->dependency_id  = $request->idDependency;
         $user->password       = $request->codPerson;
 
-        dd($user);
-
-        // $user->save();
+        $user->save();
 
         return redirect('listaU');
     }

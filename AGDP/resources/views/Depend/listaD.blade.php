@@ -2,9 +2,11 @@
 
 @section('main')
 
-<form  method="POST" action="#">
-	{{ csrf_field() }}
-    <div class="right_col" role="main">
+<form class="needs-validation" method="POST" action="">
+
+    {{ csrf_field() }}
+    
+	<div class="right_col" role="main">
 	<div class="clearfix"></div>
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12">
@@ -23,16 +25,16 @@
 								<table id="datatable-responsive" class="table table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
 									<thead>
 										<tr>
-											<th>Role</th>
+											<th>Dependencia</th>
 											<th>Description </th>
 											<th>Opciones</th>
 										</tr>
 									</thead>
 									<tbody>
-										@foreach ($role as $Role)
+										@foreach ($depend as $Depend)
 										<tr>
-											<td scope="row">{{ $Role->nameRole}}</td>
-											<td scope="row">{{ $Role->description}}</td>
+											<td scope="row">{{ $Depend->nameDependency}}</td>
+											<td scope="row">{{ $Depend->description}}</td>
 											<td>
 												<div class="dropdown">
 													<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -57,6 +59,6 @@
 			</div>
 		</div>
 	</div>
-</form>
-
+</form>  
 @endsection
+	
