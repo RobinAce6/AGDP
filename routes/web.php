@@ -11,11 +11,7 @@
 
 	Auth::routes();
 
-<<<<<<< HEAD:AGDP/routes/web.php
 
-=======
-	//Route::POST('email', 'ResetPasswordController@showResetForm');
->>>>>>> origin:routes/web.php
 
 //Mainboard
 

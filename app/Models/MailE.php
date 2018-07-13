@@ -46,9 +46,4 @@ class MailE extends Model
     {
         return $this->belongsTo(City::class, 'city_id', 'idCity');
     }
-
-    public function dependency()
-    {
-        return $this->belongsToMany(Dependency::class,'Dependency_Mail ','dpendency_id','mail_id');
-    } 
 }

@@ -22,10 +22,5 @@ class Dependency extends Model
     {
         return $this->hasMany(Dependency_Mail::class, 'dependency_id', 'idDependency');
     }
-
-    public function mail()
-    {
-        return $this->belongsToMany(MailE::class,'Dependency_Mail ','dpendency_id','mail_id');
-    } 
 }
 

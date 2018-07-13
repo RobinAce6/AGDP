@@ -32,8 +32,7 @@ class MaileController extends Controller
         $folder = FM::all();
         $storagew = SWM::all();
         $city = CM::all();
-        $mail = MailE::all();
-        return view('maile.newM', compact('folder', 'storagew', 'city', 'mail'));
+        return view('maile.newM', compact('folder', 'storagew', 'city'));
     }
 
     /**
@@ -44,54 +43,28 @@ class MaileController extends Controller
      */
     public function store(Request $request)
     {
-        if ('select_received' === 'true') {
-
         $mail = new MailE;
          
-        $mail->idMail2       = $request->idMail2;
-        $mail->codEnterprise = $request->idMail2;
-        $mail->sentDate      = $request->sentDate;
-        $mail->originCity    = $request->originCity;
-        $mail->addressee     = $request->addressee;
-        $mail->sender        = $request->sender;
-        $mail->folder_id     = $request->idFolder;
-        $mail->affair        = $request->affair;
-        $mail->receivedDate  = $request->receivedDate;
-        $mail->obervations   = $request->obervations;
-        $mail->storagew_id   = $request->idStorageWay;
-        $mail->noPages       = $request->noPages;
-        $mail->deliveredToArchive = $request->deliveredToArchive;
-        $mail->CompanyMssgr  = $request->CompanyMssgr;
-        $mail->nameMessenger = $request->nameMessenger;
-
-        $mail->save();
-
-        return redirect('maile.listM');
-
-        }elseif ('select_sent' === 'true') {
-
-        $mail = new MailE;
-         
-        $mail->idMail2       = $request->idMail2;
+        $mail->idMail2 = $request->idMail2;
         $mail->codEnterprise = $request->codEnterprise;
-        $mail->folder_id     = $request->idFolder;
-        $mail->typeMail      = $request->typeMail;
-        $mail->affair        = $request->affair;
-        $mail->sentDate      = $request->sentDate;
-        $mail->sender        = $request->sender;
-        $mail->addressee     = $request->addressee;
-        $mail->receivedDate  = $request->receivedDate;
-        $mail->storagew_id   = $request->idStorageWay;
-        $mail->noPages       = $request->noPages;
-        $mail->obervations   = $request->obervations;
+        $mail->folder_id = $request->idFolder;
+        $mail->typeMail = $request->typeMail;
+        $mail->affair   = $request->affair;
+        $mail->sentDate = $request->sentDate;
+        $mail->sender = $request->sender;
+        $mail->addressee = $request->addressee;
+        $mail->receivedDate = $request->receivedDate;
+        $mail->storagew_id  = $request->idStorageWay;
+        $mail->noPages  = $request->noPages;
+        $mail->obervations  = $request->obervations;
         $mail->deliveredToArchive = $request->deliveredToArchive;
         $mail->nameMessenger = $request->nameMessenger;
-        $mail->city_id       = $request->idCity;
+        $mail->city_id = $request->idCity;
 
         $mail->save();
 
         return redirect('maile.listM');
-        }
+
     }
 
     /**
