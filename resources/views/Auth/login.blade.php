@@ -13,17 +13,52 @@
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} text-left">
                         <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email Empresarial" required data-parsley-required-message="Este campo es obligatorio" data-parsley-type-message="Ingrese un correo electrónico válido" value="{{ old('email') }}" name="email">
 
-                        @if ($errors->has('email'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('email') }}</strong>
-                            </span>
-                        @endif
-                        
-                    </div>
-                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} text-left password">
-                        <div class="input-group-lock__pswwd">
-                            <i class="lock fa fa-eye-slash hide"></i>
-                            <i class="unlock fa fa-eye"></i>
+                                <div>
+                                    <input id="email" type="email" class="form-control" class="col-md-6 text-center" placeholder="Email Corporativo" name="email" value="{{ old('email') }}" required autofocus >
+
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+
+                            <div class="form-group text-left password{{ $errors->has('password') ? ' has-error' : '' }}"></div>
+                            
+
+                                <div><div class="form-group text-left password">
+                                    <input id="password" type="password" class="form-control" placeholder="Ingresa Contraseña" name="password" required>
+
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
+
+                                
+                                <div class="input-group-lock__pswwd">
+                                    <i class="lock fas fa-eye-slash d-none"></i>
+                                    <i class="unlock far fa-eye"></i>
+                                </div>
+                                </div>
+                                   <div class="form-group">
+                                <!-- <div class="col-md-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme
+                                        </label>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="form-group">
+                            <!-- <a href="" class="remember-pssw" data-toggle="modal" data-target="#exampleModalCenter">¿Olvidó su contraseña?</a><br> -->
+                            <a href="{{ route('password.request')}}" class="button btn btn-info">¿Olvidó su contraseña?</a>
+                                <div class="col-md-4 col-md-offset-4 text-center">
+                                </div>
+                            </div>
+                            <button  class="btn btn-info">
+                                Ingresar
+                            </button>
                         </div>
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña"  name="password" required data-parsley-required-message="Este campo es obligatorio">
 

@@ -11,7 +11,7 @@
 
 	Auth::routes();
 
-
+	//Route::POST('email', 'ResetPasswordController@showResetForm');
 
 //Mainboard
 
