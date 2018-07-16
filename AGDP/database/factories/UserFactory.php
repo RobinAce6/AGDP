@@ -16,11 +16,13 @@ use Faker\Generator as Faker;
 $factory->define(App\User::class, function (Faker $faker) {
     return [
         
-        'codPerson'      => $faker->ean13,
+        'codPerson'      => $faker->randomDigitNotNull,
         'namePerson'     => $faker->name,
         'lastnamePerson' => $faker->lastName,
-        'emailPerson'	 => $faker->unique()->companyEmail,
-        'passwordPerson' => bcrypt('admin01'), //'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
+        'typePerson_id' => "1",
+        'dependency_id' => "1",
+        'email'	         => "maesbeí12@gmail.com",
+        'password'       => bcrypt('codPerson'),
         'remember_token' => str_random(10),
     ];
 });

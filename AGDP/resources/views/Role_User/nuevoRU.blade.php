@@ -25,23 +25,23 @@
               
               <div class="row">
                   
-                  <div class="form-group">
+                  <div class="row">
                    <p> Usuario </p>
-                      <select class="wrap-input100 m-t-6" name="idUser">
+                      <select name="idUser" class="select2_single form-control" tabindex="-1" required data-parsley-required-message="Este campo es obligatorio">
                         @foreach ($user as $User)
                           <option value="{{$User->idUser}}">{{$User->namePerson}}</option>
                         @endforeach
                       </select>
                   </div>
-                  <div class="form-group">
+                  <div class="row">
                    <p> Rol de Usuario </p>
-                      <select class="wrap-input100 m-t-6" name="idRole">
+                      <select name="idRole" class="select2_single form-control" tabindex="-1" required data-parsley-required-message="Este campo es obligatorio">
                         @foreach ($role as $Role)
                           <option value="{{$Role->idRole}}">{{$Role->nameRole}}</option>
                         @endforeach
                       </select>
                   </div>
-            </div>
+              </div>
             
             <div class="row">
                 <div class="form-group text-left">
@@ -49,13 +49,14 @@
                 </div>
             </div>          
             <div class="ln_solid"></div>
-            <div class="row">
-              <div class="form-group col-xs-12 text-center">
-              
-                <a href="{{route('listaRU')}}" class="btn btn-light">Cancelar</a>
-                         <button class="btn btn-primary">Guardar</button>
-               </div>
-            </div>
+              <div class="row">
+                 <div class="form-group col-xs-12 text-center">
+                 
+                    <a href="{{route('listaRU')}}" class="btn btn-primary">Cancelar</a>
+                    <button class="btn btn-success">Guardar</button>
+                 
+                 </div>
+              </div>  
               
             </form>
 

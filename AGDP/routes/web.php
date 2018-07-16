@@ -45,36 +45,34 @@ Route::PUT ('clients/update/{id}', 'ClientsController@update')	->name('update');
 
 // Role_User Routes
 
-Route::GET ('role_user', 'RoleUserController@index')				->name('roleuser');
+Route::GET ('role_user', 'RoleUserController@index')				->name('role_user');
 Route::GET ('role_user.listaRU', 'RoleUserController@index')		->name('listaRU');
+Route::GET ('role_user/create', 'RoleUserController@create')		->name('nuevo');
 Route::POST('role_user','RoleUserController@store')					->name('storeRU');
-Route::GET ('role_user/create', 'RoleUserController@create')		->name('newRU');
-Route::POST('role_user/search', 'RoleUserController@search')		->name('searchRU');
+Route::GET ('role_user/edit/{id}', 'RoleUserController@edit')		->name('ModificarRU');
 Route::PUT ('role_user/update/{id}', 'RoleUserController@update')	->name('updateRU');
 //Route::GET ('role_user/destroy/{id}', 'RoleUserController@destroy')->name('role_user/destroy');
-Route::GET ('role_user/edit/{id}', 'RoleUserController@edit')		->name('role_user/edit');
 
 // Permissions Routes
 
-Route::GET ('permission', 'PermissionController@index')				->name('permission');
+// Route::GET ('permission', 'PermissionController@index')				->name('permisos');
+// Route::POST('permission','PermissionController@store')				->name('storePr');
+// Route::GET('ver','PermissionController@ver')				->name('Ver');
 // Route::GET ('permission.listPr', 'PermissionController@index')		->name('permission.listPr');
-Route::POST('permission','PermissionController@store')				->name('storePr');
 // Route::GET ('permission/create', 'PermissionController@create')		->name('newPr');
 // Route::POST('permission/search', 'PermissionController@search')		->name('searchPr');
 // Route::PUT ('permission/update/{id}', 'PermissionController@update')->name('updatePr');
-// Route::GET ('permission/destroy/{id}', 'PermissionController@destroy')->name('permission/destroy');
+// Route::GET ('permission/destroy/{id}', 
 // Route::GET ('permission/edit/{id}', 'PermissionController@edit')	->name('permission/edit');
 
 // Permission_Role Routes
 
 Route::GET ('permission_role', 'PermissionRoleController@index')				->name('permission_role');
 Route::GET ('permission_role.listPR', 'PermissionRoleController@index')			->name('permission_role.listPR');
-Route::POST('permission_role','PermissionRoleController@store')					->name('storePR');
-Route::GET ('permission_role/create', 'PermissionRoleController@create')		->name('newPR');
-Route::POST('permission_role/search', 'PermissionRoleController@search')		->name('searchPR');
-Route::PUT ('permission_role/update/{id}', 'PermissionRoleController@update')	->name('updatePR');
-Route::GET ('permission_role/destroy/{id}', 'PermissionRoleController@destroy') ->name('permission_role/destroy');
-Route::GET ('permission_role/edit/{id}', 'PermissionRoleController@edit')		->name('permission_role/edit');
+// Route::POST('permission_role','PermissionRoleController@store')					->name('storePR');
+// Route::GET ('permission_role/create', 'PermissionRoleController@create')		->name('newPR');
+// Route::PUT ('permission_role/update/{id}', 'PermissionRoleController@update')	->name('updatePR');
+// Route::GET ('permission_role/edit/{id}', 'PermissionRoleController@edit')		->name('permission_role/edit');
 
 //Role Routes
 

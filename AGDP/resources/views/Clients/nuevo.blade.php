@@ -12,7 +12,7 @@
                   <ul class="nav navbar-right panel_toolbox">
                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                      </li>
-                      <li><a href="·" class="collapse-link"><i class="fa fa-wrench"></i></a>
+                      <li><a href="#" class="collapse-link"><i class="fa fa-wrench"></i></a>
                      </li>
                   </ul>
                   <div class="clearfix"></div>
@@ -24,6 +24,7 @@
                      {{ csrf_field() }}
    						
    						<div class="row">
+                        
    							<div class="form-group col-xs-12 col-md-6">
    								<label class="control-label" for="last-name">Consecutivo<span class="required">*</span></label>
    								<input type="text" name="nitClient" required="required" data-parsley-required-message="Este campo es obligatorio" class="form-control">

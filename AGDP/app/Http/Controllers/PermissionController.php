@@ -84,16 +84,9 @@ class PermissionController extends Controller
         return redirect('permission.listPr');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($idPermission)
+
+    public function ver()
     {
-        $permiss = PM::find($idPermission);
-        $permiss->delete();
-        return back();
+        return view('permission.ver');
     }
 }

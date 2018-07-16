@@ -3,7 +3,9 @@
 @section('main')
 
 <form  method="POST" action="{{ route('storeRU')}}">
-  {{csrf_token()}}
+
+  {{csrf_field()}}
+
 <div class="right_col" role="main">
    <div class="clearfix"></div>
    <div class="row">
@@ -41,7 +43,7 @@
                                           <i class="fa fa-ellipsis-v"></i>
                                        </button>
                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                       <li><a href="{{ route('role_user/edit', ['nRU' => $userRole->nRU]) }}">Modificar</a></li>
+                                       <li><a href="{{ route('ModificarRU', ['nRU' => $useRole->nRU]) }}">Modificar</a></li>
                                        <li><a href="#">Ver</a></li>
                                        <li class="lock"><a href="#">Desactivar</a></li>
                                        <li class="hide unlock"><a href="#">Activar</a></li>

@@ -97,7 +97,15 @@
                    <ul class="dropdown-menu dropdown-usermenu pull-right">
                        <li><a href="{{('profile')}}"> Perfil</a></li>
                        <li><a href="javascript:;">Ayuda</a></li>
-                       <li><a href="{{('iniciar_sesion.html')}}"><i class="fa fa-sign-out pull-right"></i> Cerrar sesión</a></li>
+                       <li><a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Cerrar Sesión') }}
+                                    <i class="fa fa-sign-out pull-right"></i></a></li>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                    </ul>
                </li>
 
