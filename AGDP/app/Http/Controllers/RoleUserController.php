@@ -20,7 +20,7 @@ class RoleUserController extends Controller
         $role = Role::all();
         $user = User::all();
         $userole = RUM::with('User', 'Role')->get();
-        return view('role_user.listRU', compact('userole', 'role', 'user'));
+        return view('role_user.listaRU', compact('userole', 'role', 'user'));
     }
 
     /**
@@ -32,7 +32,7 @@ class RoleUserController extends Controller
     {
         $role = Role::all();
         $user = User::all();
-        return view('role_user', compact('role', 'user'));
+        return view('role_user.newRU', compact('role', 'user'));
     }
 
     /**
@@ -50,7 +50,7 @@ class RoleUserController extends Controller
 
         $userole->save();
 
-        return back();
+        return redirect('listaRU');
     }
 
 

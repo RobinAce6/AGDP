@@ -2,7 +2,7 @@
 
 @section('main')
 
-<form data-toggle="validator" role="form" method="POST" action="{{ route('storeU')}}" >
+<form data-toggle="validator" role="form" method="POST" action="{{ route('storeU')}}">
   {{ csrf_field() }}
     <div class="row justify-content-center main-container">
       <div class="col-sm-12 col-md-8 text-left">
@@ -78,7 +78,7 @@
 
           <div class="text-center">
            <button class="btn btn-info">Guardar</button>
-            <a href="{{route('Principal')}}" class="btn btn-light">Cancelar</a>
+            <a href="{{route('listaU')}}" class="btn btn-light">Cancelar</a>
           </div>
           
         </form>
