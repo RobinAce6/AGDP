@@ -19,7 +19,7 @@ class ClientsController extends Controller
     public function index()
     {
         $client  = Client::all();
-        return view('clients.listaC', compact('client'));
+        return view('clients.listaCl', compact('client'));
     }
 
     /**
@@ -29,7 +29,7 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        return view ('clients.nuevo');
+        return view ('clients.nuevoCl');
     }
 
     /**

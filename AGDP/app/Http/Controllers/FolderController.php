@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Folder as FolderM;
 use App\Models\Clients as Client;
+use App\Models\Folder_User as Folder_User;
 
 
 class FolderController extends Controller
@@ -59,21 +60,12 @@ class FolderController extends Controller
         return redirect('folder.lista');
     }
 
-   
-    // public function destroy($idFolder)
-    // {
-    //     $folder = FolderM::find($idFolder);
-    //     $folder->delete();
-    //     return back();
-    // }
 
-    // public function verF()
-    // {
-    //     return view('folder.ver');
-    // }
-
-    // public function editF()
-    // {
-    //     return view('folder.edit');
-    // }
+    public function verF($idFolder)
+    {
+        $folder = FolderM::find($idFolder);
+        // $folder = FolderM::with('Folder_User')->get();
+        // $client = Client::all();
+        return view('folder.ver', compact('folder'));
+    }
 }

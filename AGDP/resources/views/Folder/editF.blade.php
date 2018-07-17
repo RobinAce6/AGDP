@@ -32,22 +32,20 @@
 							<div class="form-group col-md-6 col-xs-12">
 								<label class="control-label">Cliente</label>
 								<select name="idClient" class="select2_single form-control" tabindex="-1" required data-parsley-required-message="Este campo es obligatorio">
-                                 @foreach ($client as $Client) 
+                                @foreach ($client as $Client) 
                                    <option value="{{$Client->idClient}}">{{$Client->nameClient}}</option>
-                                 @endforeach
+                                @endforeach
                                </select>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-12 col-sm-9 col-xs-12">
-								<label class="control-label">Usuarios<span {{-- class="required" --}}>*</span></label>
+								<label class="control-label">Usuarios</label>
 								<select class="select2_multiple form-control" multiple="multiple" required="required" data-parsley-required-message="Este campo es obligatorio">
 									<option>Users here!!</option>
 								</select>
 							</div>
 						</div>
-						
-						
 					
 						<div class="row">
 							<div class="form-group text-left">
@@ -60,14 +58,9 @@
 							
 								<a href="{{ route('lista')}}" class="btn btn-primary">Cancelar</a>
 								<button type="submit" class="btn btn-success">Guardar</button>
-							
+							</div>
 						</div>
-						</div>
-						
-
 					</form>
-
-
 				</div>
 			</div>
 		</div>

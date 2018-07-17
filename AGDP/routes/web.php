@@ -36,12 +36,11 @@ Route::GET('others', 'UserController@Others')->name('others');
 // Clients Routes
 
 Route::GET ('clients', 'ClientsController@index')				->name('clients');
-Route::GET ('listaC', 'ClientsController@index')				->name('listaC');
-Route::GET ('clients/nuevo', 'ClientsController@create')		->name('nuevo');
-Route::POST('clients/create','ClientsController@store')			->name('store');
+Route::GET ('listaC', 'ClientsController@index')				->name('listaCl');
+Route::GET ('clients/nuevo', 'ClientsController@create')		->name('nuevoCl');
+Route::POST('clients/create','ClientsController@store')			->name('storeCl');
 Route::GET ('clients/Modificar/{id}', 'ClientsController@edit')	->name('clients/Modificar');
-Route::PUT ('clients/update/{id}', 'ClientsController@update')	->name('update');
-//Route::GET ('clients/destroy/{id}', 'ClientsController@destroy')->name('clients/destroy');
+Route::PUT ('clients/update/{id}', 'ClientsController@update')	->name('updateCl');
 
 // Role_User Routes
 
@@ -111,15 +110,16 @@ Route::GET ('user/Modificar/{id}', 'UserController@edit')	->name('Modificar');
 
 Route::GET ('folder', 'FolderController@index')					->name('folder');
 Route::GET ('lista', 'FolderController@index')					->name('lista');
+Route::GET ('folder/ver/{id}', 'FolderController@verF')			->name('ver');
 Route::GET ('folder/nuevo', 'FolderController@create')			->name('nuevo');
 Route::POST('folder','FolderController@store')					->name('storeF');
 Route::GET ('folder/Modificar/{id}', 'FolderController@edit')	->name('folder/Modificar');
 Route::PUT ('folder/update/{id}', 'FolderController@update')	->name('update');
-//Route::GET ('folder/destroy/{id}', 'FolderController@destroy')	->name('folder/destroy');
+
 
 //StorageWays Routes
 
- Route::GET ('storagew', 'StorageWayController@index')				->name('storagew');
+Route::GET ('storagew', 'StorageWayController@index')				->name('storagew');
 Route::GET ('storagew.listSW', 'StorageWayController@index')		->name('storagew.listSW');
 Route::POST('storagew','StorageWayController@store')				->name('storeSW');
 Route::GET ('storagew/create', 'StorageWayController@create')		->name('newSW');

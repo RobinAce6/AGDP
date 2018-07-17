@@ -19,8 +19,7 @@ class MainboardController extends Controller
 
     public function index()
     {
-    	$roleuser = RU::all();
 
-    	return view('principal', compact('roleuser'));
+    	return view('principal');
     }
 }

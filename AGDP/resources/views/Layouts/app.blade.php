@@ -83,7 +83,7 @@
     <!-- Bootstrap -->
     <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
-    <script src="vendor/fastclick/lib/fastclick.js"></script>
+    <script rc="vendor/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="vendor/nprogress/nprogress.js"></script>
     <!-- bootstrap-progressbar -->
@@ -116,12 +116,10 @@
 
     <!-- DateJS -->
     <script src="vendor/DateJS/build/date.js"></script>
-    <!-- JQVMap -->
     
     <!-- bootstrap-daterangepicker -->
     <script src="vendor/moment/min/moment.min.js"></script>
     <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
-
 
     <!-- Datatables -->
     <script src="vendor/datatables.net/js/jquery.dataTables.min.js"></script>

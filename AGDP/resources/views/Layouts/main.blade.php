@@ -44,8 +44,8 @@
                        </li>
                        <li><a><i class="fa fa-globe"></i> Clientes <span class="fa fa-chevron-down"></span></a>
                            <ul class="nav child_menu">
-                               <li><a href="{{route('nuevo')}}">Registrar Nuevo</a></li>
-                               <li><a href="{{route('lista')}}">Ver Todos</a></li>
+                               <li><a href="{{route('nuevoCl')}}">Registrar Nuevo</a></li>
+                               <li><a href="{{route('listaCl')}}">Ver Todos</a></li>
                            </ul>
                        </li>
                        <li><a><i class="fa fa-users"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
