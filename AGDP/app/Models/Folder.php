@@ -26,7 +26,7 @@ class Folder extends Model
 
     public function Folder_User()
     {
-        return $this->belongsTo(Folder_User::class, 'folder_id', 'idFolder');
+        return $this->belongsTo(Folder::class, 'folder_id', 'idFolder');
     }
 
 }

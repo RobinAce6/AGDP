@@ -8,6 +8,7 @@ use App\Models\Clients as Client;
 use App\Models\Folder as Project;
 use App\Models\MailE as Mail;
 
+use DB;
 
 class ClientsController extends Controller
 {
@@ -19,7 +20,7 @@ class ClientsController extends Controller
     public function index()
     {
         $client  = Client::all();
-        return view('clients.listaCl', compact('client'));
+        return view('clients.listCl', compact('client'));
     }
 
     /**
@@ -29,7 +30,7 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        return view ('clients.nuevoCl');
+        return view ('clients');
     }
 
     /**
@@ -44,12 +45,11 @@ class ClientsController extends Controller
 
         $client->nitClient = $request->nitClient;
         $client->nameClient = $request->nameClient;
-        $client->personClient = $request->personClient;
         $client->addressClient = $request->addressClient;
 
         $client->save();
 
-        return redirect('lista');
+        return back();
     }
 
     /**
@@ -69,11 +69,10 @@ class ClientsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
     public function edit($idClient)
     {
         $client = Client::find($idClient);
-        return view('clients.modificar', compact('client'));
+        return view('clients.updateCl', compact('client'));
     }
 
     /**
@@ -89,12 +88,11 @@ class ClientsController extends Controller
 
         $client->nitClient = $request->nitClient;
         $client->nameClient = $request->nameClient;
-        $client->personClient = $request->personClient;
         $client->addressClient = $request->addressClient;
 
         $client->save();
 
-        return redirect('lista');
+        return redirect('clients');
     }
 
     /**
@@ -115,10 +113,6 @@ class ClientsController extends Controller
     //    $client = Client::where('nameClient', 'like','%'.$request->nameClient.'%')->get();
     // }
 
-    // public function editcL()
-    // {
-    //     return view('clients.modificar');
-    // }
 
    
 }

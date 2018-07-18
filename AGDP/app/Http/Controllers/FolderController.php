@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Models\Folder as FolderM;
 use App\Models\Clients as Client;
-use App\Models\Folder_User as Folder_User;
+
+use Illuminate\Http\Request;
 
 
 class FolderController extends Controller
@@ -16,14 +15,14 @@ class FolderController extends Controller
     {
         $client = Client::all();
         $folder = FolderM::with('Client')->get();
-        return view('folder.lista', compact('folder', 'client'));
+        return view('folder.listF', compact('folder', 'client'));
     }
 
    
     public function create()
     {
         $client = Client::all();
-        return view ('folder.nuevo', compact('client'));
+        return view ('folder.listF', compact('client'));
     }
 
     public function store (Request $request)
@@ -35,16 +34,14 @@ class FolderController extends Controller
  
         $folder->save();
 
-        return redirect('lista');
+        return back();
     }
 
     
     public function edit($idFolder)
     {
-        
-        $folder = FolderM::find($idFolder);
         $client = Client::all();
-        return view('folder.editF', compact('client', 'folder'));
+        return view('folder.updateF', compact('client'));
     }
 
     
@@ -57,15 +54,14 @@ class FolderController extends Controller
 
         $folder->save();
 
-        return redirect('folder.lista');
+        return redirect('folder.listF');
     }
 
-
-    public function verF($idFolder)
+   
+    public function destroy($idFolder)
     {
         $folder = FolderM::find($idFolder);
-        // $folder = FolderM::with('Folder_User')->get();
-        // $client = Client::all();
-        return view('folder.ver', compact('folder'));
+        $folder->delete();
+        return back();
     }
 }

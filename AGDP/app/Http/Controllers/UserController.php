@@ -16,7 +16,7 @@ class UserController extends Controller
         $typep  = TPM::all();
         $depend = DM::all();
         $user = UserM::with('TypePerson', 'Dependency')->get();
-        return view('user.listaU', compact('user','typep', 'depend'));
+        return view('user.listU', compact('user','typep', 'depend'));
     }
 
     
@@ -41,7 +41,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect('user');
+        return redirect('role_user')->withMessage('Asigne un rol del sistema a '.$user->namePerson);
     }
 
     public function edit($idUser)
@@ -49,39 +49,38 @@ class UserController extends Controller
         $typep  = TPM::all();
         $depend = DM::all();
         $user = UserM::find($idUser);
-        return view('user.modificarU', compact('user','typep', 'depend'));
+        return view('user.updateU', compact('user','typep', 'depend'));
 
     }
 
     public function update(Request $request, $idUser)
     {             
         $user = UserM::find($idUser);
-        
+
         $user->codPerson      = $request->codPerson;
         $user->namePerson     = $request->namePerson;
         $user->lastnamePerson = $request->lastnamePerson;
         $user->email          = $request->email;  
         $user->typePerson_id  = $request->idTypePerson;
-        $user->dependency_id  = $request->idDependency;
+        $user->dependency_id  = $request->idDependency;  
         $user->password       = $request->codPerson;
 
         $user->save();
 
-        return redirect('listaU');
+        return redirect('user');
     }
 
+    public function search (Request $request)
+    {
+        $user = UserM::where('userPerson', 'like','%'.$request->userName.'%')->get();
+    }
 
-    // public function search (Request $request)
-    // {
-    //     $user = UserM::where('userPerson', 'like','%'.$request->userName.'%')->get();
-    // }
-
-    // public function destroy($idUser)
-    // {
-    //     $user = UserM::find($idUser);
-    //     $user->delete();
-    //     return back();
-    // }
+    public function destroy($idUser)
+    {
+        $user = UserM::find($idUser);
+        $user->delete();
+        return back();
+    }
 
     public function Profile()
     {

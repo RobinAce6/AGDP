@@ -20,7 +20,7 @@ class RoleUserController extends Controller
         $role = Role::all();
         $user = User::all();
         $userole = RUM::with('User', 'Role')->get();
-        return view('role_user.listaRU', compact('userole', 'role', 'user'));
+        return view('role_user.listRU', compact('userole', 'role', 'user'));
     }
 
     /**
@@ -32,7 +32,7 @@ class RoleUserController extends Controller
     {
         $role = Role::all();
         $user = User::all();
-        return view('role_user.nuevoRU', compact('role', 'user'));
+        return view('role_user', compact('role', 'user'));
     }
 
     /**
@@ -50,7 +50,7 @@ class RoleUserController extends Controller
 
         $userole->save();
 
-        return redirect('role_user');
+        return redirect('user.listU');
     }
 
 
@@ -84,7 +84,19 @@ class RoleUserController extends Controller
 
         $roleuser->save();
 
-        return redirect('role_user');
+        return redirect('role_user.listRU');
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Role_User  $role_User
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($nRU)
+    {
+        $roleuser = RUM::find($nRU);
+        $roleuser->delete();
+        return back();
+    }
 }

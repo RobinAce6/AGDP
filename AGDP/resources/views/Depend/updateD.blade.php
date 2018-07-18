@@ -1,6 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
-@section('main')
+@section('content')
 
    <div class="limiter">
    	<div class="container-login100">

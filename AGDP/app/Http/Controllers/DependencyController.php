@@ -12,7 +12,7 @@ class DependencyController extends Controller
     public function index()
     {
         $depend = DependM::all();
-        return view ('depend.listaD', compact('depend'));
+        return view ('depend.listD', compact('depend'));
     }
 
     // public function create()
