@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta ch
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -143,7 +143,8 @@
 
     <!-- Custom Theme Scripts -->
     <script src="{{asset('js/custom.js')}}"></script>
-    <script src="{{asset('js/main.js')}}"></script>|
+    <script src="{{asset('js/main.js')}}"></script>|hay no esta el datatablescomo asi? no esta verificalo tu y lo veras has back creo que seria lo mejor a una version funcional haz hecho commits verdad?si pero la cosa es qeu funcionaba asi como esta sin el asset y de un momento a otro ya no habia front por eso es por que las carpetas no estan ok espera
+    
   
 </body>
 </html>
