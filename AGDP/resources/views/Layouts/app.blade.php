@@ -14,30 +14,30 @@
     <title>Consultécnicos</title>
 
     <!-- Bootstrap -->
-    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="vendor/nprogress/nprogress.css" rel="stylesheet">
+    <link href="nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
-    <link href="vendor/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="iCheck/skins/flat/green.css" rel="stylesheet">
 
     <!-- bootstrap-progressbar -->
-    <link href="vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <link href="bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
-    <link href="vendor/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <link href="jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
-    <link href="vendor/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     
     <!-- bootstrap-datetimepicker -->
-    <link href="vendor/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link href="bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
 
     <!-- Datatables -->
-    <link href="vendor/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <link href="datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="css/custom.css" rel="stylesheet">
@@ -79,72 +79,71 @@
 
 
     <!-- jQuery -->
-    <script src="vendor/jquery/dist/jquery.min.js"></script>
+    <script src="jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
-    <script rc="vendor/fastclick/lib/fastclick.js"></script>
+    <script rc="fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
-    <script src="vendor/nprogress/nprogress.js"></script>
+    <script src="nprogress/nprogress.js"></script>
     <!-- bootstrap-progressbar -->
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
     <!-- iCheck -->
-    <script src="vendor/iCheck/icheck.min.js"></script>
+    <script src="iCheck/icheck.min.js"></script>
     <!-- bootstrap-daterangepicker -->
-    <script src="vendor/moment/min/moment.min.js"></script>
-    <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="moment/min/moment.min.js"></script>
+    <script src="bootstrap-daterangepicker/daterangepicker.js"></script>
     <!-- bootstrap-datetimepicker -->    
-    <script src="vendor/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
     <!-- bootstrap-wysiwyg -->
-    <script src="vendor/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
-    <script src="vendor/jquery.hotkeys/jquery.hotkeys.js"></script>
-    <script src="vendor/google-code-prettify/src/prettify.js"></script>
+    <script src="bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="google-code-prettify/src/prettify.js"></script>
     <!-- jQuery Tags Input -->
-    <script src="vendor/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+    <script src="jquery.tagsinput/src/jquery.tagsinput.js"></script>
     <!-- Switchery -->
-    <script src="vendor/switchery/dist/switchery.min.js"></script>
+    <script src="switchery/dist/switchery.min.js"></script>
     <!-- Select2 -->
-    <script src="vendor/select2/dist/js/select2.full.min.js"></script>
+    <script src="select2/dist/js/select2.full.min.js"></script>
     <!-- Parsley -->
-    <script src="vendor/parsleyjs/dist/parsley.min.js"></script>
+    <script src="parsleyjs/dist/parsley.min.js"></script>
     <!-- Autosize -->
-    <script src="vendor/autosize/dist/autosize.min.js"></script>
+    <script src="autosize/dist/autosize.min.js"></script>
     <!-- jQuery autocomplete -->
-    <script src="vendor/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+    <script src="devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
     <!-- starrr -->
-    <script src="vendor/starrr/dist/starrr.js"></script>
+    <script src="starrr/dist/starrr.js"></script>
 
     <!-- DateJS -->
-    <script src="vendor/DateJS/build/date.js"></script>
+    <script src="DateJS/build/date.js"></script>
     
     <!-- bootstrap-daterangepicker -->
-    <script src="vendor/moment/min/moment.min.js"></script>
-    <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="moment/min/moment.min.js"></script>
+    <script src="bootstrap-daterangepicker/daterangepicker.js"></script>
 
     <!-- Datatables -->
-    <script src="vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <script src="vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-    <script src="vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
-    <script src="vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-    <script src="vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-    <script src="vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="vendor/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-    <script src="vendor/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
-    <script src="vendor/jszip/dist/jszip.min.js"></script>
-    <script src="vendor/pdfmake/build/pdfmake.min.js"></script>
-    <script src="vendor/pdfmake/build/vfs_fonts.js"></script>
+    <script src="datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="jszip/dist/jszip.min.js"></script>
+    <script src="pdfmake/build/pdfmake.min.js"></script>
+    <script src="pdfmake/build/vfs_fonts.js"></script>
 
     <!-- Treetable -->
     <script src="{{asset('js/jquery.treetable.js')}}"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="{{asset('js/custom.js')}}"></script>
-    <script src="{{asset('js/main.js')}}"></script>|hay no esta el datatablescomo asi? no esta verificalo tu y lo veras has back creo que seria lo mejor a una version funcional haz hecho commits verdad?si pero la cosa es qeu funcionaba asi como esta sin el asset y de un momento a otro ya no habia front por eso es por que las carpetas no estan ok espera
-    
+    <script src="{{asset('js/main.js')}}"></script>
   
 </body>
 </html>
