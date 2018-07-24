@@ -572,7 +572,7 @@ h1 {
   color: #42a3b8; }
 
 .wrapper-login {
-  /*background: url("../img/bg-login.jpg") no-repeat center center;*/
+  background: url("../img/bg-login.jpg") no-repeat center center;
   background-size: cover;
   height: 100%; }
   .wrapper-login .login {
@@ -720,8 +720,3 @@ form .password {
 @media (min-width: 1024px) {
   .hidden-desktop {
     display: none !important; } }
-
-.navbar-brand
-{
-  padding: 18px 16px;
-}
