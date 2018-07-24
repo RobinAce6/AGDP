@@ -35,14 +35,14 @@ Route::GET('others', 'UserController@Others')->name('others');
 
 // Clients Routes
 
-// Route::GET ('clients', 'ClientsController@index')				->name('clients');
-// Route::GET ('listaC', 'ClientsController@index')				->name('listaCl');
-// Route::GET ('clients/nuevo', 'ClientsController@create')		->name('nuevoCl');
-// Route::POST('clients/create','ClientsController@store')			->name('storeCl');
-// Route::GET ('clients/Modificar/{id}', 'ClientsController@edit')	->name('clients/Modificar');
-// Route::PUT ('clients/update/{id}', 'ClientsController@update')	->name('updateCl');
+Route::GET ('clients', 'ClientsController@index')				->name('clients');
+Route::GET ('listaC', 'ClientsController@index')				->name('listaCl');
+Route::GET ('clients/nuevo', 'ClientsController@create')		->name('nuevoCl');
+Route::POST('clients/create','ClientsController@store')			->name('storeCl');
+Route::GET ('clients/Modificar/{id}', 'ClientsController@edit')	->name('clients/Modificar');
+Route::PUT ('clients/update/{id}', 'ClientsController@update')	->name('updateCl');
 
-Route::resource('clients', 'ClientsController');
+// Route::resource('clients', 'ClientsController');
 
 // Role_User Routes
 

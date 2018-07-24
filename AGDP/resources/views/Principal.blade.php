@@ -1,97 +1,55 @@
 @extends('layouts.main')
 
-@section('content')
+@section('main')
 
-		<div class="container">
-			<div class="wrapper-dashboard">
-				<div class="row content-card justify-content-md-center" style="margin-top:0%;">
-					<div class="jumbotron jumbotron-fluid" style="width: 100%; padding:4%">
-						<div class="container">
-							<h1 class="display-4 text-center">Bienvenido<strong> {{Auth::user()->namePerson}}</strong></h1>
-						</div>
+<div class="right_col" role="main">
+	<div class="clearfix"></div>
+	<div class="row">
+		<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST" >
+			{{ csrf_field() }}
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="top_tiles">
+				<div class="row">
+					<div class="animated flipInY col-lg-4 col-lg-offset-2 col-md-offset-2  col-md-4 col-sm-offset-0  col-sm-6 col-xs-offset-0  col-xs-12">
+						<a href="{{route('listaM')}}"><div class="tile-stats">
+							<div class="icon"><i class="fa fa-envelope"></i></div>
+							<div class="count">1700</div>
+							<h3>Correspondencia Enviada</h3>
+							<p>Correspondencia que sale de Consultecnicos para los clientes.</p>
+						</div></a>
+					</div>
+					<div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<a href="lista_correspondencia_recibida.html"><div class="tile-stats">
+							<div class="icon"><i class="fa fa-envelope"></i></div>
+							<div class="count">3200</div>
+							<h3>Correspondencia Recibida</h3>
+							<p>Correspondencia que envían los clientes para Consultecnicos. </p>
+						</div></a>
 					</div>
 				</div>
-				<form class="form-group" method="POST" action="{{ route('logout') }}">
-					{{ csrf_field() }}
-						<div class="container text-center">
-							<div class="row content-card justify-content-md-center">
-								<div class="col-md-4 text-center">
-									<div class="card" style="width: 18rem;">
-										<div class="card-body">
-											<img src="img/correspondencia_2.png">
-											<h5 class="card-title">CORRESPONDENCIA</h5>
-											<p class="card-text">Gestión de la correspondencia recibida y enviada.</p>
-											<a href="{{route('newM')}}" class="card-link">Nueva</a>
-											<a href="{{route('maile.listM')}}" class="card-link">Ultimas Referencias</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4 text-center">
-									<div class="card" style="width: 18rem;">
-										<div class="card-body">
-											<img src="img/folder.png">
-											<h5 class="card-title">PROYECTOS</h5>
-											<p class="card-text">Gestión de los proyectos que se realizan en la empresa.</p>
-											<a href="{{route('folder')}}" class="card-link">Ir</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4 text-center">
-									<div class="card" style="width: 18rem;">
-										<div class="card-body">
-											<img src="img/clientes.png">
-
-											<h5 class="card-title">CLIENTES</h5>
-											<p class="card-text">Gestión de remitentes y destinatarios de la correspondencia</p>
-											<a href="{{ route('clients')}}" class="card-link">Ir</a>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="row content-card  justify-content-md-center">
-									
-								<div class="col-sm-4 text-center">
-									<div class="card" style="width: 18rem;">
-										<div class="card-body">
-											<img src="img/usuarios.png">
-											<h5 class="card-title">USUARIOS</h5>
-											<p class="card-text">Administración de usuarios, roles, permisos y cargos en la empresa.</p>
-											<a href="{{ route('newU')}}" class="card-link">Crear</a>
-											<a href="{{ route('user')}}" class="card-link">Ver Listado</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4 text-center">
-									<div class="card" style="width: 18rem;">
-										<div class="card-body">
-											<img src="img/area_trabajo_2.png">
-
-											
-											<h5 class="card-title">DEPENDENCIAS</h5>
-											<p class="card-text">Gestión de las diferentes áreas de trabajo. Ej.</p>
-											<a href="{{ route('depend')}}" class="card-link">Ver Dependencias</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4 text-center">
-									<div class="card" style="width: 18rem;">
-										<div class="card-body">
-											<img src="img/proyectos.png">
-
-											
-											<h5 class="card-title">OTRAS CONFIGURACIONES</h5>
-											<p class="card-text">Formato de Correspondencia, Cargo, Ciudades, Permisos, Roles del Sistema, entre otros.</p>
-											<a href="{{ route('others')}}" class="card-link">Ir</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</form>
+				<div class="row">
+					<div class="animated flipInY col-lg-4 col-lg-offset-2 col-md-offset-2  col-md-4 col-sm-offset-0  col-sm-6 col-xs-offset-0  col-xs-12">
+						<a href="lista_clientes.html"><div class="tile-stats">
+							<div class="icon"><i class="fa fa-globe"></i></div>
+							<div class="count">5</div>
+							<h3>Clientes</h3>
+							<p>Empresas receptoras de los beneficios que ofrece Consultecnicos. </p>
+						</div></a>
+					</div>
+					<div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<a href="lista_proyectos.html"><div class="tile-stats">
+							<div class="icon"><i class="fa fa-edit"></i></div>
+							<div class="count">28</div>
+							<h3>Proyectos</h3>
+							<p>Actividades que Consultecnicos realiza para sus clientes. </p>
+						</div></a>
+					</div>
 				</div>
+
 			</div>
 		</div>
+		</form>
 	</div>
+</div>
 
 @endsection
