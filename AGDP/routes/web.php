@@ -13,7 +13,7 @@
 
 	//Route::POST('email', 'ResetPasswordController@showResetForm');
 
-//Mainboard
+//Principal
 
 Route::GET('Principal', 'MainboardController@index')->name('Principal');
 Route::POST('login', 'Auth\LoginController@login')->name('login');
@@ -41,6 +41,8 @@ Route::GET ('clients/nuevo', 'ClientsController@create')		->name('nuevoCl');
 Route::POST('clients/create','ClientsController@store')			->name('storeCl');
 Route::GET ('clients/Modificar/{id}', 'ClientsController@edit')	->name('clients/Modificar');
 Route::PUT ('clients/update/{id}', 'ClientsController@update')	->name('updateCl');
+
+// Route::resource('clients', 'ClientsController');
 
 // Role_User Routes
 

@@ -24,6 +24,6 @@ class MainboardController extends Controller
     	$roleuser = RU::all();
     	$role = Role::all();
     	$user = User::all();
-    	return view('mainboard', compact('roleuser', 'role', 'user'));
+    	return view('Principal', compact('roleuser', 'role', 'user'));
     }
 }

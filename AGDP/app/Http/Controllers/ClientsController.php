@@ -19,8 +19,8 @@ class ClientsController extends Controller
      */
     public function index()
     {
-        $client  = Client::all();
-        return view('clients.listCl', compact('client'));
+        $clients  = Client::all();
+        return view('clients.listaCl', compact('clients'));
     }
 
     /**
@@ -52,16 +52,6 @@ class ClientsController extends Controller
         return back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -94,24 +84,6 @@ class ClientsController extends Controller
 
         return redirect('clients');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function destroy($idClient)
-    // {
-    //     $client = Client::find($idClient);
-    //     $client->delete();
-    //     return back();
-    // }
-
-    // public function search (Request $request)
-    // {
-    //    $client = Client::where('nameClient', 'like','%'.$request->nameClient.'%')->get();
-    // }
 
 
    
