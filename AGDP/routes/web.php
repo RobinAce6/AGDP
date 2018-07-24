@@ -13,7 +13,7 @@
 
 	//Route::POST('email', 'ResetPasswordController@showResetForm');
 
-//Mainboard
+//Principal
 
 Route::GET('Principal', 'MainboardController@index')->name('Principal');
 Route::POST('login', 'Auth\LoginController@login')->name('login');

@@ -14,34 +14,34 @@
     <title>Consultécnicos</title>
 
     <!-- Bootstrap -->
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="nprogress/nprogress.css" rel="stylesheet">
+    <link href="vendor/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
-    <link href="iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="vendor/iCheck/skins/flat/green.css" rel="stylesheet">
 
     <!-- bootstrap-progressbar -->
-    <link href="bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
-    <link href="jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <link href="vendor/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
-    <link href="bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="vendor/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     
     <!-- bootstrap-datetimepicker -->
-    <link href="bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link href="vendor/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
 
     <!-- Datatables -->
-    <link href="datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-    <link href="datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-    <link href="datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <link href="datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="css/custom.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="vendor/css/custom.css" rel="stylesheet">
+    <link href="vendor/css/main.css" rel="stylesheet">
 
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">

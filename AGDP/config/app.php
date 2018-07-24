@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -211,8 +211,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Form' => Collective\Form\FormFom::class,
-        'Html' => Collective\Html\HtmlFom::class,
+        'Form' => Collective\Form\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 
