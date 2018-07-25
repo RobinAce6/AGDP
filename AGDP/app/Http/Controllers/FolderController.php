@@ -22,7 +22,7 @@ class FolderController extends Controller
     public function create()
     {
         $client = Client::all();
-        return view ('folder.lista', compact('client'));
+        return view ('folder.nuevo', compact('client'));
     }
 
     public function store (Request $request)
