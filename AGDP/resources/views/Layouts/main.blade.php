@@ -118,47 +118,6 @@
                                 </span>
                             </a>
                         </li>
-                        <li>
-                            <a href="ver_correspondencia_recibida.html">
-                                <span>
-                                    <span><strong>CONSECUTIVO-010203</strong></span>
-                                    <!-- <span class="time">3 mins ago</span> -->
-                                </span>
-                                <span class="message">
-                                    <strong>Asunto:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat...
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="ver_correspondencia_recibida.html">
-                             <span>
-                                    <span><strong>CONSECUTIVO-010203</strong></span>
-                                    <!-- <span class="time">3 mins ago</span> -->
-                                </span>
-                                <span class="message">
-                                    <strong>Asunto:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat...
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="ver_correspondencia_recibida.html">
-                                 <span>
-                                    <span><strong>CONSECUTIVO-010203</strong></span>
-                                    <!-- <span class="time">3 mins ago</span> -->
-                                </span>
-                                <span class="message">
-                                    <strong>Asunto:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat...
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="text-center">
-                                <a href="lista_correspondencia_recibida.html">
-                                    <strong>Ver Toda la Correspondencia</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </div>
-                        </li>
                     </ul>
                 </li>
             </ul>
