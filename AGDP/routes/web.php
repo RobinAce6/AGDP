@@ -111,7 +111,7 @@ Route::GET ('user/Modificar/{id}', 'UserController@edit')	->name('Modificar');
 //Folder Routes
 
 Route::GET ('folder', 'FolderController@index')					->name('folder');
-Route::GET ('lista', 'FolderController@index')					->name('lista');
+Route::GET ('folder.lista', 'FolderController@index')			->name('lista');
 Route::GET ('folder/ver/{id}', 'FolderController@verF')			->name('ver');
 Route::GET ('folder/nuevo', 'FolderController@create')			->name('nuevo');
 Route::POST('folder','FolderController@store')					->name('storeF');
@@ -146,7 +146,7 @@ Auth::routes();
 //MailE Routes
 
 Route::GET ('maile', 'MaileController@index')				->name('maile');
-Route::GET ('maile.listM', 'MaileController@index')			->name('listM');
+Route::GET ('maile.listaM', 'MaileController@index')		->name('listaM');
 Route::POST('maile','MaileController@store')				->name('storeM');
 Route::GET ('maile/create', 'MaileController@create')		->name('newM');
 Route::POST('maile/search', 'MaileController@search')		->name('searchM');

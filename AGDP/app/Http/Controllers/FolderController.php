@@ -15,14 +15,14 @@ class FolderController extends Controller
     {
         $client = Client::all();
         $folder = FolderM::with('Client')->get();
-        return view('folder.listF', compact('folder', 'client'));
+        return view('folder.lista', compact('folder', 'client'));
     }
 
    
     public function create()
     {
         $client = Client::all();
-        return view ('folder.listF', compact('client'));
+        return view ('folder.lista', compact('client'));
     }
 
     public function store (Request $request)
@@ -54,14 +54,7 @@ class FolderController extends Controller
 
         $folder->save();
 
-        return redirect('folder.listF');
+        return redirect('folder.lista');
     }
 
-   
-    public function destroy($idFolder)
-    {
-        $folder = FolderM::find($idFolder);
-        $folder->delete();
-        return back();
-    }
 }
