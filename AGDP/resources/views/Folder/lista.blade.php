@@ -1,6 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.menu')
 
-@section('main')
+@section('menu')
 
 <div class="right_col" role="main">
 	<div class="clearfix"></div>
@@ -29,9 +29,10 @@
 									</tr>
 								</thead>
 								<tbody>
+									@foreach($folder as $folders)
 									<tr>
-										<td>1049638457</td>
-										<td>Cliente 1</td>
+										<td>{{$folders->nameFolder}}</td>
+										<td>{{$folders->Client->nameClient}}</td>
 										
 										<td>
 											<div class="dropdown">
@@ -40,7 +41,8 @@
 												</button>
 												<div class="dropdown-menu" aria-labelledby="dropdownMenu1">
 												<li><a href="ver_proyecto.html">Ver</a></li>
-												<li><a href="editar_proyecto.html">Modificar</a></li>
+												<li><a href="{{ route('folder/Modificar', ['idFolder' => $folders->idFolder]) }}">Actualizar</a></li>
+
 												<li class="lock"><a href="#">Desctivar</a></li>
 												<li class="hide unlock"><a href="#">Activar</a></li>
 												</div>
@@ -49,6 +51,7 @@
 											</div>
 										</td>
 									</tr>
+									@endforeach
 								</tbody>
 							</table>
 						</div>

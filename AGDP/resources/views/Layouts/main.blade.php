@@ -4,11 +4,11 @@
 
 <div class="top_nav">
 <div class="container body">
-    <div class="main_container">
+  <div class="main_container">
     <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-                <a href="dashboard.html" class="site_title"><img src="{{('design/img/main/logo_1.png')}}"> <span>Consultecnicos</span></a>
+                <a href="{{route('Principal')}}" class="site_title"><img src="{{('design/img/main/logo_1.png')}}"> <span>Consultecnicos</span></a>
             </div>
 
             <div class="clearfix"></div>

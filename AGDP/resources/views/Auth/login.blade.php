@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.menu')
 
-@section('content')
+@section('menu')
 
-    <form  class="needs-validation" method="POST" action="{{ route('login') }}" style="background-image: url(../img/bg-login.jpg);">
+    <form  class="needs-validation" method="POST" action="{{ route('login') }}" >
         <div class="wrapper-login" >
             <div class="container">
                     {{ csrf_field() }}

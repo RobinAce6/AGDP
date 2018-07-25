@@ -19,7 +19,7 @@ class MaileController extends Controller
     public function index()
     {
         $mail = MailE::with('Folder', 'StorageWay', 'City');
-        return view('maile.listM', compact('mail'));
+        return view('maile.listaM', compact('mail'));
     }
 
     /**

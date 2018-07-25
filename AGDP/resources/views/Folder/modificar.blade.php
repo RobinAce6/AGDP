@@ -19,7 +19,10 @@
 				</div>
 				<div class="x_content">
 					
-					<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+					<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('update', [$folder->idFolder]) }}">
+				
+						{{ method_field('PUT')}}
+						{{ csrf_field() }}
 						
 						
 						<div class="row">
@@ -30,12 +33,10 @@
 							<div class="form-group col-md-6 col-xs-12">
 								<label class="control-label">Cliente</label>
 								<select class="select2_single form-control" tabindex="-1" required="required" data-parsley-required-message="Este campo es obligatorio">
-									<option value="">Selecciona un cliente</option>
-									<option>Cliente 1</option>
-									<option>Cliente 2</option>
-									<option>Cliente 3</option>
-									<option>Cliente 4</option>
-									<option>Cliente 5</option>
+									@foreach ($client as $Client)
+					                   <option value="{{$Client->idClient}}">{{$Client->nameClient}}</option>
+										<option value="">Selecciona un cliente</option>
+					                @endforeach
 								</select>
 							</div>
 						</div>
