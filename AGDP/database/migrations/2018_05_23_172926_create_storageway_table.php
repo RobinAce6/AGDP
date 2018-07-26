@@ -17,7 +17,6 @@ class CreateStoragewayTable extends Migration {
 		{
 			$table->integer('idStorageWay', true);
 			$table->string('nameSW', 25);
-			$table->rememberToken();
             $table->timestamps();
 		});
 	}

@@ -18,7 +18,6 @@ class CreateDependencyMailTable extends Migration {
 			$table->integer('nMD', true);
 			$table->integer('dependency_id')->index('dependency_id');
 			$table->integer('mail_id')->index('mail_id');
-			$table->rememberToken();
             $table->timestamps();
 		});
 	}

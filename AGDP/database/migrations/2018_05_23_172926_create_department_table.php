@@ -17,7 +17,6 @@ class CreateDepartmentTable extends Migration {
 		{
 			$table->integer('idDepartment', true);
 			$table->string('nameDepartment', 25);
-			$table->rememberToken();
             $table->timestamps();
 		});
 	}

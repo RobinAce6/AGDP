@@ -18,7 +18,6 @@ class CreateRoleUserTable extends Migration {
 			$table->integer('nRU', true);
 			$table->integer('role_id')->index('role_id');
 			$table->integer('user_id')->index('user_id');
-			$table->rememberToken();
             $table->timestamps();
 		});
 	}

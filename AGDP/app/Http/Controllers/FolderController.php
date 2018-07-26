@@ -34,7 +34,7 @@ class FolderController extends Controller
  
         $folder->save();
 
-        return back();
+        return view('folder.lista');
     }
 
     

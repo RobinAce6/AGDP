@@ -18,7 +18,6 @@ class CreatePermissionTable extends Migration {
 			$table->integer('idPermission', true);
 			$table->string('namePermission', 250)->unique();
 			$table->string('description', 250);
-			$table->rememberToken();
             $table->timestamps();
 		});
 	}

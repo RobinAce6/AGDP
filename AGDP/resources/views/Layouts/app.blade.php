@@ -201,6 +201,5 @@
     <script src="{{asset('design/js/main.js')}}"></script>
 
 
-
 </body>
 </html>

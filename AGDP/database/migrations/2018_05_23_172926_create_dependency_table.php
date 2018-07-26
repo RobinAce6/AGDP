@@ -17,7 +17,6 @@ class CreateDependencyTable extends Migration {
 		{
 			$table->integer('idDependency', true);
 			$table->string('nameDependency', 50);
-			$table->rememberToken();
             $table->timestamps();
 		});
 	}

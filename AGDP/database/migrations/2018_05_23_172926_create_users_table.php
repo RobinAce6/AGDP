@@ -22,8 +22,8 @@
 				$table->string('email', 45)->unique('email');
 				$table->integer('typePerson_id')->index('per_typ');
 				$table->integer('dependency_id')->index('per_dep');
-				$table->string('password');
 				$table->rememberToken();
+				$table->string('password');
 				$table->timestamps();
 			});
 		}

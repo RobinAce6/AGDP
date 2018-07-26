@@ -18,7 +18,6 @@ class CreateEdocTable extends Migration {
 			$table->integer('idEDoc', true);
 			$table->string('nameEDoc', 50)->unique();
 			$table->integer('mail_id');
-			$table->rememberToken();
             $table->timestamps();
 		});
 	}

@@ -19,11 +19,10 @@
 				</div>
 				<div class="x_content">
 					
-					<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('update', [$folder->idFolder]) }}">
+					<form  class="form-horizontal form-label-left" data-parsley-validate method="POST" action="{{ route('update', [$folder->idFolder]) }}">
 				
 						{{ method_field('PUT')}}
 						{{ csrf_field() }}
-						
 						
 						<div class="row">
 							<div class="form-group col-xs-12 col-md-6">

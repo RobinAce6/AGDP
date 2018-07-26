@@ -18,7 +18,6 @@ class CreateFolderUserTable extends Migration {
 			$table->integer('nUF', true);
 			$table->integer('user_id')->index('user_id');
 			$table->integer('folder_id')->index('folder_id');
-			$table->rememberToken();
             $table->timestamps();
 		});
 	}

@@ -1,6 +1,6 @@
-@extends('layouts.menu')
+@extends('layouts.main')
 
-@section('menu')
+@section('main')
 
 <div class="right_col" role="main">
 	<div class="clearfix"></div>

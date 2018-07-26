@@ -1,6 +1,6 @@
-@extends('layouts.menu')
+@extends('layouts.main')
 
-@section('menu')
+@section('main')
 
     <form  class="needs-validation" method="POST" action="{{ route('login') }}" >
         <div class="wrapper-login" >

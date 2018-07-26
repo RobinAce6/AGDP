@@ -17,7 +17,6 @@ class CreateTypepersonTable extends Migration {
 		{
 			$table->integer('idTypePerson', true);
 			$table->string('nameTypePerson', 25);
-			$table->rememberToken();
             $table->timestamps();
 		});
 	}

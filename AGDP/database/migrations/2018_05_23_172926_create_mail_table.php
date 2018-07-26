@@ -32,8 +32,7 @@ class CreateMailTable extends Migration {
 			$table->boolean('deliveredToArchive');
 			$table->string('CompanyMssgr', 30);
 			$table->string('nameMessenger', 50);			
-			$table->integer('city_id');			
-			$table->rememberToken();
+			$table->integer('city_id');	
             $table->timestamps();
 		});
 	}	

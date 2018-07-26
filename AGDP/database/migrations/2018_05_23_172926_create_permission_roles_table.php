@@ -18,7 +18,6 @@ class CreatePermissionRolesTable extends Migration {
 			$table->integer('nPR', true);
 			$table->integer('permission_id');
 			$table->integer('role_id');
-			$table->rememberToken();
             $table->timestamps();
 		});
 	}
