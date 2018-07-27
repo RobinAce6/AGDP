@@ -31,7 +31,7 @@ class ClientsController extends Controller
     public function create()
     {
         $client = Client::all();
-        return view('clients.nuevoCl', compact('client', 'folder'));
+        return view('clients.nuevoCl', compact('client'));
     }
 
     /**
@@ -46,11 +46,13 @@ class ClientsController extends Controller
 
         $client->nitClient = $request->nitClient;
         $client->nameClient = $request->nameClient;
+        $client->personClient = $request->personClient;
         $client->addressClient = $request->addressClient;
+        $client->typeClient = $request->typeClient;        
 
         $client->save();
 
-        return back();
+        return view('folder.ListaCl');
     }
 
 

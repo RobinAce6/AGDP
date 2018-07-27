@@ -55,7 +55,6 @@
                                        <li class="lock"><a href="#">Desctivar</a></li>
                                        <li class="hide unlock"><a href="#">Activar</a></li>
                                        </div>
-                                       
                                     </div>
                                  </div>
                               </td>
@@ -63,9 +62,8 @@
                            @endforeach
                         </tbody>
                      </table>
-            						</div>
-					</div>
-
+   						</div>
+					   </div>
                </form>
 				</div>
 			</div>

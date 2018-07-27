@@ -36,9 +36,9 @@ Route::GET('others', 'UserController@Others')->name('others');
 // Clients Routes
 
 Route::GET ('clients', 'ClientsController@index')				->name('clients');
-Route::GET ('listaC', 'ClientsController@index')				->name('listaCl');
-Route::GET ('clients/nuevo', 'ClientsController@create')		->name('nuevoCl');
-Route::POST('clients/create','ClientsController@store')			->name('storeCl');
+Route::GET ('listaC', 'ClientsController@index')				->name('ListaCl');
+Route::GET ('clients/Nuevo', 'ClientsController@create')		->name('NuevoCl');
+Route::POST('clients','ClientsController@store')				->name('storeCl');
 Route::GET ('clients/Modificar/{id}', 'ClientsController@edit')	->name('clients/Modificar');
 Route::PUT ('clients/Actualizar/{id}', 'ClientsController@update')	->name('Actualizar');
 
@@ -90,23 +90,21 @@ Route::GET ('role.listR', 'RoleController@index')			->name('role.listR');
 
 Route::GET ('depend', 'DependencyController@index')					->name('depend');
 Route::GET ('depend.listaD', 'DependencyController@index')			->name('listaD');
-// Route::POST('depend','DependencyController@store')					->name('storeD');
-// Route::GET ('depend/create', 'DependencyController@create')			->name('newD');
-//Route::POST('depend/search', 'DependencyController@search')			->name('searchD');
+//Route::POST('depend','DependencyController@store')				->name('storeD');
+//Route::GET ('depend/create', 'DependencyController@create')		->name('newD');
+//Route::POST('depend/search', 'DependencyController@search')		->name('searchD');
 //Route::PUT ('depend/update/{id}', 'DependencyController@update')	->name('updateD');
-// Route::GET ('depend/destroy/{id}', 'DependencyController@destroy')	->name('depend/destroy');
-//Route::GET ('depend/edit/{id}', 'DependencyController@edit')->name('depend/edit');
+//Route::GET ('depend/destroy/{id}', 'DependencyController@destroy')->name('depend/destroy');
+//Route::GET ('depend/edit/{id}', 'DependencyController@edit')		->name('depend/edit');
 
 //User Routes
 
 Route::GET ('user', 'UserController@index')					->name('user');
 Route::GET ('listaU', 'UserController@index')				->name('listaU');
-Route::POST('user','UserController@store')					->name('storeU');
 Route::GET ('user/create', 'UserController@create')			->name('newU');
+Route::POST('user','UserController@store')					->name('storeU');
 Route::PUT ('user/update/{id}', 'UserController@update')	->name('updateU');
 Route::GET ('user/Modificar/{id}', 'UserController@edit')	->name('Modificar');
-//Route::POST('user/search', 'UserController@search')			->name('searchU');
-//Route::GET ('user/destroy/{id}', 'UserController@destroy')	->name('user/destroy');
 
 //Folder Routes
 

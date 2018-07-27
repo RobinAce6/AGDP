@@ -7,13 +7,13 @@
   <div class="main_container">
     <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-                <a href="{{route('Principal')}}" class="site_title"><img src="{{('design/img/main/logo_1.png')}}"> <span>Consultecnicos</span></a>
-            </div>
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="{{route('Principal')}}" class="site_title"><img src="{{('design/img/main/logo_1.png')}}"> <span>Consultecnicos</span></a>
+          </div>
 
-            <div class="clearfix"></div>
+          <div class="clearfix"></div>
 
-            <br><br>
+          <br><br>
 
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -45,8 +45,8 @@
                            </li>
                            <li><a><i class="fa fa-globe"></i> Clientes <span class="fa fa-chevron-down"></span></a>
                                <ul class="nav child_menu">
-                                   <li><a href="{{route('nuevoCl')}}">Registrar Nuevo</a></li>
-                                   <li><a href="{{route('listaCl')}}">Ver Todos</a></li>
+                                   <li><a href="{{route('NuevoCl')}}">Registrar Nuevo</a></li>
+                                   <li><a href="{{route('ListaCl')}}">Ver Todos</a></li>
                                </ul>
                            </li>
                            <li><a><i class="fa fa-users"></i> Usuarios <span class="fa fa-chevron-down"></span></a>

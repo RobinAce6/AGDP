@@ -22,7 +22,7 @@
             		{{ csrf_field() }}
 						
 						<div class="row">
-							<div class="form-group col-xs-12 col-md-6">
+							<div class="form-group col-xs-12 col-md-12">
 								<label class="control-label" for="last-name">Nombre<span class="required">*</span></label>
 								<input type="text" name="nameFolder" required="required" data-parsley-required-message="Este campo es obligatorio" class="form-control">
 							</div>
@@ -44,8 +44,6 @@
 								</select>
 							</div>
 						</div>
-						
-					
 						<div class="row">
 							<div class="form-group text-left">
 								<small class="col-sm-12 col-lg-12 "><sup>*</sup> Campos obligatorios</small>

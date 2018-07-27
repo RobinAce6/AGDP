@@ -41,7 +41,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect('role_user')->withMessage('Asigne un rol del sistema a '.$user->namePerson);
+        return redirect('role_user')->with('info','Asigne un rol del sistema a '.$user->namePerson);
     }
 
     public function edit($idUser)
