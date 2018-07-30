@@ -18,6 +18,12 @@ class FolderController extends Controller
         return view('folder.lista', compact('folder', 'client'));
     }
 
+    public function list(Request $request) 
+    {
+        $client = Client::all();
+        $folder = FolderM::with('Client')->get();
+        return view('folder.lista', compact('client', 'folder'));
+    }
    
     public function create()
     {

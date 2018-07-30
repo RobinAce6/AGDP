@@ -20,7 +20,15 @@ class ClientsController extends Controller
     public function index()
     {
         $clients  = Client::all();
-        return view('clients.listaCl', compact('clients'));
+        $folder = Project::all();
+        return view('clients.listaCl', compact('clients', 'folder'));
+    }
+
+    public function list()
+    {
+        $clients  = Client::all();
+        $folder = Project::all();
+        return view('clients.listaCl', compact('clients', 'folder'));
     }
 
     /**
@@ -48,7 +56,9 @@ class ClientsController extends Controller
         $client->nameClient = $request->nameClient;
         $client->personClient = $request->personClient;
         $client->addressClient = $request->addressClient;
-        $client->typeClient = $request->typeClient;        
+        $client->typeClient = $request->typeClient;  
+
+        dd('$client');      
 
         $client->save();
 
@@ -65,7 +75,8 @@ class ClientsController extends Controller
     public function edit($idClient)
     {
         $client = Client::find($idClient);
-        return view('clients.modificarCl', compact('client'));
+        $folder = Project::all();
+        return view('clients.modificarCl', compact('client', 'folder'));
     }
 
     /**
@@ -81,7 +92,9 @@ class ClientsController extends Controller
 
         $client->nitClient = $request->nitClient;
         $client->nameClient = $request->nameClient;
+        $client->personClient = $request->personClient;
         $client->addressClient = $request->addressClient;
+        $client->typeClient = $request->typeClient;
 
         $client->save();
 

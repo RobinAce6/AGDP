@@ -36,9 +36,9 @@ Route::GET('others', 'UserController@Others')->name('others');
 // Clients Routes
 
 Route::GET ('clients', 'ClientsController@index')				->name('clients');
-Route::GET ('listaC', 'ClientsController@index')				->name('ListaCl');
+Route::GET ('ListaCl', 'ClientsController@list')				->name('ListaCl');
 Route::GET ('clients/Nuevo', 'ClientsController@create')		->name('NuevoCl');
-Route::POST('clients','ClientsController@store')				->name('storeCl');
+Route::POST('clients','ClientsController@store')				->name('Guardar');
 Route::GET ('clients/Modificar/{id}', 'ClientsController@edit')	->name('clients/Modificar');
 Route::PUT ('clients/Actualizar/{id}', 'ClientsController@update')	->name('Actualizar');
 
@@ -109,7 +109,7 @@ Route::GET ('user/Modificar/{id}', 'UserController@edit')	->name('Modificar');
 //Folder Routes
 
 Route::GET ('folder', 'FolderController@index')					->name('folder');
-Route::GET ('folder.lista', 'FolderController@index')			->name('lista');
+Route::GET ('folder.lista', 'FolderController@list')			->name('lista');
 Route::GET ('folder/ver/{id}', 'FolderController@verF')			->name('ver');
 Route::GET ('folder/nuevo', 'FolderController@create')			->name('nuevo');
 Route::POST('folder','FolderController@store')					->name('storeF');

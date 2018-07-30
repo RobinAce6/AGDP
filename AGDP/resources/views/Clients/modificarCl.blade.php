@@ -8,7 +8,7 @@
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
-					<h2>Modificar Cliente <small>Cliente 1</small> </h2>
+					<h2>Modificar Cliente <small>{{$client->nameClient}}</small> </h2>
 					<ul class="nav navbar-right panel_toolbox">
 						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 						</li>
@@ -19,13 +19,15 @@
 				</div>
 				<div class="x_content">
 					
-					<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+					<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{route('Actualizar', [$client->idClient])}}">
 						
+						{{ method_field('PUT')}}
+						{{ csrf_field() }}
 						
 						<div class="row">
 							<div class="form-group col-xs-12 col-md-6">
 								<label class="control-label" for="last-name">NIT Empresa<span class="required">*</span></label>
-								<input type="text"  name="nameClient" value="{{ $client->nitClient }}" required data-parsley-required-message="Este campo es obligatorio" class="form-control">
+								<input type="text"  name="nitClient" value="{{ $client->nitClient }}" required data-parsley-required-message="Este campo es obligatorio" class="form-control">
 							</div>
 							<div class="form-group col-xs-12 col-md-6">
 								<label class="control-label" for="last-name">Nombre<span class="required">*</span></label>
@@ -33,15 +35,19 @@
 							</div>
 							<div class="form-group col-xs-12 col-md-6">
 								<label class="control-label" for="last-name">Encargad@<span class="required">*</span></label>
-								<input type="text"  name="nameClient" value="{{ $client->personClient }}" data-parsley-required-message="Este campo es obligatorio" class="form-control">
+								<input type="text"  name="personClient" value="{{ $client->personClient }}" data-parsley-required-message="Este campo es obligatorio" class="form-control">
 							</div>
 							<div class="form-group col-xs-12 col-md-6">
 								<label class="control-label" for="last-name">Dirección<span class="required">*</span></label>
-								<input type="text"  name="nameClient" value="{{ $client->addressClient }}" data-parsley-required-message="Este campo es obligatorio" class="form-control">
+								<input type="text" name="addressClient" value="{{ $client->addressClient }}" data-parsley-required-message="Este campo es obligatorio" class="form-control">
 							</div>
-							<div class="form-group col-xs-12 col-md-6">
-								<label class="control-label" for="last-name">Dirección<span class="required">*</span></label>
-								<input type="text"  name="nameClient" value="{{ $client->folder->nameFolder }}" data-parsley-required-message="Este campo es obligatorio" class="form-control">
+							
+							<div class="form-group col-md-6 col-xs-12">
+								<label class="control-label">Tipo Cliente</label>
+								<select class="select2_single form-control" tabindex="-1" required data-parsley-required-message="Este campo es obligatorio" name="typeClient">
+									<option value="Intervenido">Intervenido</option>
+									<option value="Contratante">Contratante</option>
+								</select>
 							</div>
 						</div>
 						
