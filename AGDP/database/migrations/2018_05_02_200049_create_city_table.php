@@ -15,8 +15,11 @@ class CreateCityTable extends Migration {
 		Schema::create('city', function(Blueprint $table)
 		{
 			$table->integer('idCity', true);
+            $table->integer('codCity');
 			$table->string('nameCity');
-			$table->integer('department_id');
+			$table->timestamps();
+			
+			//$table->integer('department_id');
 		});
 	}
 

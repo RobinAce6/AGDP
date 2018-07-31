@@ -15,36 +15,28 @@
 					<div class="clearfix"></div>
 				</div>
 				<div class="x_content">
-					
-					<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" array( method="POST" action="{{route('import.file')}}" files='true') enctype="multipart/form-data">
+		          <div class="panel-body">
 
-            {{ csrf_field() }}
-						
-						<div class="row">
-							<div class="form-group col-xs-12 col-md-12">
-								<label class="control-label" for="last-name">Nombre<span class="required">*</span></label>
-								<input type="file" name="excel" required data-parsley-required-message="Este campo es obligatorio" class="form-control">
-							</div>
-              {!! $errors->first('excel', '<p class="alert alert-danger">:message</p>') !!}
-						</div>
-						<div class="row">
-							<div class="form-group text-left">
-								<small class="col-sm-12 col-lg-12 "><sup>*</sup> Campos obligatorios</small>
-							</div>
-						</div>					
-						<div class="ln_solid"></div>
-						<div class="row">
-							<div class="form-group col-xs-12 text-center">
-							
-								<a href="{{route('lista')}}" class="btn btn-primary">Cancelar</a>
-								<button class="btn btn-success">Guardar</button>
-							
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
+		            <form action="{{ url('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+		                {{csrf_field()}}
+		 
+		                @if ($errors->any())
+		                    <div class="alert alert-danger">
+		                        <a class="close" data-dismiss="alert" aria-label="close">×</a>
+		                        <ul>
+		                            @foreach ($errors->all() as $error)
+		                                <li>{{ $error }}</li>
+		                            @endforeach
+		                        </ul>
+		                    </div>
+		                @endif
+		 
+                        <input type="file" name="import_file" required />
+						<button class="btn btn-primary">Import File</button>
+						</form>                 
+				</div>             
+			</div>         
+		</div>     
 	</div>
-</div>
+</div> 
 @endsection
