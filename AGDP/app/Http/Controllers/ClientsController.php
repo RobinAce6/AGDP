@@ -56,13 +56,11 @@ class ClientsController extends Controller
         $client->nameClient = $request->nameClient;
         $client->personClient = $request->personClient;
         $client->addressClient = $request->addressClient;
-        $client->typeClient = $request->typeClient;  
-
-        dd('$client');      
+        $client->typeClient = $request->typeClient;      
 
         $client->save();
 
-        return view('folder.ListaCl');
+        return redirect('listaCl');
     }
 
 

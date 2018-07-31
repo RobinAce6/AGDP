@@ -33,7 +33,6 @@
 									<tr>
 										<td>{{$folders->nameFolder}}</td>
 										<td>{{$folders->Client->nameClient}}</td>
-										
 										<td>
 											<div class="dropdown">
 												<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

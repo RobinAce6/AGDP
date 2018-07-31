@@ -24,11 +24,12 @@ Route::GET('others', 'UserController@Others')->name('others');
 
 // City Routes
 
-//Route::GET ('city', 'CityController@index')					->name('city');
+Route::GET ('city', 'ExcelController@index')					->name('city');
+Route::GET ('city/create', 'ExcelController@create')			->name('newC');
+Route::POST('city/search', 'ExcelController@search')			->name('searchC');
+Route::POST('import-file', 'ExcelController@importFile')	->name('import.file');
 // Route::GET ('city.listC', 'CityController@index')			->name('city.listC');
 // Route::POST('city','CityController@store')					->name('storeC');
-// Route::GET ('city/create', 'CityController@create')			->name('newC');
-// Route::POST('city/search', 'CityController@search')			->name('searchC');
 // Route::PUT ('city/update/{id}', 'CityController@update')	->name('updateC');
 // Route::GET ('city/destroy/{id}', 'CityController@destroy')	->name('city/destroy');
 // Route::GET ('city/edit/{id}', 'CityController@edit')		->name('city/edit');
@@ -38,7 +39,8 @@ Route::GET('others', 'UserController@Others')->name('others');
 Route::GET ('clients', 'ClientsController@index')				->name('clients');
 Route::GET ('ListaCl', 'ClientsController@list')				->name('ListaCl');
 Route::GET ('clients/Nuevo', 'ClientsController@create')		->name('NuevoCl');
-Route::POST('clients','ClientsController@store')				->name('Guardar');
+//Route::POST('store','ClientsController@store')					->name('storeCl');
+Route::POST('clients', 'ClientsController@store')->name('storeCl');
 Route::GET ('clients/Modificar/{id}', 'ClientsController@edit')	->name('clients/Modificar');
 Route::PUT ('clients/Actualizar/{id}', 'ClientsController@update')	->name('Actualizar');
 
@@ -47,8 +49,8 @@ Route::PUT ('clients/Actualizar/{id}', 'ClientsController@update')	->name('Actua
 // Role_User Routes
 
 Route::GET ('role_user', 'RoleUserController@index')				->name('role_user');
-Route::GET ('role_user.listaRU', 'RoleUserController@index')		->name('listaRU');
-Route::GET ('role_user/create', 'RoleUserController@create')		->name('nuevo');
+Route::GET ('listaRU', 'RoleUserController@list')					->name('listaRU');
+Route::GET ('role_user/create', 'RoleUserController@create')		->name('nuevoRU');
 Route::POST('role_user','RoleUserController@store')					->name('storeRU');
 Route::GET ('role_user/edit/{id}', 'RoleUserController@edit')		->name('ModificarRU');
 Route::PUT ('role_user/update/{id}', 'RoleUserController@update')	->name('updateRU');
@@ -110,11 +112,11 @@ Route::GET ('user/Modificar/{id}', 'UserController@edit')	->name('Modificar');
 
 Route::GET ('folder', 'FolderController@index')					->name('folder');
 Route::GET ('folder.lista', 'FolderController@list')			->name('lista');
+Route::POST('folder','FolderController@store')					->name('storeF');
 Route::GET ('folder/ver/{id}', 'FolderController@verF')			->name('ver');
 Route::GET ('folder/nuevo', 'FolderController@create')			->name('nuevo');
-Route::POST('folder','FolderController@store')					->name('storeF');
 Route::GET ('folder/Modificar/{id}', 'FolderController@edit')	->name('folder/Modificar');
-Route::PUT ('folder/update/{id}', 'FolderController@update')	->name('update');
+Route::PUT ('folder/update/{id}', 'FolderController@update')	->name('updateF');
 
 
 //StorageWays Routes

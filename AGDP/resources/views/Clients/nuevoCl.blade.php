@@ -11,18 +11,18 @@
 					<ul class="nav navbar-right panel_toolbox">
 						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 						</li>
-						 <li><a href="editar_proyecto.html" class="collapse-link"><i class="fa fa-wrench"></i></a>
-						</li>
 					</ul>
 					<div class="clearfix"></div>
 				</div>
 				<div class="x_content">
 					
-					<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('Guardar')}}">
+					<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('storeCl')}}">
+
+						{{ csrf_field()}}
 						
 						<div class="row">
 							<div class="form-group col-xs-12 col-md-2">
-								<label class="control-label" for="last-name">NIT Empresa</label>
+								<label class="control-label">NIT Empresa</label>
 								<input type="text"  name="nitClient" required data-parsley-required-message="Este campo es obligatorio" class="form-control">
 							</div>
 							<div class="form-group col-xs-12 col-md-4">
@@ -57,7 +57,7 @@
 							<div class="form-group col-xs-12 text-center">
 							
 								<a href="{{route('ListaCl')}}" class="btn btn-primary">Cancelar</a>
-								<button class="btn btn-success">Guardar</button>
+								<button type="submit" class="btn btn-success">Guardar</button>
 							
 							</div>
 						</div>

@@ -1,40 +1,50 @@
 @extends('layouts.main')
 
-@section('content')
-<div class="limiter">
-   <div class="container-login100">
-      <div class="wrap-login100 p-t-65 p-b-10">
-         <form class="login100-form validate-form" method="POST" action="" novalidate>
+@section('main')
+<div class="right_col" role="main">
+<div class="clearfix"></div>
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+					<h2>Cargue Ciudades </h2>
+					<ul class="nav navbar-right panel_toolbox">
+						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="x_content">
+					
+					<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" array( method="POST" action="{{route('import.file')}}" files='true') enctype="multipart/form-data">
 
             {{ csrf_field() }}
-                
-            <span class="login100-form-title p-b-45">
-               Registro Ciudad
-            </span>
-                    
-            <div class="form-control">
-               <div class="wrap-input100 validate-input m-t-6">
-                  <input class="input100" type="text" name="nameCity" placeholder="Nombre" required>
-               </div>
-               <div class="form-group">
-                 <p> Departamento </p>
-                    <select class="wrap-input100 m-t-6" name="idDepartment">
-                      @foreach ($departm as $Departm)
-                        <option value="{{$department->idDepartment}}">{{$Departm->nameDepartment}}</option>
-                      @endforeach
-                    </select>
-                </div>
-
-               <div class="container-login100-form-btn">
-                  <button class="btn btn-warning">Guardar</button>
-               </div>
-
-               <div class="container-login100-form-btn">
-                  <a href="" class="btn btn-danger">Cancelar</a>
-               </div>   
-            </div>
-         </form>
-      </div>
-   </div>
+						
+						<div class="row">
+							<div class="form-group col-xs-12 col-md-12">
+								<label class="control-label" for="last-name">Nombre<span class="required">*</span></label>
+								<input type="file" name="excel" required data-parsley-required-message="Este campo es obligatorio" class="form-control">
+							</div>
+              {!! $errors->first('excel', '<p class="alert alert-danger">:message</p>') !!}
+						</div>
+						<div class="row">
+							<div class="form-group text-left">
+								<small class="col-sm-12 col-lg-12 "><sup>*</sup> Campos obligatorios</small>
+							</div>
+						</div>					
+						<div class="ln_solid"></div>
+						<div class="row">
+							<div class="form-group col-xs-12 text-center">
+							
+								<a href="{{route('lista')}}" class="btn btn-primary">Cancelar</a>
+								<button class="btn btn-success">Guardar</button>
+							
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 @endsection

@@ -20,7 +20,7 @@ class CreateClientsTable extends Migration {
 			$table->string('nameClient', 50);
 			$table->string('personClient', 50);
 			$table->string('addressClient', 50)->unique();
-			$table->boolean('typeClient');
+			$table->string('typeClient');
 			$table->timestamps();
 		});
 	}

@@ -51,7 +51,9 @@
                                           <i class="fa fa-ellipsis-v"></i>
                                        </button>
                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                       <li><a class="btn btn-link" href="{{ route('clients/Modificar', ['idClient' => $clients->idClient]) }}">Modificar</a></li>
+                                       <li>
+                                          <a class="btn btn-link" href="{{ route('clients/Modificar', ['idClient' => $clients->idClient]) }}">Modificar</a>
+                                       </li>
                                        <li class="lock"><a href="#">Desctivar</a></li>
                                        <li class="hide unlock"><a href="#">Activar</a></li>
                                        </div>

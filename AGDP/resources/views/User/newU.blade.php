@@ -21,6 +21,7 @@
           
           <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('storeU')}}">
             
+            {{ csrf_field()}}
             
             <div class="row ">
               <div class="form-group col-xs-10 col-md-2">
@@ -29,7 +30,7 @@
               </div>
               <div class="form-group col-xs-12 col-md-2">
                 <label class="control-label">Número de documento</label>
-                <input type="text" name="codPerson" required data-parsley-required-message="Este campo es obligatorio"  class="form-control">
+                <input type="text" name="codPerson" required data-parsley-required-message="Este campo es obligatorio"  class="form-control" type="number">
               </div>
             </div>
             <div class="row">
@@ -49,7 +50,7 @@
 
             <div class="row">
               <div class="form-group col-md-4 col-xs-12">
-                <label class="control-label">Área de trabajo</label>
+                <label class="control-label">Cargo</label>
                 <select class="select2_single form-control" tabindex="-1" required data-parsley-required-message="Este campo es obligatorio" name="idTypePerson">
                   <option>Selecciona una Opción</option>
                   @foreach ($typep as $typePerson)
@@ -58,7 +59,7 @@
                 </select>
               </div>
               <div class="form-group col-md-4 col-xs-12">
-                <label class="control-label">Cargo</label>
+                <label class="control-label">Dependencia</label>
                 <select class="select2_single form-control" tabindex="-1" required data-parsley-required-message="Este campo es obligatorio" name="idDependency">
                   <option>Selecciona una Opción</option>
                   @foreach ($depend as $Depend)

@@ -19,7 +19,7 @@
 				</div>
 				<div class="x_content">
 					
-					<form  class="form-horizontal form-label-left" data-parsley-validate method="POST" action="{{ route('update', [$folder->idFolder]) }}">
+					<form  class="form-horizontal form-label-left" data-parsley-validate method="POST" action="{{ route('updateF', [$folder->idFolder]) }}">
 				
 						{{ method_field('PUT')}}
 						{{ csrf_field() }}
@@ -27,33 +27,18 @@
 						<div class="row">
 							<div class="form-group col-xs-12 col-md-6">
 								<label class="control-label" for="last-name">Nombre<span class="required">*</span></label>
-								<input type="text" id="last-name" name="last-name" required="required" data-parsley-required-message="Este campo es obligatorio" class="form-control">
+								<input type="text" value="{{$folder->nameFolder}}" name="nameFolder" required="required" data-parsley-required-message="Este campo es obligatorio" class="form-control">
 							</div>
 							<div class="form-group col-md-6 col-xs-12">
 								<label class="control-label">Cliente</label>
-								<select class="select2_single form-control" tabindex="-1" required="required" data-parsley-required-message="Este campo es obligatorio">
+								<select class="select2_single form-control" tabindex="-1" required="required" data-parsley-required-message="Este campo es obligatorio" name="idClient">
 									@foreach ($client as $Client)
 					                   <option value="{{$Client->idClient}}">{{$Client->nameClient}}</option>
 										<option value="">Selecciona un cliente</option>
 					                @endforeach
 								</select>
 							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-md-12 col-sm-9 col-xs-12">
-								<label class="control-label">Usuarios<span class="required">*</span></label>
-								<select class="select2_multiple form-control" multiple="multiple" required="required" data-parsley-required-message="Este campo es obligatorio">
-									<option>Option one</option>
-									<option>Option two</option>
-									<option>Option three</option>
-									<option>Option four</option>
-									<option>Option five</option>
-									<option>Option six</option>
-								</select>
-							</div>
-						</div>
-						
-						
+						</div>				
 					
 						<div class="row">
 							<div class="form-group text-left">
@@ -64,8 +49,8 @@
 						<div class="row">
 							<div class="form-group col-xs-12 text-center">
 							
-								<button class="btn btn-primary" type="button">Cancelar</button>
-								<button type="submit" class="btn btn-success">Guardar</button>
+								<a class="btn btn-primary" class="button">Cancelar</a>
+								<button  class="btn btn-success">Guardar</button>
 							
 						</div>
 						</div>

@@ -19,6 +19,7 @@
         <div class="x_content">
 
           <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST">
+
             {{ csrf_field() }}
           
             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -40,8 +41,8 @@
                         <td>{{$User->idUser}}</td>
                         <td>{{$User->codPerson}}</td>
                         <td>{{$User->namePerson}} {{$User->lastnamePerson}}</td>
-                        <td>{{ $users->Dependency->nameDependency}}</td>
-                        <td>{{ $users->TypePerson->nameTypePerson}}</td>
+                        <td>{{ $User->Dependency->nameDependency}}</td>
+                        <td>{{ $User->TypePerson->nameTypePerson}}</td>
                         <td>
                           <div class="dropdown">
                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
