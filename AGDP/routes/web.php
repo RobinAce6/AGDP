@@ -25,10 +25,9 @@ Route::GET('others', 'UserController@Others')->name('others');
 // City Routes
 
 Route::GET ('city', 'ExcelController@index')					->name('city');
-Route::GET ('city/create', 'ExcelController@create')			->name('newC');
-Route::POST('city/search', 'ExcelController@search')			->name('searchC');
+Route::GET ('city/create', 'ExcelController@cargue')			->name('nuevaC');
+ Route::GET ('city.listC', 'CityController@index')				->name('listC');
 Route::post('importExcel', 'ExcelController@importExcel');
-// Route::GET ('city.listC', 'CityController@index')			->name('city.listC');
 // Route::POST('city','CityController@store')					->name('storeC');
 // Route::PUT ('city/update/{id}', 'CityController@update')	->name('updateC');
 // Route::GET ('city/destroy/{id}', 'CityController@destroy')	->name('city/destroy');
