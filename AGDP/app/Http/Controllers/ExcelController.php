@@ -33,7 +33,7 @@ class ExcelController extends Controller
             }
         }
  
-        return back()->with('success', 'Insert Record successfully.');
+        return view('city.listaC');
     }
 
 
