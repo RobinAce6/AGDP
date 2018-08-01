@@ -20,7 +20,6 @@ class CreateCityTable extends Migration {
 			$table->integer('department_id');
 			$table->timestamps();
 			
-			//$table->integer('department_id');
 		});
 	}
 

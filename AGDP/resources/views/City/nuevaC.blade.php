@@ -31,9 +31,10 @@
 		                    </div>
 		                @endif
 		 
-                        <input type="file" name="import_file" required />
-						<button class="btn btn-primary">Import File</button>
-						</form>                 
+                        <input class="form-group" type="file" id="import_file" name="import_file" required />
+                        <br>
+						<button class="btn btn-success">Cargar</button>
+					</form>                 
 				</div>             
 			</div>         
 		</div>     

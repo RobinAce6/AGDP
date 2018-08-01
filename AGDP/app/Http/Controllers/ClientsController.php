@@ -60,7 +60,7 @@ class ClientsController extends Controller
 
         $client->save();
 
-        return redirect('listaCl');
+        return redirect('ListaCl');
     }
 
 

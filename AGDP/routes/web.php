@@ -21,12 +21,17 @@ Route::POST('logout', 'Auth\LoginController@logout')->name('logout');
 Route::GET('profile', 'UserController@profile')->name('profile');
 Route::GET('others', 'UserController@Others')->name('others');
 
+//Department
+Route::GET ('depto', 'DepartmentController@index')					->name('depto');
+Route::GET ('depto/create', 'DepartmentController@cargue')			->name('nuevoDe');
+Route::GET ('listaDe', 'DepartmentController@index')					->name('listaDe');
+Route::post('importExcelD', 'DepartmentController@importExcel');
 
 // City Routes
 
 Route::GET ('city', 'ExcelController@index')					->name('city');
 Route::GET ('city/create', 'ExcelController@cargue')			->name('nuevaC');
- Route::GET ('city.listC', 'CityController@index')				->name('listC');
+Route::GET ('listaC', 'ExcelController@index')			->name('listaC');
 Route::post('importExcel', 'ExcelController@importExcel');
 // Route::POST('city','CityController@store')					->name('storeC');
 // Route::PUT ('city/update/{id}', 'CityController@update')	->name('updateC');

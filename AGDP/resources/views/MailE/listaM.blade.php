@@ -65,7 +65,7 @@
                            </tbody>
                         </table>
                      </div>
-                  
+                  <a class="btn btn-success" href="{{route('newM')}}">Registrar Nueva Correspondencia</a>
                </div>
             </div>
          </div>

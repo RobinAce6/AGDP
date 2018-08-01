@@ -3,21 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\City;
-use Excel;
+use App\Models\Department;
+USE Excel;
 
-class ExcelController extends Controller
+class DepartmentController extends Controller
 {
+
     public function index()
     {
-        $city = City::all();
-        return view('city.listaC', compact('city'));
+        $depto = Department::all();
+        return view('department.listaDe', compact('depto'));
     }
 
     public function cargue()
     {
-        $city = City::all();
-        return view('city.nuevaC', compact('city'));
+        $depto = Department::all();
+        return view('department.nuevODe', compact('depto'));
     }
 
     public function importExcel(Request $request)
@@ -31,15 +32,15 @@ class ExcelController extends Controller
  
         if($data->count()){
             foreach ($data as $key => $value) {
-                $arr[] = ['codCity' => $value->codcity, 'nameCity' => $value->namecity, 'department_id' => $value->deprt_id ];
+                $arr[] = ['codDeprt' => $value->coddeprt, 'nameDeprt' => $value->namedeprt];
             }
             if(!empty($arr)){
       
-                City::insert($arr);
+                Department::insert($arr);
             }
         }
  
-        return redirect('listaC');
+        return redirect('listaDe');
     }
 
 

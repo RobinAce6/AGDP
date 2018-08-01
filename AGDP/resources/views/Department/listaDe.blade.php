@@ -8,7 +8,7 @@
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
-					<h2>Cargue Ciudades </h2>
+					<h2>Cargue Departamentos </h2>
 					<ul class="nav navbar-right panel_toolbox">
 						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 						</li>
@@ -27,17 +27,15 @@
 					<table class="table table-bordered">
 						<thead class="thead-light">
 							<tr>
-								<th scope="col">#</th>
+								<th scope="col">Cod.</th>
 								<th scope="col"> Nombre </th>
-								<th scope="col"> Departamento </th>
 							</tr>
 						</thead>
 						<tbody class="table table-bordered">
-							@foreach ( $city as $City )
+							@foreach ( $depto as $Depto )
 							<tr>
-								<td scope="row">{{ $City->codCity }}</td>
-								<td scope="row">{{ $City->nameCity }}</td>
-								<td scope="row">{{ $City->department_id }}</td>
+								<td scope="row">{{ $Depto->codDeprt }}</td>
+								<td scope="row">{{ $Depto->nameDeprt }}</td>
 							</tr>
 							@endforeach
 						</tbody>
@@ -46,7 +44,7 @@
 
 					<div class="form-group col-xs-12 text-center">
 							
-						<a href="{{route('nuevaC')}}" class="btn btn-primary">Cargar Ciudades</a>
+						<a href="{{route('nuevoDe')}}" class="btn btn-primary">Cargar Departamentos</a>
 					
 					</div>
 				</div>

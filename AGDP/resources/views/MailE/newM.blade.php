@@ -1,412 +1,180 @@
 @extends('layouts.main')
 
-@section('content')
-
-<form data-toggle="validator" role="form" method="POST" action="#">
-	{{ csrf_field() }}			
-
-	   	<div class="row justify-content-center main-container">
-	      	<div class="col-sm-12 col-md-8 text-left">
-
-
-				<h1 class="text-center text-uppercase">Registro Correspondencia</h1> <br>
-					
-				<div class="form-group row justify-content-center">
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="select_received" name="select_radio" class="custom-control-input" checked>
-						<label class="custom-control-label" for="select_received">Correspondencia recibida</label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="select_sent" name="select_radio" class="custom-control-input">
-						<label class="custom-control-label" for="select_sent">Correspondencia enviada</label>
-					</div>
-					<br>
+@section('main')
+<div class="right_col" role="main">
+	<div class="clearfix"></div>
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+					<h2>Nueva Correspondencia <small>Enviada</small></h2>
+					<ul class="nav navbar-right panel_toolbox">
+						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
 				</div>
+				<div class="x_content">
+					
+					<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
-					<div id="sent" class="sent d-none">
-						<form  class="needs-validation" novalidate>
+						<div class="row">
+							<div class="form-group col-xs-12 col-md-4">
+								<label class="control-label" for="first-name">Fecha de Envío</label>
+								<div class=" xdisplay_inputx has-feedback">
+									<input type="text" class="form-control single_cal4 has-feedback-left" aria-describedby="inputSuccess2Status4" required="required" data-parsley-required-message="Este campo es obligatorio">
+									<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+									<span id="inputSuccess2Status4" class="sr-only">(success)</span>
+								</div>
+							</div>
+							<div class="form-group col-xs-12 col-md-4">
+								<label class="control-label" for="first-name">Hora de envío</label>
 
-							<div class="form-group row">
-								<div class="col-sm-12 col-md-12">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Fecha de envío <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										<input type="date" class="form-control" name="sentDate" required>
-										<div class="invalid-feedback">
-											Por favor ingrese la fecha
-										</div>
-									</div>
-								</div>
-							<div class="col-sm-12 col-md-4"> 
-		                        <label for="" class="col-sm-12 col-lg-12 col-form-label">Ciudad Origen <sup>*</sup></label>
-		                        <div class="col-sm-10 col-lg-12">
-		                           <select class="form-control custom-select" required>
-		                               <option value="">Seleccione la ciudad Origen</option>
-		                           </select>
-		                        </div>
-		                  	</div>
-							<input type="text" class="form-control" name="" value="" required>
-								<div class="invalid-feedback">
-									Por favor ingrese la ciudad
+								<div class="input-group date" id="myDatepicker3">
+									<input type="text" class="form-control" required="required" data-parsley-required-message="Este campo es obligatorio">
+									<span class="input-group-addon icon-date">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>
 								</div>
 							</div>
-		                    
-							<div class="form-group row">
-								<div class="col-sm-12 col-md-4"> 
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Destinatario <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										<input type="text" class="form-control" name="idAddrress" value="" required>
-										<div class="invalid-feedback">
-											Por favor ingrese el destinatario
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 col-md-4">
-									<div class="col-sm-12 col-md-4">
-		                                <label for="" class="col-sm-12 col-lg-12 col-form-label">Hora de envío <sup>*</sup></label>
-		                                <div class="col-sm-10 col-lg-12">
-		                                    <input type="time" class="form-control" name="create_at" value="" required>
-		                                    <div class="invalid-feedback">
-		                                        Por favor ingrese la hora
-		                                    </div>
-		                                </div>
-								    </div>
-								</div>
-								<div class="col-sm-12 col-md-4">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Proyecto <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-		                                <select class="form-control custom-select" name="idFolder">
-		                                @foreach ($folder as $Proyecto)
-		                                    <option value="{{$Proyecto->idFolder}}">{{$Proyecto->nameFolder}}</option>
-		                                @endforeach
-		                                </select>
-										<div class="invalid-feedback">
-											Por favor ingrese el proyecto
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="form-group row">
-								<div class="col-sm-12 col-md-4"> 
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Remitente <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
+							<div class="form-group col-xs-12 col-md-4">
 
-										<select class="form-control custom-select" required>
-											<option value="">Seleccione el área de trabajo</option>
-											<option value="1">One</option>
-											<option value="2">Two</option>
-											<option value="3">Three</option>
-										</select>
-										<div class="invalid-feedback">
-											Por favor ingrese el área de trabajo de destino
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 col-md-4"> 
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Destinatario<br></label>
-									<div class="col-sm-10 col-lg-12">
-										
-										<select class="form-control custom-select" required>
-											<option value="">Seleccione el destinatario</option>
-											<option value="1">One</option>
-											<option value="2">Two</option>
-											<option value="3">Three</option>
-										</select>
-										<div class="invalid-feedback">
-											Por favor ingrese el destinatario de destino
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 col-md-4">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Fecha de radicación <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										<input type="date" class="form-control" name="" value="" required>
-										<div class="invalid-feedback">
-											Por favor ingrese la fecha
-										</div>
-									</div>
-								</div>
+								<label class="control-label" for="first-name">Ciudad</label>
+								<input type="text" name="country" id="autocomplete-custom-city" class="form-control" required="required" data-parsley-required-message="Este campo es obligatorio"/>
 							</div>
-							<div class="form-group row">
-								<div class="col-sm-12 col-md-12"> 
-
-									<label for="" class="col-sm-12 col-lg-4 col-form-label">Asunto <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-6">
-										<input type="text" class="form-control" name="" value="" required>
-										<div class="invalid-feedback">
-											Por favor ingrese el asunto
-										</div>
-									</div>
-								</div>
+						</div>
+						
+						<div class="ln_solid"></div>
+						
+						<div class="row">
+							<div class="form-group col-xs-12 col-md-4">
+								<label class="control-label">Proyecto</label>
+								<select class="select2_single form-control" tabindex="-1" required="required" data-parsley-required-message="Este campo es obligatorio">
+									<option value="">Selecciona un proyecto</option>
+									<option>Proyecto 1</option>
+									<option>Proyecto 2</option>
+									<option>Proyecto 3</option>
+									<option>Proyecto 4</option>
+									<option>Proyecto 5</option>
+								</select>
 							</div>
-							<div class="form-group row">
-								<div class="col-sm-12 col-md-12"> 
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Observaciones</label>
-									<div class="col-sm-10 col-lg-12">
-										<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ></textarea>
-									</div>
-								</div>
+							<div class="form-group col-xs-12 col-md-4">
+								<label class="control-label">Cliente</label>
+								<select disabled class="select2_single form-control" tabindex="-1" required="required" data-parsley-required-message="Este campo es obligatorio">
+									<option value="">Aqui va el cliente</option>
+								</select>
 							</div>
+							<div class="form-group  col-xs-12 col-md-4">
+								<label class="control-label ">Remitente</label>
+								<select class="select2_single form-control" tabindex="-1" required="required" data-parsley-required-message="Este campo es obligatorio">
+									<option value="">Selecciona una area de trabajo</option>
+									<option>Área de Trabajo 1</option>
+									<option>Área de Trabajo 2</option>
+									<option>Área de Trabajo 3</option>
+									<option>Área de Trabajo 4</option>
+									<option>Área de Trabajo 5</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
 							
-							
-							<div class="form-group row">
-								<div class="col-sm-12 col-lg-4">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Formato <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										
-										<select class="form-control custom-select" required>
-											<option value="">Seleccione el formato</option>
-											<option value="1">One</option>
-											<option value="2">Two</option>
-											<option value="3">Three</option>
-										</select>
-										<div class="invalid-feedback">
-											Por favor ingrese el formato
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 col-lg-3">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Número de folios </label>
-									<div class="col-sm-10 col-lg-6">
-										<input type="text" class="form-control" name="" value="">
-									</div>
-								</div>
-								<div class="col-sm-12 col-lg-4 form-group form-check text-center">
-									<label for="exampleCheck1" class="form-check-label col-sm-12 col-lg-12 col-form-label">Entregada a archivo </label>
-									<div class="col-sm-10 col-lg-12 text-center">
-										<input type="checkbox" class="form-check-input" id="exampleCheck1">
-									</div>
-									
+							<div class="form-group col-xs-12 col-md-4">
+								<label class="control-label"><br></label>
+								 <select class="select2_single form-control" tabindex="-1" required="required" data-parsley-required-message="Este campo es obligatorio">
+									<option value="">Selecciona un usuario</option>
+									<option>Usuario 1</option>
+									<option>Usuario 2</option>
+									<option>Usuario 3</option>
+									<option>Usuario 4</option>
+									<option>Usuario 5</option>
+								</select>
+							</div>
+							<div class="form-group col-xs-12 col-md-4">
+								<label class="control-label" for="first-name">Fecha de radicación</label>
+								<div class=" xdisplay_inputx has-feedback">
+									<input type="text" class="form-control single_cal4 has-feedback-left" id="" aria-describedby="inputSuccess2Status4" required="required" data-parsley-required-message="Este campo es obligatorio">
+									<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+									<span id="inputSuccess2Status4" class="sr-only">(success)</span>
 								</div>
 							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-xs-12 col-md-4">
+								<label class="control-label" for="last-name">Asunto</label>
+								<input type="text" id="last-name" name="last-name" required="required" class="form-control" data-parsley-required-message="Este campo es obligatorio" >
+							</div>
+							<div class="form-group col-xs-12 col-md-4">
+								<label class="control-label" for="first-name">Consecutivo</label>
 
-							<div class="form-group row">
-								<div class="col-sm-12 col-md-6">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Empresa de mensajería </label>
-									<div class="col-sm-10 col-lg-12">
-										<input type="text" class="form-control" name="" value="">
-										<div class="invalid-feedback">
-											Por favor ingrese la empresa de mensajería
-										</div>
-									</div>
-								</div>
-
-								<div class="col-sm-12 col-md-6">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Mensajero <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										<input type="text" class="form-control" name="" value="" required>
-										<div class="invalid-feedback">
-											Por favor ingrese el nombre del mensajero
-										</div>
-									</div>
+								<div class="input-group date" id="myDatepicker3">
+									<input type="text" class="form-control" required data-parsley-required-message="Este campo es obligatorio">
 								</div>
 							</div>
+							<div class="form-group col-xs-12 col-md-4">
 
+								<label class="control-label" for="first-name">Secuencia</label>
+								<input type="text" name="country" id="autocomplete-custom-city" class="form-control" required="required" data-parsley-required-message="Este campo es obligatorio"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-xs-12">
+								<label class="control-label" for="last-name">Observaciones</label>
+								<textarea id="message"  class="form-control" name="message" ></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4 col-xs-12">
+								<label class="control-label">Formato</label>
+								<select class="select2_single form-control" tabindex="-1"  required="required" data-parsley-required-message="Este campo es obligatorio">
+									<option  value="">Selecciona un formato</option>
+									<option>Cliente 1</option>
+									<option>Cliente 2</option>
+									<option>Cliente 3</option>
+									<option>Cliente 4</option>
+									<option>Cliente 5</option>
+								</select>
+							</div>
+							<div class="form-group col-md-4 col-xs-12">
+								<label class="control-label" for="last-name">Número de folios</label>
+								<input type="text" id="last-name" name="last-name"  class="form-control col-md-7 col-xs-12">
+							</div>
+							<div class="form-group col-md-4 col-xs-12">
+								<label class="control-label"> Entregada a archivo </label>
+								<div class="checkbox col-xs-9 col-xs-offset-2">
+									<input type="checkbox" class="flat" > 
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6 col-xs-12">
+								<label class="control-label" for="last-name">Empresa de mensajería</label>
+								<input type="text" name="country" id="autocomplete-custom-messenger" required="required" class="form-control" data-parsley-required-message="Este campo es obligatorio">
+							</div>
+							<div class="form-group col-md-6 col-xs-12">
+								<label class="control-label" for="last-name">Mensajero</label>
+								<input type="text" id="last-name" name="last-name" required="required" class="form-control" data-parsley-required-message="Este campo es obligatorio">
+							</div>
+						</div>
+						<div class="row">
 							<div class="form-group text-left">
 								<small class="col-sm-12 col-lg-12 "><sup>*</sup> Campos obligatorios</small>
 							</div>
-
-							<div class="text-center">
-								<button class="btn btn-info">Guardar</button>
-								<a href="{{ route('maile.listM')}}" class="btn btn-light">Cancelar</a>
-							</div>
-						</form>
-					</div>
-
-					<div id="received" class="received">
-						<form  class="needs-validation" novalidate>
-							<div class="form-group row">
-								<div class="col-sm-12 col-md-6"> 
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Consecutivo <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										
-										<input type="text" class="form-control" name="" value="" required>
-										<div class="invalid-feedback">
-											Por favor ingrese el consecutivo
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="form-group row">
-								<div class="col-sm-12 col-md-4">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Fecha de recibido <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										<input type="date" class="form-control" name="" value="" required>
-										<div class="invalid-feedback">
-											Por favor ingrese la fecha
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 col-md-4">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Hora de recibido <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										<input type="time" class="form-control" name="" value="" required>
-										<div class="invalid-feedback">
-											Por favor ingrese la hora
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 col-md-4"> 
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Ciudad <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										
-										<input type="text" class="form-control" name="" value="" required>
-										<div class="invalid-feedback">
-											Por favor ingrese la ciudad
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="form-group row">
-								<div class="col-sm-12 col-md-4"> 
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Remitente <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										<input type="text" class="form-control" name="" value="" required>
-										<div class="invalid-feedback">
-											Por favor ingrese el remitente
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 col-md-4">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Cliente <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										
-										<select class="form-control custom-select" required>
-											<option value="">Seleccione el cliente</option>
-											<option value="1">One</option>
-											<option value="2">Two</option>
-											<option value="3">Three</option>
-										</select>
-										<div class="invalid-feedback">
-											Por favor ingrese el cliente
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 col-md-4">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Proyecto <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12 ">
-										
-										<select class="form-control custom-select" required>
-											<option value="">Seleccione el proyecto</option>
-											<option value="1">One</option>
-											<option value="2">Two</option>
-											<option value="3">Three</option>
-										</select>
-										<div class="invalid-feedback">
-											Por favor ingrese el proyecto
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="form-group row">
-								<div class="col-sm-12 col-md-4"> 
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Destinatario <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										
-										<select class="form-control custom-select" required>
-											<option value="">Seleccione el área de trabajo</option>
-											<option value="1">One</option>
-											<option value="2">Two</option>
-											<option value="3">Three</option>
-										</select>
-										<div class="invalid-feedback">
-											Por favor ingrese el área de trabajo de destino
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 col-md-4"> 
-									<label for="" class="col-sm-12 col-lg-12 col-form-label"><br></label>
-									<div class="col-sm-10 col-lg-12">
-										
-										<select class="form-control custom-select" required>
-											<option value="">Seleccione el usuario</option>
-											<option value="1">One</option>
-											<option value="2">Two</option>
-											<option value="3">Three</option>
-										</select>
-										<div class="invalid-feedback">
-											Por favor ingrese el usuario de destino
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="form-group row">
-								<div class="col-sm-12 col-md-12"> 
-
-									<label for="" class="col-sm-12 col-lg-4 col-form-label">Asunto <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-6">
-										<input type="text" class="form-control" name="" value="" required>
-										<div class="invalid-feedback">
-											Por favor ingrese el asunto
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="form-group row">
-								<div class="col-sm-12 col-md-12"> 
-
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Observaciones</label>
-									<div class="col-sm-10 col-lg-12">
-										<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ></textarea>
-										
-									</div>
-								</div>
-							</div>
+						</div>					
+						<div class="ln_solid"></div>
+						<div class="row">
+							<div class="form-group col-xs-12 text-center">
 							
+								<button class="btn btn-primary" type="button">Cancelar</button>
+								<button type="submit" class="btn btn-success">Guardar</button>
 							
-							<div class="form-group row">
-								<div class="col-sm-12 col-lg-6">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Formato <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										
-										<select class="form-control custom-select" required>
-											<option value="">Seleccione el formato</option>
-											<option value="1">One</option>
-											<option value="2">Two</option>
-											<option value="3">Three</option>
-										</select>
-										<div class="invalid-feedback">
-											Por favor ingrese el formato
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 col-lg-6">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Número de folios </label>
-									<div class="col-sm-10 col-lg-4">
-										<input type="text" class="form-control" name="" value="">
-										
-									</div>
-								</div>
-							</div>
-							<div class="form-group row">
-								<div class="col-sm-12 col-md-6">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Empresa de mensajería </label>
-									<div class="col-sm-10 col-lg-12">
-										<input type="text" class="form-control" name="" value="">
-										<div class="invalid-feedback">
-											Por favor ingrese la empresa de mensajería
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 col-md-6">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Mensajero <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										<input type="text" class="form-control" name="" value="" required>
-										<div class="invalid-feedback">
-											Por favor ingrese el nombre del mensajero
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="form-group text-left">
-								<small class="col-sm-12 col-lg-12"><sup>*</sup> Campos obligatorios</small>
-							</div>
-							<div class="text-center">
-								<button type="submit" class="btn btn-info">Guardar</button>
-								<a href="{{route('maile.listM')}}" class="btn btn-light">Cancelar</a>
-							</div>
-						</form>
-					</div>
+						</div>
+						</div>
+						
+
+					</form>
+				</div>
 			</div>
 		</div>
-</form>
+	</div>
+</div>
 @endsection

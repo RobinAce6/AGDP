@@ -14,14 +14,14 @@ class AllRelationship extends Migration
     public function up()
     {
         //City
-        /*Schema::table('city', function(Blueprint $table)
+        Schema::table('city', function(Blueprint $table)
 		{
             $table->foreign('department_id')
-            ->references('idDepartment')
+            ->references('codDeprt')
             ->on('department')
             ->onUpdate('CASCADE')
             ->onDelete('CASCADE');
-        });*/
+        });
         
         
         //Edoc
