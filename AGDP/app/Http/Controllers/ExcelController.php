@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\City;
-use Excel;
 use Illuminate\Http\Request;
+use Excel;
 
 class ExcelController extends Controller
 {
     public function index()
     {
-        return view('city.newC');
+        $city = City::all();
+        return view('city.listaC', compact('city'));
+    }
+
+    public function cargue()
+    {
+        $city = City::all();
+        return view('city.nuevaC', compact('city'));
     }
 
     public function importExcel(Request $request)
