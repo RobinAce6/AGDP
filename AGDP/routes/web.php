@@ -152,7 +152,7 @@ Auth::routes();
 Route::GET ('maile', 'MaileController@index')				->name('maile');
 Route::GET ('maile.listaM', 'MaileController@index')		->name('listaM');
 Route::POST('maile','MaileController@store')				->name('storeM');
-Route::GET ('maile/create', 'MaileController@create')		->name('newM');
+Route::GET ('maile/create', 'MaileController@create')		->name('Nueva Correspondencia');
 Route::POST('maile/search', 'MaileController@search')		->name('searchM');
 Route::PUT ('maile/update/{idTypePerson}', 'MaileController@update')->name('updateM');
 Route::GET ('maile/destroy/{id}', 'MaileController@destroy')->name('maile/destroy');

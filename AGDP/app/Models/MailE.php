@@ -13,11 +13,23 @@ class MailE extends Model
 {
     protected $table    = 'mailE';
     protected $fillable = [
-        'idMail2', 'codEnterprise','typeMail','folder_id' ,'affair', 
-        'dependency_id', 'receivedDate', 'sentDate', 
-        'sender'. 'addressee', 'storagew_id', 'noPages', 
-        'obervations','deliveredToArchive','CompanyMssgr' ,'nameMessenger', 
-        'city_id'
+        'idMail2', 
+        'codEnterprise',
+        'typeMail',
+        'sentDate', 
+        'city_id',
+        'receivedDate',  
+        'sender', 
+        'addressee',
+        'dependency_id',
+        'folder_id' ,
+        'affair', 
+        'obervations',
+        'storagew_id',  
+        'noPages',
+        'deliveredToArchive',
+        'CompanyMssgr' ,
+        'nameMessenger',
     ];   
     protected $guarded  = ['idMail'];
     protected $primaryKey = 'idMail';
@@ -47,8 +59,4 @@ class MailE extends Model
         return $this->belongsTo(City::class, 'city_id', 'idCity');
     }
 
-    public function dependency()
-    {
-        return $this->belongsToMany(Dependency::class,'Dependency_Mail ','dpendency_id','mail_id');
-    } 
 }

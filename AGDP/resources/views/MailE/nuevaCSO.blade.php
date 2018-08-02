@@ -17,45 +17,46 @@
 				<div class="x_content">
 					
 					<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
 						<div class="row">
+						<input type="hidden" name="codEnterprise">
 							<div class="form-group col-xs-12 col-md-4">
-								<label class="control-label" for="first-name">Fecha de Envío</label>
+								<label class="control-label">Tipo Correspondencia</label>
+								<select class="select2_single form-control" tabindex="-1" required="required" data-parsley-required-message="Este campo es obligatorio">
+									<option value="">Selecciona una Opción</option>
+									<option>C. Entrada</option>
+									<option>C. Salida</option>
+								</select>
+							</div>
+						 </div>
+						
+						<div class="ln_solid"></div>
+						
+						<div class="row">
+
+							<div class="form-group col-xs-12 col-md-4">
+								<label class="control-label" for="first-name">Fecha de Envio</label>
 								<div class=" xdisplay_inputx has-feedback">
-									<input type="text" class="form-control single_cal4 has-feedback-left" aria-describedby="inputSuccess2Status4" required="required" data-parsley-required-message="Este campo es obligatorio">
+									<input type="text" class="form-control single_cal4 has-feedback-left" name="sentDate" aria-describedby="inputSuccess2Status4" required="required" data-parsley-required-message="Este campo es obligatorio">
+									<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+									<span id="inputSuccess2Status4" class="sr-only">(success)</span>
+								</div>
+							</div>
+
+							<div class="form-group col-xs-12 col-md-4">
+								<label class="control-label" for="first-name">Fecha de Radicación</label>
+								<div class=" xdisplay_inputx has-feedback">
+									<input type="text" class="form-control single_cal4 has-feedback-left" id="" aria-describedby="inputSuccess2Status4" required name="receivedDate" data-parsley-required-message="Este campo es obligatorio">
 									<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 									<span id="inputSuccess2Status4" class="sr-only">(success)</span>
 								</div>
 							</div>
 							<div class="form-group col-xs-12 col-md-4">
-								<label class="control-label" for="first-name">Hora de envío</label>
-
-								<div class="input-group date" id="myDatepicker3">
-									<input type="text" class="form-control" required="required" data-parsley-required-message="Este campo es obligatorio">
-									<span class="input-group-addon icon-date">
-										<span class="glyphicon glyphicon-calendar"></span>
-									</span>
-								</div>
-							</div>
-							<div class="form-group col-xs-12 col-md-4">
-
-								<label class="control-label" for="first-name">Ciudad</label>
-								<input type="text" name="country" id="autocomplete-custom-city" class="form-control" required="required" data-parsley-required-message="Este campo es obligatorio"/>
-							</div>
-						</div>
-						
-						<div class="ln_solid"></div>
-						
-						<div class="row">
-							<div class="form-group col-xs-12 col-md-4">
-								<label class="control-label">Proyecto</label>
+								<label class="control-label">Ciudad Origen</label>
 								<select class="select2_single form-control" tabindex="-1" required="required" data-parsley-required-message="Este campo es obligatorio">
-									<option value="">Selecciona un proyecto</option>
-									<option>Proyecto 1</option>
-									<option>Proyecto 2</option>
-									<option>Proyecto 3</option>
-									<option>Proyecto 4</option>
-									<option>Proyecto 5</option>
+									<option>Escoje una Opción</option>
+									@foreach( $city as $City)
+									<option value="{{$City->idCity}}">{{$City->nameCity}}</option>
+									@endforeach
 								</select>
 							</div>
 							<div class="form-group col-xs-12 col-md-4">
@@ -69,10 +70,6 @@
 								<select class="select2_single form-control" tabindex="-1" required="required" data-parsley-required-message="Este campo es obligatorio">
 									<option value="">Selecciona una area de trabajo</option>
 									<option>Área de Trabajo 1</option>
-									<option>Área de Trabajo 2</option>
-									<option>Área de Trabajo 3</option>
-									<option>Área de Trabajo 4</option>
-									<option>Área de Trabajo 5</option>
 								</select>
 							</div>
 						</div>
@@ -84,18 +81,7 @@
 									<option value="">Selecciona un usuario</option>
 									<option>Usuario 1</option>
 									<option>Usuario 2</option>
-									<option>Usuario 3</option>
-									<option>Usuario 4</option>
-									<option>Usuario 5</option>
 								</select>
-							</div>
-							<div class="form-group col-xs-12 col-md-4">
-								<label class="control-label" for="first-name">Fecha de radicación</label>
-								<div class=" xdisplay_inputx has-feedback">
-									<input type="text" class="form-control single_cal4 has-feedback-left" id="" aria-describedby="inputSuccess2Status4" required="required" data-parsley-required-message="Este campo es obligatorio">
-									<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
-									<span id="inputSuccess2Status4" class="sr-only">(success)</span>
-								</div>
 							</div>
 						</div>
 						<div class="row">
