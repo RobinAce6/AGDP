@@ -11,17 +11,13 @@ use App\Models\City;
 
 class MailE extends Model
 {
-    protected $table    = 'mailE';
+    protected $table    = 'mailES';
     protected $fillable = [
         'idMail2', 
         'codEnterprise',
-        'typeMail',
-        'sentDate', 
-        'city_id',
-        'receivedDate',  
+        'sentDate',  
         'sender', 
         'addressee',
-        'dependency_id',
         'folder_id' ,
         'affair', 
         'obervations',

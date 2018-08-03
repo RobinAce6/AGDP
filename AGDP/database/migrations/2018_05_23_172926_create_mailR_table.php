@@ -13,13 +13,11 @@ class CreateMailTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('mailE', function(Blueprint $table)
+		Schema::create('mailER', function(Blueprint $table)
 		{
 			$table->integer('idMail', true);
 			$table->char('idMail2', 3);
 			$table->char('codEnterprise', 2);
-			$table->boolean('typeMail');
-			$table->date('sentDate');
 			$table->date('receivedDate');			
 			$table->integer('city_id');
 			$table->string('sender', 200);
