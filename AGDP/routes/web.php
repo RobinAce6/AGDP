@@ -149,15 +149,19 @@ Auth::routes();
 
 //MailE Routes
 
-Route::GET ('maile', 'MaileController@index')				->name('maile');
-Route::GET ('maile.listaM', 'MaileController@index')		->name('listaM');
-Route::POST('maile','MaileController@store')				->name('storeM');
-Route::GET ('maile/create', 'MaileController@create')		->name('Nueva Correspondencia');
-Route::POST('maile/search', 'MaileController@search')		->name('searchM');
-Route::PUT ('maile/update/{idTypePerson}', 'MaileController@update')->name('updateM');
-Route::GET ('maile/destroy/{id}', 'MaileController@destroy')->name('maile/destroy');
-Route::GET ('maile/edit/{id}', 'MaileController@edit')		->name('maile/edit');
+Route::GET ('send_maile', 'SendMaileController@index')->name('send_maile');
+Route::GET ('send_maile_create', 'SendMaileController@create')->name('send_maile_create');
+Route::GET ('send_maile_files', 'SendMaileController@files')->name('send_maile_files');
+Route::GET ('send_maile_show', 'SendMaileController@show')->name('send_maile_show');
+Route::GET ('send_maile_edit', 'SendMaileController@edit')->name('send_maile_edit');
+Route::POST('send_maile','SendMaileController@store')->name('send_maile_store');
 
+Route::GET ('recived_maile', 'RecivedMaileController@index')->name('recived_maile');
+Route::GET ('recived_maile_create', 'RecivedMaileController@create')->name('recived_maile_create');
+Route::GET ('recived_maile_files', 'RecivedMaileController@files')->name('recived_maile_files');
+Route::GET ('recived_maile_show', 'RecivedMaileController@show')->name('recived_maile_show');
+Route::GET ('recived_maile_edit', 'RecivedMaileController@edit')->name('recived_maile_edit');
+Route::POST('recived_maile','RecivedMaileController@store')->name('recived_maile_store');
 
 
 //Front V2.0

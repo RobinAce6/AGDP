@@ -9,25 +9,27 @@ use App\Models\Edoc;
 use App\Models\Dependency_Mail;
 use App\Models\City;
 
-class MailE extends Model
+class MailER extends Model
 {
-    protected $table    = 'mailER';
+    protected $table    = 'maile';
     protected $fillable = [
         'idMail2', 
         'codEnterprise',
-        'receivedDate',  
-        'city_id',
-        'sender', 
-        'addressee',
-        'dependency_id',
+        'typeMail',
         'folder_id' ,
-        'affair', 
-        'obervations',
+        'affair',
+        'dependency_id',
+        'sentDate',
+        'sender',         
+        'addressee',
+        'receivedDate',  
         'storagew_id',  
         'noPages',
+        'obervations',
         'deliveredToArchive',
         'CompanyMssgr' ,
         'nameMessenger',
+        'city_id',
     ];   
     protected $guarded  = ['idMail'];
     protected $primaryKey = 'idMail';

@@ -8,7 +8,7 @@
     <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="{{route('Principal')}}" class="site_title"><img src="{{('design/img/main/logo_1.png')}}"> <span>Consultecnicos</span></a>
+            <a href="#" class="site_title"><img src="{{('design/img/main/logo_1.png')}}"> <span>Consultecnicos</span></a>
           </div>
 
           <div class="clearfix"></div>
@@ -23,16 +23,16 @@
                                <ul class="nav child_menu">
                                    <li><a>C. Enviada <span class="fa fa-chevron-down"></span></a>
                                        <ul class="nav child_menu">
-                                           <li><a href="{{route('listaM')}}">Registrar Nueva</a></li>
-                                           <li><a href="{{('listaM')}}">Ver Todas</a></li>
-                                           <li><a href="#">Archivos adjuntos</a></li>
+                                           <li><a href="{{route('send_maile_create')}}">Registrar Nueva</a></li>
+                                           <li><a href="{{route('send_maile')}}">Ver Todas</a></li>
+                                           <li><a href="{{route('send_maile_files')}}">Archivos adjuntos</a></li>
                                        </ul>
                                    </li>
                                    <li><a>C. Recibida <span class="fa fa-chevron-down"></span></a>
                                        <ul class="nav child_menu">
-                                           <li><a href="{{route('listaM')}}">Registrar Nueva</a></li>
-                                           <li><a href="{{route('listaM')}}">Ver Todas</a></li>
-                                           <li><a href="#">Archivos adjuntos</a></li>
+                                           <li><a href="{{route('recived_maile_create')}}">Registrar Nueva</a></li>
+                                           <li><a href="{{route('recived_maile')}}">Ver Todas</a></li>
+                                           <li><a href="{{route('recived_maile_files')}}">Archivos adjuntos</a></li>
                                        </ul>
                                    </li>
                                </ul>
@@ -100,26 +100,7 @@
                     </ul>
                 </li>
 
-                <li role="presentation" class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-envelope-o"></i>
-                        <span class="badge bg-green">6</span>
-                    </a>
-                    <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                        <li>
-                            <a href="ver_correspondencia_recibida.html">
-                             
-                                <span>
-                                    <span><strong>CONSECUTIVO-010203</strong></span>
-                                    <!-- <span class="time">3 mins ago</span> -->
-                                </span>
-                                <span class="message">
-                                    <strong>Asunto:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat...
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                
             </ul>
         </nav>
     </div>
