@@ -46,7 +46,7 @@ class FolderController extends Controller
     
     public function edit($idFolder)
     {
-        $folder = Project::all();
+        $folder = Project::find($idFolder);
         $client = Client::all();
         return view('folder.modificar', compact('folder', 'client'));
     }
