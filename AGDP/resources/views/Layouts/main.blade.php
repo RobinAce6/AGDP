@@ -8,7 +8,7 @@
     <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="{{route('Principal')}}" class="site_title"><img src="{{('design/img/main/logo_1.png')}}"> <span>Consultecnicos</span></a>
+            <a href="{{route('Principal')}}" class="site_title"><img src="{{('../img/logo.png')}}"> <span>Consultecnicos</span></a>
           </div>
 
           <div class="clearfix"></div>
@@ -53,12 +53,6 @@
                                <ul class="nav child_menu">
                                    <li><a href="{{route('newU')}}">Registrar Nuevo</a></li>
                                    <li><a href="{{route('listaU')}}">Ver Todos</a></li>
-                               </ul>
-                           </li>
-                           <li><a><i class="fa fa-bar-chart-o"></i> Informes <span class="fa fa-chevron-down"></span></a>
-                               <ul class="nav child_menu">
-                                   <li><a href="#">C. Enviada</a></li>
-                                   <li><a href="#">C. Recibida</a></li>
                                </ul>
                            </li>
                        </ul>
