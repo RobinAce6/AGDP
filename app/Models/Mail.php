@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Proyect;
 use App\Models\State;
+use App\Models\Answer;
 
 class Mail extends Model
 {
@@ -20,5 +21,8 @@ class Mail extends Model
     {
     	return $this->belongsTo(State::class);
     }
-
+    public function Answer()
+    {
+        return $this->belongsTo(Answer::class);
+    }
 }

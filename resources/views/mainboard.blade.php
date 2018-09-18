@@ -11,7 +11,8 @@
 						</div>
 					</div>
 				</div>
-				<form class="form-group" method="POST" action="{{ route('logout') }}">
+					<!--
+					<form class="form-group" method="POST" action="{{ route('logout') }}">
 					{{ csrf_field() }}
 						<div class="container text-center">
 							<div class="row content-card justify-content-md-center">
@@ -89,7 +90,8 @@
 							</div>
 						</div>
 					</form>
-				</div>
+					-->
+
 			</div>
 		</div>
 	</div>

@@ -22,14 +22,15 @@ class CreateMailsTable extends Migration
             $table->foreign('city_id')->references('id')->on('cities');
             $table->integer('consectutive');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('cities');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('subjet', 200);
             $table->string('observations', 200);
             $table->string('folder', 200);
             $table->string('companymsn', 30);
-            $table->string('namemessenger', 50);    
+            $table->string('namemessenger', 50); 
+            $table->string('typeresponse', 50);    
             $table->integer('state_id')->unsigned();
-            $table->foreign('state_id')->references('id')->on('cities');
+            $table->foreign('state_id')->references('id')->on('states');
             $table->rememberToken();
             $table->timestamps();
         });

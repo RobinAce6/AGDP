@@ -8,6 +8,7 @@ use App\User;
 use Auth;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use App\Models\Dependency;
 use Session;
 Use Menu;
 
@@ -37,7 +38,12 @@ class UserController extends Core\BaseController
     public function create()
     {
         $roles = Role::get();
-        return view('users.create', ['roles'=>$roles]);
+        $departs = Dependency::all();
+        $selectdepart[0] = '';
+        foreach($departs as $depart) {
+            $selectdepart[$depart->id] = $depart->name;
+        }
+        return view('users.create', ['roles'=>$roles,'selectdepart'=>$selectdepart]);
     }
 
     /**
@@ -54,10 +60,11 @@ class UserController extends Core\BaseController
             'email'=>'required|email|unique:users',
             'password'=>'required|min:6|confirmed',
             'lastname'=>'required|max:120',
-            'codUser'=>'required|min:7|max:10',
+            'document'=>'required|min:7|max:10',
             'avatar' => 'http://lorempixel.com/600/338?'.mt_rand(0,1000),
+            'dependencie_id' => 'required|not_in:0'
         ]);
-        $user = User::create($request->only('email', 'name', 'password','lastname','codUser'));
+        $user = User::create($request->only('email', 'name', 'password','lastname','document','dependencie_id'));
         $roles = $request['roles'];
 
         if (isset($roles)) {

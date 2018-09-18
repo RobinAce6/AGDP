@@ -31,8 +31,13 @@
         {{ Form::text('lastname', '', array('class' => 'form-control')) }}
     </div>
     <div class="form-group">
+        {{ Form::label('dependencie_id', 'Departamento') }}
+        {{ Form::select('dependencie_id', $selectdepart,null,[ 'class' => 'form-control custom-select' ]) }}
+    </div>
+    
+    <div class="form-group">
         {{ Form::label('codUser', 'Documento') }}
-        {{ Form::text('codUser', '', array('class' => 'form-control')) }}
+        {{ Form::text('document', '', array('class' => 'form-control')) }}
     </div>
     <div class="form-group">
         {{ Form::label('email', 'Email') }}

@@ -14,5 +14,11 @@ class Dependency extends Seeder
         DB::table('dependencies')->insert([
             'name' => 'Recepcion'
         ]);
+        DB::table('dependencies')->insert([
+            'name' => 'Operacion'
+        ]);
+        DB::table('dependencies')->insert([
+            'name' => 'Archivo'
+        ]);
     }
 }

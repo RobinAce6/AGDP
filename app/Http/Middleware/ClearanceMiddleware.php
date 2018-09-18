@@ -19,16 +19,16 @@ class ClearanceMiddleware {
             return $next($request);
         }
         
-        if ($request->is('posts/create')) {
-            if (!Auth::user()->hasPermissionTo('Edit Admin')) {
+        if ($request->is('users/create')) {
+            if (!Auth::user()->hasPermissionTo('Owner')) {
                 abort('401');
             } else {
                 return $next($request);
             }
         }
             
-        if ($request->is('posts/*/edit')) {
-            if (!Auth::user()->hasPermissionTo('Dueño Clan')) {
+        if ($request->is('users/*/edit')) {
+            if (!Auth::user()->hasPermissionTo('Edit')) {
                 abort('401');
             } else {
                 return $next($request);
@@ -36,7 +36,7 @@ class ClearanceMiddleware {
         }
 
         if ($request->isMethod('Delete')) {
-            if (!Auth::user()->hasPermissionTo('Integrante Clan')) {
+            if (!Auth::user()->hasPermissionTo('Owner')) {
                 abort('401');
             } else {
                 return $next($request);

@@ -11,8 +11,12 @@ use App\Models\Department;
 use App\Models\Dependency;
 use Illuminate\Http\Request;
 use App\Models\Proyect;
+use App\Models\Answer;
+use App\Models\Archive;
+
 use DB;
 use App\User;
+use Auth;
 
 class MailController extends Core\BaseController
 {
@@ -23,8 +27,113 @@ class MailController extends Core\BaseController
      */
     public function index()
     {
-        $mail = MailE::all();
-        return view('maile.listM', compact('mail'));
+        switch (Auth::user()->roles()->get()[0]->name) {
+            case 'Recepción':
+                $mail = MailE::where('state_id','=',1)->orwhere('state_id','=',6)->get();
+                return view('maile.listM', compact('mail'));
+            break;
+            case 'Operador':
+                $mail = MailE::where('state_id','=',2)->orwhere('state_id','=',3)->where('user_id','=',Auth::user()->id)->get();
+                return view('maile.listM_ope', compact('mail'));
+            break;
+            case 'Archivo':
+                $mail = MailE::where('state_id','=',4)->orwhere('state_id','=',5)->get();
+                return view('maile.listM_Arch', compact('mail'));
+            break;
+            case 'Admin':
+                $mail = MailE::all();
+                return view('maile.listM', compact('mail'));
+            break;
+            default:
+                $mail = null;
+                return view('maile.listM', compact('mail'));
+            break;
+        }
+    }
+    public function saveArch(Request $request)
+    {
+        $this->validate($request, [
+            'carpeta'=>'required',
+            'folio'=>'required',
+            'caja'=>'required',
+            'ubicacion'=>'required' 
+        ]);
+        $archive = new Archive;
+
+        $archive->document_id   =$request->id;
+        $archive->carpeta       =$request->carpeta;
+        $archive->folio         =$request->folio;
+        $archive->caja          =$request->caja;
+        $archive->ubicacion     =$request->ubicacion;
+        $archive->typeDocument  =$request->typeDocument;
+        $archive->save();
+        $mail = MailE::find($request->id);
+        $mail->state_id = 6;
+        $mail->save();
+        return redirect()->route('maile')
+            ->with('flash_message',
+             'Maile successfully added.');
+    }
+    public function saveSend(Request $request)
+    {
+        $this->validate($request, [
+            'le_file'=>'required',
+        ]);
+        $file = $request->file('le_file');
+        $type = $file->getMimeType();
+        $dateSplit = explode('/', $type);
+        \Storage::disk('local')->put($request->con.'.'.$dateSplit[1],  \File::get($file));
+        $answer = new Answer;
+        $answer->folder     = $request->con.'.'.$dateSplit[1];
+        $answer->mail_id    = $request->id;
+        $answer->user_id    = $request->user_id;
+        $answer->state_id   = 7;
+        $answer->save();    
+        $mail = MailE::find($request->id);
+        $mail->state_id =$request->state_id;
+        $mail->save();
+        return redirect()->route('maile')
+            ->with('flash_message',
+             'Maile successfully added.');
+
+    }
+    public function download(Request $request)
+    {
+        $mail = MailE::find($request->id);
+        $archivo = $mail->folder;
+        $public_path = storage_path('app/upload/');
+        $url = $public_path.''.$archivo;
+        if (\Storage::exists($archivo))
+        {
+            return response()->download($url);
+        }
+        abort(404);
+    }
+    public function savemsn(Request $request)
+    {
+        $this->validate($request, [
+            'state_id'=>'required|not_in:0'
+        ]);
+
+        $answer = Answer::where('mail_id','=',$request->id)->get();
+        $mail = Answer::find($answer[0]->id);
+        $mail->state_id =$request->state_id;
+        $mail->save();
+        return redirect()->route('maile')
+            ->with('flash_message',
+             'Maile successfully added.');
+    }
+    public function downloadAnswer(Request $request)
+    {
+        $mail = Answer::where('mail_id','=',$request->id)->get();
+        $archivo = $mail[0]->folder;
+        $public_path = storage_path('app/upload/');
+        $url = $public_path.''.$archivo;
+        if (\Storage::exists($archivo))
+        {
+            return response()->download($url);
+        }
+        abort(404);
     }
     public function save(Request $request)
     {
@@ -36,6 +145,20 @@ class MailController extends Core\BaseController
         \Storage::disk('local')->put($request->con.'-'.$nombre,  \File::get($file));
         $mail = MailE::find($request->id);
         $mail->folder = $request->con.'-'.$nombre;
+        $mail->state_id =2;
+        $mail->save();
+        return redirect()->route('maile')
+            ->with('flash_message',
+             'Maile successfully added.');
+    }
+    public function savetype(Request $request)
+    {
+        $this->validate($request, [
+            'tipocarta'=>'required',
+        ]);
+        $mail = MailE::find($request->id);
+        $mail->typeresponse = $request->tipocarta;
+        $mail->state_id =3;
         $mail->save();
         return redirect()->route('maile')
             ->with('flash_message',
@@ -128,6 +251,7 @@ class MailController extends Core\BaseController
         $mail->subjet           = $request->asunto;
         $mail->observations     = $request->obser;
         $mail->folder           = '';
+        $mail->typeresponse     = 'XX';
         $mail->companymsn       = $request->empresa;
         $mail->namemessenger    = $request->mensajeria;
         $mail->state_id         = 1;

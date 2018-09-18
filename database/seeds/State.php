@@ -17,5 +17,23 @@ class State extends Seeder
         DB::table('states')->insert([
             'name' => "Documentos Cargados"
         ]);
+        DB::table('states')->insert([
+            'name' => "Asignado Tipo Respuesta"
+        ]);
+        DB::table('states')->insert([
+            'name' => "Respondido"
+        ]);
+        DB::table('states')->insert([
+            'name' => "Archivo"
+        ]);
+        DB::table('states')->insert([
+            'name' => "Archivado"
+        ]);
+        DB::table('states')->insert([
+            'name' => "Pendiente Mensajeria"
+        ]);
+        DB::table('states')->insert([
+            'name' => "Envio Mensajeria"
+        ]);
     }
 }

@@ -26,17 +26,27 @@ class GenerateMenus
             }else{
                 $menu->add('', ['url'  => 'home',  'class' => 'navbar-brand'])->prepend('<img src="../img/home.png" width="30" height="30" alt="">')->data('order', 1);
             }
-            switch ($this->rol) {
-                case 1:
-                    $menu->add('REGISTRO USUARIO', ['url'  => 'users/create',  'class' => 'nav-link']);
-                    $menu->add('Clientes', ['url'  => 'clients',  'class' => 'nav-link text-uppercase']);
-                    $menu->add('Proyectos', ['url'  => 'proyect',  'class' => 'nav-link text-uppercase']);
-                    $menu->add('DEPENDENCIAS', ['url'  => 'depend',  'class' => 'nav-link text-uppercase']);
-                    $menu->add('Correspondencia', ['url'  => 'maile',  'class' => 'nav-link text-uppercase']);
-                    $menu->add('OTROS', ['url'  => 'others',  'class' => 'nav-link text-uppercase']);
-                break;
+            if(Auth::user()){
+                switch (Auth::user()->roles()->get()[0]->name) {
+                    case 'Recepción':
+                        $menu->add('Correspondencia', ['url'  => 'maile',  'class' => 'nav-link text-uppercase']);
+                    break;
+                    case 'Operador':
+                        $menu->add('Correspondencia', ['url'  => 'maile',  'class' => 'nav-link text-uppercase']);
+                    break;
+                    case 'Archivo':
+                        $menu->add('Correspondencia', ['url'  => 'maile',  'class' => 'nav-link text-uppercase']);
+                    break;
+                    case 'Admin':
+                        $menu->add('REGISTRO USUARIO', ['url'  => 'users/create',  'class' => 'nav-link']);
+                        $menu->add('Clientes', ['url'  => 'clients',  'class' => 'nav-link text-uppercase']);
+                        $menu->add('Proyectos', ['url'  => 'proyect',  'class' => 'nav-link text-uppercase']);
+                        $menu->add('DEPENDENCIAS', ['url'  => 'depend',  'class' => 'nav-link text-uppercase']);
+                        $menu->add('Correspondencia', ['url'  => 'maile',  'class' => 'nav-link text-uppercase']);
+                        $menu->add('OTROS', ['url'  => 'others',  'class' => 'nav-link text-uppercase']);
+                    break;
+                }
             }
-
         });   
 
         return $next($request);

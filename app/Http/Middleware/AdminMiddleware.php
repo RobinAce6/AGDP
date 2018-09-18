@@ -18,10 +18,22 @@ class AdminMiddleware
     public function handle($request, Closure $next)
     {
         $user = User::all()->count();
+
         if (!($user == 1)) {
+            /*
             if (!Auth::user()->hasPermissionTo('Admin')) {
                 abort('401');
             }
+            if (!Auth::user()->hasPermissionTo('Owner')) {
+                abort('401');
+            }
+            if (!Auth::user()->hasPermissionTo('Edit')) {
+                abort('401');
+            }
+            if (!Auth::user()->hasPermissionTo('Select')) {
+                abort('401');
+            }
+            */
         }
         
         return $next($request);

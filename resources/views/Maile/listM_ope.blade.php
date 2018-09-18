@@ -23,6 +23,7 @@
                      <th>Cliente</th>
                      <th>Proyecto</th>
                      <th>Asunto</th>
+                     <th>Archivo</th>
                      <th>Estado</th>
                   </thead>
                   <tbody>
@@ -33,6 +34,9 @@
                         <td scope="row">{{ $Mail->Proyect->Client->name}}</td>
                         <td scope="row">{{ $Mail->Proyect->name}}</td>
                         <td scope="row">{{ $Mail->subjet}}</td>   
+                        <td scope="row">
+                           <a href="{{ route('download', ['id' => $Mail->id]) }}"  target="_blank">Descargar</a>
+                        </td>
                         <td scope="row">{{ $Mail->State->name}}</td>               
                         <td class="subject">
                            <span class="indenter" style="padding-left: 0px;">
@@ -42,25 +46,28 @@
                            <!--<a href="{{ route('maile/edit', ['id' => $Mail->id]) }}"><i class="fas fa-pencil-alt"></i></a> -->
                            <i class="fas fa-upload"  data-toggle="modal" data-target=".modal-upload{{$Mail->id}}"></i>
                         </td>
-                        @if($Mail->state_id == 1)
+                        @if($Mail->state_id == 2)
                         <div class="modal fade modal-upload{{$Mail->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-upload" aria-hidden="true">
                            <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content">
-                                 {{ Form::open(array('url' => 'maile/guardar', 'method' => 'post', 'enctype'=>'multipart/form-data', 'files' => true)) }}
+                                 {{ Form::open(array('url' => 'maile/guardarrespuesta', 'method' => 'post', 'enctype'=>'multipart/form-data', 'files' => true)) }}
                                     {{ csrf_field() }}   
                                     <div class="modal-body">
                                        <input type="hidden" name="id" value="{{$Mail->id}}">
                                     </div>
                                     <div class="modal-body">
                                        <div class="form-group text-left">
-                                          <input type="text" class="form-control"  placeholder="Consecutivo" required readonly value="CTE-{{ $Mail->Proyect->Client->cod}}-XX-{{ $Mail->Proyect->cod}}-{{ $Mail->consectutive}}-{{ substr($Mail->receivedDate,0,4) }}" name="con">
+                                          <input type="text" class="form-control"  placeholder="Consecutivo" required readonly value="CTE-{{ $Mail->Proyect->Client->cod}}-XXX-{{ $Mail->Proyect->cod}}-{{ $Mail->consectutive}}-{{ substr($Mail->receivedDate,0,4) }}" name="con">
                                        </div>
-                                       <div class="form-group custom-file">
-                                          <input type="file" name="le_file"/>      
-                                       </div>
+                                       <select name="tipocarta" class="form-control custom-select">
+                                          <option value="0">Selecione opcion</option>
+                                          <option value="CI">CI</option>
+                                          <option value="CN">CN</option>
+                                          <option value="CO">CO</option>
+                                       </select>
                                     </div>
                                     <div class="modal-body text-center">
-                                       <button type="submit" class="btn btn-info">Cargar Archivo</button>
+                                       <button type="submit" class="btn btn-info">Guardar</button>
                                     </div>
                                 {{ Form::close() }}
                               </div>
@@ -70,27 +77,27 @@
                         <div class="modal fade modal-upload{{$Mail->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-upload" aria-hidden="true">
                            <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content">
-                                 {{ Form::open(array('url' => 'maile/guardarmensajeria', 'method' => 'post', 'enctype'=>'multipart/form-data', 'files' => true)) }}
+                                 {{ Form::open(array('url' => 'maile/guardarEnvio', 'method' => 'post', 'enctype'=>'multipart/form-data', 'files' => true)) }}
                                     {{ csrf_field() }}   
                                     <div class="modal-body">
                                        <input type="hidden" name="id" value="{{$Mail->id}}">
+                                       <input type="hidden" name="user_id" value="{{$Mail->user_id}}">
                                     </div>
                                     <div class="modal-body">
                                        <div class="form-group text-left">
-                                          <a href="{{ route('downloadresponce', ['id' => $Mail->id]) }}"  target="_blank">Descargar respuesta</a>
-                                       </div>
-                                       <div class="form-group text-left">
                                           <input type="text" class="form-control"  placeholder="Consecutivo" required readonly value="CTE-{{ $Mail->Proyect->Client->cod}}-{{ $Mail->typeresponse}}-{{ $Mail->Proyect->cod}}-{{ $Mail->consectutive}}-{{ substr($Mail->receivedDate,0,4) }}" name="con">
                                        </div>
-                                       <div class="form-group text-left">
-                                          <select name="state_id" class="form-control custom-select">
-                                          <option value="0">Selecione opcion</option>
-                                          <option value="8">Envio Mensajeria</option>
-                                       </select>
+                                       <div class="form-group custom-file">
+                                          <input type="file" name="le_file"/>      
                                        </div>
+                                       <select name="state_id" class="form-control custom-select">
+                                          <option value="0">Selecione opcion</option>
+                                          <option value="4">Responder</option>
+                                          <option value="5">Archivo</option>
+                                       </select>
                                     </div>
                                     <div class="modal-body text-center">
-                                       <button type="submit" class="btn btn-info">Cargar Archivo</button>
+                                       <button type="submit" class="btn btn-info">Responder</button>
                                     </div>
                                 {{ Form::close() }}
                               </div>

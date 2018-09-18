@@ -97,6 +97,19 @@ Route::group(['prefix' => 'maile/'], function () {
 	Route::GET ('destroy/{id}', 'MailController@destroy')->name('maile/destroy');
 	Route::GET ('edit/{id}', 'MailController@edit')		->name('maile/edit');
 	Route::post('guardar', 'MailController@save');
+	Route::post('guardarmensajeria', 'MailController@savemsn');
+	
+	Route::post('guardarrespuesta', 'MailController@savetype');
+	Route::post('guardarsrchivo', 'MailController@saveArch');
+
+	
+	
+	Route::get('download', 'MailController@download')->name('download');
+	Route::get('downloadrespuesta', 'MailController@downloadAnswer')->name('downloadresponce');
+
+	
+
+	Route::post('guardarEnvio', 'MailController@saveSend');
 });	
 
 

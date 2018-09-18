@@ -11,6 +11,7 @@ use Auth;
 
 class BaseController extends Controller
 {
+
     public function __construct()
     {    
         $this->Log = new Log();
@@ -21,5 +22,11 @@ class BaseController extends Controller
         else{
             $this->dateModify = $date->addHour();
         }       
+        if (is_null(Auth::user())) {
+            return redirect('/');
+        }else
+        {
+            
+        }
     }
 }
