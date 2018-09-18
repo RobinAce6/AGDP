@@ -15,8 +15,8 @@ class User extends Seeder
             'name' => 'admin',
             'lastname' => 'general',
             'document' => 111111,
-            'email' => 'soportecolombia@grupo-link.com',
-            'password' => bcrypt('pc12345'),
+            'email' => 'sistemas@consultecnicos.com',
+            'password' => bcrypt('Agdps1st3m4s'),
             'dependencie_id' => 1
         ]);
         DB::table('user_has_permissions')->insert([
