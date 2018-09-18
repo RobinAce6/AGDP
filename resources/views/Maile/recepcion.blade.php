@@ -39,13 +39,13 @@
 								<div class="col-sm-12 col-md-4"> 
 									{{ Form::label('Cliente', 'Cliente') }}
 									<div class="col-sm-10 col-lg-12">
-										{{ Form::select('client_id', $selectClient,null,[ 'class' => 'form-control custom-select', ]) }}
+										{{ Form::select('client_id', $selectClient,null,[ 'class' => 'form-control custom-select','onchange' => 'cambioProyect()' ]) }}
 									</div>
 								</div>
 								<div class="col-sm-12 col-md-4"> 
-									{{ Form::label('Remitente', 'Remitente') }}
+									{{ Form::label('Proyecto', 'Proyecto') }}
 									<div class="col-sm-10 col-lg-12">
-										{{ Form::select('proyect_id', $selectProyect,null,[ 'class' => 'form-control custom-select', ]) }}
+										{{ Form::select('proyect_id', $selectProyect,null,[ 'class' => 'form-control custom-select', 'id'=> 'proyect_id']) }}
 									</div>
 								</div>
 							</div>
@@ -59,100 +59,59 @@
 								<div class="col-sm-12 col-md-4"> 
 									{{ Form::label('Ciudad', 'Ciudad') }}
 									<div class="col-sm-10 col-lg-12">
-										{{ Form::select('ciudad_id', $selectProyect,null,[ 'class' => 'form-control custom-select', 'id'=> 'ciudad_id']) }}
+										{{ Form::select('ciudad_id', $selectCity,null,[ 'class' => 'form-control custom-select', 'id'=> 'ciudad_id']) }}
 									</div>
 								</div>
-							</div>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-							<div class="form-group row">
-
-
+								<!--
 								<div class="col-sm-12 col-md-4"> 
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Consecutivo <sup>*</sup></label>
+									{{ Form::label('Consecutivo', 'Consecutivo') }}
 									<div class="col-sm-10 col-lg-12">
-										
-										<input type="text" class="form-control" name="idMail2" value="" required>
-										<div class="invalid-feedback">
-											Este campo es requerido*
-										</div>
+										{{ Form::text('consecutivo', null, array('class' => 'form-control','readonly')) }}
 									</div>
 								</div>
-								<div class="col-sm-12 col-md-4"> 
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Fecha Recibido </label>
-									<div class="col-sm-10 col-lg-12">
-										<input type="date" class="form-control" name="sentDate" value="" required>
-										<div class="invalid-feedback">
-											Este campo es requerido*
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 col-md-4"> 
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Ciudad <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										
-										<input type="text" class="form-control" name="originCity" value="" required>
-										<div class="invalid-feedback">
-											Este campo es requerido*
-										</div>
-									</div>
-								</div>
+								-->
 							</div>
 							<div class="form-group row">
-								
 								<div class="col-sm-12 col-md-5"> 
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Destinatario <sup>*</sup></label>
+									{{ Form::label('Destinatario', 'Destinatario') }}
 									<div class="col-sm-12 col-lg-12">
 										<div class="input-group" name="addressee" required>
-										<input type="text" placeholder="Nombre " class="form-control col-md-6" required>
-										<input type="text" placeholder="Dependencia " class="form-control col-md-9" required>
+											
+											{{ Form::select('dependency_id', $selectDepend,null,[ 'class' => 'form-control custom-select','onchange' => 'cambioDependencia()' ]) }}
+											{{ Form::select('persona_id', $selectUser,null,[ 'class' => 'form-control custom-select', 'id'=> 'persona_id']) }}
 										</div>
-										<div class="invalid-feedback">
-											Este campo es requerido*
-										</div>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-5"> 
+									{{ Form::label('Asunto', 'Asunto') }}
+									<div class="col-sm-12 col-lg-12">
+										{{ Form::text('asunto', null, array('class' => 'form-control')) }}
 									</div>
 								</div>
 							</div>
 							<div class="form-group row">
 								<div class="col-sm-12 col-md-12"> 
-
-									<label for="" class="col-sm-12 col-lg-4 col-form-label">Asunto <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-6">
-										<input type="text" class="form-control" name="" value="" required>
-										<div class="invalid-feedback">
-											Este campo es requerido*
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="form-group row">
-								<div class="col-sm-12 col-md-12"> 
-
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Observaciones</label>
+									{{ Form::label('Observaciones', 'Observaciones') }}
 									<div class="col-sm-10 col-lg-12">
-										<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ></textarea>
-										
+										{!! Form::textarea('obser',null,['class'=>'form-control']) !!}								
 									</div>
 								</div>
 							</div>
-							
-							
+							<div class="form-group row">
+								<div class="col-sm-12 col-md-6">
+									{{ Form::label('Empresa de mensajería', 'Empresa de mensajería') }}
+									<div class="col-sm-10 col-lg-12">
+										{{ Form::text('empresa', null, array('class' => 'form-control')) }}
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-6">
+									{{ Form::label('Mensajero', 'Mensajero') }}
+									<div class="col-sm-10 col-lg-12">
+										{{ Form::text('mensajeria', null, array('class' => 'form-control')) }}
+									</div>
+								</div>
+							</div>
+							<!--
 							<div class="form-group row">
 								<div class="col-sm-12 col-lg-6">
 									<label for="" class="col-sm-12 col-lg-12 col-form-label">Formato <sup>*</sup></label>
@@ -179,26 +138,8 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-group row">
-								<div class="col-sm-12 col-md-6">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Empresa de mensajería </label>
-									<div class="col-sm-10 col-lg-12">
-										<input type="text" class="form-control" name="" value="" required>
-										<div class="invalid-feedback">
-											Este campo es requerido*
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 col-md-6">
-									<label for="" class="col-sm-12 col-lg-12 col-form-label">Mensajero <sup>*</sup></label>
-									<div class="col-sm-10 col-lg-12">
-										<input type="text" class="form-control" name="" value="" required>
-										<div class="invalid-feedback">
-											Este valor es requerido*
-										</div>
-									</div>
-								</div>
-							</div>
+							-->
+							
 							<div class="form-group text-left">
 								<small class="col-sm-12 col-lg-12"><sup>*</sup> Campos obligatorios</small>
 							</div>
@@ -220,7 +161,45 @@
     });
 </script>
 <script type="text/javascript">
-
+	function cambioProyect(){
+        var data = {
+            reg_Departamento: $('select[name="client_id"]').val()
+        };
+        //hacer las solicitudes al servidor
+        var protocolo = window.location.protocol;
+        var port = window.location.port;
+        
+        if (port!="") {
+        	var URLactual = window.location.hostname+":"+port+"/";
+        }else{
+        	var URLactual = window.location.hostname+"/";
+        }
+        URLactual = protocolo+'//'+URLactual+'';
+        $.ajax({
+            url: URLactual+ "ajax/proyecto/"+data.reg_Departamento,
+            type: 'post',
+            data: data,
+			headers: {
+				"X-CSRF-TOKEN": "{{ csrf_token() }}"
+			},
+            success: function(info){
+                $("#proyect_id").empty();
+                if (info === 'false') {
+                    console.log('no found');
+                   $("#proyect_id").append('<option value="" selected="">Seleccione una Proyecto</option>');
+                }else{
+                    //modResponse = $.parseJSON(info.msg);
+                    $.each(info.msg, function (i, dataCon) {
+                        $("#proyect_id").append('<option value="' + i + '">' + dataCon + '</option>');
+                        console.log(i);
+                    });
+                }
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }        
+        });
+    };
     function cambioDepartamento(){
         var data = {
             reg_Departamento: $('select[name="departamento_id"]').val()
@@ -236,7 +215,7 @@
         }
         URLactual = protocolo+'//'+URLactual+'';
         $.ajax({
-            url: URLactual+ "ajax/ciudad",
+            url: URLactual+ "ajax/ciudad/"+data.reg_Departamento,
             type: 'post',
             data: data,
 			headers: {
@@ -251,6 +230,45 @@
                     //modResponse = $.parseJSON(info.msg);
                     $.each(info.msg, function (i, dataCon) {
                         $("#ciudad_id").append('<option value="' + i + '">' + dataCon + '</option>');
+                        console.log(i);
+                    });
+                }
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }        
+        });
+    };
+    function cambioDependencia(){
+        var data = {
+            reg_Departamento: $('select[name="dependency_id"]').val()
+        };
+        //hacer las solicitudes al servidor
+        var protocolo = window.location.protocol;
+        var port = window.location.port;
+        
+        if (port!="") {
+        	var URLactual = window.location.hostname+":"+port+"/";
+        }else{
+        	var URLactual = window.location.hostname+"/";
+        }
+        URLactual = protocolo+'//'+URLactual+'';
+        $.ajax({
+            url: URLactual+ "ajax/persona/"+data.reg_Departamento,
+            type: 'post',
+            data: data,
+			headers: {
+				"X-CSRF-TOKEN": "{{ csrf_token() }}"
+			},
+            success: function(info){
+                $("#persona_id").empty();
+                if (info === 'false') {
+                    console.log('no found');
+                   $("#persona_id").append('<option value="" selected="">Seleccione un Usuario</option>');
+                }else{
+                    //modResponse = $.parseJSON(info.msg);
+                    $.each(info.msg, function (i, dataCon) {
+                        $("#persona_id").append('<option value="' + i + '">' + dataCon + '</option>');
                         console.log(i);
                     });
                 }

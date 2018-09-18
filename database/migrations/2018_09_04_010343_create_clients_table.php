@@ -19,7 +19,7 @@ class CreateClientsTable extends Migration
             $table->string('name', 50)->unique();
             $table->string('person', 50);
             $table->string('address', 50);
-            $table->string('cod', 3)->unique();
+            $table->string('cod', 4)->unique();
             $table->boolean('type');
             $table->rememberToken();
             $table->timestamps();

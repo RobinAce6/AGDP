@@ -50,6 +50,7 @@ class UserController extends Core\BaseController
     {
         $this->validate($request, [
             'name'=>'required|max:120',
+            'lastname'=>'required|max:120',
             'email'=>'required|email|unique:users',
             'password'=>'required|min:6|confirmed',
             'lastname'=>'required|max:120',

@@ -20,7 +20,7 @@
 
               <div class="container-login100-form-btn">
                  <button class="btn btn-warning">Guardar</button><br><br>
-                 <a href="{{ route('depend.listD')}}" class="btn btn-danger">Cancelar</a>
+                 <a href="{{ url('depend/store')}}" class="btn btn-danger">Cancelar</a>
               </div>
            </div>
         </form>

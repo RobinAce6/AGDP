@@ -3,11 +3,9 @@
 @section('content')
 <div class="row justify-content-center main-container">
    <div class="col-sm-11">
-      <form class="form-group" method="POST" action="{{ route('maile.listM') }}">
 
-         {{ csrf_field() }}
 
-         <div class="row justify-content-center main-container">
+      <div class="row justify-content-center main-container">
          <div class="col-sm-11">
             <h1 class="text-center text-uppercase">Correspondencia:<small> Registro</small></h1> <br>  
 
@@ -20,74 +18,62 @@
             <div>
                <table  class="treetable table-search hover text-left">
                   <thead class="text-center">
-                     <th>Consecutivo1</th>
-                     <th>Consecutivo2</th>
-                     <th>Consecutivo3</th>
                      <th>Fecha</th>
-                     <th>Fecha</th>
+                     <th>Consecutivo</th>
+                     <th>Cliente</th>
+                     <th>Proyecto</th>
                      <th>Asunto</th>
-                     <th>Opciones</th>
+                     <th>Estado</th>
+                     <th>Editar</th>
                   </thead>
                   <tbody>
                      @foreach ($mail as $Mail)
                      <tr>
-                        <td scope="row">{{ $Mail->idMail}}</td>
-                        <td scope="row">{{ $Mail->idMail2}}</td>
-                        <td scope="row">{{ $Mail->codEnterprise}}</td>
                         <td scope="row">{{ $Mail->receivedDate}}</td>
-                        <td scope="row">{{ $Mail->sentDate}}</td>
-                        <td scope="row">{{ $Mail->affair}}</td>                     
+                        <td scope="row">{{ $Mail->consectutive}}</td>
+                        <td scope="row">{{ $Mail->Proyect->Client->name}}</td>
+                        <td scope="row">{{ $Mail->Proyect->name}}</td>
+                        <td scope="row">{{ $Mail->subjet}}</td>   
+                        <td scope="row">{{ $Mail->State->name}}</td>               
                         <td class="subject">
                            <span class="indenter" style="padding-left: 0px;">
                            <a href="#" title="Collapse">&nbsp;</a></span>
                         </td>
                         <td class="text-center">
-                           <a href="{{ route('maile/edit', ['idMail' => $mail->idMail]) }}"><i class="fas fa-pencil-alt"></i></a> <i class="fas fa-upload"  data-toggle="modal" data-target=".modal-upload"></i>
+                           <!--<a href="{{ route('maile/edit', ['id' => $Mail->id]) }}"><i class="fas fa-pencil-alt"></i></a> -->
+                           <i class="fas fa-upload"  data-toggle="modal" data-target=".modal-upload{{$Mail->id}}"></i>
                         </td>
-                        <td>
-                           <a class="btn btn-link" href="{{ route('maile/edit', ['idMail' => $mail->idMail]) }}">Actualizar</a>
-                        </td>
+                        <div class="modal fade modal-upload{{$Mail->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-upload" aria-hidden="true">
+                           <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                 {{ Form::open(array('url' => 'maile/guardar', 'method' => 'post', 'enctype'=>'multipart/form-data', 'files' => true)) }}
+                                    {{ csrf_field() }}   
+                                    <div class="modal-body">
+                                       <input type="hidden" name="id" value="{{$Mail->id}}">
+                                    </div>
+                                    <div class="modal-body">
+                                       <div class="form-group text-left">
+                                          <input type="text" class="form-control"  placeholder="Consecutivo" required readonly value="{{ $Mail->consectutive}}" name="con">
+                                       </div>
+                                       <div class="form-group custom-file">
+                                          <input type="file" name="le_file"/>      
+                                       </div>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                       <button type="submit" class="btn btn-info">Cargar Archivo</button>
+                                    </div>
+                                {{ Form::close() }}
+                              </div>
+                           </div>
+                        </div>
                      </tr>
                      @endforeach
                   </tbody>
                </table>
             </div>
          </div>
-            <div class="modal fade modal-upload" tabindex="-1" role="dialog" aria-labelledby="modal-upload" aria-hidden="true">
-               <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                     <form  class="needs-validation" novalidate>
-                        <div class="modal-header">
-                           <h5 class="modal-title" id="exampleModalLongTitle">Cargar EDoc</h5>
-                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                           <span aria-hidden="true">&times;</span>
-                           </button>
-                        </div>
-                        <div class="modal-body">
-                           <div class="form-group text-left">
-                              <input type="text" class="form-control"  placeholder="Consecutivo" required>
-                              <div class="invalid-feedback">
-                                 Por favor ingrese el consecutivo del archivo
-                              </div>
-                           </div>
-                           <div class="form-group custom-file">
-                              <input type="file" class="custom-file-input" id="customFileLang" lang="es" required>
-                              <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
-                              <div class="invalid-feedback">
-                                 Por favor ingrese el archivo
-                              </div>
-                           </div>
-                        </div>
-                        <div class="modal-body text-center">
-                           <button  class="btn btn-light">Cancelar</button>
-                           <button type="submit" class="btn btn-info">Cargar Archivo</button>
-                        </div>
-                     </form>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </form>
+            
+      </div>
    </div>
 </div>
 @endsection

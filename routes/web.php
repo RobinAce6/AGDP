@@ -39,8 +39,12 @@ Route::GET ('others', 'UserController@others')		->name('others');
 
 
 Route::group(['prefix' => 'ajax/'], function () {
-	Route::post('ciudad','AjaxController@ciudad');
-	Route::get('ciudad','AjaxController@ciudad');
+	Route::post('ciudad/{id}','AjaxController@ciudad');
+	Route::get('ciudad/{id}','AjaxController@ciudad');
+	Route::post('proyecto/{id}','AjaxController@proyecto');
+	Route::get('proyecto/{id}','AjaxController@proyecto');
+	Route::post('persona/{id}','AjaxController@persona');
+	Route::get('persona/{id}','AjaxController@persona');
 });	
 
 
@@ -92,6 +96,7 @@ Route::group(['prefix' => 'maile/'], function () {
 	Route::PUT ('update/{idTypePerson}', 'MailController@update')->name('updateTP');
 	Route::GET ('destroy/{id}', 'MailController@destroy')->name('maile/destroy');
 	Route::GET ('edit/{id}', 'MailController@edit')		->name('maile/edit');
+	Route::post('guardar', 'MailController@save');
 });	
 
 
