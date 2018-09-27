@@ -98,9 +98,8 @@ class ClientController extends Core\BaseController
     {
         $client = Client::find($idClient); 
 
-        $client->nitClient = $request->nitClient;
-        $client->nameClient = $request->nameClient;
-        $client->addressClient = $request->addressClient;
+        $client->name = $request->nameClient;
+        $client->address = $request->addressClient;
 
         $client->save();
 

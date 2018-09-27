@@ -228,8 +228,6 @@ class MailController extends Core\BaseController
             'persona_id'=>'required|not_in:0',
             'asunto'=>'required',
             'obser'=>'required',
-            'empresa'=>'required',
-            'mensajeria'=>'required',
             
         ]);
         $data = MailE::where('proyect_id','=',$request->proyect_id)

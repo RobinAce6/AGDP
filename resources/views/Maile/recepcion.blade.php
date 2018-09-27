@@ -83,6 +83,19 @@
 									</div>
 								</div>
 								<div class="col-sm-12 col-md-5"> 
+									{{ Form::label('Copia', 'Copia') }}
+									<div class="col-sm-12 col-lg-12">
+										<div class="input-group" name="addressee" required>
+											
+											{{ Form::select('dependency_id_cp', $selectDepend,null,[ 'class' => 'form-control custom-select','onchange' => 'cambioDependenciaCopia()' ]) }}
+											{{ Form::select('persona_id_cp', $selectUser,null,[ 'class' => 'form-control custom-select', 'id'=> 'persona_id_cp']) }}
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							<div class="form-group row">
+								<div class="col-sm-12 col-md-5"> 
 									{{ Form::label('Asunto', 'Asunto') }}
 									<div class="col-sm-12 col-lg-12">
 										{{ Form::text('asunto', null, array('class' => 'form-control')) }}
@@ -269,6 +282,45 @@
                     //modResponse = $.parseJSON(info.msg);
                     $.each(info.msg, function (i, dataCon) {
                         $("#persona_id").append('<option value="' + i + '">' + dataCon + '</option>');
+                        console.log(i);
+                    });
+                }
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }        
+        });
+    };
+    function cambioDependenciaCopia(){
+        var data = {
+            reg_Departamento: $('select[name="dependency_id_cp"]').val()
+        };
+        //hacer las solicitudes al servidor
+        var protocolo = window.location.protocol;
+        var port = window.location.port;
+        
+        if (port!="") {
+        	var URLactual = window.location.hostname+":"+port+"/";
+        }else{
+        	var URLactual = window.location.hostname+"/";
+        }
+        URLactual = protocolo+'//'+URLactual+'';
+        $.ajax({
+            url: URLactual+ "ajax/persona/"+data.reg_Departamento,
+            type: 'post',
+            data: data,
+			headers: {
+				"X-CSRF-TOKEN": "{{ csrf_token() }}"
+			},
+            success: function(info){
+                $("#persona_id_cp").empty();
+                if (info === 'false') {
+                    console.log('no found');
+                   $("#persona_id_cp").append('<option value="" selected="">Seleccione un Usuario</option>');
+                }else{
+                    //modResponse = $.parseJSON(info.msg);
+                    $.each(info.msg, function (i, dataCon) {
+                        $("#persona_id_cp").append('<option value="' + i + '">' + dataCon + '</option>');
                         console.log(i);
                     });
                 }

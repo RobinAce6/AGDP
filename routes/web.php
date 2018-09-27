@@ -58,7 +58,7 @@ Route::group(['prefix' => 'users/'], function () {
 Route::group(['prefix' => 'clients/'], function () {
 	Route::GET ('create', 'ClientController@create')->name('newCL');
 	Route::POST ('store', 'ClientController@store')->name('storeCl');
-	Route::PUT ('update/{id}', 'ClientsController@update')->name('update');
+	Route::PUT ('update/{id}', 'ClientController@update')->name('update');
 });	
 
 Route::group(['prefix' => 'proyect/'], function () {
