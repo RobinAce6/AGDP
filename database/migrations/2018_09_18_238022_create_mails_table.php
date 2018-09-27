@@ -26,8 +26,8 @@ class CreateMailsTable extends Migration
             $table->string('subjet', 200);
             $table->string('observations', 200);
             $table->string('folder', 200);
-            $table->string('companymsn', 30);
-            $table->string('namemessenger', 50); 
+            $table->string('companymsn', 30)->nullable();
+            $table->string('namemessenger', 50)->nullable(); 
             $table->string('typeresponse', 50);    
             $table->integer('state_id')->unsigned();
             $table->foreign('state_id')->references('id')->on('states');
