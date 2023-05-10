@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 //Routes Login
 
 	Route::get('/', function () 
@@ -9,7 +10,7 @@
 
 	Route::get('/home', 'HomeController@index')->name('home');
 
-	Auth::routes();
+	// Auth::routes();
 
 	//Route::POST('email', 'ResetPasswordController@showResetForm');
 
@@ -141,7 +142,7 @@ Route::POST('typePerson/search', 'TypePersonController@search')			->name('search
 Route::PUT ('typePerson/update/{idTypePerson}', 'TypePersonController@update')	->name('updateTP');
 Route::GET ('typePerson/destroy/{id}', 'TypePersonController@destroy')  ->name('typePerson/destroy');
 Route::GET ('typePerson/edit/{id}', 'TypePersonController@edit')		->name('typePerson/edit');
-Auth::routes();
+// Auth::routes();
 
 
 //MailE Routes
@@ -154,10 +155,10 @@ Route::POST('maile/search', 'MaileController@search')		->name('searchM');
 Route::PUT ('maile/update/{idTypePerson}', 'MaileController@update')->name('updateTP');
 Route::GET ('maile/destroy/{id}', 'MaileController@destroy')->name('maile/destroy');
 Route::GET ('maile/edit/{id}', 'MaileController@edit')		->name('maile/edit');
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
